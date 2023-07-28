@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
 	Alert,
 	Button,
@@ -13,10 +13,18 @@ import { Entypo } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 
 export default function App() {
+
+  // STATE HOOKS
 	const [username, setUserName] = useState("");
 	const [password, setPassword] = useState("");
 	const [isPasswordHidden, setIsPasswordVisible] = useState(false);
 
+  // EFFECT HOOKS
+  useEffect(() => {
+
+  },[]);
+
+  // HELPER FUNCTIONS & USER ACTIONS
 	function assignUsername(text) {
 		setUserName(text);
 	}
