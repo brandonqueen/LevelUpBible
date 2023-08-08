@@ -82,8 +82,8 @@ const SignInScreen = () => {
 				<CustomButton
 					text="Sign In with Apple"
 					onPress={onSignInApple}
-					bgColor="#e3e3e3"
-					fgColor="#363636"
+					bgColor="black"
+					fgColor="white"
 				/>
 				<CustomButton
 					text="Don't have an account? Create one"
