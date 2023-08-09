@@ -9,7 +9,7 @@ const ResetPasswordScreen = () => {
 	const [email, setEmail] = useState("");
 
 	const onSendPressed = () => {
-		console.warn("Sent!");
+		navigation.navigate("NewPassword");
 	};
 
 	const onSignInPressed = () => {

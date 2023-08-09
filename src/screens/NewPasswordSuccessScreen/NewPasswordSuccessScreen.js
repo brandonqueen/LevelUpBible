@@ -1,17 +1,16 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
-import React, { useState } from "react";
-import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import { useNavigation } from "@react-navigation/native";
 
-const NewPasswordScreen = () => {
-	const [code, setCode] = useState("");
-	const [newPassword, setNewPassword] = useState("");
-
+const NewPasswordSuccessScreen = () => {
 	const navigation = useNavigation();
 
-	const onSendPressed = () => {
-		navigation.navigate("NewPasswordSuccess");
+	const onConfirmPressed = () => {
+		console.warn("Confirmed!");
+	};
+
+	const onResendPressed = () => {
+		console.warn("Code Resent");
 	};
 
 	const onSignInPressed = () => {
@@ -21,21 +20,9 @@ const NewPasswordScreen = () => {
 	return (
 		<ScrollView showsVerticalScrollIndicator={false}>
 			<View style={styles.root}>
-				<Text style={styles.title}>Set New Password</Text>
-
-				<CustomInput
-					placeholder="Enter your confirmation code"
-					value={code}
-					setValue={setCode}
-				/>
-				<CustomInput
-					placeholder="Enter your new password"
-					value={newPassword}
-					setValue={setNewPassword}
-					secureTextEntry={true}
-				/>
-
-				<CustomButton text="Send" onPress={onSendPressed} />
+				<Text style={styles.title}>
+					Your password has been successfully reset! 🥳🎉
+				</Text>
 
 				<CustomButton
 					text="Back to Sign in"
@@ -57,6 +44,7 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		color: "#051c60",
 		margin: 20,
+		textAlign: "center",
 	},
 	text: {
 		color: "gray",
@@ -67,4 +55,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default NewPasswordScreen;
+export default NewPasswordSuccessScreen;
