@@ -4,6 +4,7 @@ import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import SocialSignInButtons from "../../components/SocialSignInButtons";
 import { useNavigation } from "@react-navigation/native";
+import { auth } from "../../../.expo/firebaseConfig";
 
 const SignUpScreen = () => {
 	const [username, setUsername] = useState("");
@@ -12,6 +13,15 @@ const SignUpScreen = () => {
 	const [passwordRepeat, setPasswordRepeat] = useState("");
 
 	const navigation = useNavigation();
+	const handleSignUp = () => {
+		auth
+			.createUserWithUsernameEmailAndPassword(username, email, password)
+			.then((userCredentials) => {
+				const user = userCredentials.user;
+				console.log(user.email);
+			})
+			.catch((error) => alert(error.message));
+	};
 
 	const onRegisterPressed = () => {
 		navigation.navigate("ConfirmEmail");
