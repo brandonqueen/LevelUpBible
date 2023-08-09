@@ -7,7 +7,7 @@ import {
 	ScrollView,
 } from "react-native";
 import React, { useState } from "react";
-import Logo from "../../../assets/Images/BibleTogether.png";
+import Logo from "../../../assets/Images/Level_Up_Bible.png";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import SocialSignInButtons from "../../components/SocialSignInButtons";
