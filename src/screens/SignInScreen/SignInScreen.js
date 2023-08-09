@@ -10,34 +10,27 @@ import React, { useState } from "react";
 import Logo from "../../../assets/Images/BibleTogether.png";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
+import SocialSignInButtons from "../../components/SocialSignInButtons";
+import { useNavigation } from "@react-navigation/native";
 
 const SignInScreen = () => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 
 	const { height } = useWindowDimensions();
+	const navigation = useNavigation();
+
 	const onSignInPressed = () => {
-		console.warn("sign in");
+		//validate user
+		navigation.navigate("Home");
 	};
 
 	const onForgotPasswordPressed = () => {
-		console.warn("forgot password");
-	};
-
-	const onSignInFacebook = () => {
-		console.warn("Facebook");
-	};
-
-	const onSignInGoogle = () => {
-		console.warn("Google");
-	};
-
-	const onSignInApple = () => {
-		console.warn("Apple");
+		navigation.navigate("ResetPassword");
 	};
 
 	const onSignupPressed = () => {
-		console.warn("Sign up");
+		navigation.navigate("SignUp");
 	};
 
 	return (
@@ -53,6 +46,8 @@ const SignInScreen = () => {
 					placeholder="Username"
 					value={username}
 					setValue={setUsername}
+					autoCorrect={false}
+					autoCapitalize="none"
 				/>
 				<CustomInput
 					placeholder="Password"
@@ -67,24 +62,7 @@ const SignInScreen = () => {
 					onPress={onForgotPasswordPressed}
 					type="TERTIARY"
 				/>
-				<CustomButton
-					text="Sign In with Facebook"
-					onPress={onSignInFacebook}
-					bgColor="#e7eaf4"
-					fgColor="#4765a9"
-				/>
-				<CustomButton
-					text="Sign In with Google"
-					onPress={onSignInGoogle}
-					bgColor="#fae9ea"
-					fgColor="#dd4d44"
-				/>
-				<CustomButton
-					text="Sign In with Apple"
-					onPress={onSignInApple}
-					bgColor="black"
-					fgColor="white"
-				/>
+				<SocialSignInButtons />
 				<CustomButton
 					text="Don't have an account? Create one"
 					onPress={onSignupPressed}
