@@ -16,13 +16,12 @@ const HomeScreen = () => {
 					<View style={styles.yourProgress}>
 						<View style={styles.graphLayout}>
 							<View style={styles.progressBarTextContainer}>
-								<Text style={styles.progressBarText}>OT</Text>
-								<Text style={styles.progressBarText}>NT</Text>
+								<Text style={styles.progressBarText}>OT{"\n"}NT</Text>
 							</View>
 							<Image source={bibleMeters} style={styles.progressBars} />
 						</View>
 						<View style={styles.graphLayout}>
-							<Text style={styles.progressCircleText}>WHOLE BIBLE</Text>
+							<Text style={styles.progressCircleText}>WHOLE {"\n"}BIBLE</Text>
 							<Image source={progressCircle} style={styles.progressCircle} />
 						</View>
 					</View>
@@ -30,6 +29,7 @@ const HomeScreen = () => {
 				<View style={styles.middleContentContainers}>
 					<View style={styles.topFriends}>
 						<Text style={styles.headers}>TOP FRIENDS</Text>
+						<Image source={dummyFriends} style={styles.dummyFriends} />
 					</View>
 				</View>
 			</View>
@@ -52,11 +52,12 @@ const styles = StyleSheet.create({
 		paddingTop: 20,
 	},
 	yourProgress: {
-		flex: 1,
+		flex: 8,
 		marginTop: 10,
 	},
 	topFriends: {
 		marginTop: 10,
+		overflow: "hidden",
 	},
 	graphLayout: {
 		padding: 10,
@@ -64,16 +65,16 @@ const styles = StyleSheet.create({
 		flex: 1,
 		overflow: "hidden",
 	},
+	progressBarTextContainer: {
+		flex: 1,
+		alignItems: "center",
+		justifyContent: "center",
+	},
 	headers: {
 		fontSize: 30,
 		fontWeight: "900",
 		textAlign: "center",
 		color: "#f5f5f5",
-	},
-	progressBarTextContainer: {
-		flex: 1,
-		alignItems: "center",
-		justifyContent: "center",
 	},
 	progressBarText: {
 		color: "lightgray",
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
 		fontWeight: "900",
 		fontSize: 23,
 		padding: 2,
-		flex: 2,
+		flex: 1.5,
 		alignSelf: "center",
 		textAlign: "center",
 	},
@@ -102,6 +103,13 @@ const styles = StyleSheet.create({
 		resizeMode: "contain",
 		alignSelf: "center",
 		flex: 1,
+	},
+	dummyFriends: {
+		height: "85%",
+		width: "95%",
+		left: 22,
+		resizeMode: "contain",
+		justifyContent: "center"
 	},
 });
 
