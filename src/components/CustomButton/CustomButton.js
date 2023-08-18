@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
 		borderRadius: 5,
 	},
 	container_PRIMARY: {
-		backgroundColor: "#3b71f3",
+		backgroundColor: "#695DDA",
 	},
 	container_SECONDARY: {
 		borderColor: "#3b71f3",
@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
 		color: "white",
 	},
 	text_SECONDARY: {
-		color: "#3b71f3",
+		color: "whitesmoke",
 	},
 	text_TERTIARY: {
-		color: "gray",
+		color: "lightgray",
 	},
 });

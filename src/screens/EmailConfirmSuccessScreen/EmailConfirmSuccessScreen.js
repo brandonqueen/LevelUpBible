@@ -7,14 +7,6 @@ import { useNavigation } from "@react-navigation/native";
 const EmailConfirmSuccessScreen = () => {
 	const navigation = useNavigation();
 
-	const onConfirmPressed = () => {
-		console.warn("Confirmed!");
-	};
-
-	const onResendPressed = () => {
-		console.warn("Code Resent");
-	};
-
 	const onSignInPressed = () => {
 		navigation.navigate("SignIn");
 	};
@@ -44,16 +36,9 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 30,
 		fontWeight: "bold",
-		color: "#051c60",
+		color: "#f5f5f5",
 		margin: 20,
 		textAlign: "center",
-	},
-	text: {
-		color: "gray",
-		marginVertical: 10,
-	},
-	link: {
-		color: "#fdb075",
 	},
 });
 

@@ -21,7 +21,7 @@ const NewPasswordSuccessScreen = () => {
 		<ScrollView showsVerticalScrollIndicator={false}>
 			<View style={styles.root}>
 				<Text style={styles.title}>
-					Your password has been successfully reset! 🥳🎉
+					Your password has been successfully reset!  🥳🎉
 				</Text>
 
 				<CustomButton
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 30,
 		fontWeight: "bold",
-		color: "#051c60",
+		color: "whitesmoke",
 		margin: 20,
 		textAlign: "center",
 	},

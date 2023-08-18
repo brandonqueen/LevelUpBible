@@ -4,7 +4,6 @@ import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import SocialSignInButtons from "../../components/SocialSignInButtons";
 import { useNavigation } from "@react-navigation/native";
-import { auth } from "../../../.expo/firebaseConfig";
 
 const SignUpScreen = () => {
 	const [username, setUsername] = useState("");
@@ -14,13 +13,7 @@ const SignUpScreen = () => {
 
 	const navigation = useNavigation();
 	const handleSignUp = () => {
-		auth
-			.createUserWithUsernameEmailAndPassword(username, email, password)
-			.then((userCredentials) => {
-				const user = userCredentials.user;
-				console.log(user.email);
-			})
-			.catch((error) => alert(error.message));
+		console.warn('signed up');
 	};
 
 	const onRegisterPressed = () => {
@@ -105,11 +98,11 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 30,
 		fontWeight: "bold",
-		color: "#051c60",
+		color: "whitesmoke",
 		margin: 20,
 	},
 	text: {
-		color: "gray",
+		color: "lightgray",
 		marginVertical: 10,
 	},
 	link: {

@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SignInScreen from "../screens/SignInScreen/SignInScreen";
 import SignUpScreen from "../screens/SignUpScreen/SignUpScreen";
@@ -13,8 +13,17 @@ import NewPasswordSuccessScreen from "../screens/NewPasswordSuccessScreen/NewPas
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
+	const MyTheme = {
+		...DefaultTheme,
+		colors: {
+		  ...DefaultTheme.colors,
+		  background: "rgb(22,30,57)",
+		},
+	  };
+	
+	
 	return (
-		<NavigationContainer>
+		<NavigationContainer theme={MyTheme}>
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
 				<Stack.Screen name="SignIn" component={SignInScreen} />
 				<Stack.Screen name="SignUp" component={SignUpScreen} />

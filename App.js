@@ -1,4 +1,4 @@
-import { StyleSheet, Text, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 import React from "react";
 import Navigation from "./src/navigation";
 
@@ -15,6 +15,6 @@ export default App;
 const styles = StyleSheet.create({
 	root: {
 		flex: 1,
-		backgroundColor: "#F9FBFC",
+		backgroundColor: "rgb(22,30,57)",
 	},
 });

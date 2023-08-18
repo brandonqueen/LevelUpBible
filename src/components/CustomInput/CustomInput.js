@@ -10,6 +10,7 @@ const CustomInput = ({ value, setValue, placeholder, secureTextEntry }) => {
 				placeholder={placeholder}
 				style={styles.input}
 				secureTextEntry={secureTextEntry}
+				autoCapitalize='none'
 			/>
 		</View>
 	);
@@ -29,7 +30,10 @@ const styles = StyleSheet.create({
 
 		marginVertical: 6,
 	},
-	input: {},
+	input: {
+		color: 'black',
+		fontWeight: '400'
+	},
 });
 
 export default CustomInput;
