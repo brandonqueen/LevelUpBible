@@ -18,7 +18,7 @@ const HeadNav = () => {
 			<View style={styles.topBarContainer}>
 				<MaterialCommunity
 					name="account"
-					size={50}
+					size={45}
 					color="#f5f5f5"
 					style={{ alignSelf: "flex-end" }}
 				/>
@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
 		alignSelf: "center",
 	},
 	graphic: {
-		width: 50,
-		height: 50,
+		width: 45,
+		height: 45,
 		alignSelf: "flex-start",
 	},
 	LUBWords: {
