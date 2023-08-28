@@ -1,6 +1,4 @@
 import { StyleSheet, Text, View, Image } from "react-native";
-import HeadNav from "../../components/HeadNav";
-import FootNav from "../../components/FootNav/FootNav";
 
 import progressCircle from "../../../assets/Images/progress_circle.png";
 import bibleMeters from "../../../assets/Images/Bible_Meters.png";
@@ -9,7 +7,6 @@ import dummyFriends from "../../../assets/Images/dummy_friends.png";
 const HomeScreen = () => {
 	return (
 		<View style={styles.root}>
-			<HeadNav />
 			<View style={styles.middleContent}>
 				<View style={styles.yourProgressContainer}>
 					<Text style={styles.headers}>YOUR PROGRESS</Text>
@@ -31,7 +28,6 @@ const HomeScreen = () => {
 					<Image source={dummyFriends} style={styles.dummyFriends} />
 				</View>
 			</View>
-			<FootNav />
 		</View>
 	);
 };

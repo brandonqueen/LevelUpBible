@@ -1,11 +1,12 @@
-import { StyleSheet, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView, View } from "react-native";
 import React from "react";
-import Navigation from "./src/navigation";
+import StackNavigator from "./src/navigation/StackNavigator";
+import NotImplemented from "./src/screens/NotImplemented/NotImplemented";
 
 const App = () => {
 	return (
 		<SafeAreaView style={styles.root}>
-			<Navigation />
+			<StackNavigator />
 		</SafeAreaView>
 	);
 };

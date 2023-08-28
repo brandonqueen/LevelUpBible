@@ -1,5 +1,6 @@
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import graphic from "../../../assets/Images/LUB_Icon.png";
 import LUBWords from "../../../assets/Images/LUB_WORDS_ONLY.png";
@@ -7,6 +8,11 @@ import LUBWords from "../../../assets/Images/LUB_WORDS_ONLY.png";
 import MaterialCommunity from "react-native-vector-icons/MaterialCommunityIcons";
 
 const HeadNav = () => {
+	const navigation = useNavigation();
+	const onAccountPressed = () => {
+		navigation.navigate("Account");
+	};
+
 	return (
 		<View style={styles.topBar}>
 			<View style={styles.topBarContainer}>
@@ -15,21 +21,24 @@ const HeadNav = () => {
 			<View style={styles.topBarContainer}>
 				<Image source={LUBWords} style={styles.LUBWords} />
 			</View>
-			<View style={styles.topBarContainer}>
+			<TouchableOpacity
+				style={styles.topBarContainer}
+				onPress={onAccountPressed}>
 				<MaterialCommunity
 					name="account"
 					size={45}
 					color="#f5f5f5"
 					style={{ alignSelf: "flex-end" }}
 				/>
-			</View>
+			</TouchableOpacity>
 		</View>
 	);
 };
 
 const styles = StyleSheet.create({
 	topBar: {
-		flex: 1,
+		height: "10%",
+		width: "100%",
 		flexDirection: "row",
 		justifyContent: "space-between",
 		padding: 5,
