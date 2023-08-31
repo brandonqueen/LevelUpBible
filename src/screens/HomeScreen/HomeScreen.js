@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
 	topFriendsContainer: {
 		flex: 3,
 		marginBottom: 20,
-		overflow: "hidden",
 	},
 	yourProgress: {
 		flex: 8,

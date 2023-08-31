@@ -6,7 +6,7 @@ const NotImplemented = () => {
 	return (
 		<View style={styles.root}>
 			<View style={styles.card}>
-				<Text style={styles.text}>Feature Coming Soon! 🥳</Text>
+				<Text style={styles.text}>Feature Coming Soon! 🎊</Text>
 				<Image source={Capybara} style={styles.capybara} />
 			</View>
 		</View>
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	card: {
-		width: "90%",
-		height: "80%",
+		width: "95%",
+		height: "95%",
 		backgroundColor: "#f5f5f5",
 		borderRadius: "25%",
 		justifyContent: "center",

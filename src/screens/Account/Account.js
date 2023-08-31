@@ -12,6 +12,11 @@ const Account = () => {
 		<View style={styles.root}>
 			<View style={styles.card}>
 				<Button title="Sign Out" onPress={onSignOutPressed} />
+				<Button
+					title="Back"
+					onPress=//log user out
+					{navigation.goBack}
+				/>
 			</View>
 		</View>
 	);
@@ -26,8 +31,8 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	card: {
-		width: "90%",
-		height: "80%",
+		width: "95%",
+		height: "85%",
 		backgroundColor: "#f5f5f5",
 		borderRadius: "25%",
 		justifyContent: "center",
