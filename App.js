@@ -1,13 +1,16 @@
 import { StyleSheet, SafeAreaView, View } from "react-native";
 import React from "react";
 import StackNavigator from "./src/navigation/StackNavigator";
-import NotImplemented from "./src/screens/NotImplemented/NotImplemented";
+import { PaperProvider } from "react-native-paper";
+import ChooseChapterScreen from "./src/screens/ChooseChapterScreen/ChooseChapterScreen";
 
 const App = () => {
 	return (
-		<SafeAreaView style={styles.root}>
-			<StackNavigator />
-		</SafeAreaView>
+		<PaperProvider>
+			<SafeAreaView style={styles.root}>
+				<ChooseChapterScreen/>
+			</SafeAreaView>
+		</PaperProvider>
 	);
 };
 

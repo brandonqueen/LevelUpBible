@@ -12,7 +12,7 @@ const BibleScreen = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [response, setResponse] = useState("");
-	const [selectedPassage, setSelectedPassage] = useState("Gen 1");
+	const [selectedPassage, setSelectedPassage] = useState("Jn 3");
 
 	useEffect(() => {
 		if (selectedPassage != "") {
