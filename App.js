@@ -1,10 +1,10 @@
 import { StyleSheet, SafeAreaView, View } from "react-native";
 import React from "react";
 import { Provider } from "react-redux";
-import { store } from "./src/app/store.js";
+import { store } from "./store.js";
 //import StackNavigator from "./src/navigation/StackNavigator";
 import { PaperProvider } from "react-native-paper";
-import ChooseChapterScreen from "./src/screens/ChooseChapterScreen/ChooseChapterScreen";
+import ChooseChapterScreen from "./src/screens/ChooseChapterScreen/ChooseChapterScreen.js";
 
 const App = () => {
 	return (

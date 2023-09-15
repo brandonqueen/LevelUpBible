@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
 	Text,
 	StyleSheet,
@@ -8,16 +8,16 @@ import {
 	ScrollView,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { setTestamentSelected } from "../../features/bibleSlice/bibleSlice";
+import {
+	setTestamentSelected,
+	setBookSelected,
+} from "../../features/bibleSlice/bibleSlice";
 import { List } from "react-native-paper";
 
 const ChooseChapterScreen = () => {
-	// const [list, setList] = useState(bibleData);
-	// const [isTestamentChosen, setIsTestamentChosen] = useState(false);
-	// const [isBookChosen, setIsBookChosen] = useState(false);
+	const [isTestamentChosen, setIsTestamentChosen] = useState(false);
+	const [isBookChosen, setIsBookChosen] = useState(false);
 	// const [chapterIsPressed, setChapterIsPressed] = useState(false);
-
-	// useEffect(() => {}, [bibleState, dispatch]);
 
 	//state setter
 	const dispatch = useDispatch();
@@ -25,36 +25,27 @@ const ChooseChapterScreen = () => {
 	//state getter
 	const bibleState = useSelector((state) => state.bibleData);
 
-
+	//press handlers
 	const handleTestamentPress = (index) => {
-		dispatch(
-			setTestamentSelected({index: index,})
-		);
+		dispatch(setTestamentSelected({ index: index }));
+		setIsTestamentChosen(!isTestamentChosen);
 	};
 
-	// const handleBookPress = (bookIndex, item, index) => {
-	// 	let tempList = list.map((testament) => ({
-	// 		...testament,
-	// 		books: testament.books.map((book) => ({
-	// 			...book,
-	// 			isExpanded: false,
-	// 		})),
-	// 	}));
-	// 	tempList[index].books[bookIndex].isExpanded =
-	// 		!item.books[bookIndex].isExpanded;
-	// 	setList(tempList);
-	// 	setIsBookChosen(!isBookChosen);
-	// };
+	const handleBookPress = (testamentIndex, bookIndex) => {
+		const actionObj = { testamentIndex: testamentIndex, bookIndex: bookIndex };
+		dispatch(setBookSelected(actionObj));
+		setIsBookChosen(!isBookChosen);
+	};
 
-	// const Header = () => {
-	// 	if (isBookChosen) {
-	// 		return <Text style={styles.header}>Choose Chapter</Text>;
-	// 	} else if (isTestamentChosen) {
-	// 		return <Text style={styles.header}>Choose Book</Text>;
-	// 	} else {
-	// 		return <Text style={styles.header}>Choose Testament</Text>;
-	// 	}
-	// };
+	const Header = () => {
+		if (isBookChosen) {
+			return <Text style={styles.header}>Choose Chapter</Text>;
+		} else if (isTestamentChosen) {
+			return <Text style={styles.header}>Choose Book</Text>;
+		} else {
+			return <Text style={styles.header}>Choose Testament</Text>;
+		}
+	};
 
 	const accordionStyle = {
 		header: {
@@ -116,7 +107,7 @@ const ChooseChapterScreen = () => {
 
 	return (
 		<View style={styles.root}>
-			{/* <Header /> */}
+			<Header />
 			<FlatList
 				data={bibleState}
 				keyExtractor={(item, index) => index.toString()}
@@ -135,7 +126,7 @@ const ChooseChapterScreen = () => {
 								//render books
 								title={book.bookName}
 								expanded={book.selected}
-								onPress={() => handleBookPress(bookIndex, item, index)}
+								onPress={() => handleBookPress(index, bookIndex)}
 								style={accordionStyle.header}
 								titleStyle={
 									book.selected
