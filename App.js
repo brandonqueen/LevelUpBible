@@ -2,7 +2,7 @@ import { StyleSheet, SafeAreaView, View } from "react-native";
 import React from "react";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
-//import StackNavigator from "./src/navigation/StackNavigator";
+import StackNavigator from "./src/navigation/StackNavigator";
 import { PaperProvider } from "react-native-paper";
 import ChooseChapterScreen from "./src/screens/ChooseChapterScreen/ChooseChapterScreen.js";
 
@@ -11,7 +11,7 @@ const App = () => {
 		<Provider store={store}>
 			<PaperProvider>
 				<SafeAreaView style={styles.root}>
-					<ChooseChapterScreen />
+					<StackNavigator />
 				</SafeAreaView>
 			</PaperProvider>
 		</Provider>

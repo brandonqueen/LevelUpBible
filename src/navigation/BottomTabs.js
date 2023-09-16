@@ -1,19 +1,17 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import HomeScreen from "../screens/HomeScreen";
-import BibleScreen from "../screens/BibleScreen";
 import { View, StyleSheet } from "react-native";
 import HeadNav from "../components/HeadNav/HeadNav";
 import NotImplemented from "../screens/NotImplemented/NotImplemented";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import BibleStack from "./BibleStack";
 
 const Tab = createBottomTabNavigator();
 
 function BottomTabs() {
 	return (
 		<View style={styles.container}>
-			<HeadNav />
 			<Tab.Navigator
 				screenOptions={{
 					headerShown: false,
@@ -21,7 +19,7 @@ function BottomTabs() {
 					tabBarActiveTintColor: "#695DDA",
 					tabBarStyle: {
 						backgroundColor: "rgb(22,30,57)",
-						borderTopWidth: 0
+						borderTopWidth: 0,
 					},
 				}}>
 				<Tab.Screen
@@ -35,7 +33,8 @@ function BottomTabs() {
 				/>
 				<Tab.Screen
 					name="BIBLE"
-					component={BibleScreen}
+					component={BibleStack}
+					key="BibleStackKey"
 					options={{
 						tabBarIcon: ({ color, size }) => (
 							<FontAwesome5 name="bible" size={size} color={color} />

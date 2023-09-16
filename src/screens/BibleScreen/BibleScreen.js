@@ -7,12 +7,19 @@ import {
 } from "react-native";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useRoute } from "@react-navigation/native";
 
 const BibleScreen = () => {
+	const route = useRoute();
+	const book = route.params?.book;
+	const chapterNum = route.params?.chapterNum;
+
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [response, setResponse] = useState("");
-	const [selectedPassage, setSelectedPassage] = useState("Jn 3");
+	const [selectedPassage, setSelectedPassage] = useState(
+		book + " " + chapterNum
+	);
 
 	useEffect(() => {
 		if (selectedPassage != "") {
@@ -32,12 +39,10 @@ const BibleScreen = () => {
 				},
 			})
 				.then((res) => {
-					console.log("RES: ", JSON.stringify(res?.data, null, 2));
 					setIsLoading(false);
 					setResponse(res?.data?.passages);
 				})
 				.catch((error) => {
-					console.log(`Error: `, JSON.stringify(error));
 					setIsLoading(false);
 					setError(error);
 				});
@@ -62,6 +67,7 @@ const BibleScreen = () => {
 					<ActivityIndicator size="large" style={{ alignSelf: "center" }} />
 				) : (
 					<ScrollView style={styles.scroll}>
+						<Text style={styles.header}>{selectedPassage}</Text>
 						<Text style={styles.text}>{response}</Text>
 					</ScrollView>
 				)}
@@ -92,7 +98,14 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		color: "#f5f5f5",
+		fontSize: 20,
+		fontWeight: "400",
+	},
+	header: {
+		color: "#f5f5f5",
+		textAlign: "center",
+		paddingBottom: 8,
 		fontSize: 24,
-		fontWeight: "500",
+		fontWeight: "800",
 	},
 });

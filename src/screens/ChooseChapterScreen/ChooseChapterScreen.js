@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
 	Text,
 	StyleSheet,
@@ -11,13 +11,15 @@ import { useSelector, useDispatch } from "react-redux";
 import {
 	setTestamentSelected,
 	setBookSelected,
+	setChapterSelected,
+	clearAllSelected,
 } from "../../features/bibleSlice/bibleSlice";
 import { List } from "react-native-paper";
+import { useNavigation, useIsFocused } from "@react-navigation/native";
 
 const ChooseChapterScreen = () => {
-	const [isTestamentChosen, setIsTestamentChosen] = useState(false);
-	const [isBookChosen, setIsBookChosen] = useState(false);
-	const [chapterIsPressed, setChapterIsPressed] = useState(false);
+	const [headerTestament, setHeaderTestament] = useState(false);
+	const [headerBook, setHeaderBook] = useState(false);
 
 	//state setter
 	const dispatch = useDispatch();
@@ -25,23 +27,51 @@ const ChooseChapterScreen = () => {
 	//state getter
 	const bibleState = useSelector((state) => state.bibleData);
 
+	//nav
+	const navigation = useNavigation();
+	const isFocused = useIsFocused();
+
+	useEffect(() => {
+		if (isFocused) {
+			dispatch(clearAllSelected());
+			setHeaderBook(false);
+			setHeaderTestament(false);
+		}
+	}, [isFocused]);
+
 	//press handlers
 	const handleTestamentPress = (index) => {
 		dispatch(setTestamentSelected({ index: index }));
-		setIsTestamentChosen(!isTestamentChosen);
+		setHeaderTestament(!headerTestament);
 	};
 
 	const handleBookPress = (testamentIndex, bookIndex) => {
 		dispatch(
 			setBookSelected({ testamentIndex: testamentIndex, bookIndex: bookIndex })
 		);
-		setIsBookChosen(!isBookChosen);
+		setHeaderBook(!headerBook);
+	};
+
+	const handleChapterPress = (testamentIndex, bookIndex, item) => {
+		const book = bibleState[testamentIndex].books[bookIndex].bookName;
+		const chapterNum = item.chapter;
+		dispatch(
+			setChapterSelected({
+				testamentIndex: testamentIndex,
+				bookIndex: bookIndex,
+				chapterNum: chapterNum,
+			})
+		);
+		navigation.navigate("Bible", {
+			book: book,
+			chapterNum: chapterNum,
+		});
 	};
 
 	const Header = () => {
-		if (isBookChosen) {
+		if (headerBook) {
 			return <Text style={styles.header}>Choose Chapter</Text>;
-		} else if (isTestamentChosen) {
+		} else if (headerTestament) {
 			return <Text style={styles.header}>Choose Book</Text>;
 		} else {
 			return <Text style={styles.header}>Choose Testament</Text>;
@@ -66,27 +96,17 @@ const ChooseChapterScreen = () => {
 		},
 	};
 
-	const Chapters = ({ bookData }) => {
+	const Chapters = ({ bookData, testamentIndex, bookIndex }) => {
 		const { chapters } = bookData;
 
-		const handleChapterPressIn = () => {
-			setChapterIsPressed(true);
-		};
-
-		const handleChapterPressOut = () => {
-			setChapterIsPressed(false);
-		};
-
 		const renderItem = (item) => {
-			<Pressable
-				style={{ width: "20%" }}
-				onPressIn={handleChapterPressIn}
-				onPressOut={handleChapterPressOut}>
-				<Text
-					style={[styles.chapters, { opacity: chapterIsPressed ? 1 : 0.8 }]}>
-					{item.chapter}
-				</Text>
-			</Pressable>;
+			return (
+				<Pressable
+					style={{ width: "20%" }}
+					onPress={() => handleChapterPress(testamentIndex, bookIndex, item)}>
+					<Text style={[styles.chapters]}>{item.chapter}</Text>
+				</Pressable>
+			);
 		};
 
 		return (
@@ -94,9 +114,9 @@ const ChooseChapterScreen = () => {
 				<View style={styles.chapterNumRow}>
 					<FlatList
 						data={chapters}
-						keyExtractor={(item) => `${bookData.bookName} ${item.chapter}`}
+						keyExtractor={(item) => item.chapter.toString()}
 						renderItem={({ item }) => {
-							renderItem(item);
+							return renderItem(item);
 						}}
 						numColumns={5}
 					/>
@@ -133,7 +153,11 @@ const ChooseChapterScreen = () => {
 										? accordionStyle.titleChosen
 										: accordionStyle.title
 								}>
-								<Chapters bookData={book} />
+								<Chapters
+									bookData={book}
+									testamentIndex={index}
+									bookIndex={bookIndex}
+								/>
 							</List.Accordion>
 						))}
 					</List.Accordion>
@@ -157,6 +181,7 @@ const styles = StyleSheet.create({
 	},
 	chapters: {
 		color: "#f5f5f5",
+		opacity: 0.8,
 		fontSize: 25,
 		fontWeight: "800",
 		padding: 15,

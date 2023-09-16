@@ -3,10 +3,12 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import progressCircle from "../../../assets/Images/progress_circle.png";
 import bibleMeters from "../../../assets/Images/Bible_Meters.png";
 import dummyFriends from "../../../assets/Images/dummy_friends.png";
+import HeadNav from "../../components/HeadNav/HeadNav";
 
 const HomeScreen = () => {
 	return (
 		<View style={styles.root}>
+			<HeadNav />
 			<View style={styles.middleContent}>
 				<View style={styles.yourProgressContainer}>
 					<Text style={styles.headers}>YOUR PROGRESS</Text>

@@ -31,10 +31,54 @@ const bibleSlice = createSlice({
 				});
 			});
 		},
-		setChapterSelected: (state, action) => {},
+		setChapterSelected: (state, action) => {
+			const { testamentIndex, bookIndex, chapterNum } = action.payload;
+			state.map((testament, testamentMapIndex) => {
+				testament.books.map((book, bookMapIndex) => {
+					book.chapters.map((chapter, chapterMapIndex) => {
+						if (
+							testamentMapIndex === testamentIndex &&
+							bookMapIndex === bookIndex &&
+							chapter.chapter === chapterNum
+						) {
+							state[testamentMapIndex].books[bookMapIndex].chapters[
+								chapterMapIndex
+							].selected =
+								!state[testamentMapIndex].books[bookMapIndex].chapters[
+									chapterMapIndex
+								].selected;
+						} else {
+							state[testamentMapIndex].books[bookMapIndex].chapters[
+								chapterMapIndex
+							].selected = false;
+						}
+					});
+				});
+			});
+		},
+		clearAllSelected: (state) => {
+			state.map((testament, testIndex) => {
+				state[testIndex].selected = false;
+				state[testIndex].books.map((book, bookIndex) => {
+					state[testIndex].books[bookIndex].selected = false;
+					state[testIndex].books[bookIndex].chapters.map(
+						(chapter, chapIndex) => {
+							state[testIndex].books[bookIndex].chapters[
+								chapIndex
+							].selected = false;
+						}
+					);
+				});
+			});
+		},
 		setChapterCompleted: (state, action) => {},
 	},
 });
 
-export const { setTestamentSelected, setBookSelected } = bibleSlice.actions;
+export const {
+	setTestamentSelected,
+	setBookSelected,
+	setChapterSelected,
+	clearAllSelected,
+} = bibleSlice.actions;
 export default bibleSlice.reducer;
