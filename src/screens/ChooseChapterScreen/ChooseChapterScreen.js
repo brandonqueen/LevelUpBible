@@ -17,7 +17,7 @@ import { List } from "react-native-paper";
 const ChooseChapterScreen = () => {
 	const [isTestamentChosen, setIsTestamentChosen] = useState(false);
 	const [isBookChosen, setIsBookChosen] = useState(false);
-	// const [chapterIsPressed, setChapterIsPressed] = useState(false);
+	const [chapterIsPressed, setChapterIsPressed] = useState(false);
 
 	//state setter
 	const dispatch = useDispatch();
@@ -32,8 +32,9 @@ const ChooseChapterScreen = () => {
 	};
 
 	const handleBookPress = (testamentIndex, bookIndex) => {
-		const actionObj = { testamentIndex: testamentIndex, bookIndex: bookIndex };
-		dispatch(setBookSelected(actionObj));
+		dispatch(
+			setBookSelected({ testamentIndex: testamentIndex, bookIndex: bookIndex })
+		);
 		setIsBookChosen(!isBookChosen);
 	};
 
@@ -65,45 +66,44 @@ const ChooseChapterScreen = () => {
 		},
 	};
 
-	// const Chapters = ({ bookData }) => {
-	// 	const data = Array.from({ length: bookData.numOfChapters }, (_, index) => ({
-	// 		key: String(index),
-	// 		text: `${index + 1}`,
-	// 	}));
+	const Chapters = ({ bookData }) => {
+		const { chapters } = bookData;
 
-	// 	const handleChapterPressIn = () => {
-	// 		setChapterIsPressed(true);
-	// 	};
+		const handleChapterPressIn = () => {
+			setChapterIsPressed(true);
+		};
 
-	// 	const handleChapterPressOut = () => {
-	// 		setChapterIsPressed(false);
-	// 	};
+		const handleChapterPressOut = () => {
+			setChapterIsPressed(false);
+		};
 
-	// 	const renderItem = ({ item }) => (
-	// 		<Pressable
-	// 			style={{ width: "20%" }}
-	// 			onPressIn={handleChapterPressIn}
-	// 			onPressOut={handleChapterPressOut}>
-	// 			<Text
-	// 				style={[styles.chapters, { opacity: chapterIsPressed ? 1 : 0.8 }]}>
-	// 				{item.text}
-	// 			</Text>
-	// 		</Pressable>
-	// 	);
+		const renderItem = (item) => {
+			<Pressable
+				style={{ width: "20%" }}
+				onPressIn={handleChapterPressIn}
+				onPressOut={handleChapterPressOut}>
+				<Text
+					style={[styles.chapters, { opacity: chapterIsPressed ? 1 : 0.8 }]}>
+					{item.chapter}
+				</Text>
+			</Pressable>;
+		};
 
-	// 	return (
-	// 		<ScrollView horizontal={true} style={{ padding: 8 }}>
-	// 			<View style={styles.chapterNumRow}>
-	// 				<FlatList
-	// 					data={data}
-	// 					renderItem={renderItem}
-	// 					keyExtractor={(item) => item.key}
-	// 					numColumns={5}
-	// 				/>
-	// 			</View>
-	// 		</ScrollView>
-	// 	);
-	// };
+		return (
+			<ScrollView horizontal={true} style={{ padding: 8 }}>
+				<View style={styles.chapterNumRow}>
+					<FlatList
+						data={chapters}
+						keyExtractor={(item) => `${bookData.bookName} ${item.chapter}`}
+						renderItem={({ item }) => {
+							renderItem(item);
+						}}
+						numColumns={5}
+					/>
+				</View>
+			</ScrollView>
+		);
+	};
 
 	return (
 		<View style={styles.root}>
@@ -133,7 +133,7 @@ const ChooseChapterScreen = () => {
 										? accordionStyle.titleChosen
 										: accordionStyle.title
 								}>
-								{/* <Chapters bookData={book} /> */}
+								<Chapters bookData={book} />
 							</List.Accordion>
 						))}
 					</List.Accordion>
