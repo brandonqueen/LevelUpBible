@@ -56,7 +56,7 @@ const bibleSlice = createSlice({
 				});
 			});
 		},
-		clearAllSelected: (state) => {
+		resetBibleSelection: (state) => {
 			state.map((testament, testIndex) => {
 				state[testIndex].selected = false;
 				state[testIndex].books.map((book, bookIndex) => {
@@ -79,6 +79,6 @@ export const {
 	setTestamentSelected,
 	setBookSelected,
 	setChapterSelected,
-	clearAllSelected,
+	resetBibleSelection,
 } = bibleSlice.actions;
 export default bibleSlice.reducer;

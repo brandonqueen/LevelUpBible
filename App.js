@@ -1,16 +1,18 @@
-import { StyleSheet, SafeAreaView, View } from "react-native";
+import { StyleSheet, SafeAreaView, Text } from "react-native";
 import React from "react";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
-import StackNavigator from "./src/navigation/StackNavigator";
 import { PaperProvider } from "react-native-paper";
-import ChooseChapterScreen from "./src/screens/ChooseChapterScreen/ChooseChapterScreen.js";
+import StackNavigator from "./src/navigation/StackNavigator.js";
+import BibleScreen from "./src/screens/BibleScreen/BibleScreen.js";
 
 const App = () => {
 	return (
 		<Provider store={store}>
 			<PaperProvider>
-				<SafeAreaView style={styles.root}>
+				<SafeAreaView
+					style={styles.root}
+					forceInset={{ top: "always", bottom: "never" }}>
 					<StackNavigator />
 				</SafeAreaView>
 			</PaperProvider>

@@ -1,11 +1,13 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/HomeScreen";
 import { View, StyleSheet } from "react-native";
-import HeadNav from "../components/HeadNav/HeadNav";
+import { useEffect } from "react";
 import NotImplemented from "../screens/NotImplemented/NotImplemented";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import BibleStack from "./BibleStack";
+import ProfileScreen from "../screens/ProfileScreen";
+import ProfileStack from "./ProfileStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,10 +15,13 @@ function BottomTabs() {
 	return (
 		<View style={styles.container}>
 			<Tab.Navigator
+				initialRouteName="HOME"
+				safeAreaInsets={{ bottom: 0 }}
 				screenOptions={{
 					headerShown: false,
 					tabBarInactiveTintColor: "#f5f5f5",
 					tabBarActiveTintColor: "#695DDA",
+					tabBarLabelStyle: { padding: 0 },
 					tabBarStyle: {
 						backgroundColor: "rgb(22,30,57)",
 						borderTopWidth: 0,
@@ -42,20 +47,20 @@ function BottomTabs() {
 					}}
 				/>
 				<Tab.Screen
-					name="REWARDS"
-					component={NotImplemented}
-					options={{
-						tabBarIcon: ({ color, size }) => (
-							<FontAwesome name="star" size={size} color={color} />
-						),
-					}}
-				/>
-				<Tab.Screen
 					name="FRIENDS"
 					component={NotImplemented}
 					options={{
 						tabBarIcon: ({ color, size }) => (
 							<FontAwesome5 name="users" size={size} color={color} />
+						),
+					}}
+				/>
+				<Tab.Screen
+					name="PROFILE"
+					component={ProfileStack}
+					options={{
+						tabBarIcon: ({ color, size }) => (
+							<FontAwesome name="user" size={size} color={color} />
 						),
 					}}
 				/>

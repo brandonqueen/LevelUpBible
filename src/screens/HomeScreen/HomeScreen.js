@@ -1,14 +1,15 @@
 import { StyleSheet, Text, View, Image } from "react-native";
-
 import progressCircle from "../../../assets/Images/progress_circle.png";
 import bibleMeters from "../../../assets/Images/Bible_Meters.png";
 import dummyFriends from "../../../assets/Images/dummy_friends.png";
-import HeadNav from "../../components/HeadNav/HeadNav";
+import graphic from "../../../assets/Images/Logo.png";
 
 const HomeScreen = () => {
 	return (
 		<View style={styles.root}>
-			<HeadNav />
+			<View style={styles.topBar}>
+				<Image source={graphic} style={styles.graphic} />
+			</View>
 			<View style={styles.middleContent}>
 				<View style={styles.yourProgressContainer}>
 					<Text style={styles.headers}>YOUR PROGRESS</Text>
@@ -38,6 +39,18 @@ const styles = StyleSheet.create({
 	root: {
 		margin: 5,
 		flex: 1,
+	},
+	topBar: {
+		height: "12%",
+		width: "100%",
+		marginTop: 8,
+		justifyContent: "flex-end",
+		alignItems: "center",
+	},
+	graphic: {
+		height: "100%",
+		flex: 1,
+		objectFit: "contain",
 	},
 	middleContent: {
 		flex: 9,

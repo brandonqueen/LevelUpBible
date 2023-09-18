@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
 	Text,
 	StyleSheet,
@@ -12,10 +12,10 @@ import {
 	setTestamentSelected,
 	setBookSelected,
 	setChapterSelected,
-	clearAllSelected,
+	resetBibleSelection,
 } from "../../features/bibleSlice/bibleSlice";
 import { List } from "react-native-paper";
-import { useNavigation, useIsFocused } from "@react-navigation/native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
 
 const ChooseChapterScreen = () => {
 	const [headerTestament, setHeaderTestament] = useState(false);
@@ -29,15 +29,6 @@ const ChooseChapterScreen = () => {
 
 	//nav
 	const navigation = useNavigation();
-	const isFocused = useIsFocused();
-
-	useEffect(() => {
-		if (isFocused) {
-			dispatch(clearAllSelected());
-			setHeaderBook(false);
-			setHeaderTestament(false);
-		}
-	}, [isFocused]);
 
 	//press handlers
 	const handleTestamentPress = (index) => {
@@ -68,13 +59,29 @@ const ChooseChapterScreen = () => {
 		});
 	};
 
+	const handleHeaderPress = () => {
+		dispatch(resetBibleSelection());
+	};
+
 	const Header = () => {
 		if (headerBook) {
-			return <Text style={styles.header}>Choose Chapter</Text>;
+			return (
+				<Pressable onPress={handleHeaderPress}>
+					<Text style={styles.header}>Choose Chapter</Text>
+				</Pressable>
+			);
 		} else if (headerTestament) {
-			return <Text style={styles.header}>Choose Book</Text>;
+			return (
+				<Pressable onPress={handleHeaderPress}>
+					<Text style={styles.header}>Choose Book</Text>
+				</Pressable>
+			);
 		} else {
-			return <Text style={styles.header}>Choose Testament</Text>;
+			return (
+				<Pressable onPress={handleHeaderPress}>
+					<Text style={styles.header}>Choose Testament</Text>
+				</Pressable>
+			);
 		}
 	};
 

@@ -9,7 +9,6 @@ import ResetPasswordScreen from "../screens/ResetPasswordScreen";
 import NewPasswordScreen from "../screens/NewPasswordScreen";
 import EmailConfirmSuccessScreen from "../screens/EmailConfirmSuccessScreen";
 import NewPasswordSuccessScreen from "../screens/NewPasswordSuccessScreen/NewPasswordSuccessScreen";
-import Account from "../screens/Account/Account";
 import BottomTabs from "./BottomTabs";
 
 const Stack = createNativeStackNavigator();
@@ -39,7 +38,6 @@ const StackNavigator = () => {
 					component={NewPasswordSuccessScreen}
 				/>
 				<Stack.Screen name="NewPassword" component={NewPasswordScreen} />
-				<Stack.Screen name="Account" component={Account} />
 				<Stack.Screen name="BottomTabs" component={BottomTabs} />
 			</Stack.Navigator>
 		</NavigationContainer>
