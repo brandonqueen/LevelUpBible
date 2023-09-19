@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	Text,
 	StyleSheet,
@@ -15,9 +15,20 @@ import {
 	resetBibleSelection,
 } from "../../features/bibleSlice/bibleSlice";
 import { List } from "react-native-paper";
-import { useNavigation, useFocusEffect } from "@react-navigation/native";
+import {
+	useNavigation,
+	useIsFocused,
+	useRoute,
+} from "@react-navigation/native";
 
 const ChooseChapterScreen = () => {
+	useEffect(() => {
+		const unsubscribe = navigation.addListener("tabPress", () => {
+			console.log("Tab Pressed");
+		});
+		return unsubscribe;
+	}, [navigation]);
+
 	//local state
 	const [headerTestament, setHeaderTestament] = useState(false);
 	const [headerBook, setHeaderBook] = useState(false);
@@ -30,6 +41,14 @@ const ChooseChapterScreen = () => {
 
 	//nav
 	const navigation = useNavigation();
+	const isFocused = useIsFocused();
+	const route = useRoute();
+
+	useEffect(() => {
+		if (isFocused) {
+			dispatch(resetBibleSelection());
+		}
+	}, [isFocused]);
 
 	//press handlers
 	const handleTestamentPress = (index) => {

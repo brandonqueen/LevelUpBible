@@ -1,12 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/HomeScreen";
 import { View, StyleSheet } from "react-native";
-import { useEffect } from "react";
 import NotImplemented from "../screens/NotImplemented/NotImplemented";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import BibleStack from "./BibleStack";
-import ProfileScreen from "../screens/ProfileScreen";
 import ProfileStack from "./ProfileStack";
 
 const Tab = createBottomTabNavigator();

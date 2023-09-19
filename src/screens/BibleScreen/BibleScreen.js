@@ -104,7 +104,7 @@ const BibleScreen = () => {
 		<View style={styles.root}>
 			<View style={styles.header}>
 				<TouchableOpacity
-					onPress={navigation.goBack}
+					onPress={() => navigation.goBack({ fromScreen: "BibleScreen" })}
 					style={{
 						flex: 1,
 						height: "100%",
