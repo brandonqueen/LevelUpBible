@@ -32,7 +32,6 @@ const BibleScreen = () => {
 	const [shouldRenderPressable, setShouldRenderPressable] = useState(false);
 	const [completeButtonFinishedStyle, setCompleteButtonFinishedStyle] =
 		useState({});
-	const [readTextIndices, setReadTextIndices] = useState([]);
 
 	useEffect(() => {
 		setSelectedPassage(book + " " + chapterNum);
@@ -62,12 +61,6 @@ const BibleScreen = () => {
 				});
 		}
 	}, [selectedPassage]);
-
-	const handleTextRead = (index) => {
-		if (!readTextIndices.includes(index)) {
-			setReadTextIndices([...readTextIndices, index]);
-		}
-	};
 
 	const handleScroll = (event) => {
 		const offsetY = event.nativeEvent.contentOffset.y;
@@ -137,7 +130,7 @@ const BibleScreen = () => {
 						onScroll={handleScroll}
 						scrollEventThrottle={8}>
 						<Text style={styles.heading}>{selectedPassage}</Text>
-							<Text style={styles.text}>{response}</Text>
+						<Text style={styles.text}>{response}</Text>
 						<Pressable
 							onPress={shouldRenderPressable ? handleCompletePress : null}
 							style={[
