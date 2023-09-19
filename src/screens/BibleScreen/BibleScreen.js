@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
 		fontSize: 22,
 		fontWeight: "400",
 		letterSpacing: 0.2,
-		lineHeight: 30,
+		lineHeight: 32,
 		marginBottom: 60,
 	},
 	heading: {

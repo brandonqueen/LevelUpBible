@@ -15,20 +15,9 @@ import {
 	resetBibleSelection,
 } from "../../features/bibleSlice/bibleSlice";
 import { List } from "react-native-paper";
-import {
-	useNavigation,
-	useIsFocused,
-	useRoute,
-} from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
 const ChooseChapterScreen = () => {
-	useEffect(() => {
-		const unsubscribe = navigation.addListener("tabPress", () => {
-			console.log("Tab Pressed");
-		});
-		return unsubscribe;
-	}, [navigation]);
-
 	//local state
 	const [headerTestament, setHeaderTestament] = useState(false);
 	const [headerBook, setHeaderBook] = useState(false);
@@ -41,14 +30,6 @@ const ChooseChapterScreen = () => {
 
 	//nav
 	const navigation = useNavigation();
-	const isFocused = useIsFocused();
-	const route = useRoute();
-
-	useEffect(() => {
-		if (isFocused) {
-			dispatch(resetBibleSelection());
-		}
-	}, [isFocused]);
 
 	//press handlers
 	const handleTestamentPress = (index) => {
@@ -172,7 +153,8 @@ const ChooseChapterScreen = () => {
 						}
 						expanded={item.selected}
 						key={item.testamentName.toString()}
-						onPress={() => handleTestamentPress(index)}>
+						onPress={() => handleTestamentPress(index)}
+						right={(props) => (props.isExpanded === false ? null : null)}>
 						{item.books.map((book, bookIndex) => (
 							<List.Accordion
 								//render books
@@ -181,6 +163,7 @@ const ChooseChapterScreen = () => {
 								expanded={book.selected}
 								onPress={() => handleBookPress(index, bookIndex)}
 								style={accordionStyle.header}
+								right={(props) => (props.isExpanded === false ? null : null)}
 								titleStyle={
 									book.selected
 										? accordionStyle.titleChosen
