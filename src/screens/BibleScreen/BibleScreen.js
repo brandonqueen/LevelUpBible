@@ -32,6 +32,7 @@ const BibleScreen = () => {
 	const [shouldRenderPressable, setShouldRenderPressable] = useState(false);
 	const [completeButtonFinishedStyle, setCompleteButtonFinishedStyle] =
 		useState({});
+	const [completeButtonPressedIn, setCompleteButtonPressedIn] = useState({});
 
 	useEffect(() => {
 		setSelectedPassage(book + " " + chapterNum);
@@ -84,6 +85,17 @@ const BibleScreen = () => {
 		}
 	};
 
+	const handleCompletePressIn = () => {
+		setCompleteButtonPressedIn({
+			backgroundColor: "#f0cd51",
+			borderColor: "#f0cd51",
+		});
+	};
+
+	const handleCompletePressOut = () => {
+		setCompleteButtonPressedIn(null);
+	};
+
 	const handleCompletePress = () => {
 		alert(`AI Quiz Goes Here To Verify Chapter Completion`);
 	};
@@ -132,10 +144,13 @@ const BibleScreen = () => {
 						<Text style={styles.heading}>{selectedPassage}</Text>
 						<Text style={styles.text}>{response}</Text>
 						<Pressable
+							onPressIn={handleCompletePressIn}
 							onPress={shouldRenderPressable ? handleCompletePress : null}
+							onPressOut={handleCompletePressOut}
 							style={[
 								styles.completeButtonPressable,
 								completeButtonFinishedStyle,
+								completeButtonPressedIn,
 							]}>
 							<Text style={styles.completeButtonText}>Complete</Text>
 						</Pressable>
@@ -202,10 +217,6 @@ const styles = StyleSheet.create({
 		borderColor: "#695DDA",
 		width: "50%",
 		alignSelf: "center",
-	},
-	completeButtonPressableCrossed: {
-		backgroundColor: "#F4C01E",
-		borderColor: "#F4C01E",
 	},
 	completeButtonText: {
 		color: "white",
