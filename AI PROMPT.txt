@@ -1,0 +1,19 @@
+Generate 3 easy multiple-choice  questions, with 4 possible answers,  to check for reading comprehension for Exodus chapter 3. Return the response in JSON in the following shape: 
+
+{
+    "questions": [
+        {
+            "question":  QUESTION
+            "options":  [
+                "A) [OPTION 1]",
+                "B) [OPTION 2]",
+                "C) [OPTION 3]",
+                "D) [OPTION 4]"
+            ]
+        },
+    ],  
+    "correct_answer": {
+        "text": "C) [CORRECT ANSWER TEXT]",
+        "verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"
+      }
+},

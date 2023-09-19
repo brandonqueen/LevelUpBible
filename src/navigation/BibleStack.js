@@ -11,7 +11,7 @@ const BibleStack = () => {
 			<Stack.Screen
 				name="ChooseChapter"
 				component={ChooseChapterScreen}
-				key="ChooseChapterKey"
+				initialParams={{ prevScreen: "" }}
 			/>
 			<Stack.Screen name="Bible" component={BibleScreen} />
 		</Stack.Navigator>

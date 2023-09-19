@@ -15,9 +15,22 @@ import {
 	resetBibleSelection,
 } from "../../features/bibleSlice/bibleSlice";
 import { List } from "react-native-paper";
-import { useNavigation } from "@react-navigation/native";
+import {
+	useNavigation,
+	useIsFocused,
+	useRoute,
+} from "@react-navigation/native";
 
 const ChooseChapterScreen = () => {
+	const isFocused = useIsFocused();
+	const route = useRoute();
+	useEffect(() => {
+		if (isFocused && route?.params?.prevScreen !== "BibleScreen") {
+			dispatch(resetBibleSelection());
+		}
+		navigation.setParams({ prevScreen: "" });
+	}, [isFocused]);
+
 	//local state
 	const [headerTestament, setHeaderTestament] = useState(false);
 	const [headerBook, setHeaderBook] = useState(false);

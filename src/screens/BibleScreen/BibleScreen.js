@@ -7,7 +7,7 @@ import {
 	Pressable,
 	TouchableOpacity,
 } from "react-native";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useRoute } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
@@ -23,16 +23,20 @@ const BibleScreen = () => {
 	const book = route.params?.book;
 	const chapterNum = route.params?.chapterNum;
 
+	// refs
+	const scrollPosition = useRef({}).current;
+
 	//local state
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
-	const [response, setResponse] = useState("");
+	const [response, setResponse] = useState([]);
 	const [selectedPassage, setSelectedPassage] = useState("Genesis 1");
 	const [scrollY, setScrollY] = useState(0);
 	const [shouldRenderPressable, setShouldRenderPressable] = useState(false);
 	const [completeButtonFinishedStyle, setCompleteButtonFinishedStyle] =
 		useState({});
 	const [completeButtonPressedIn, setCompleteButtonPressedIn] = useState({});
+	const [highlightedId, setHighlightedId] = useState(null);
 
 	useEffect(() => {
 		setSelectedPassage(book + " " + chapterNum);
@@ -54,7 +58,9 @@ const BibleScreen = () => {
 			})
 				.then((res) => {
 					setIsLoading(false);
-					setResponse(res?.data?.passages);
+					const textString = res?.data?.passages.toString();
+					const wordArray = textString.split(/(\w+\s+)/g).filter(Boolean);
+					setResponse(wordArray);
 				})
 				.catch((error) => {
 					setIsLoading(false);
@@ -63,7 +69,54 @@ const BibleScreen = () => {
 		}
 	}, [selectedPassage]);
 
+	///attempt to get AI Quiz Responses
+	// useEffect(() => {
+	// 	const endpoint = "https://api.openai.com/v1/chat/completions";
+	// 	const openAiApiKey = "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";
+	// 	const client = axios.create({
+	// 		headers: {
+	// 			Authorization: "Bearer " + openAiApiKey,
+	// 		},
+	// 	});
+	// 	const prompt = `Generate 3 easy multiple-choice  questions, with 4 possible answers,  to check for reading comprehension for ${selectedPassage}. Return the response in JSON in the following shape:
+
+	// 	{
+	// 		"questions": [
+	// 			{
+	// 				"question":  QUESTION
+	// 				"options":  [
+	// 					"A) [OPTION 1]",
+	// 					"B) [OPTION 2]",
+	// 					"C) [OPTION 3]",
+	// 					"D) [OPTION 4]"
+	// 				]
+	// 			},
+	// 		],
+	// 		"correct_answer": {
+	// 			"text": "C) [CORRECT ANSWER TEXT]",
+	// 			"verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"
+	// 		  }
+	// 	},`;
+	// 	const params = {
+	// 		prompt: prompt,
+	// 		model: "gpt-3.5-turbo",
+	// 		temperature: 0.6,
+	// 	};
+
+	// 	if (selectedPassage !== "") {
+	// 		client
+	// 			.post("https://api.openai.com/v1/completions", params)
+	// 			.then((result) => {
+	// 				console.log(result);
+	// 			})
+	// 			.catch((err) => {
+	// 				console.log(JSON.stringify(err));
+	// 			});
+	// 	}
+	// }, [selectedPassage]);
+
 	const handleScroll = (event) => {
+		// Progress Bar Logic
 		const offsetY = event.nativeEvent.contentOffset.y;
 		const contentHeight = event.nativeEvent.contentSize.height;
 		const scrollViewHeight = event.nativeEvent.layoutMeasurement.height;
@@ -83,6 +136,26 @@ const BibleScreen = () => {
 				});
 			}, 500);
 		}
+
+		// // Highlighting Logic
+		// const scrollOffset = event.nativEvent.contentOffset.y;
+		// let idToHighlight = null;
+		// for (const id in scrollPosition) {
+		// 	const position = scrollPosition[id];
+		// 	if (
+		// 		scrollOffset >= position.y &&
+		// 		scrollOffset < position.y + position.height
+		// 	) {
+		// 		idToHighlight = id;
+		// 		break;
+		// 	}
+		// }
+		// setHighlightedId(idToHighlight);
+	};
+
+	const onTextLayout = (event) => {
+		const lines = event?.nativeEvent.lines;
+		console.log("Text event", lines);
 	};
 
 	const handleCompletePressIn = () => {
@@ -104,7 +177,9 @@ const BibleScreen = () => {
 		<View style={styles.root}>
 			<View style={styles.header}>
 				<TouchableOpacity
-					onPress={() => navigation.goBack({ fromScreen: "BibleScreen" })}
+					onPress={() =>
+						navigation.navigate("ChooseChapter", { prevScreen: "BibleScreen" })
+					}
 					style={{
 						flex: 1,
 						height: "100%",
@@ -140,9 +215,24 @@ const BibleScreen = () => {
 					<ScrollView
 						style={styles.scroll}
 						onScroll={handleScroll}
-						scrollEventThrottle={8}>
+						scrollEventThrottle={16}>
 						<Text style={styles.heading}>{selectedPassage}</Text>
-						<Text style={styles.text}>{response}</Text>
+						<View style={styles.passageContainer}>
+							{response.map((word) => {
+								return (
+									<Text
+										style={styles.text}
+										onTextLayout={(event) => onTextLayout(event)}>
+										{word}
+									</Text>
+								);
+							})}
+						</View>
+						{/* <Text
+							style={styles.text}
+							onTextLayout={(event) => onTextLayout(event)}>
+							{response}
+						</Text> */}
 						<Pressable
 							onPressIn={handleCompletePressIn}
 							onPress={shouldRenderPressable ? handleCompletePress : null}
@@ -194,13 +284,17 @@ const styles = StyleSheet.create({
 	scroll: {
 		flex: 1,
 	},
+	passageContainer: {
+		flexDirection: "row",
+		flexWrap: "wrap",
+	},
 	text: {
 		color: "#f5f5f5",
 		fontSize: 22,
 		fontWeight: "400",
 		letterSpacing: 0.2,
 		lineHeight: 32,
-		marginBottom: 60,
+		//marginBottom: 60,
 	},
 	heading: {
 		color: "#f5f5f5",
