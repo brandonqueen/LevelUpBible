@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, Text } from "react-native";
+import { StyleSheet, SafeAreaView, Text, StatusBar } from "react-native";
 import React from "react";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
@@ -14,6 +14,7 @@ const App = () => {
 					style={styles.root}
 					forceInset={{ top: "always", bottom: "never" }}>
 					<StackNavigator />
+					<StatusBar barStyle="light-content" />
 				</SafeAreaView>
 			</PaperProvider>
 		</Provider>

@@ -18,6 +18,7 @@ import { List } from "react-native-paper";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 
 const ChooseChapterScreen = () => {
+	//local state
 	const [headerTestament, setHeaderTestament] = useState(false);
 	const [headerBook, setHeaderBook] = useState(false);
 
@@ -63,6 +64,7 @@ const ChooseChapterScreen = () => {
 		dispatch(resetBibleSelection());
 	};
 
+	//Header component
 	const Header = () => {
 		if (headerBook) {
 			return (
@@ -85,6 +87,7 @@ const ChooseChapterScreen = () => {
 		}
 	};
 
+	//styles for Accordion lists
 	const accordionStyle = {
 		header: {
 			backgroundColor: "rgb(22,30,57)",
@@ -103,6 +106,7 @@ const ChooseChapterScreen = () => {
 		},
 	};
 
+	//Chapters component
 	const Chapters = ({ bookData, testamentIndex, bookIndex }) => {
 		const { chapters } = bookData;
 
@@ -121,7 +125,7 @@ const ChooseChapterScreen = () => {
 				<View style={styles.chapterNumRow}>
 					<FlatList
 						data={chapters}
-						keyExtractor={(item) => item.chapter.toString()}
+						keyExtractor={(item, index) => item.chapter.toString()}
 						renderItem={({ item }) => {
 							return renderItem(item);
 						}}
@@ -132,6 +136,7 @@ const ChooseChapterScreen = () => {
 		);
 	};
 
+	//ChooseChapterScreen main render
 	return (
 		<View style={styles.root}>
 			<Header />
@@ -147,11 +152,13 @@ const ChooseChapterScreen = () => {
 							item.selected ? accordionStyle.titleChosen : accordionStyle.title
 						}
 						expanded={item.selected}
+						key={item.testamentName.toString()}
 						onPress={() => handleTestamentPress(index)}>
 						{item.books.map((book, bookIndex) => (
 							<List.Accordion
 								//render books
 								title={book.bookName}
+								key={book.bookName.toString()}
 								expanded={book.selected}
 								onPress={() => handleBookPress(index, bookIndex)}
 								style={accordionStyle.header}
