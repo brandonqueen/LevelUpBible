@@ -8,14 +8,12 @@ import {
 	TouchableOpacity,
 } from "react-native";
 import { useState, useEffect, useRef } from "react";
-import axios from "axios";
-import OpenAI from "openai";
-import AIQuizModal from "../../components/AIQuizModal/AIQuizModal";
-import { useRoute } from "@react-navigation/native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
-import QuizData from "./test.json";
+import axios from "axios";
+import AIQuizModal from "../../components/AIQuizModal/AIQuizModal";
+import rawJSON from "./test.json";
 
 const BibleScreen = () => {
 	//nav
@@ -40,9 +38,8 @@ const BibleScreen = () => {
 		useState({});
 	const [completeButtonPressedIn, setCompleteButtonPressedIn] = useState({});
 	const [modalOpen, setModalOpen] = useState(false);
+	const [quizJSON, setQuizJSON] = useState(rawJSON);
 	const [highlightedId, setHighlightedId] = useState(null);
-
-	let quizJSON;
 
 	useEffect(() => {
 		setSelectedPassage(book + " " + chapterNum);
@@ -78,18 +75,40 @@ const BibleScreen = () => {
 	///attempt to get AI Quiz Responses
 	// useEffect(() => {
 	// 	const openAiApiKey = "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";
-	// 	const openai = new OpenAI({ apiKey: openAiApiKey });
-	// 	const prompt = `Generate 3 easy multiple-choice  questions, each with 4 possible answers, to check for reading comprehension for ${selectedPassage}. Return the response in JSON in the following shape: {"questions":[{"question":QUESTION,"options":["A) [OPTION 1]","B) [OPTION 2]","C) [OPTION 3]","D) [OPTION 4]"]},],"correct_answer":{"text": "C) [CORRECT ANSWER TEXT]","verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"}},`;
-
-	// 	// async function chat() {
-	// 	// 	const completion = await openai.chat.completions.create({
-	// 	// 		model: "gpt-3.5-turbo",
-	// 	// 		temperature: 0.5,
-	// 	// 		max_tokens: 1024,
-	// 	// 		messages: [{ role: "user", content: "Say this is a test" }],
-	// 	// 	});
-	// 	// 	console.log(completion);
-	// 	// }
+	// 	const prompt = `Generate very neasy multiple-choice and/or true/false questions, 3 questions total with at least one being true/false, each question with each with 2-4 possible answers, to check for reading comprehension for ${selectedPassage}. Make the questions easy enough for a 5th grader to answer. Return the response in JSON in the following shape:
+	// 	{
+	// 		"questions": [
+	// 			{
+	// 				"question":  QUESTION 1
+	// 				"options":  [
+	// 					"[OPTION 1]",
+	// 					"[OPTION 2]",
+	// 					"[OPTION 3]",
+	// 					"[OPTION 4]"
+	// 				],
+	// 				"answer": {
+	// 					"index": "[INDEX OF CORRECT ANSWER]",
+	// 					"text": "[TEXT OF CORRECT ANSWER]",
+	// 					"verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"
+	// 				}
+	// 			},
+	// 				{
+	// 				"question":  QUESTION 2
+	// 				"options":  [
+	// 					"[OPTION 1]",
+	// 					"[OPTION 2]",
+	// 					"[OPTION 3]",
+	// 					"[OPTION 4]"
+	// 				],
+	// 				"answer": {
+	// 					"index": "[INDEX OF CORRECT ANSWER]",
+	// 					"text": "[TEXT OF CORRECT ANSWER]",
+	// 					"verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"
+	// 				}
+	// 			},
+	// 			... etc.
+	// 		]
+	// 	}`;
 
 	// 	async function callOpenAI() {
 	// 		if (selectedPassage !== "")
@@ -112,9 +131,7 @@ const BibleScreen = () => {
 	// 						Authorization: `Bearer ${openAiApiKey}`,
 	// 					},
 	// 				});
-
-	// 				quizJSON = response.data.choices[0].message.content;
-	// 				console.log(quizJSON);
+	// 				setQuizJSON(response.data.choices[0].message.content);
 	// 			} catch (error) {
 	// 				console.error("Axios error: ", error);
 
@@ -180,10 +197,6 @@ const BibleScreen = () => {
 
 	const handleCompletePressOut = () => {
 		setCompleteButtonPressedIn(null);
-	};
-
-	const handleCompletePress = () => {
-		alert(`AI Quiz Goes Here To Verify Chapter Completion`);
 	};
 
 	const handleModalToggle = () => {
@@ -269,7 +282,7 @@ const BibleScreen = () => {
 				<AIQuizModal
 					modalOpen={modalOpen}
 					modalToggle={handleModalToggle}
-					QuizData={QuizData}
+					QuizData={quizJSON}
 				/>
 			)}
 		</View>

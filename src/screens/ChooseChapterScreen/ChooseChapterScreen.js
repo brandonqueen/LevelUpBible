@@ -75,6 +75,8 @@ const ChooseChapterScreen = () => {
 
 	const handleHeaderPress = () => {
 		dispatch(resetBibleSelection());
+		setHeaderTestament(false);
+		setHeaderBook(false);
 	};
 
 	//Header component
