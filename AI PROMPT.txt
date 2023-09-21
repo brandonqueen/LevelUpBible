@@ -1,19 +1,35 @@
-Generate 3 easy multiple-choice  questions, with 4 possible answers,  to check for reading comprehension for Exodus chapter 3. Return the response in JSON in the following shape: 
+Generate very neasy multiple-choice and/or true/false questions, 3 questions total with at least one being true/false, each question with each with 2-4 possible answers, to check for reading comprehension for Genesis chapter 1. Make the questions easy enough for a 5th grader to answer. Return the response in JSON in the following shape: 
 
 {
     "questions": [
         {
-            "question":  QUESTION
+            "question":  QUESTION 1
             "options":  [
-                "A) [OPTION 1]",
-                "B) [OPTION 2]",
-                "C) [OPTION 3]",
-                "D) [OPTION 4]"
-            ]
+                "[OPTION 1]",
+                "[OPTION 2]",
+                "[OPTION 3]",
+                "[OPTION 4]"
+            ],
+            "answer": {
+                "index": "[INDEX OF CORRECT ANSWER]",
+                "text": "[TEXT OF CORRECT ANSWER]",
+                "verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"
+            }
         },
-    ],  
-    "correct_answer": {
-        "text": "C) [CORRECT ANSWER TEXT]",
-        "verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"
-      }
-},
+            {
+            "question":  QUESTION 2
+            "options":  [
+                "[OPTION 1]",
+                "[OPTION 2]",
+                "[OPTION 3]",
+                "[OPTION 4]"
+            ],
+            "answer": {
+                "index": "[INDEX OF CORRECT ANSWER]",
+                "text": "[TEXT OF CORRECT ANSWER]",
+                "verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"
+            }
+        },
+        ... etc.
+    ] 
+}

@@ -9,10 +9,13 @@ import {
 } from "react-native";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import OpenAI from "openai";
+import AIQuizModal from "../../components/AIQuizModal/AIQuizModal";
 import { useRoute } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
+import QuizData from "./test.json";
 
 const BibleScreen = () => {
 	//nav
@@ -36,7 +39,10 @@ const BibleScreen = () => {
 	const [completeButtonFinishedStyle, setCompleteButtonFinishedStyle] =
 		useState({});
 	const [completeButtonPressedIn, setCompleteButtonPressedIn] = useState({});
+	const [modalOpen, setModalOpen] = useState(false);
 	const [highlightedId, setHighlightedId] = useState(null);
+
+	let quizJSON;
 
 	useEffect(() => {
 		setSelectedPassage(book + " " + chapterNum);
@@ -71,48 +77,55 @@ const BibleScreen = () => {
 
 	///attempt to get AI Quiz Responses
 	// useEffect(() => {
-	// 	const endpoint = "https://api.openai.com/v1/chat/completions";
 	// 	const openAiApiKey = "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";
-	// 	const client = axios.create({
-	// 		headers: {
-	// 			Authorization: "Bearer " + openAiApiKey,
-	// 		},
-	// 	});
-	// 	const prompt = `Generate 3 easy multiple-choice  questions, with 4 possible answers,  to check for reading comprehension for ${selectedPassage}. Return the response in JSON in the following shape:
+	// 	const openai = new OpenAI({ apiKey: openAiApiKey });
+	// 	const prompt = `Generate 3 easy multiple-choice  questions, each with 4 possible answers, to check for reading comprehension for ${selectedPassage}. Return the response in JSON in the following shape: {"questions":[{"question":QUESTION,"options":["A) [OPTION 1]","B) [OPTION 2]","C) [OPTION 3]","D) [OPTION 4]"]},],"correct_answer":{"text": "C) [CORRECT ANSWER TEXT]","verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"}},`;
 
-	// 	{
-	// 		"questions": [
-	// 			{
-	// 				"question":  QUESTION
-	// 				"options":  [
-	// 					"A) [OPTION 1]",
-	// 					"B) [OPTION 2]",
-	// 					"C) [OPTION 3]",
-	// 					"D) [OPTION 4]"
-	// 				]
-	// 			},
-	// 		],
-	// 		"correct_answer": {
-	// 			"text": "C) [CORRECT ANSWER TEXT]",
-	// 			"verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"
-	// 		  }
-	// 	},`;
-	// 	const params = {
-	// 		prompt: prompt,
-	// 		model: "gpt-3.5-turbo",
-	// 		temperature: 0.6,
-	// 	};
+	// 	// async function chat() {
+	// 	// 	const completion = await openai.chat.completions.create({
+	// 	// 		model: "gpt-3.5-turbo",
+	// 	// 		temperature: 0.5,
+	// 	// 		max_tokens: 1024,
+	// 	// 		messages: [{ role: "user", content: "Say this is a test" }],
+	// 	// 	});
+	// 	// 	console.log(completion);
+	// 	// }
 
-	// 	if (selectedPassage !== "") {
-	// 		client
-	// 			.post("https://api.openai.com/v1/completions", params)
-	// 			.then((result) => {
-	// 				console.log(result);
-	// 			})
-	// 			.catch((err) => {
-	// 				console.log(JSON.stringify(err));
-	// 			});
+	// 	async function callOpenAI() {
+	// 		if (selectedPassage !== "")
+	// 			try {
+	// 				const response = await axios({
+	// 					method: "POST",
+	// 					url: "https://api.openai.com/v1/chat/completions",
+	// 					data: {
+	// 						model: "gpt-3.5-turbo",
+	// 						messages: [
+	// 							{
+	// 								role: "user",
+	// 								content: prompt,
+	// 							},
+	// 						],
+	// 						temperature: 0.2,
+	// 					},
+	// 					headers: {
+	// 						"Content-Type": "application/json",
+	// 						Authorization: `Bearer ${openAiApiKey}`,
+	// 					},
+	// 				});
+
+	// 				quizJSON = response.data.choices[0].message.content;
+	// 				console.log(quizJSON);
+	// 			} catch (error) {
+	// 				console.error("Axios error: ", error);
+
+	// 				if (error.response) {
+	// 					console.error("HTTP Status: ", error.response.status);
+	// 					console.error("Response Data: ", error.response.data);
+	// 				}
+	// 			}
 	// 	}
+
+	// 	callOpenAI();
 	// }, [selectedPassage]);
 
 	const handleScroll = (event) => {
@@ -153,10 +166,10 @@ const BibleScreen = () => {
 		// setHighlightedId(idToHighlight);
 	};
 
-	const onTextLayout = (event) => {
-		const lines = event?.nativeEvent.lines;
-		console.log("Text event", lines);
-	};
+	// const onTextLayout = (event) => {
+	// 	const lines = event?.nativeEvent.lines;
+	// 	console.log("Text event", lines);
+	// };
 
 	const handleCompletePressIn = () => {
 		setCompleteButtonPressedIn({
@@ -171,6 +184,10 @@ const BibleScreen = () => {
 
 	const handleCompletePress = () => {
 		alert(`AI Quiz Goes Here To Verify Chapter Completion`);
+	};
+
+	const handleModalToggle = () => {
+		setModalOpen(!modalOpen);
 	};
 
 	return (
@@ -217,7 +234,7 @@ const BibleScreen = () => {
 						onScroll={handleScroll}
 						scrollEventThrottle={16}>
 						<Text style={styles.heading}>{selectedPassage}</Text>
-						<View style={styles.passageContainer}>
+						{/* <View style={styles.passageContainer}>
 							{response.map((word) => {
 								return (
 									<Text
@@ -227,15 +244,16 @@ const BibleScreen = () => {
 									</Text>
 								);
 							})}
-						</View>
-						{/* <Text
+						</View> */}
+						<Text
 							style={styles.text}
-							onTextLayout={(event) => onTextLayout(event)}>
+							// onTextLayout={(event) => onTextLayout(event)}
+						>
 							{response}
-						</Text> */}
+						</Text>
 						<Pressable
 							onPressIn={handleCompletePressIn}
-							onPress={shouldRenderPressable ? handleCompletePress : null}
+							onPress={shouldRenderPressable ? handleModalToggle : null}
 							onPressOut={handleCompletePressOut}
 							style={[
 								styles.completeButtonPressable,
@@ -247,6 +265,13 @@ const BibleScreen = () => {
 					</ScrollView>
 				)}
 			</View>
+			{modalOpen && (
+				<AIQuizModal
+					modalOpen={modalOpen}
+					modalToggle={handleModalToggle}
+					QuizData={QuizData}
+				/>
+			)}
 		</View>
 	);
 };
@@ -292,7 +317,7 @@ const styles = StyleSheet.create({
 		color: "#f5f5f5",
 		fontSize: 22,
 		fontWeight: "400",
-		letterSpacing: 0.2,
+		letterSpacing: 0.3,
 		lineHeight: 32,
 		//marginBottom: 60,
 	},
@@ -314,9 +339,35 @@ const styles = StyleSheet.create({
 	},
 	completeButtonText: {
 		color: "white",
-		fontSize: 16,
+		fontSize: 18,
 		fontWeight: "800",
 		textAlign: "center",
-		padding: 18,
+		padding: 16,
+	},
+	modalQuestionContainer: {
+		flex: 1,
+		padding: 10,
+	},
+	modalQuestionText: {
+		color: "#f5f5f5",
+		fontWeight: "600",
+		fontSize: 22,
+	},
+	modalChoicesContainer: {
+		flex: 1,
+		padding: 10,
+	},
+	modalChoiceContainer: {
+		borderWidth: 1,
+		borderStyle: "solid",
+		borderColor: "#695DDA",
+		backgroundColor: "rgba(11,14,29, .6)",
+		borderRadius: 8,
+		padding: 12,
+		marginVertical: 8,
+	},
+	modalButtonsContainer: {
+		backgroundColor: "yellow",
+		flexDirection: "row",
 	},
 });

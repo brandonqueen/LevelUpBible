@@ -15,8 +15,13 @@
     "@react-navigation/native-stack": "^6.9.13",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.5.0",
+    "dotenv": "^16.3.1",
     "expo": "^49.0.6",
+    "expo-blur": "~12.4.1",
+    "expo-constants": "~14.4.2",
     "expo-status-bar": "~1.6.0",
+    "immer": "^10.0.2",
+    "openai": "^4.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.72.3",
@@ -26,8 +31,7 @@
     "react-native-screens": "~3.22.0",
     "react-native-vector-icons": "^10.0.0",
     "react-native-web": "~0.19.6",
-    "react-redux": "^8.1.2",
-    "expo-constants": "~14.4.2"
+    "react-redux": "^8.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
