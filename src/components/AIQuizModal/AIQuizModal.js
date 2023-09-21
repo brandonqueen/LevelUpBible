@@ -93,14 +93,14 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData }) => {
 					<TouchableHighlight
 						style={styles.exitButton}
 						activeOpacity={1}
-						underlayColor="#fc7662"
+						underlayColor="rgba(156, 47, 33, .8)"
 						onPress={modalToggle}>
 						<Text style={styles.modalQuestionText}>Exit</Text>
 					</TouchableHighlight>
 					<TouchableHighlight
 						style={styles.nextChapterButton}
 						activeOpacity={1}
-						underlayColor="rgb(72, 199, 70)"
+						underlayColor="rgba(39, 173, 38, .7)"
 						onPress={() => {
 							handleNextChapterPress();
 						}}>
@@ -343,8 +343,9 @@ const styles = StyleSheet.create({
 		borderRadius: 8,
 		justifyContent: "center",
 		alignItems: "center",
-		backgroundColor: "rgb(232, 91, 70)",
-        //borderWidth: 2,
+		backgroundColor: "rgba(110, 29, 24, .8)",
+		borderColor: "rgb(227, 62, 52)",
+		borderWidth: 1.5,
 	},
 	nextChapterButton: {
 		width: "90%",
@@ -353,7 +354,9 @@ const styles = StyleSheet.create({
 		borderRadius: 8,
 		justifyContent: "center",
 		alignItems: "center",
-		backgroundColor: "rgba(72, 199, 70, .8)",
+		backgroundColor: "rgba(25, 110, 24, .7)",
+		borderColor: "rgb(37, 171, 36)",
+		borderWidth: 1.5,
 	},
 });
 
