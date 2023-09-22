@@ -7,7 +7,53 @@ export const bibleData = [
 				bookName: "Genesis",
 				selected: false,
 				chapters: [
-					{ chapter: 1, selected: false, completed: false },
+					{
+						chapter: 1,
+						selected: false,
+						completed: false,
+						questions: [
+							{
+								question:
+									"According to Genesis chapter 1, what did God create on the first day?",
+								options: [
+									"Plants and trees",
+									"The sun and moon",
+									"Light and darkness",
+									"Animals and birds",
+								],
+								answer: {
+									index: 2,
+									text: "Light and darkness",
+									verse: "Genesis 1:3-5",
+								},
+							},
+							{
+								question:
+									"True or False: In Genesis chapter 1, God created humans before creating animals.",
+								options: ["True", "False"],
+								answer: {
+									index: 1,
+									text: "False",
+									verse: "Genesis 1:24-27",
+								},
+							},
+							{
+								question:
+									"According to Genesis chapter 1, what did God create on the sixth day?",
+								options: [
+									"The oceans and seas",
+									"The land and mountains",
+									"The animals and humans",
+									"The stars and planets",
+								],
+								answer: {
+									index: 2,
+									text: "The animals and humans",
+									verse: "Genesis 1:24-31",
+								},
+							},
+						],
+					},
 					{ chapter: 2, selected: false, completed: false },
 					{ chapter: 3, selected: false, completed: false },
 					{ chapter: 4, selected: false, completed: false },

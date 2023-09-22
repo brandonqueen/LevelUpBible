@@ -31,6 +31,8 @@ const BibleScreen = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [response, setResponse] = useState([]);
+	const [highlightedText, setHighlightedText] = useState([]);
+	const [linesData, setLinesData] = useState([]);
 	const [selectedPassage, setSelectedPassage] = useState("Genesis 1");
 	const [scrollY, setScrollY] = useState(0);
 	const [shouldRenderPressable, setShouldRenderPressable] = useState(false);
@@ -39,7 +41,7 @@ const BibleScreen = () => {
 	const [completeButtonPressedIn, setCompleteButtonPressedIn] = useState({});
 	const [modalOpen, setModalOpen] = useState(false);
 	const [quizJSON, setQuizJSON] = useState(rawJSON);
-	const [highlightedId, setHighlightedId] = useState(null);
+	//const [highlightedId, setHighlightedId] = useState(null);
 
 	useEffect(() => {
 		setSelectedPassage(book + " " + chapterNum);
@@ -62,8 +64,8 @@ const BibleScreen = () => {
 				.then((res) => {
 					setIsLoading(false);
 					const textString = res?.data?.passages.toString();
-					const wordArray = textString.split(/(\w+\s+)/g).filter(Boolean);
-					setResponse(wordArray);
+					//const wordArray = textString.split(/(\w+\s+)/g).filter(Boolean);
+					setResponse(textString);
 				})
 				.catch((error) => {
 					setIsLoading(false);
@@ -145,11 +147,16 @@ const BibleScreen = () => {
 	// 	callOpenAI();
 	// }, [selectedPassage]);
 
+	const onTextLayout = (event) => {
+		const lines = event?.nativeEvent.lines;
+		setLinesData(lines);
+	};
+
 	const handleScroll = (event) => {
 		// Progress Bar Logic
-		const offsetY = event.nativeEvent.contentOffset.y;
-		const contentHeight = event.nativeEvent.contentSize.height;
-		const scrollViewHeight = event.nativeEvent.layoutMeasurement.height;
+		const offsetY = event.nativeEvent.contentOffset.y; //dynamic: how far, in pixels, you have scrolled vertically
+		const contentHeight = event.nativeEvent.contentSize.height; //static: size, in pixels, of the content (visible and invisible) contained in the ScrollView
+		const scrollViewHeight = event.nativeEvent.layoutMeasurement.height; //static: visible height, in pixels, of ScrollView container
 
 		const scrollProgress = offsetY / (contentHeight - scrollViewHeight);
 		setScrollY(scrollProgress);
@@ -167,26 +174,20 @@ const BibleScreen = () => {
 			}, 500);
 		}
 
-		// // Highlighting Logic
-		// const scrollOffset = event.nativEvent.contentOffset.y;
-		// let idToHighlight = null;
-		// for (const id in scrollPosition) {
-		// 	const position = scrollPosition[id];
-		// 	if (
-		// 		scrollOffset >= position.y &&
-		// 		scrollOffset < position.y + position.height
-		// 	) {
-		// 		idToHighlight = id;
-		// 		break;
-		// 	}
-		// }
-		// setHighlightedId(idToHighlight);
-	};
+		// Highlighted Text Logic
+		if (scrollProgress >= 1) {
+			setHighlightedText(response);
+		}
+		if (scrollProgress < 1) {
+			const linesOutOfView = linesData.filter((line) => {
+				const lineYStart = line.y;
+				const lineYEnd = lineYStart + line.height;
+				return line && lineYEnd < offsetY;
+			});
 
-	// const onTextLayout = (event) => {
-	// 	const lines = event?.nativeEvent.lines;
-	// 	console.log("Text event", lines);
-	// };
+			setHighlightedText(linesOutOfView.map((line) => line.text));
+		}
+	};
 
 	const handleCompletePressIn = () => {
 		setCompleteButtonPressedIn({
@@ -258,12 +259,25 @@ const BibleScreen = () => {
 								);
 							})}
 						</View> */}
-						<Text
-							style={styles.text}
-							// onTextLayout={(event) => onTextLayout(event)}
-						>
-							{response}
-						</Text>
+						<View>
+							<Text
+								style={[
+									styles.text,
+									{ position: "relative", flex: 1, top: 0, left: 0 },
+								]}
+								onTextLayout={(event) => onTextLayout(event)}>
+								{response}
+							</Text>
+							{highlightedText == [] ? null : (
+								<View
+									style={{ position: "absolute", flex: 1, top: 0, left: 0 }}>
+									<Text
+										style={[styles.text, { color: "rgba(250, 250, 125, .6)" }]}>
+										{highlightedText}
+									</Text>
+								</View>
+							)}
+						</View>
 						<Pressable
 							onPressIn={handleCompletePressIn}
 							onPress={shouldRenderPressable ? handleModalToggle : null}
@@ -312,7 +326,7 @@ const styles = StyleSheet.create({
 		height: "95%",
 		backgroundColor: "rgb(11,14,29)",
 		borderRadius: 12,
-		paddingHorizontal: 16,
+		paddingHorizontal: 8,
 		paddingVertical: 20,
 		justifyContent: "center",
 		alignItems: "center",
@@ -332,6 +346,7 @@ const styles = StyleSheet.create({
 		fontWeight: "400",
 		letterSpacing: 0.3,
 		lineHeight: 32,
+		padding: 16,
 		//marginBottom: 60,
 	},
 	heading: {
