@@ -175,9 +175,6 @@ const BibleScreen = () => {
 		}
 
 		// Highlighted Text Logic
-		if (scrollProgress >= 1) {
-			setHighlightedText(response);
-		}
 		if (scrollProgress < 1) {
 			const linesOutOfView = linesData.filter((line) => {
 				const lineYStart = line.y;
@@ -186,6 +183,9 @@ const BibleScreen = () => {
 			});
 
 			setHighlightedText(linesOutOfView.map((line) => line.text));
+		}
+		if (contentHeight - offsetY - scrollViewHeight <= 15) {
+			setHighlightedText(response);
 		}
 	};
 
