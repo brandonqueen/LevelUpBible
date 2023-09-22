@@ -3,6 +3,7 @@ import {
 	Modal,
 	StyleSheet,
 	View,
+	Image,
 	TouchableWithoutFeedback,
 	ScrollView,
 	Text,
@@ -10,6 +11,7 @@ import {
 	Pressable,
 } from "react-native";
 import { BlurView } from "expo-blur";
+import correctImg from "../../../assets/Images/CORRECT!!.png";
 
 const AIQuizModal = ({ modalOpen, modalToggle, QuizData }) => {
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -60,7 +62,7 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData }) => {
 							answeredIncorrectly && styles.startOverButton,
 						]}
 						activeOpacity={1}
-						underlayColor={answeredCorrectly ? "#f2c227" : "#DFB01C"}
+						underlayColor={answeredCorrectly ? "#60c75d" : "#1d1e21"}
 						onPress={
 							answeredCorrectly || answeredIncorrectly
 								? () => handleSubmit()
@@ -86,25 +88,24 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData }) => {
 							{ textAlign: "center", marginVertical: 24 },
 						]}>
 						You answered all the questions correctly! Your progress has been
-						logged. Click below to exit or to go to the next chapter.
+						recorded.
+					</Text>
+					<Text
+						style={[
+							styles.modalQuestionText,
+							{ textAlign: "center", marginVertical: 24 },
+						]}>
+						Click below to exit the quiz.
 					</Text>
 				</View>
 				<View style={styles.bottomButtonsCompleteContainer}>
 					<TouchableHighlight
+						key={"exit button"}
 						style={styles.exitButton}
 						activeOpacity={1}
 						underlayColor="rgba(156, 47, 33, .8)"
 						onPress={modalToggle}>
 						<Text style={styles.modalQuestionText}>Exit</Text>
-					</TouchableHighlight>
-					<TouchableHighlight
-						style={styles.nextChapterButton}
-						activeOpacity={1}
-						underlayColor="rgba(39, 173, 38, .7)"
-						onPress={() => {
-							handleNextChapterPress();
-						}}>
-						<Text style={styles.modalQuestionText}>Next Chapter</Text>
 					</TouchableHighlight>
 				</View>
 			</View>
@@ -121,9 +122,9 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData }) => {
 					(isCorrect ? styles.correctChoice : styles.incorrectChoice),
 			];
 			return (
-				<View>
+				<View key={"mainview" + index}>
 					<Pressable
-						key={index}
+						key={"press" + index}
 						style={style}
 						onPress={
 							answeredCorrectly || answeredIncorrectly
@@ -134,21 +135,21 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData }) => {
 					</Pressable>
 					{isSelected &&
 						(isCorrect ? (
-							<View>
-								<Text
-									key={"correctFeedback" + index}
-									style={styles.feedbackText}>
-									👏 CORRECT! 👏
-								</Text>
+							<View key={"correct dropdown" + index}>
+								<Image
+									key={"image" + index}
+									source={correctImg}
+									style={{ height: 90, width: 180, alignSelf: "center" }}
+								/>
 								<Text
 									key={"correctVerse" + index}
 									style={[
 										styles.feedbackText,
 										{ fontWeight: "500", fontSize: 14 },
-									]}>{`(${currentQuestion.answer.verse})`}</Text>
+									]}>{`(see ${currentQuestion.answer.verse})`}</Text>
 							</View>
 						) : (
-							<View>
+							<View key={"incorrectdropdown" + index}>
 								<Text
 									key={"incorrectFeedback" + index}
 									style={styles.feedbackText}>
@@ -189,10 +190,6 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData }) => {
 				setAnsweredIncorrectly(false);
 			}
 		}
-	};
-
-	const handleNextChapterPress = () => {
-		alert("nav to next chapter");
 	};
 
 	return (
@@ -303,12 +300,12 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		alignItems: "center",
 		backgroundColor: "rgba(11,14,29, .6)",
-		borderColor: "#dfb01c",
+		borderColor: "#56b553",
 		borderWidth: 2,
 	},
 	activeNextButton: {
 		opacity: 1,
-		backgroundColor: "#DFB01C",
+		backgroundColor: "#56b553",
 		borderWidth: 0,
 	},
 	startOverButton: {
@@ -338,25 +335,15 @@ const styles = StyleSheet.create({
 	},
 	exitButton: {
 		width: "90%",
+		maxWidth: 500,
 		paddingVertical: 16,
 		marginVertical: 24,
 		borderRadius: 8,
 		justifyContent: "center",
 		alignItems: "center",
-		backgroundColor: "rgba(110, 29, 24, .8)",
-		borderColor: "rgb(227, 62, 52)",
-		borderWidth: 1.5,
-	},
-	nextChapterButton: {
-		width: "90%",
-		paddingVertical: 18,
-		marginVertical: 10,
-		borderRadius: 8,
-		justifyContent: "center",
-		alignItems: "center",
-		backgroundColor: "rgba(25, 110, 24, .7)",
-		borderColor: "rgb(37, 171, 36)",
-		borderWidth: 1.5,
+		backgroundColor: "rgb(232, 91, 70)",
+		borderWidth: 1,
+		borderColor: "rgba(232, 91, 70, .5)",
 	},
 });
 

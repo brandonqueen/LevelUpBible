@@ -7,7 +7,7 @@ import {
 	Pressable,
 	TouchableOpacity,
 } from "react-native";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
@@ -21,19 +21,19 @@ const BibleScreen = () => {
 	const navigation = useNavigation();
 
 	//receive book & chapter number from ChooseChapterScreen
-	const book = route.params?.book;
-	const chapterNum = route.params?.chapterNum;
-
-	// refs
-	const scrollPosition = useRef({}).current;
+	const bookInitial = route.params?.book;
+	const chapterNumInitial = route.params?.chapterNum;
+	const testamentIndexInitial = route.params?.testamentIndex;
 
 	//local state
 	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState(null);
+	const [error, setError] = useState("");
 	const [response, setResponse] = useState([]);
 	const [highlightedText, setHighlightedText] = useState([]);
 	const [linesData, setLinesData] = useState([]);
-	const [selectedPassage, setSelectedPassage] = useState("Genesis 1");
+	const [selectedPassage, setSelectedPassage] = useState(
+		bookInitial + " " + chapterNumInitial
+	);
 	const [scrollY, setScrollY] = useState(0);
 	const [shouldRenderPressable, setShouldRenderPressable] = useState(false);
 	const [completeButtonFinishedStyle, setCompleteButtonFinishedStyle] =
@@ -41,37 +41,33 @@ const BibleScreen = () => {
 	const [completeButtonPressedIn, setCompleteButtonPressedIn] = useState({});
 	const [modalOpen, setModalOpen] = useState(false);
 	const [quizJSON, setQuizJSON] = useState(rawJSON);
-	//const [highlightedId, setHighlightedId] = useState(null);
 
 	useEffect(() => {
-		setSelectedPassage(book + " " + chapterNum);
-		if (selectedPassage != "") {
-			axios({
-				method: "get",
-				url: "https://api.esv.org/v3/passage/text/",
-				params: {
-					q: selectedPassage,
-					"include-passage-references": false,
-					"include-short-copyright": false,
-					"include-verse-numbers": false,
-					"include-footnotes": false,
-					"include-headings": false,
-				},
-				headers: {
-					Authorization: "Token f636017b5f40767318894388ecec11f031f2efc6",
-				},
+		axios({
+			method: "get",
+			url: "https://api.esv.org/v3/passage/text/",
+			params: {
+				q: selectedPassage,
+				"include-passage-references": false,
+				"include-short-copyright": false,
+				"include-verse-numbers": false,
+				"include-footnotes": false,
+				"include-headings": false,
+			},
+			headers: {
+				Authorization: "Token f636017b5f40767318894388ecec11f031f2efc6",
+			},
+		})
+			.then((res) => {
+				setIsLoading(false);
+				const textString = res?.data?.passages.toString();
+				setResponse(textString);
 			})
-				.then((res) => {
-					setIsLoading(false);
-					const textString = res?.data?.passages.toString();
-					//const wordArray = textString.split(/(\w+\s+)/g).filter(Boolean);
-					setResponse(textString);
-				})
-				.catch((error) => {
-					setIsLoading(false);
-					setError(error);
-				});
-		}
+			.catch((error) => {
+				setIsLoading(false);
+				setError(error);
+				error && console.log(error);
+			});
 	}, [selectedPassage]);
 
 	///attempt to get AI Quiz Responses
@@ -174,19 +170,47 @@ const BibleScreen = () => {
 			}, 500);
 		}
 
+		//Take lines data and find which are out of view
+		const linesOutOfViewRaw = linesData.filter((line) => {
+			const lineYStart = line.y;
+			const lineYEnd = lineYStart + line.height;
+			return line && lineYEnd < offsetY;
+		});
+
+		//extract just the text from the raw data for lines out of view
+		linesOutOfViewText = linesOutOfViewRaw.map((line) => line.text);
+
+		//function to compare array in state with array of text out of view
+		function isArrayContained(array1, array2) {
+			// Convert both arrays to sets for efficient comparison
+			const set1 = new Set(array1);
+			const set2 = new Set(array2);
+			// Check if all elements in array1 are present in array2
+			for (const item of set1) {
+				if (!set2.has(item)) {
+					return false;
+				}
+			}
+			return true;
+		}
+
 		// Highlighted Text Logic
 		if (scrollProgress < 1) {
-			const linesOutOfView = linesData.filter((line) => {
-				const lineYStart = line.y;
-				const lineYEnd = lineYStart + line.height;
-				return line && lineYEnd < offsetY;
-			});
-
-			setHighlightedText(linesOutOfView.map((line) => line.text));
+			if (!highlightedText) {
+				setHighlightedText(linesOutOfViewText);
+			} else if (isArrayContained(highlightedText, linesOutOfViewText)) {
+				setHighlightedText(linesOutOfViewText);
+			} else {
+				return;
+			}
 		}
 		if (contentHeight - offsetY - scrollViewHeight <= 15) {
 			setHighlightedText(response);
 		}
+	};
+
+	const clearHighLightedText = () => {
+		setHighlightedText([]);
 	};
 
 	const handleCompletePressIn = () => {
@@ -202,6 +226,10 @@ const BibleScreen = () => {
 
 	const handleModalToggle = () => {
 		setModalOpen(!modalOpen);
+	};
+
+	const nextChapter = () => {
+		handleModalToggle();
 	};
 
 	return (
@@ -297,6 +325,9 @@ const BibleScreen = () => {
 					modalOpen={modalOpen}
 					modalToggle={handleModalToggle}
 					QuizData={quizJSON}
+					nextChapter={() => {
+						nextChapter();
+					}}
 				/>
 			)}
 		</View>

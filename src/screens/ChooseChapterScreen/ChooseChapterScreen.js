@@ -35,10 +35,10 @@ const ChooseChapterScreen = () => {
 	const [headerTestament, setHeaderTestament] = useState(false);
 	const [headerBook, setHeaderBook] = useState(false);
 
-	//state setter
+	//global state setter
 	const dispatch = useDispatch();
 
-	//state getter
+	//global state getter
 	const bibleState = useSelector((state) => state.bibleData);
 
 	//nav
@@ -60,6 +60,7 @@ const ChooseChapterScreen = () => {
 	const handleChapterPress = (testamentIndex, bookIndex, item) => {
 		const book = bibleState[testamentIndex].books[bookIndex].bookName;
 		const chapterNum = item.chapter;
+	
 		dispatch(
 			setChapterSelected({
 				testamentIndex: testamentIndex,
@@ -68,6 +69,7 @@ const ChooseChapterScreen = () => {
 			})
 		);
 		navigation.navigate("Bible", {
+			testamentIndex: testamentIndex,
 			book: book,
 			chapterNum: chapterNum,
 		});
