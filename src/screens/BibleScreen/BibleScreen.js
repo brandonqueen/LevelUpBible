@@ -276,17 +276,6 @@ const BibleScreen = () => {
 						onScroll={handleScroll}
 						scrollEventThrottle={16}>
 						<Text style={styles.heading}>{selectedPassage}</Text>
-						{/* <View style={styles.passageContainer}>
-							{response.map((word) => {
-								return (
-									<Text
-										style={styles.text}
-										onTextLayout={(event) => onTextLayout(event)}>
-										{word}
-									</Text>
-								);
-							})}
-						</View> */}
 						<View>
 							<Text
 								style={[
@@ -300,7 +289,7 @@ const BibleScreen = () => {
 								<View
 									style={{ position: "absolute", flex: 1, top: 0, left: 0 }}>
 									<Text
-										style={[styles.text, { color: "rgba(250, 250, 125, .6)" }]}>
+										style={[styles.text, { color: "rgba(250, 250, 125, .7)" }]}>
 										{highlightedText}
 									</Text>
 								</View>
