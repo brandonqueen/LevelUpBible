@@ -21,19 +21,18 @@ const BibleScreen = () => {
 	const navigation = useNavigation();
 
 	//receive book & chapter number from ChooseChapterScreen
-	const bookInitial = route.params?.book;
-	const chapterNumInitial = route.params?.chapterNum;
+	const book = route.params?.book;
+	const chapter = route.params?.chapterNum;
 	const testamentIndexInitial = route.params?.testamentIndex;
+	let selectedPassage = book + " " + chapter;
 
 	//local state
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState("");
 	const [response, setResponse] = useState([]);
+	const [numOfVerses, setNumOfVerses] = useState(null);
 	const [highlightedText, setHighlightedText] = useState([]);
 	const [linesData, setLinesData] = useState([]);
-	const [selectedPassage, setSelectedPassage] = useState(
-		bookInitial + " " + chapterNumInitial
-	);
 	const [scrollY, setScrollY] = useState(0);
 	const [shouldRenderPressable, setShouldRenderPressable] = useState(false);
 	const [completeButtonFinishedStyle, setCompleteButtonFinishedStyle] =
@@ -50,17 +49,24 @@ const BibleScreen = () => {
 				q: selectedPassage,
 				"include-passage-references": false,
 				"include-short-copyright": false,
-				"include-verse-numbers": false,
+				"include-verse-numbers": true,
 				"include-footnotes": false,
 				"include-headings": false,
+				"indent-paragraphs": 0,
 			},
 			headers: {
 				Authorization: "Token f636017b5f40767318894388ecec11f031f2efc6",
 			},
 		})
 			.then((res) => {
+				let verseRange = res.data.passage_meta[0].chapter_end;
+				let endVerseArray = verseRange[1];
+				const last3Digits = parseInt(String(endVerseArray).slice(-3), 10);
+				setNumOfVerses(last3Digits);
+
 				setIsLoading(false);
 				const textString = res?.data?.passages.toString();
+				console.log(textString)
 				setResponse(textString);
 			})
 			.catch((error) => {
