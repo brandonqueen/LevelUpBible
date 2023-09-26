@@ -6,9 +6,12 @@ import {
 	ActivityIndicator,
 	Pressable,
 	TouchableOpacity,
+	Button,
 } from "react-native";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { setChapterSelected } from "../../features/bibleSlice/bibleSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
 import axios from "axios";
@@ -16,17 +19,28 @@ import AIQuizModal from "../../components/AIQuizModal/AIQuizModal";
 import quizJSON from "./test.json";
 
 const BibleScreen = () => {
+	//global state getter
+	const bibleState = useSelector((state) => state.bibleData);
+
+	//global state setter
+	const dispatch = useDispatch();
+
 	//nav
 	const route = useRoute();
 	const navigation = useNavigation();
 
-	//receive book & chapter number from ChooseChapterScreen
-	const book = route.params?.book;
-	const chapter = route.params?.chapterNum;
-	const testamentIndexInitial = route.params?.testamentIndex;
-	let selectedPassage = book + " " + chapter;
+	//receive testament inidex, book index & chapter number from ChooseChapterScreen
+	const testamentIndex = route.params?.testamentIndex;
+	const bookIndex = route.params?.bookIndex;
+	const bookName = route.params?.bookName;
+	const chapterNumInitial = route.params?.chapter;
 
 	//local state
+	const [chapterNum, setChapterNum] = useState(chapterNumInitial);
+	const [nextChapterExists, setNextChapterExists] = useState(true);
+	const [selectedPassage, setSelectedPassage] = useState(
+		bookName + " " + chapterNum
+	);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState("");
 	const [response, setResponse] = useState("");
@@ -40,64 +54,84 @@ const BibleScreen = () => {
 	const [completeButtonPressedIn, setCompleteButtonPressedIn] = useState({});
 	const [modalOpen, setModalOpen] = useState(false);
 
-	useEffect(() => {
-		axios({
-			method: "get",
-			url: "https://api.esv.org/v3/passage/text/",
-			params: {
-				q: selectedPassage,
-				"include-passage-references": false,
-				"include-short-copyright": false,
-				"include-verse-numbers": true,
-				"include-footnotes": false,
-				"include-headings": false,
-				"indent-paragraphs": 0,
-			},
-			headers: {
-				Authorization: "Token f636017b5f40767318894388ecec11f031f2efc6",
-			},
-		})
-			.then((res) => {
-				let verseRange = res.data.passage_meta[0].chapter_end;
-				let endVerseArray = verseRange[1];
+	//API call
+	const fetchData = async () => {
+		try {
+			const response = await axios({
+				method: "get",
+				url: "https://api.esv.org/v3/passage/text/",
+				params: {
+					q: selectedPassage,
+					"include-passage-references": false,
+					"include-short-copyright": false,
+					"include-verse-numbers": true,
+					"include-footnotes": false,
+					"include-headings": false,
+					"indent-paragraphs": 0,
+				},
+				headers: {
+					Authorization: "Token f636017b5f40767318894388ecec11f031f2efc6",
+				},
+			});
+
+			const verseRange = response?.data?.passage_meta[0]?.chapter_end;
+
+			if (verseRange && verseRange.length > 1) {
+				const endVerseArray = verseRange[1];
 				const last3Digits = parseInt(String(endVerseArray).slice(-3), 10);
 				setNumOfVerses(last3Digits);
+			}
 
-				setIsLoading(false);
-				const textString = res?.data?.passages.toString();
-				
-				//superscripting logic
-				function replaceWithSuperscript(inputString) {
-					// Use regular expression to find and replace text within brackets
-					const result = inputString.replace(/\[(\d+)\]/g, (_, number) => {
-						// Convert the matched number to a superscripted Unicode version
-						const superscriptedNumber = number
-							.split("")
-							.map((digit) => {
-								const superscriptDigits = "⁰¹²³⁴⁵⁶⁷⁸⁹";
-								return superscriptDigits[digit];
-							})
-							.join("");
-						return superscriptedNumber;
-					});
+			setIsLoading(false);
+			const textString = response?.data?.passages.toString();
 
-					return result;
-				}
-				const superScripted = replaceWithSuperscript(textString);
-				console.log(superScripted);
-				setResponse(superScripted);
-			})
-			.catch((error) => {
-				setIsLoading(false);
-				setError(error);
-				error && console.log(error);
-			});
-	}, [selectedPassage]);
+			//superscripting logic
+			function replaceWithSuperscript(inputString) {
+				// Use regular expression to find and replace text within brackets
+				const result = inputString.replace(/\[(\d+)\]/g, (_, number) => {
+					// Convert the matched number to a superscripted Unicode version
+					const superscriptedNumber = number
+						.split("")
+						.map((digit) => {
+							const superscriptDigits = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+							return superscriptDigits[digit];
+						})
+						.join("");
+					return superscriptedNumber;
+				});
+
+				return result;
+			}
+			const superScripted = replaceWithSuperscript(textString);
+			setResponse(superScripted);
+		} catch (error) {
+			setIsLoading(false);
+			setError(error);
+			error && console.log(error);
+		}
+	};
+
+	// //Update onChange
+	useEffect(() => {
+		const nextChapterNumIndex = chapterNum;
+		if (
+			bibleState[testamentIndex]?.books[bookIndex]?.chapters[
+				nextChapterNumIndex
+			]
+		) {
+			setNextChapterExists(true);
+		} else {
+			setNextChapterExists(false);
+		}
+		fetchData();
+	}, [chapterNum]);
 
 	const onTextLayout = (event) => {
 		const lines = event?.nativeEvent.lines;
 		setLinesData(lines);
 	};
+
+	const scrollViewRef = useRef(null);
 
 	const handleScroll = (event) => {
 		// Progress Bar Logic
@@ -175,6 +209,26 @@ const BibleScreen = () => {
 		setModalOpen(!modalOpen);
 	};
 
+	const handleNextChapterPress = () => {
+		const nextChapterNum = chapterNum + 1;
+
+		if (nextChapterExists) {
+			dispatch(
+				setChapterSelected({
+					testamentIndex: testamentIndex,
+					bookIndex: bookIndex,
+					chapterNum: nextChapterNum,
+				})
+			);
+			navigation.replace("Bible", {
+				testamentIndex: testamentIndex,
+				bookIndex: bookIndex,
+				bookName: bookName,
+				chapter: nextChapterNum,
+			});
+		}
+	};
+
 	return (
 		<View style={styles.root}>
 			<View style={styles.header}>
@@ -215,6 +269,7 @@ const BibleScreen = () => {
 					<ActivityIndicator size="large" style={{ alignSelf: "center" }} />
 				) : (
 					<ScrollView
+						ref={scrollViewRef}
 						style={styles.scroll}
 						onScroll={handleScroll}
 						scrollEventThrottle={16}>
@@ -249,6 +304,12 @@ const BibleScreen = () => {
 							]}>
 							<Text style={styles.completeButtonText}>Complete</Text>
 						</Pressable>
+						{nextChapterExists && (
+							<Button
+								title="Next Chapter"
+								onPress={() => handleNextChapterPress()}
+							/>
+						)}
 					</ScrollView>
 				)}
 			</View>

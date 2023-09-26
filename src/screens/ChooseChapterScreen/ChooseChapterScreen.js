@@ -105,8 +105,9 @@ const ChooseChapterScreen = () => {
 		);
 		navigation.navigate("Bible", {
 			testamentIndex: testamentIndex,
-			book: book,
-			chapterNum: chapterNum,
+			bookIndex: bookIndex,
+			bookName: book,
+			chapter: chapterNum,
 		});
 	};
 
@@ -253,12 +254,13 @@ const styles = StyleSheet.create({
 	chapters: {
 		color: "#f5f5f5",
 		opacity: 0.8,
-		fontSize: 25,
+		fontSize: 24,
 		fontWeight: "800",
-		padding: 15,
+		paddingVertical: 12,
 	},
 	chapterNumRow: {
 		minWidth: "100%",
+		paddingLeft: 10,
 	},
 });
 
