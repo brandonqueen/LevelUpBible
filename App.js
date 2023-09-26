@@ -3,8 +3,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
 import { PaperProvider } from "react-native-paper";
-import StackNavigator from "./src/navigation/StackNavigator.js";
-import BibleScreen from "./src/screens/BibleScreen/BibleScreen.js";
+import InitialStackNavigator from "./src/navigation/InitialStackNavigator.js";
 
 const App = () => {
 	return (
@@ -13,7 +12,7 @@ const App = () => {
 				<SafeAreaView
 					style={styles.root}
 					forceInset={{ top: "always", bottom: "never" }}>
-					<StackNavigator />
+					<InitialStackNavigator />
 					<StatusBar barStyle="light-content" />
 				</SafeAreaView>
 			</PaperProvider>
