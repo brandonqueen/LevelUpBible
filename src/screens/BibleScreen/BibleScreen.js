@@ -38,9 +38,6 @@ const BibleScreen = () => {
 	//local state
 	const [chapterNum, setChapterNum] = useState(chapterNumInitial);
 	const [nextChapterExists, setNextChapterExists] = useState(true);
-	const [selectedPassage, setSelectedPassage] = useState(
-		bookName + " " + chapterNum
-	);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState("");
 	const [response, setResponse] = useState("");
@@ -57,11 +54,20 @@ const BibleScreen = () => {
 	//API call
 	const fetchData = async () => {
 		try {
+			const passage = () => {
+				if (
+					bibleState[testamentIndex]?.books[bookIndex]?.chapters.length === 1
+				) {
+					return bookName;
+				} else {
+					return `${bookName}${chapterNum}`;
+				}
+			};
 			const response = await axios({
 				method: "get",
 				url: "https://api.esv.org/v3/passage/text/",
 				params: {
-					q: selectedPassage,
+					q: passage(),
 					"include-passage-references": false,
 					"include-short-copyright": false,
 					"include-verse-numbers": true,
@@ -273,7 +279,7 @@ const BibleScreen = () => {
 						style={styles.scroll}
 						onScroll={handleScroll}
 						scrollEventThrottle={16}>
-						<Text style={styles.heading}>{selectedPassage}</Text>
+						<Text style={styles.heading}>{`${bookName} ${chapterNum}`}</Text>
 						<View>
 							<Text
 								style={[
