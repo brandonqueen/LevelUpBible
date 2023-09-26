@@ -167,7 +167,10 @@ const ChooseChapterScreen = () => {
 				<Pressable
 					style={{ width: "20%" }}
 					onPress={() => handleChapterPress(testamentIndex, bookIndex, item)}>
-					<Text style={[styles.chapters]}>{item.chapter}</Text>
+					<Text
+						style={[styles.chapters, item.completed && { color: "#DFB01C" }]}>
+						{item.chapter}
+					</Text>
 				</Pressable>
 			);
 		};
