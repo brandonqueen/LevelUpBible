@@ -13,7 +13,7 @@ import {
 import { BlurView } from "expo-blur";
 import correctImg from "../../../assets/Images/CORRECT!!.png";
 
-const AIQuizModal = ({ modalOpen, modalToggle, QuizData }) => {
+const AIQuizModal = ({ modalOpen, modalToggle, QuizData, numOfVerses }) => {
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [selectedChoiceIndex, setSelectedChoiceIndex] = useState(null);
 	const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
@@ -80,15 +80,22 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData }) => {
 	const QuizSuccess = () => {
 		return (
 			<View>
-				<Text style={[styles.heading, { fontSize: 28 }]}>Congrats!! 🥳</Text>
+				<Text style={[styles.heading, { fontSize: 28 }]}>Congrats!! 🎊</Text>
 				<View style={styles.modalQuestionContainer}>
 					<Text
 						style={[
 							styles.modalQuestionText,
 							{ textAlign: "center", marginVertical: 24 },
 						]}>
-						You answered all the questions correctly! Your progress has been
-						recorded.
+						You answered all the questions correctly!{"  "}
+						<Text style={{ 
+									fontWeight: "900", 
+									marginHorizontal: 10,
+									fontSize: 23
+								}}>
+							{numOfVerses}
+						</Text>{"  "}
+						points have been added to your overall score! 🥳
 					</Text>
 					<Text
 						style={[
@@ -105,8 +112,15 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData }) => {
 						activeOpacity={1}
 						underlayColor="rgba(156, 47, 33, .8)"
 						onPress={modalToggle}>
-						<Text style={styles.modalQuestionText}>Exit</Text>
+						<Text style={styles.completeButtonText}>Exit</Text>
 					</TouchableHighlight>
+					{/* <TouchableHighlight
+						style={[styles.completeButtonPressable]}
+						activeOpacity={0.8}
+						underlayColor="#695DDA"
+						onPress={nextChapter}>
+						<Text style={styles.completeButtonText}>Next Chapter</Text>
+					</TouchableHighlight> */}
 				</View>
 			</View>
 		);
@@ -334,16 +348,26 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	exitButton: {
-		width: "90%",
-		maxWidth: 500,
-		paddingVertical: 16,
-		marginVertical: 24,
-		borderRadius: 8,
-		justifyContent: "center",
-		alignItems: "center",
-		backgroundColor: "rgb(232, 91, 70)",
-		borderWidth: 1,
-		borderColor: "rgba(232, 91, 70, .5)",
+		width: "50%",
+		marginBottom: 35,
+		borderRadius: 12,
+		backgroundColor: "rgb(207, 75, 56)",
+	},
+	completeButtonPressable: {
+		borderRadius: 12,
+		borderStyle: "solid",
+		borderWidth: 2,
+		borderColor: "#695DDA",
+		backgroundColor: "rgba(11,14,29, .6)",
+		width: "50%",
+		alignSelf: "center",
+	},
+	completeButtonText: {
+		color: "white",
+		fontSize: 18,
+		fontWeight: "800",
+		textAlign: "center",
+		padding: 16,
 	},
 });
 

@@ -7,6 +7,7 @@ import {
 	Pressable,
 	TouchableOpacity,
 	Button,
+	TouchableHighlight,
 } from "react-native";
 import { useState, useEffect, useRef } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -317,10 +318,13 @@ const BibleScreen = () => {
 							<Text style={styles.completeButtonText}>Complete</Text>
 						</Pressable>
 						{nextChapterExists && (
-							<Button
-								title="Next Chapter"
-								onPress={() => handleNextChapterPress()}
-							/>
+							<TouchableHighlight
+								style={[styles.completeButtonPressable]}
+								activeOpacity={0.8}
+								underlayColor="#695DDA"
+								onPress={handleNextChapterPress}>
+								<Text style={styles.completeButtonText}>Next Chapter</Text>
+							</TouchableHighlight>
 						)}
 					</ScrollView>
 				)}
@@ -330,6 +334,7 @@ const BibleScreen = () => {
 					modalOpen={modalOpen}
 					modalToggle={handleModalToggle}
 					QuizData={quizJSON}
+					numOfVerses={numOfVerses}
 				/>
 			)}
 		</View>
