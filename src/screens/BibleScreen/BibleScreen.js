@@ -65,8 +65,8 @@ const BibleScreen = () => {
 
 				setIsLoading(false);
 				const textString = res?.data?.passages.toString();
-				//const noBrackets = textString.replace(/\[(\d+)\]/g, '$1');
-				//console.log(noBrackets);
+				
+				//superscripting logic
 				function replaceWithSuperscript(inputString) {
 					// Use regular expression to find and replace text within brackets
 					const result = inputString.replace(/\[(\d+)\]/g, (_, number) => {
@@ -78,8 +78,6 @@ const BibleScreen = () => {
 								return superscriptDigits[digit];
 							})
 							.join("");
-
-						// Return only the superscripted number without <sup> tags
 						return superscriptedNumber;
 					});
 

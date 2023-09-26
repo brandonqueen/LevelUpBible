@@ -32,8 +32,8 @@ const ChooseChapterScreen = () => {
 	}, [isFocused]);
 
 	//local state
-	const [headerTestament, setHeaderTestament] = useState(false);
-	const [headerBook, setHeaderBook] = useState(false);
+	const [headerTestamentChosen, setHeaderTestamentChosen] = useState(false);
+	const [headerBookChosen, setHeaderBookChosen] = useState(false);
 
 	//global state setter
 	const dispatch = useDispatch();
@@ -46,21 +46,56 @@ const ChooseChapterScreen = () => {
 
 	//press handlers
 	const handleTestamentPress = (index) => {
+		//set global state
 		dispatch(setTestamentSelected({ index: index }));
-		setHeaderTestament(!headerTestament);
+
+		//set header state of a book chosen to false
+		setHeaderBookChosen(false);
+
+		//handle header switching logic
+		const otherTestament = bibleState.filter((_, testIndex) => {
+			return testIndex !== index;
+		});
+
+		function isSelected(array) {
+			return array.some((obj) => {
+				return obj.selected === true;
+			});
+		}
+		const anotherTestamentSelected = isSelected(otherTestament);
+
+		anotherTestamentSelected
+			? setHeaderTestamentChosen(true)
+			: setHeaderTestamentChosen(!headerTestamentChosen);
 	};
 
 	const handleBookPress = (testamentIndex, bookIndex) => {
+		//set global state
 		dispatch(
 			setBookSelected({ testamentIndex: testamentIndex, bookIndex: bookIndex })
 		);
-		setHeaderBook(!headerBook);
+
+		//header switching logic
+		const otherBooks = bibleState[testamentIndex].books.filter(
+			(_, filteredBookIndex) => {
+				return filteredBookIndex !== bookIndex;
+			}
+		);
+		function isSelected(array) {
+			return array.some((obj) => {
+				return obj.selected === true;
+			});
+		}
+		const anotherBookSelected = isSelected(otherBooks);
+		anotherBookSelected
+			? setHeaderBookChosen(true)
+			: setHeaderBookChosen(!headerBookChosen);
 	};
 
 	const handleChapterPress = (testamentIndex, bookIndex, item) => {
 		const book = bibleState[testamentIndex].books[bookIndex].bookName;
 		const chapterNum = item.chapter;
-	
+
 		dispatch(
 			setChapterSelected({
 				testamentIndex: testamentIndex,
@@ -77,19 +112,19 @@ const ChooseChapterScreen = () => {
 
 	const handleHeaderPress = () => {
 		dispatch(resetBibleSelection());
-		setHeaderTestament(false);
-		setHeaderBook(false);
+		setHeaderTestamentChosen(false);
+		setHeaderBookChosen(false);
 	};
 
 	//Header component
 	const Header = () => {
-		if (headerBook) {
+		if (headerBookChosen) {
 			return (
 				<Pressable onPress={handleHeaderPress}>
 					<Text style={styles.header}>Choose Chapter</Text>
 				</Pressable>
 			);
-		} else if (headerTestament) {
+		} else if (headerTestamentChosen) {
 			return (
 				<Pressable onPress={handleHeaderPress}>
 					<Text style={styles.header}>Choose Book</Text>
