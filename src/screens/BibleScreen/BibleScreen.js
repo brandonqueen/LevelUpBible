@@ -74,6 +74,11 @@ const BibleScreen = () => {
 					"include-footnotes": false,
 					"include-headings": false,
 					"indent-paragraphs": 0,
+					"indent-poetry": true,
+					"indent-poetry-lines": 3,
+					"indent-declares": 3,
+					"indent-psalm-doxology": 0,
+					"line-length": 0,
 				},
 				headers: {
 					Authorization: "Token f636017b5f40767318894388ecec11f031f2efc6",
@@ -90,6 +95,7 @@ const BibleScreen = () => {
 
 			setIsLoading(false);
 			const textString = response?.data?.passages.toString();
+			const modifiedText = textString.replace(/\n\s+\n/g, "\n\n");
 
 			//superscripting logic
 			function replaceWithSuperscript(inputString) {
@@ -108,7 +114,7 @@ const BibleScreen = () => {
 
 				return result;
 			}
-			const superScripted = replaceWithSuperscript(textString);
+			const superScripted = replaceWithSuperscript(modifiedText);
 			setResponse(superScripted);
 		} catch (error) {
 			setIsLoading(false);
@@ -369,13 +375,11 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		color: "#f5f5f5",
-		fontSize: 22,
+		fontSize: 20,
 		fontWeight: "400",
 		letterSpacing: 0.3,
 		lineHeight: 32,
 		padding: 16,
-		flexDirection: "row",
-		flexWrap: "wrap",
 	},
 	heading: {
 		color: "#f5f5f5",
