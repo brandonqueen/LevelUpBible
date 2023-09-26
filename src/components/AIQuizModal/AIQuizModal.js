@@ -80,27 +80,31 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData, numOfVerses }) => {
 	const QuizSuccess = () => {
 		return (
 			<View>
-				<Text style={[styles.heading, { fontSize: 28 }]}>Congrats!! 🎊</Text>
+				<Text style={[styles.heading, { fontSize: 28 }]}>
+					🎊{"  "}HOORAY! 🎊
+				</Text>
 				<View style={styles.modalQuestionContainer}>
 					<Text
 						style={[
 							styles.modalQuestionText,
 							{ textAlign: "center", marginVertical: 24 },
 						]}>
-						You answered all the questions correctly!{"  "}
-						<Text style={{ 
-									fontWeight: "900", 
-									marginHorizontal: 10,
-									fontSize: 23
-								}}>
+						You answered all the questions correctly and have added{"  "}
+						<Text
+							style={{
+								fontWeight: "900",
+								fontSize: 30,
+								color: "rgb(255, 198, 99)",
+							}}>
 							{numOfVerses}
-						</Text>{"  "}
-						points have been added to your overall score! 🥳
+						</Text>
+						{"  "}
+						points to your overall score! {"\n\n"} Rejoice! 🥳
 					</Text>
 					<Text
 						style={[
 							styles.modalQuestionText,
-							{ textAlign: "center", marginVertical: 24 },
+							{ textAlign: "center", marginVertical: 24, fontWeight: "800" },
 						]}>
 						Click below to exit the quiz.
 					</Text>
@@ -110,7 +114,7 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData, numOfVerses }) => {
 						key={"exit button"}
 						style={styles.exitButton}
 						activeOpacity={1}
-						underlayColor="rgba(156, 47, 33, .8)"
+						underlayColor="rgb(232, 91, 70)"
 						onPress={modalToggle}>
 						<Text style={styles.completeButtonText}>Exit</Text>
 					</TouchableHighlight>

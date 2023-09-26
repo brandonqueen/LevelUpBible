@@ -6,7 +6,6 @@ import {
 	ActivityIndicator,
 	Pressable,
 	TouchableOpacity,
-	Button,
 	TouchableHighlight,
 } from "react-native";
 import { useState, useEffect, useRef } from "react";
@@ -34,10 +33,15 @@ const BibleScreen = () => {
 	const testamentIndex = route.params?.testamentIndex;
 	const bookIndex = route.params?.bookIndex;
 	const bookName = route.params?.bookName;
-	const chapterNumInitial = route.params?.chapter;
+	const chapterNum = route.params?.chapter;
+	const chapterIndex = chapterNum - 1;
+
+	//current chapter completed status
+	const isCurrentChapterCompleted =
+		bibleState[testamentIndex].books[bookIndex].chapters[chapterIndex]
+			.completed;
 
 	//local state
-	const [chapterNum, setChapterNum] = useState(chapterNumInitial);
 	const [nextChapterExists, setNextChapterExists] = useState(true);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState("");
