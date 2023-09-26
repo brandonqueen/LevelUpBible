@@ -13,7 +13,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
 import axios from "axios";
 import AIQuizModal from "../../components/AIQuizModal/AIQuizModal";
-import rawJSON from "./test.json";
+import quizJSON from "./test.json";
 
 const BibleScreen = () => {
 	//nav
@@ -29,7 +29,7 @@ const BibleScreen = () => {
 	//local state
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState("");
-	const [response, setResponse] = useState([]);
+	const [response, setResponse] = useState("");
 	const [numOfVerses, setNumOfVerses] = useState(null);
 	const [highlightedText, setHighlightedText] = useState([]);
 	const [linesData, setLinesData] = useState([]);
@@ -39,7 +39,6 @@ const BibleScreen = () => {
 		useState({});
 	const [completeButtonPressedIn, setCompleteButtonPressedIn] = useState({});
 	const [modalOpen, setModalOpen] = useState(false);
-	const [quizJSON, setQuizJSON] = useState(rawJSON);
 
 	useEffect(() => {
 		axios({
@@ -66,8 +65,29 @@ const BibleScreen = () => {
 
 				setIsLoading(false);
 				const textString = res?.data?.passages.toString();
-				console.log(textString)
-				setResponse(textString);
+				//const noBrackets = textString.replace(/\[(\d+)\]/g, '$1');
+				//console.log(noBrackets);
+				function replaceWithSuperscript(inputString) {
+					// Use regular expression to find and replace text within brackets
+					const result = inputString.replace(/\[(\d+)\]/g, (_, number) => {
+						// Convert the matched number to a superscripted Unicode version
+						const superscriptedNumber = number
+							.split("")
+							.map((digit) => {
+								const superscriptDigits = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+								return superscriptDigits[digit];
+							})
+							.join("");
+
+						// Return only the superscripted number without <sup> tags
+						return superscriptedNumber;
+					});
+
+					return result;
+				}
+				const superScripted = replaceWithSuperscript(textString);
+				console.log(superScripted);
+				setResponse(superScripted);
 			})
 			.catch((error) => {
 				setIsLoading(false);
@@ -75,79 +95,6 @@ const BibleScreen = () => {
 				error && console.log(error);
 			});
 	}, [selectedPassage]);
-
-	///attempt to get AI Quiz Responses
-	// useEffect(() => {
-	// 	const openAiApiKey = "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";
-	// 	const prompt = `Generate very neasy multiple-choice and/or true/false questions, 3 questions total with at least one being true/false, each question with each with 2-4 possible answers, to check for reading comprehension for ${selectedPassage}. Make the questions easy enough for a 5th grader to answer. Return the response in JSON in the following shape:
-	// 	{
-	// 		"questions": [
-	// 			{
-	// 				"question":  QUESTION 1
-	// 				"options":  [
-	// 					"[OPTION 1]",
-	// 					"[OPTION 2]",
-	// 					"[OPTION 3]",
-	// 					"[OPTION 4]"
-	// 				],
-	// 				"answer": {
-	// 					"index": "[INDEX OF CORRECT ANSWER]",
-	// 					"text": "[TEXT OF CORRECT ANSWER]",
-	// 					"verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"
-	// 				}
-	// 			},
-	// 				{
-	// 				"question":  QUESTION 2
-	// 				"options":  [
-	// 					"[OPTION 1]",
-	// 					"[OPTION 2]",
-	// 					"[OPTION 3]",
-	// 					"[OPTION 4]"
-	// 				],
-	// 				"answer": {
-	// 					"index": "[INDEX OF CORRECT ANSWER]",
-	// 					"text": "[TEXT OF CORRECT ANSWER]",
-	// 					"verse": "[VERSE FROM WHICH ANSWER WAS TAKEN]"
-	// 				}
-	// 			},
-	// 			... etc.
-	// 		]
-	// 	}`;
-
-	// 	async function callOpenAI() {
-	// 		if (selectedPassage !== "")
-	// 			try {
-	// 				const response = await axios({
-	// 					method: "POST",
-	// 					url: "https://api.openai.com/v1/chat/completions",
-	// 					data: {
-	// 						model: "gpt-3.5-turbo",
-	// 						messages: [
-	// 							{
-	// 								role: "user",
-	// 								content: prompt,
-	// 							},
-	// 						],
-	// 						temperature: 0.2,
-	// 					},
-	// 					headers: {
-	// 						"Content-Type": "application/json",
-	// 						Authorization: `Bearer ${openAiApiKey}`,
-	// 					},
-	// 				});
-	// 				setQuizJSON(response.data.choices[0].message.content);
-	// 			} catch (error) {
-	// 				console.error("Axios error: ", error);
-
-	// 				if (error.response) {
-	// 					console.error("HTTP Status: ", error.response.status);
-	// 					console.error("Response Data: ", error.response.data);
-	// 				}
-	// 			}
-	// 	}
-
-	// 	callOpenAI();
-	// }, [selectedPassage]);
 
 	const onTextLayout = (event) => {
 		const lines = event?.nativeEvent.lines;
@@ -163,10 +110,10 @@ const BibleScreen = () => {
 		const scrollProgress = offsetY / (contentHeight - scrollViewHeight);
 		setScrollY(scrollProgress);
 
-		if (scrollProgress < 0.01) {
+		if (contentHeight - offsetY - scrollViewHeight > 15) {
 			setShouldRenderPressable(false);
 			setCompleteButtonFinishedStyle({});
-		} else if (scrollProgress >= 1) {
+		} else if (contentHeight - offsetY - scrollViewHeight <= 15) {
 			setTimeout(() => {
 				setShouldRenderPressable(true);
 				setCompleteButtonFinishedStyle({
@@ -215,10 +162,6 @@ const BibleScreen = () => {
 		}
 	};
 
-	const clearHighLightedText = () => {
-		setHighlightedText([]);
-	};
-
 	const handleCompletePressIn = () => {
 		setCompleteButtonPressedIn({
 			backgroundColor: "#f0cd51",
@@ -232,10 +175,6 @@ const BibleScreen = () => {
 
 	const handleModalToggle = () => {
 		setModalOpen(!modalOpen);
-	};
-
-	const nextChapter = () => {
-		handleModalToggle();
 	};
 
 	return (
@@ -320,9 +259,6 @@ const BibleScreen = () => {
 					modalOpen={modalOpen}
 					modalToggle={handleModalToggle}
 					QuizData={quizJSON}
-					nextChapter={() => {
-						nextChapter();
-					}}
 				/>
 			)}
 		</View>
@@ -373,7 +309,8 @@ const styles = StyleSheet.create({
 		letterSpacing: 0.3,
 		lineHeight: 32,
 		padding: 16,
-		//marginBottom: 60,
+		flexDirection: "row",
+		flexWrap: "wrap",
 	},
 	heading: {
 		color: "#f5f5f5",
