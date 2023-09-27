@@ -10,10 +10,23 @@ import {
 	TouchableHighlight,
 	Pressable,
 } from "react-native";
+import { useDispatch } from "react-redux";
+import { updateProgress } from "../../features/userProgressSlice/userProgressSlice";
+import { setChapterCompleted } from "../../features/bibleSlice/bibleSlice";
 import { BlurView } from "expo-blur";
 import correctImg from "../../../assets/Images/CORRECT!!.png";
 
-const AIQuizModal = ({ modalOpen, modalToggle, QuizData, numOfVerses }) => {
+const QuizModal = ({
+	modalOpen,
+	modalToggle,
+	QuizData,
+	numOfVerses,
+	testamentIndex,
+	bookIndex,
+	chapterIndex,
+	bookName,
+	chapterNum
+}) => {
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [selectedChoiceIndex, setSelectedChoiceIndex] = useState(null);
 	const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
@@ -23,6 +36,8 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData, numOfVerses }) => {
 	const numberOfQuestions = QuizData?.questions?.length;
 	const currentQuestion = QuizData?.questions[currentQuestionIndex];
 	const correctAnswerIndex = currentQuestion?.answer?.index;
+
+	const dispatch = useDispatch();
 
 	const QuizContent = () => {
 		return (
@@ -78,10 +93,19 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData, numOfVerses }) => {
 	};
 
 	const QuizSuccess = () => {
+		dispatch(
+			setChapterCompleted({
+				testamentIndex: testamentIndex,
+				bookIndex: bookIndex,
+				chapterIndex: chapterIndex,
+			})
+		);
+		dispatch(updateProgress({ points: numOfVerses }));
+
 		return (
 			<View>
 				<Text style={[styles.heading, { fontSize: 28 }]}>
-					🎊{"    "}HOORAY!   🎊
+					🎊{"    "}HOORAY! 🎊
 				</Text>
 				<View style={styles.pointsContainer}>
 					<Text style={styles.points}>+{numOfVerses}pts</Text>
@@ -92,7 +116,8 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData, numOfVerses }) => {
 							styles.modalQuestionText,
 							{ textAlign: "center", marginVertical: 16 },
 						]}>
-						You answered all the questions correctly and have added {numOfVerses} points to your overall score! {"\n\n"} Rejoice! 🥳
+						You answered all the questions correctly and have added{" "}
+						{numOfVerses} points to your overall score! {"\n\n"} Rejoice! 🥳
 					</Text>
 					<Text
 						style={[
@@ -380,4 +405,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default AIQuizModal;
+export default QuizModal;

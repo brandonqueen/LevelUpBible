@@ -1,24 +1,51 @@
-import { StyleSheet, Text, View, Image } from "react-native";
-import progressCircle from "../../../assets/Images/progress_circle.png";
-import bibleMeters from "../../../assets/Images/Bible_Meters.png";
-import dummyFriends from "../../../assets/Images/dummy_friends.png";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import graphic from "../../../assets/Images/Logo.png";
+import Reward from "../../components/Reward/Reward";
+import { useSelector } from "react-redux";
+import OTColor from "../../../assets/Images/RewardsIcons/OT-color.png";
 
 const HomeScreen = () => {
+	const userProgress = useSelector((state) => state.userProgress);
+	const points = userProgress.stats.totalPoints;
+	const chapters = userProgress.stats.numChaptersCompleted;
+
 	return (
-		<View style={styles.root}>
+		<ScrollView style={styles.root}>
 			<View style={styles.topBar}>
 				<Image source={graphic} style={styles.graphic} />
 			</View>
 			<View style={styles.mainContent}>
 				<View style={styles.progressContainer}>
 					<Text style={styles.headers}>YOUR PROGRESS</Text>
+					<Text
+						style={{
+							fontSize: 20,
+							fontWeight: "800",
+							color: "white",
+							textAlign: "center",
+							margin: 20,
+						}}>
+						You have {points} points
+					</Text>
+					<Text
+						style={{
+							fontSize: 20,
+							fontWeight: "800",
+							color: "white",
+							textAlign: "center",
+							margin: 20,
+						}}>
+						You have read {chapters} chapters
+					</Text>
 				</View>
+				<Text style={styles.headers}>REWARDS</Text>
 				<View style={styles.rewardsContainer}>
-					<Text style={styles.headers}>REWARDS</Text>
+					<Reward image={OTColor} title="OLD TESTAMENT" completed={false} />
+					<Reward />
+					<Reward />
 				</View>
 			</View>
-		</View>
+		</ScrollView>
 	);
 };
 
@@ -29,7 +56,8 @@ const styles = StyleSheet.create({
 	topBar: {
 		height: "12%",
 		width: "100%",
-		marginVertical: 8,
+		marginTop: 8,
+		marginBottom: 16,
 		justifyContent: "flex-end",
 		alignItems: "center",
 	},
@@ -46,8 +74,12 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	rewardsContainer: {
-		flex: 3,
+		flex: 1,
+		flexDirection: "row",
+		flexWrap: "wrap",
 		marginBottom: 20,
+		alignItems: "center",
+		justifyContent: "center",
 	},
 	headers: {
 		fontSize: 30,

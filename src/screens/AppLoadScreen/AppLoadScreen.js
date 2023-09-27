@@ -1,7 +1,7 @@
 import { Image, View } from "react-native";
 import { useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import Logo from "../../../assets/Images/Level_Up_Bible.png";
+import Logo from "../../../assets/Images/Logo.png";
 
 const AppLoadScreen = () => {
 	const navigation = useNavigation();
@@ -9,7 +9,7 @@ const AppLoadScreen = () => {
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			navigation.navigate("BottomTabs");
-		}, 1500);
+		}, 1000);
 
 		return () => clearTimeout(timeout);
 	}, [navigation]);
@@ -18,7 +18,7 @@ const AppLoadScreen = () => {
 		<View
 			style={{
 				flex: 1,
-				width: "90%",
+				width: "75%",
 				alignSelf: "center",
 				justifySelf: "center",
 				alignItems: "center",

@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
 import axios from "axios";
-import AIQuizModal from "../../components/AIQuizModal/AIQuizModal";
+import QuizModal from "../../components/QuizModal/QuizModal";
 import quizJSON from "./test.json";
 
 const BibleScreen = () => {
@@ -334,11 +334,16 @@ const BibleScreen = () => {
 				)}
 			</View>
 			{modalOpen && (
-				<AIQuizModal
+				<QuizModal
 					modalOpen={modalOpen}
 					modalToggle={handleModalToggle}
 					QuizData={quizJSON}
 					numOfVerses={numOfVerses}
+					testamentIndex={testamentIndex}
+					bookIndex={bookIndex}
+					chapterIndex={chapterIndex}
+					bookName={bookName}
+					chapterNum={chapterNum}
 				/>
 			)}
 		</View>
