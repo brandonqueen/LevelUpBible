@@ -10,25 +10,12 @@ const HomeScreen = () => {
 			<View style={styles.topBar}>
 				<Image source={graphic} style={styles.graphic} />
 			</View>
-			<View style={styles.middleContent}>
-				<View style={styles.yourProgressContainer}>
+			<View style={styles.mainContent}>
+				<View style={styles.progressContainer}>
 					<Text style={styles.headers}>YOUR PROGRESS</Text>
-					<View style={styles.yourProgress}>
-						<View style={styles.graphLayout}>
-							<View style={styles.progressBarTextContainer}>
-								<Text style={styles.progressBarText}>OT{"\n"}NT</Text>
-							</View>
-							<Image source={bibleMeters} style={styles.progressBars} />
-						</View>
-						<View style={styles.graphLayout}>
-							<Text style={styles.progressCircleText}>WHOLE {"\n"}BIBLE</Text>
-							<Image source={progressCircle} style={styles.progressCircle} />
-						</View>
-					</View>
 				</View>
-				<View style={styles.topFriendsContainer}>
-					<Text style={styles.headers}>TOP FRIENDS</Text>
-					<Image source={dummyFriends} style={styles.dummyFriends} />
+				<View style={styles.rewardsContainer}>
+					<Text style={styles.headers}>REWARDS</Text>
 				</View>
 			</View>
 		</View>
@@ -37,13 +24,12 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
 	root: {
-		margin: 5,
 		flex: 1,
 	},
 	topBar: {
 		height: "12%",
 		width: "100%",
-		marginTop: 8,
+		marginVertical: 8,
 		justifyContent: "flex-end",
 		alignItems: "center",
 	},
@@ -52,72 +38,22 @@ const styles = StyleSheet.create({
 		flex: 1,
 		objectFit: "contain",
 	},
-	middleContent: {
-		flex: 9,
-		padding: 5,
+	mainContent: {
+		flex: 1,
+		margin: 8,
 	},
-	yourProgressContainer: {
-		flex: 4,
-		paddingTop: 20,
+	progressContainer: {
+		flex: 1,
 	},
-	topFriendsContainer: {
+	rewardsContainer: {
 		flex: 3,
 		marginBottom: 20,
-	},
-	yourProgress: {
-		flex: 8,
-		justifyContent: "center",
-	},
-	graphLayout: {
-		flexDirection: "row",
-		padding: 5,
-	},
-	progressBarTextContainer: {
-		flex: 1,
-		alignItems: "center",
-		justifyContent: "center",
-		paddingBottom: 10,
 	},
 	headers: {
 		fontSize: 30,
 		fontWeight: "900",
 		textAlign: "center",
 		color: "#f5f5f5",
-	},
-	progressBarText: {
-		color: "pink",
-		fontWeight: "900",
-		fontSize: 23,
-	},
-	progressBars: {
-		height: "100%",
-		width: "100%",
-		alignSelf: "center",
-		resizeMode: "contain",
-		flex: 2.2,
-	},
-	progressCircleText: {
-		color: "#695DDA",
-		fontWeight: "900",
-		fontSize: 25,
-		paddingRight: 25,
-		flex: 1.8,
-		alignSelf: "center",
-		textAlign: "right",
-	},
-	progressCircle: {
-		width: 100,
-		height: 100,
-		resizeMode: "contain",
-		alignSelf: "center",
-		flex: 1,
-	},
-	dummyFriends: {
-		height: "85%",
-		width: "95%",
-		left: 22,
-		resizeMode: "contain",
-		justifyContent: "center",
 	},
 });
 

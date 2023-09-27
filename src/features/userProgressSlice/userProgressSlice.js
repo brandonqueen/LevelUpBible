@@ -18,8 +18,9 @@ const userProgressSlice = createSlice({
 	name: "userProgress",
 	initialState: initialState,
 	reducers: {
-		updateProgress: {},
+		updateProgress: (state, action) => {},
 	},
 });
 
+export const { updateProgress } = userProgressSlice.actions;
 export default userProgressSlice.reducer;
