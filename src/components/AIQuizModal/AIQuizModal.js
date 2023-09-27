@@ -81,25 +81,18 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData, numOfVerses }) => {
 		return (
 			<View>
 				<Text style={[styles.heading, { fontSize: 28 }]}>
-					🎊{"  "}HOORAY! 🎊
+					🎊{"    "}HOORAY!   🎊
 				</Text>
+				<View style={styles.pointsContainer}>
+					<Text style={styles.points}>+{numOfVerses}pts</Text>
+				</View>
 				<View style={styles.modalQuestionContainer}>
 					<Text
 						style={[
 							styles.modalQuestionText,
-							{ textAlign: "center", marginVertical: 24 },
+							{ textAlign: "center", marginVertical: 16 },
 						]}>
-						You answered all the questions correctly and have added{"  "}
-						<Text
-							style={{
-								fontWeight: "900",
-								fontSize: 30,
-								color: "rgb(255, 198, 99)",
-							}}>
-							{numOfVerses}
-						</Text>
-						{"  "}
-						points to your overall score! {"\n\n"} Rejoice! 🥳
+						You answered all the questions correctly and have added {numOfVerses} points to your overall score! {"\n\n"} Rejoice! 🥳
 					</Text>
 					<Text
 						style={[
@@ -118,13 +111,6 @@ const AIQuizModal = ({ modalOpen, modalToggle, QuizData, numOfVerses }) => {
 						onPress={modalToggle}>
 						<Text style={styles.completeButtonText}>Exit</Text>
 					</TouchableHighlight>
-					{/* <TouchableHighlight
-						style={[styles.completeButtonPressable]}
-						activeOpacity={0.8}
-						underlayColor="#695DDA"
-						onPress={nextChapter}>
-						<Text style={styles.completeButtonText}>Next Chapter</Text>
-					</TouchableHighlight> */}
 				</View>
 			</View>
 		);
@@ -372,6 +358,25 @@ const styles = StyleSheet.create({
 		fontWeight: "800",
 		textAlign: "center",
 		padding: 16,
+	},
+	pointsContainer: {
+		borderWidth: 3,
+		borderRadius: 57.5,
+		borderColor: "#a38b00",
+		padding: 12,
+		margin: 12,
+		width: 115,
+		height: 115,
+		alignSelf: "center",
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "rgba(11,14,29, .5)",
+	},
+	points: {
+		fontWeight: "900",
+		fontSize: 23,
+		color: "rgb(255, 198, 99)",
+		textAlign: "center",
 	},
 });
 
