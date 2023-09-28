@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
-import Capybara from "../../../assets/Images/Capybara.png";
+import Capybara from "../../../../assets/Images/Capybara.png";
 
 const NotImplemented = () => {
 	return (

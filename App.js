@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import { store } from "./store.js";
 import { PaperProvider } from "react-native-paper";
 import InitialStackNavigator from "./src/navigation/InitialStackNavigator.js";
-import RewardsScreen from "./src/screens/RewardsScreen/RewardsScreen.js";
 
 const App = () => {
 	return (
@@ -13,8 +12,7 @@ const App = () => {
 				<SafeAreaView
 					style={styles.root}
 					forceInset={{ top: "always", bottom: "never" }}>
-					<InitialStackNavigator/>
-					{/* <RewardsScreen /> */}
+					<InitialStackNavigator />
 					<StatusBar barStyle="light-content" />
 				</SafeAreaView>
 			</PaperProvider>

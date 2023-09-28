@@ -3,29 +3,35 @@ import { useSelector } from "react-redux";
 import Reward from "../../components/Reward/Reward";
 
 const RewardsScreen = () => {
-	const userProgress = useSelector((state) => state.userProgress);
+	const userProgress = useSelector((state) => state.globalData.userProgress);
 	const rewardsData = userProgress.rewards;
 
-	const renderItem = (item) => {
-		<Reward
-			image={item.complete ? item.completeImage : item.incompleteImage}
-			title={item.title}
-			completed={item.complete}
-		/>;
+	function handleRewardPress(item) {
+		alert(`You Pressed ${item.title}`);
+	}
+
+	const rewardRender = (item) => {
+		return (
+			<View style={styles.rewardContainer}>
+				<Reward
+					reward={item}
+				/>
+			</View>
+		);
 	};
 
 	return (
-		<View>
+		<View style={styles.root}>
 			<Text style={styles.header}>Your Rewards</Text>
-			<View style={styles.rewardsContainer}>
-				<FlatList
-					data={rewardsData}
-					keyExtractor={(item, index) => `RewardIndex${index}`}
-					renderItem={({ item }) => {
-						return renderItem(item);
-					}}
-				/>
-			</View>
+			<FlatList
+				data={rewardsData}
+				showsVerticalScrollIndicator={false}
+				numColumns={3}
+				keyExtractor={(item, index) => `RewardIndex${index}`}
+				renderItem={({ item }) => {
+					return rewardRender(item);
+				}}
+			/>
 		</View>
 	);
 };
@@ -33,6 +39,9 @@ const RewardsScreen = () => {
 export default RewardsScreen;
 
 const styles = StyleSheet.create({
+	root: {
+		flex: 1,
+	},
 	header: {
 		fontSize: 30,
 		fontWeight: "900",
@@ -40,7 +49,7 @@ const styles = StyleSheet.create({
 		color: "#f5f5f5",
 		margin: 24,
 	},
-	rewardsContainer: {
+	rewardContainer: {
 		flex: 1,
 		flexDirection: "row",
 		flexWrap: "wrap",

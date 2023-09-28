@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/HomeScreen";
 import { View, StyleSheet } from "react-native";
-import NotImplemented from "../screens/NotImplemented/NotImplemented";
+import RewardsScreen from "../screens/RewardsScreen/RewardsScreen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import BibleStack from "./BibleStack";
@@ -45,11 +45,11 @@ function BottomTabs() {
 					}}
 				/>
 				<Tab.Screen
-					name="FRIENDS"
-					component={NotImplemented}
+					name="REWARDS"
+					component={RewardsScreen}
 					options={{
 						tabBarIcon: ({ color, size }) => (
-							<FontAwesome5 name="users" size={size} color={color} />
+							<FontAwesome name="star" size={size} color={color} />
 						),
 					}}
 				/>
