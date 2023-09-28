@@ -14,7 +14,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["Chapter-color.png"],
 			description: `Earned after completing your first chapter.`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 		{
 			title: "First Book",
@@ -23,7 +22,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["Book-color.png"],
 			description: `Earned after completing your first book of the Bible.`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 		{
 			title: "Law",
@@ -32,7 +30,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["law-color.png"],
 			description: `Earned after completing the Law or "Torah", the first five books of the Old Testament: Genesis, Exodus, Leviticus, Numbers, and Deuteronomy.`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 		{
 			title: "History",
@@ -41,7 +38,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["history-color.png"],
 			description: `Earned after completing the history books of the Old Testament: Joshua, Judges, 1 Samuel, 2 Samuel, 1 Kings, and 2 Kings.`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 		{
 			title: "Poetry",
@@ -50,7 +46,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["poetry-color.png"],
 			description: `Earned after completing the poetry books of the Old Testament: Job, Psalms, Proverbs, Ecclesiastes, and Song of Solomon.`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 		{
 			title: "Major Prophets",
@@ -59,7 +54,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["major-prophets-color.png"],
 			description: `Earned after completing the Old Testament's collection of longer prophetical writings: Isaiah, Jeremiah, Lamentations, Ezekiel, and Daniel.`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 		{
 			title: "Minor Prophets",
@@ -68,7 +62,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["minor-prophets-color.png"],
 			description: `Earned after completing the Old Testament's collection of shorter prophetical writings: Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi.`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 		{
 			title: "Old Testament",
@@ -77,7 +70,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["OT-color.png"],
 			description: `Earned after completing the entire Old Testament! 👏`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 		{
 			title: "Gospels",
@@ -86,7 +78,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["gospels-color.png"],
 			description: `Earned after completing the four books of the New Testament's gospel account: Matthew, Mark, Luke, and John.`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 		{
 			title: "Paul's Letters",
@@ -95,7 +86,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["pauline-epistles-color.png"],
 			description: `Earned after completing all the letters from the Apostle Paul in the New Testament: Romans, 1 & 2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1 & 2 Thessalonians, 1 & 2 Timothy, Titus, and Philemon.`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 		{
 			title: "New Testament",
@@ -104,7 +94,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["NT-color.png"],
 			description: `Earned after completing all the of the New Testament! 🙌`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 		{
 			title: "Whole Bile",
@@ -113,7 +102,6 @@ const initialUserProgress = {
 			imageColor: RewardsIcons["WholeBible-color.png"],
 			description: `The most prestigious of all awards. 🤩 Earned after completing all the books of the Bible, both Old and New Testaments! 🥳 🎊 🎉`,
 			earnedDate: "",
-			earnedSource: "",
 		},
 	],
 	recentEarnedRewards: [],

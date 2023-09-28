@@ -1,26 +1,22 @@
-import { StyleSheet, Text, Pressable, Image } from "react-native";
+import { StyleSheet, Text, Pressable, Image, View } from "react-native";
 
-const Reward = ({ reward }) => {
-	function handleRewardPress() {
-		alert(`You pressed ${reward.title}`);
-	}
-
+const Reward = ({ reward, openDescription }) => {
 	return (
-		<Pressable
-			style={styles.container}
-			onPress={() => handleRewardPress(reward)}>
-			<Image
-				style={[styles.image, !reward.completed && { opacity: 0.3 }]}
-				source={reward.completed ? reward.imageColor : reward.imageBW}
-			/>
-			<Text
-				style={[
-					styles.text,
-					reward.completed ? null : { color: "rgba(245, 245, 245, .6)" },
-				]}>
-				{reward.title}
-			</Text>
-		</Pressable>
+		<View style={styles.container}>
+			<Pressable style={styles.pressable} onPress={openDescription}>
+				<Image
+					style={[styles.image, !reward.completed && { opacity: 0.25 }]}
+					source={reward.completed ? reward.imageColor : reward.imageBW}
+				/>
+				<Text
+					style={[
+						styles.text,
+						reward.completed ? null : { color: "rgba(245, 245, 245, .6)" },
+					]}>
+					{reward.title}
+				</Text>
+			</Pressable>
+		</View>
 	);
 };
 
@@ -28,6 +24,11 @@ export default Reward;
 
 const styles = StyleSheet.create({
 	container: {
+		flex: 1,
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	pressable: {
 		width: 80,
 		flexDirection: "column",
 	},
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
 		aspectRatio: 1,
 	},
 	text: {
-		marginVertical: 8,
+		marginVertical: 4,
 		textAlign: "center",
 		color: "#f5f5f5",
 		fontWeight: "900",
