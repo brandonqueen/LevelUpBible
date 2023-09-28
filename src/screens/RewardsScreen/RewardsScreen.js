@@ -41,6 +41,7 @@ export default RewardsScreen;
 const styles = StyleSheet.create({
 	root: {
 		flex: 1,
+		padding: 10
 	},
 	header: {
 		fontSize: 30,

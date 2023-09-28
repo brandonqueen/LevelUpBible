@@ -10,7 +10,7 @@ const Reward = ({ reward }) => {
 			style={styles.container}
 			onPress={() => handleRewardPress(reward)}>
 			<Image
-				style={[styles.image, !reward.completed && { opacity: 0.5 }]}
+				style={[styles.image, !reward.completed && { opacity: 0.3 }]}
 				source={reward.completed ? reward.imageColor : reward.imageBW}
 			/>
 			<Text

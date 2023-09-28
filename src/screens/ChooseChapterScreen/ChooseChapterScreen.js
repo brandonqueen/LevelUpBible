@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
 	header: {
 		color: "#f5f5f5",
 		fontWeight: "800",
-		fontSize: 24,
+		fontSize: 30,
 		padding: 24,
 		textAlign: "center",
 	},
