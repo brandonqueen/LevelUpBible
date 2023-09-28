@@ -20,7 +20,7 @@ import quizJSON from "./test.json";
 
 const BibleScreen = () => {
 	//global state getter
-	const bibleState = useSelector((state) => state.bibleData);
+	const bibleState = useSelector((state) => state.globalData.bibleData);
 
 	//global state setter
 	const dispatch = useDispatch();

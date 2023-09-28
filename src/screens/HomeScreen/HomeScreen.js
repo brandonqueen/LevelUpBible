@@ -1,20 +1,18 @@
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import graphic from "../../../assets/Images/Logo.png";
-import Reward from "../../components/Reward/Reward";
 import { useSelector } from "react-redux";
 
 const HomeScreen = () => {
-	const userProgress = useSelector((state) => state.globalData);
-	console.log(userProgress);
+	const userProgress = useSelector((state) => state.globalData.userProgress);
 	const points = userProgress.stats.totalPoints;
 	const chapters = userProgress.stats.numChaptersCompleted;
 
 	return (
-		<ScrollView style={styles.root}>
+		<View style={styles.root}>
 			<View style={styles.topBar}>
 				<Image source={graphic} style={styles.graphic} />
 			</View>
-			<View style={styles.mainContent}>
+			<ScrollView style={styles.mainContent}>
 				<View style={styles.progressContainer}>
 					<Text style={styles.headers}>YOUR PROGRESS</Text>
 					<Text
@@ -40,8 +38,8 @@ const HomeScreen = () => {
 				</View>
 				<Text style={styles.headers}>REWARDS</Text>
 				<View style={styles.rewardsContainer}>{/* Rewards go here! */}</View>
-			</View>
-		</ScrollView>
+			</ScrollView>
+		</View>
 	);
 };
 
@@ -64,6 +62,7 @@ const styles = StyleSheet.create({
 	},
 	mainContent: {
 		flex: 1,
+		flexDirection: "column",
 		margin: 8,
 	},
 	progressContainer: {

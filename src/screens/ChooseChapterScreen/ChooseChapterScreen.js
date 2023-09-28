@@ -22,11 +22,13 @@ import {
 } from "@react-navigation/native";
 
 const ChooseChapterScreen = () => {
+	//logic to avoid reset of selected book when navigating back from the Bible Screen
 	const isFocused = useIsFocused();
 	const route = useRoute();
 	useEffect(() => {
 		if (isFocused && route?.params?.prevScreen !== "BibleScreen") {
 			dispatch(resetBibleSelection());
+			handleHeaderPress(); //sets header back to testament selection
 		}
 		navigation.setParams({ prevScreen: "" });
 	}, [isFocused]);
@@ -39,7 +41,7 @@ const ChooseChapterScreen = () => {
 	const dispatch = useDispatch();
 
 	//global state getter
-	const bibleState = useSelector((state) => state.bibleData);
+	const bibleState = useSelector((state) => state.globalData.bibleData);
 
 	//nav
 	const navigation = useNavigation();

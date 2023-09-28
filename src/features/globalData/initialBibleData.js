@@ -2,10 +2,12 @@ export const initialBibleData = [
 	{
 		testamentName: "Old Testament",
 		selected: false,
+		completed: false,
 		books: [
 			{
 				bookName: "Genesis",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -62,6 +64,7 @@ export const initialBibleData = [
 			{
 				bookName: "Exodus",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -108,6 +111,7 @@ export const initialBibleData = [
 			{
 				bookName: "Leviticus",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -141,6 +145,7 @@ export const initialBibleData = [
 			{
 				bookName: "Numbers",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -183,6 +188,7 @@ export const initialBibleData = [
 			{
 				bookName: "Deuteronomy",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -223,6 +229,7 @@ export const initialBibleData = [
 			{
 				bookName: "Joshua",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -253,6 +260,7 @@ export const initialBibleData = [
 			{
 				bookName: "Judges",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -280,6 +288,7 @@ export const initialBibleData = [
 			{
 				bookName: "Ruth",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -290,6 +299,7 @@ export const initialBibleData = [
 			{
 				bookName: "1 Samuel",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -327,6 +337,7 @@ export const initialBibleData = [
 			{
 				bookName: "2 Samuel",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -357,6 +368,7 @@ export const initialBibleData = [
 			{
 				bookName: "1 Kings",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -385,6 +397,7 @@ export const initialBibleData = [
 			{
 				bookName: "2 Kings",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -416,6 +429,7 @@ export const initialBibleData = [
 			{
 				bookName: "1 Chronicles",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -451,6 +465,7 @@ export const initialBibleData = [
 			{
 				bookName: "2 Chronicles",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -493,6 +508,7 @@ export const initialBibleData = [
 			{
 				bookName: "Ezra",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -509,6 +525,7 @@ export const initialBibleData = [
 			{
 				bookName: "Nehemiah",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -528,6 +545,7 @@ export const initialBibleData = [
 			{
 				bookName: "Esther",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -544,6 +562,7 @@ export const initialBibleData = [
 			{
 				bookName: "Job",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -592,6 +611,7 @@ export const initialBibleData = [
 			{
 				bookName: "Psalms",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -748,6 +768,7 @@ export const initialBibleData = [
 			{
 				bookName: "Proverbs",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -785,6 +806,7 @@ export const initialBibleData = [
 			{
 				bookName: "Ecclesiastes",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -803,6 +825,7 @@ export const initialBibleData = [
 			{
 				bookName: "Song of Solomon",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -817,6 +840,7 @@ export const initialBibleData = [
 			{
 				bookName: "Isaiah",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -889,6 +913,7 @@ export const initialBibleData = [
 			{
 				bookName: "Jeremiah",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -947,6 +972,7 @@ export const initialBibleData = [
 			{
 				bookName: "Lamentations",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -958,6 +984,7 @@ export const initialBibleData = [
 			{
 				bookName: "Ezekiel",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1012,6 +1039,7 @@ export const initialBibleData = [
 			{
 				bookName: "Daniel",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1030,6 +1058,7 @@ export const initialBibleData = [
 			{
 				bookName: "Hosea",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1050,6 +1079,7 @@ export const initialBibleData = [
 			{
 				bookName: "Joel",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1059,6 +1089,7 @@ export const initialBibleData = [
 			{
 				bookName: "Amos",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1074,11 +1105,13 @@ export const initialBibleData = [
 			{
 				bookName: "Obadiah",
 				selected: false,
+				completed: false,
 				chapters: [{ chapter: 1, selected: false, completed: false }],
 			},
 			{
 				bookName: "Jonah",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1089,6 +1122,7 @@ export const initialBibleData = [
 			{
 				bookName: "Micah",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1102,6 +1136,7 @@ export const initialBibleData = [
 			{
 				bookName: "Nahum",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1111,6 +1146,7 @@ export const initialBibleData = [
 			{
 				bookName: "Habakkuk",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1120,6 +1156,7 @@ export const initialBibleData = [
 			{
 				bookName: "Zephaniah",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1129,6 +1166,7 @@ export const initialBibleData = [
 			{
 				bookName: "Haggai",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1137,6 +1175,7 @@ export const initialBibleData = [
 			{
 				bookName: "Zechariah",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1157,6 +1196,7 @@ export const initialBibleData = [
 			{
 				bookName: "Malachi",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1169,10 +1209,12 @@ export const initialBibleData = [
 	{
 		testamentName: "New Testament",
 		selected: false,
+		completed: false,
 		books: [
 			{
 				bookName: "Matthew",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1207,6 +1249,7 @@ export const initialBibleData = [
 			{
 				bookName: "Mark",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1229,6 +1272,7 @@ export const initialBibleData = [
 			{
 				bookName: "Luke",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1259,6 +1303,7 @@ export const initialBibleData = [
 			{
 				bookName: "John",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1286,6 +1331,7 @@ export const initialBibleData = [
 			{
 				bookName: "Acts",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1320,6 +1366,7 @@ export const initialBibleData = [
 			{
 				bookName: "Romans",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1342,6 +1389,7 @@ export const initialBibleData = [
 			{
 				bookName: "1 Corinthians",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1364,6 +1412,7 @@ export const initialBibleData = [
 			{
 				bookName: "2 Corinthians",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1383,6 +1432,7 @@ export const initialBibleData = [
 			{
 				bookName: "Galatians",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1395,6 +1445,7 @@ export const initialBibleData = [
 			{
 				bookName: "Ephesians",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1407,6 +1458,7 @@ export const initialBibleData = [
 			{
 				bookName: "Philippians",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1417,6 +1469,7 @@ export const initialBibleData = [
 			{
 				bookName: "Colossians",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1427,6 +1480,7 @@ export const initialBibleData = [
 			{
 				bookName: "1 Thessalonians",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1438,6 +1492,7 @@ export const initialBibleData = [
 			{
 				bookName: "2 Thessalonians",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1447,6 +1502,7 @@ export const initialBibleData = [
 			{
 				bookName: "1 Timothy",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1459,6 +1515,7 @@ export const initialBibleData = [
 			{
 				bookName: "2 Timothy",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1469,6 +1526,7 @@ export const initialBibleData = [
 			{
 				bookName: "Titus",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1478,11 +1536,13 @@ export const initialBibleData = [
 			{
 				bookName: "Philemon",
 				selected: false,
+				completed: false,
 				chapters: [{ chapter: 1, selected: false, completed: false }],
 			},
 			{
 				bookName: "Hebrews",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1502,6 +1562,7 @@ export const initialBibleData = [
 			{
 				bookName: "James",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1513,6 +1574,7 @@ export const initialBibleData = [
 			{
 				bookName: "1 Peter",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1524,6 +1586,7 @@ export const initialBibleData = [
 			{
 				bookName: "2 Peter",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1533,6 +1596,7 @@ export const initialBibleData = [
 			{
 				bookName: "1 John",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },
@@ -1544,21 +1608,25 @@ export const initialBibleData = [
 			{
 				bookName: "2 John",
 				selected: false,
+				completed: false,
 				chapters: [{ chapter: 1, selected: false, completed: false }],
 			},
 			{
 				bookName: "3 John",
 				selected: false,
+				completed: false,
 				chapters: [{ chapter: 1, selected: false, completed: false }],
 			},
 			{
 				bookName: "Jude",
 				selected: false,
+				completed: false,
 				chapters: [{ chapter: 1, selected: false, completed: false }],
 			},
 			{
 				bookName: "Revelation",
 				selected: false,
+				completed: false,
 				chapters: [
 					{ chapter: 1, selected: false, completed: false },
 					{ chapter: 2, selected: false, completed: false },

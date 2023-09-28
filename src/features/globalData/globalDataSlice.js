@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import initialBibleData from "./initialBibleData";
+import { initialBibleData } from "./initialBibleData";
 import initialUserProgress from "./initialUserProgress";
 
 const globalDataSlice = createSlice({
@@ -11,33 +11,33 @@ const globalDataSlice = createSlice({
 	reducers: {
 		setTestamentSelected: (state, action) => {
 			const selectedIndex = action.payload.index;
-			state.map((testament, index) => {
+			state.bibleData.map((testament, index) => {
 				if (index === selectedIndex) {
-					return (state[index].selected = !state[index].selected);
+					return (state.bibleData[index].selected = !state.bibleData[index].selected);
 				} else {
-					return (state[index].selected = false);
+					return (state.bibleData[index].selected = false);
 				}
 			});
 		},
 		setBookSelected: (state, action) => {
 			const { testamentIndex, bookIndex } = action.payload;
-			state.map((testament, testamentMapIndex) => {
+			state.bibleData.map((testament, testamentMapIndex) => {
 				testament.books.map((book, bookMapIndex) => {
 					if (
 						testamentMapIndex === testamentIndex &&
 						bookMapIndex === bookIndex
 					) {
-						state[testamentMapIndex].books[bookMapIndex].selected =
-							!state[testamentMapIndex].books[bookMapIndex].selected;
+						state.bibleData[testamentMapIndex].books[bookMapIndex].selected =
+							!state.bibleData[testamentMapIndex].books[bookMapIndex].selected;
 					} else {
-						state[testamentMapIndex].books[bookMapIndex].selected = false;
+						state.bibleData[testamentMapIndex].books[bookMapIndex].selected = false;
 					}
 				});
 			});
 		},
 		setChapterSelected: (state, action) => {
 			const { testamentIndex, bookIndex, chapterNum } = action.payload;
-			state.map((testament, testamentMapIndex) => {
+			state.bibleData.map((testament, testamentMapIndex) => {
 				testament.books.map((book, bookMapIndex) => {
 					book.chapters.map((chapter, chapterMapIndex) => {
 						if (
@@ -45,14 +45,14 @@ const globalDataSlice = createSlice({
 							bookMapIndex === bookIndex &&
 							chapter.chapter === chapterNum
 						) {
-							state[testamentMapIndex].books[bookMapIndex].chapters[
+							state.bibleData[testamentMapIndex].books[bookMapIndex].chapters[
 								chapterMapIndex
 							].selected =
-								!state[testamentMapIndex].books[bookMapIndex].chapters[
+								!state.bibleData[testamentMapIndex].books[bookMapIndex].chapters[
 									chapterMapIndex
 								].selected;
 						} else {
-							state[testamentMapIndex].books[bookMapIndex].chapters[
+							state.bibleData[testamentMapIndex].books[bookMapIndex].chapters[
 								chapterMapIndex
 							].selected = false;
 						}
@@ -61,13 +61,13 @@ const globalDataSlice = createSlice({
 			});
 		},
 		resetBibleSelection: (state) => {
-			state.map((testament, testIndex) => {
-				state[testIndex].selected = false;
-				state[testIndex].books.map((book, bookIndex) => {
-					state[testIndex].books[bookIndex].selected = false;
-					state[testIndex].books[bookIndex].chapters.map(
+			state.bibleData.map((testament, testIndex) => {
+				state.bibleData[testIndex].selected = false;
+				state.bibleData[testIndex].books.map((book, bookIndex) => {
+					state.bibleData[testIndex].books[bookIndex].selected = false;
+					state.bibleData[testIndex].books[bookIndex].chapters.map(
 						(chapter, chapIndex) => {
-							state[testIndex].books[bookIndex].chapters[
+							state.bibleData[testIndex].books[bookIndex].chapters[
 								chapIndex
 							].selected = false;
 						}
