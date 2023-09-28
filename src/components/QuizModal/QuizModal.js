@@ -11,6 +11,10 @@ import {
 	Pressable,
 } from "react-native";
 import { useDispatch } from "react-redux";
+import {
+	setChapterCompleted,
+	updateProgress,
+} from "../../features/globalData/globalDataSlice";
 import { BlurView } from "expo-blur";
 import correctImg from "../../../assets/Images/CORRECT!!.png";
 
@@ -22,8 +26,6 @@ const QuizModal = ({
 	testamentIndex,
 	bookIndex,
 	chapterIndex,
-	bookName,
-	chapterNum,
 }) => {
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [selectedChoiceIndex, setSelectedChoiceIndex] = useState(null);
@@ -93,9 +95,7 @@ const QuizModal = ({
 	const QuizSuccess = () => {
 		return (
 			<View>
-				<Text style={[styles.heading, { fontSize: 28 }]}>
-					HOORAY! 🥳
-				</Text>
+				<Text style={[styles.heading, { fontSize: 28 }]}>HOORAY! 🥳</Text>
 				<View style={styles.pointsContainer}>
 					<Text style={styles.points}>+{numOfVerses}pts</Text>
 				</View>
@@ -201,7 +201,18 @@ const QuizModal = ({
 		if (answeredCorrectly) {
 			if (currentQuestionIndex + 1 === numberOfQuestions) {
 				//Quiz completed!
-					//dispatch actions as needed here
+				dispatch(
+					setChapterCompleted({
+						testamentIndex: testamentIndex,
+						bookIndex: bookIndex,
+						chapterIndex: chapterIndex,
+					})
+				);
+				dispatch(
+					updateProgress({
+						points: numOfVerses,
+					})
+				);
 				setQuizComplete(true);
 			} else if (currentQuestionIndex + 1 < numberOfQuestions) {
 				setCurrentQuestionIndex(currentQuestionIndex + 1);

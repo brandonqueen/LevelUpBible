@@ -77,8 +77,80 @@ const globalDataSlice = createSlice({
 				});
 			});
 		},
-		setChapterCompleted: (state, action) => {},
-		updateProgress: (state, action) => {},
+		setChapterCompleted: (state, action) => {
+			const { testamentIndex, bookIndex, chapterIndex } = action.payload;
+			const testament = state.bibleData[testamentIndex];
+			const book = testament.books[bookIndex];
+			const chapter = book.chapters[chapterIndex];
+			//set chapter complete
+			chapter.completed = true;
+
+			// * * iterate other Bible state updates * *
+			//check for book completion
+			const allChaptersComplete = book.chapters.every(
+				(chapter) => chapter.completed === true
+			);
+
+			if (allChaptersComplete) {
+				book.completed = true;
+			}
+			//check for testament completion
+			const allBooksComplete = testament.books.every(
+				(book) => book.completed === true
+			);
+
+			if (allBooksComplete) {
+				testament.completed = true;
+			}
+		},
+		updateProgress: (state, action) => {
+			const { points } = action.payload;
+			const bibleData = state.bibleData;
+			const stats = state.userProgress.stats;
+			const rewards = state.userProgress.rewards;
+			/*  
+			~~~ update stats ~~~
+			*/
+			//add new points to total
+			stats.totalPoints += points;
+
+			//add up chapters completed
+			let completedChaptersCount = 0;
+			BibleData.forEach((testament) => {
+				testament.books.forEach((book) => {
+					book.chapters.forEach((chapter) => {
+						if (chapter.completed === "true") {
+							completedChaptersCount++;
+						}
+					});
+				});
+			});
+			stats.numChaptersCompleted = completedChaptersCount;
+
+			//add up books completed
+			let completedBooksCount = 0;
+			BibleData.forEach((testament) => {
+				testament.books.forEach((book) => {
+					if (book.completed === "true") {
+						completedBooksCount++;
+					}
+				});
+			});
+			stats.numBooksCompleted = completedBooksCount;
+			//update rewards
+			//first chapter
+			//first book
+			//Law
+			//History
+			//Poetry
+			//Major Prophets
+			//Minor Prophets
+			//Old Testament
+			//Gospels
+			//Paul's Letters
+			//New Testament
+			//Whole Bible
+		},
 	},
 });
 
@@ -87,5 +159,7 @@ export const {
 	setBookSelected,
 	setChapterSelected,
 	resetBibleSelection,
+	setChapterCompleted,
+	updateProgress,
 } = globalDataSlice.actions;
 export default globalDataSlice.reducer;

@@ -342,8 +342,6 @@ const BibleScreen = () => {
 					testamentIndex={testamentIndex}
 					bookIndex={bookIndex}
 					chapterIndex={chapterIndex}
-					bookName={bookName}
-					chapterNum={chapterNum}
 				/>
 			)}
 		</View>
