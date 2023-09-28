@@ -46,7 +46,7 @@ const RewardsScreen = () => {
 					</Text>
 					{modalReward.completed && (
 						<Text style={styles.modalRewardEarned}>
-							Earned on {modalReward.dateEarned}
+							Earned on {modalReward.earnedDate}
 						</Text>
 					)}
 					<TouchableHighlight
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		flexDirection: "row",
 		flexWrap: "wrap",
-		marginBottom: 20,
+		marginVertical: 10,
 		justifyContent: "center",
 	},
 	modalContent: {

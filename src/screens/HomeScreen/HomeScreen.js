@@ -7,6 +7,7 @@ const HomeScreen = () => {
 	const points = userProgress.stats.totalPoints;
 	const chapters = userProgress.stats.numChaptersCompleted;
 	const books = userProgress.stats.numBooksCompleted;
+	const recentEarnedRewards = userProgress.recentEarnedRewards;
 
 	return (
 		<View style={styles.root}>
@@ -47,7 +48,7 @@ const HomeScreen = () => {
 						You have read {books} books
 					</Text>
 				</View>
-				<Text style={[styles.headers, { marginTop: 20 }]}>REWARDS</Text>
+				<Text style={[styles.headers, { marginTop: 20 }]}>RECENT REWARDS</Text>
 				<View style={styles.rewardsContainer}>{/* Rewards go here! */}</View>
 			</ScrollView>
 		</View>

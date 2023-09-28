@@ -108,6 +108,18 @@ const globalDataSlice = createSlice({
 			const bibleData = state.bibleData;
 			const stats = state.userProgress.stats;
 			const rewards = state.userProgress.rewards;
+			const recentEarnedRewards = state.userProgress.recentEarnedRewards;
+
+			const currentDate = new Date();
+
+			// Get the individual components of the date (month, day, year)
+			const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
+			const day = String(currentDate.getDate()).padStart(2, "0");
+			const year = String(currentDate.getFullYear()).slice(-2); // Get the last two digits of the year
+
+			// Combine the components into MM/DD/YY format
+			const formattedDate = `${month}/${day}/${year}`;
+
 			/*  
 			~~~ update stats ~~~
 			*/
@@ -137,9 +149,32 @@ const globalDataSlice = createSlice({
 				});
 			});
 			stats.numBooksCompleted = completedBooksCount;
-			//update rewards
+			/*  
+			~~~ update rewards ~~~
+			*/
 			//first chapter
+
+			if (rewards[0].completed === false) {
+				if (stats.numChaptersCompleted > 0) {
+					rewards[0].completed = true;
+					rewards[0].earnedDate = formattedDate;
+					if (!recentEarnedRewards.includes(rewards[0].title)) {
+						recentEarnedRewards.push(rewards[0].title);
+					}
+				}
+			}
+
 			//first book
+			if (rewards[1].completed === false) {
+				if (stats.numBooksCompleted > 0) {
+					rewards[1].completed = true;
+					rewards[1].earnedDate = formattedDate;
+					if (!recentEarnedRewards.includes(rewards[1].title)) {
+						recentEarnedRewards.push(rewards[1].title);
+					}
+				}
+			}
+			console.log(recentEarnedRewards);
 			//Law
 			//History
 			//Poetry
