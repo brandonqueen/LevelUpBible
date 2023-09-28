@@ -13,7 +13,8 @@ const App = () => {
 				<SafeAreaView
 					style={styles.root}
 					forceInset={{ top: "always", bottom: "never" }}>
-					<RewardsScreen />
+					<InitialStackNavigator/>
+					{/* <RewardsScreen /> */}
 					<StatusBar barStyle="light-content" />
 				</SafeAreaView>
 			</PaperProvider>

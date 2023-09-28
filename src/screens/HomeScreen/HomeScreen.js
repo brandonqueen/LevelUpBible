@@ -2,10 +2,10 @@ import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import graphic from "../../../assets/Images/Logo.png";
 import Reward from "../../components/Reward/Reward";
 import { useSelector } from "react-redux";
-import OTColor from "../../../assets/Images/RewardsIcons/OT-color.png";
 
 const HomeScreen = () => {
-	const userProgress = useSelector((state) => state.userProgress);
+	const userProgress = useSelector((state) => state.globalData);
+	console.log(userProgress);
 	const points = userProgress.stats.totalPoints;
 	const chapters = userProgress.stats.numChaptersCompleted;
 
@@ -39,11 +39,7 @@ const HomeScreen = () => {
 					</Text>
 				</View>
 				<Text style={styles.headers}>REWARDS</Text>
-				<View style={styles.rewardsContainer}>
-					<Reward image={OTColor} title="OLD TESTAMENT" completed={false} />
-					<Reward />
-					<Reward />
-				</View>
+				<View style={styles.rewardsContainer}>{/* Rewards go here! */}</View>
 			</View>
 		</ScrollView>
 	);

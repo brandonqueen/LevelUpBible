@@ -1,4 +1,4 @@
-export const bibleData = [
+export const initialBibleData = [
 	{
 		testamentName: "Old Testament",
 		selected: false,

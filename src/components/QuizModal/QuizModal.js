@@ -11,8 +11,6 @@ import {
 	Pressable,
 } from "react-native";
 import { useDispatch } from "react-redux";
-import { updateProgress } from "../../features/userProgressSlice/userProgressSlice";
-import { setChapterCompleted } from "../../features/bibleSlice/bibleSlice";
 import { BlurView } from "expo-blur";
 import correctImg from "../../../assets/Images/CORRECT!!.png";
 
@@ -25,7 +23,7 @@ const QuizModal = ({
 	bookIndex,
 	chapterIndex,
 	bookName,
-	chapterNum
+	chapterNum,
 }) => {
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [selectedChoiceIndex, setSelectedChoiceIndex] = useState(null);
@@ -93,15 +91,6 @@ const QuizModal = ({
 	};
 
 	const QuizSuccess = () => {
-		dispatch(
-			setChapterCompleted({
-				testamentIndex: testamentIndex,
-				bookIndex: bookIndex,
-				chapterIndex: chapterIndex,
-			})
-		);
-		dispatch(updateProgress({ points: numOfVerses }));
-
 		return (
 			<View>
 				<Text style={[styles.heading, { fontSize: 28 }]}>

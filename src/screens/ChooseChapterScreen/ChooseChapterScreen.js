@@ -13,7 +13,7 @@ import {
 	setBookSelected,
 	setChapterSelected,
 	resetBibleSelection,
-} from "../../features/bibleSlice/bibleSlice";
+} from "../../features/globalData/globalDataSlice";
 import { List } from "react-native-paper";
 import {
 	useNavigation,
@@ -166,7 +166,7 @@ const ChooseChapterScreen = () => {
 		const renderItem = (item) => {
 			return (
 				<Pressable
-					style={{ width: "20%", aspectRatio: 1}}
+					style={{ width: "20%", aspectRatio: 1 }}
 					onPress={() => handleChapterPress(testamentIndex, bookIndex, item)}>
 					<Text
 						style={[styles.chapters, item.completed && { color: "#DFB01C" }]}>

@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { useState, useEffect, useRef } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { setChapterSelected } from "../../features/bibleSlice/bibleSlice";
+import { setChapterSelected } from "../../features/globalData/globalDataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";

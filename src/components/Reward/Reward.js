@@ -1,10 +1,14 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 
-const Reward = ({ image, title, completed }) => {
+const Reward = ({ image, title, complete }) => {
 	return (
 		<View style={styles.container}>
 			<Image style={styles.image} source={image} />
-			<Text style={[styles.text, completed ? null : { color: "rgba(245, 245, 245, .6)" }]}>
+			<Text
+				style={[
+					styles.text,
+					complete ? null : { color: "rgba(245, 245, 245, .6)" },
+				]}>
 				{title}
 			</Text>
 		</View>

@@ -1,9 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { bibleData as initialState } from "./bibleData";
+import initialBibleData from "./initialBibleData";
+import initialUserProgress from "./initialUserProgress";
 
-const bibleSlice = createSlice({
-	name: "bibleData",
-	initialState: initialState,
+const globalDataSlice = createSlice({
+	name: "globalData",
+	initialState: {
+		bibleData: initialBibleData,
+		userProgress: initialUserProgress,
+	},
 	reducers: {
 		setTestamentSelected: (state, action) => {
 			const selectedIndex = action.payload.index;
@@ -80,5 +84,5 @@ export const {
 	setBookSelected,
 	setChapterSelected,
 	resetBibleSelection,
-} = bibleSlice.actions;
-export default bibleSlice.reducer;
+} = globalDataSlice.actions;
+export default globalDataSlice.reducer;

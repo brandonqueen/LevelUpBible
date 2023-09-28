@@ -1,24 +1,6 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 import Reward from "../../components/Reward/Reward";
-import RewardsIcons from "../../../assets/Images/RewardsIcons/RewardsIconsLoader";
-
-console.log(JSON.stringify(RewardsIcons, null, 2));
-
-let rewards = [
-	{
-		title: "First Chapter",
-		complete: false,
-		completeImage: RewardsIcons["Chapter-BW.png"],
-		incompleteImage: RewardsIcons["Chapter-color.png"],
-	},
-	{
-		title: "First Book",
-		complete: false,
-		completeImage: RewardsIcons["Book-BW.png"],
-		incompleteImage: RewardsIcons["Book-color.png"],
-	},
-];
 
 const RewardsScreen = () => {
 	const userProgress = useSelector((state) => state.userProgress);
