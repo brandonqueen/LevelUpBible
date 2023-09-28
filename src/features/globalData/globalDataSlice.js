@@ -13,7 +13,8 @@ const globalDataSlice = createSlice({
 			const selectedIndex = action.payload.index;
 			state.bibleData.map((testament, index) => {
 				if (index === selectedIndex) {
-					return (state.bibleData[index].selected = !state.bibleData[index].selected);
+					return (state.bibleData[index].selected =
+						!state.bibleData[index].selected);
 				} else {
 					return (state.bibleData[index].selected = false);
 				}
@@ -30,7 +31,9 @@ const globalDataSlice = createSlice({
 						state.bibleData[testamentMapIndex].books[bookMapIndex].selected =
 							!state.bibleData[testamentMapIndex].books[bookMapIndex].selected;
 					} else {
-						state.bibleData[testamentMapIndex].books[bookMapIndex].selected = false;
+						state.bibleData[testamentMapIndex].books[
+							bookMapIndex
+						].selected = false;
 					}
 				});
 			});
@@ -48,9 +51,8 @@ const globalDataSlice = createSlice({
 							state.bibleData[testamentMapIndex].books[bookMapIndex].chapters[
 								chapterMapIndex
 							].selected =
-								!state.bibleData[testamentMapIndex].books[bookMapIndex].chapters[
-									chapterMapIndex
-								].selected;
+								!state.bibleData[testamentMapIndex].books[bookMapIndex]
+									.chapters[chapterMapIndex].selected;
 						} else {
 							state.bibleData[testamentMapIndex].books[bookMapIndex].chapters[
 								chapterMapIndex
@@ -76,6 +78,7 @@ const globalDataSlice = createSlice({
 			});
 		},
 		setChapterCompleted: (state, action) => {},
+		updateProgress: (state, action) => {},
 	},
 });
 

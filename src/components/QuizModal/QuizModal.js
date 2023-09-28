@@ -94,7 +94,7 @@ const QuizModal = ({
 		return (
 			<View>
 				<Text style={[styles.heading, { fontSize: 28 }]}>
-					🎊{"    "}HOORAY! 🎊
+					HOORAY! 🥳
 				</Text>
 				<View style={styles.pointsContainer}>
 					<Text style={styles.points}>+{numOfVerses}pts</Text>
@@ -106,15 +106,15 @@ const QuizModal = ({
 							{ textAlign: "center", marginVertical: 16 },
 						]}>
 						You answered all the questions correctly and have added{" "}
-						{numOfVerses} points to your overall score! {"\n\n"} Rejoice! 🥳
+						{numOfVerses} points to your overall score! {"\n\n"} Rejoice! 🙌 🎉
 					</Text>
-					<Text
+					{/* <Text
 						style={[
 							styles.modalQuestionText,
 							{ textAlign: "center", marginVertical: 24, fontWeight: "800" },
 						]}>
 						Click below to exit the quiz.
-					</Text>
+					</Text> */}
 				</View>
 				<View style={styles.bottomButtonsCompleteContainer}>
 					<TouchableHighlight
@@ -200,6 +200,8 @@ const QuizModal = ({
 		}
 		if (answeredCorrectly) {
 			if (currentQuestionIndex + 1 === numberOfQuestions) {
+				//Quiz completed!
+					//dispatch actions as needed here
 				setQuizComplete(true);
 			} else if (currentQuestionIndex + 1 < numberOfQuestions) {
 				setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -375,16 +377,16 @@ const styles = StyleSheet.create({
 	},
 	pointsContainer: {
 		borderWidth: 3,
-		borderRadius: 57.5,
+		borderRadius: 65,
 		borderColor: "#a38b00",
 		padding: 12,
 		margin: 12,
-		width: 115,
-		height: 115,
+		width: 130,
+		height: 130,
 		alignSelf: "center",
 		alignItems: "center",
 		justifyContent: "center",
-		backgroundColor: "rgba(11,14,29, .5)",
+		backgroundColor: "rgba(11,14,29, .6)",
 	},
 	points: {
 		fontWeight: "900",
