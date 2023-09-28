@@ -296,31 +296,41 @@ const BibleScreen = () => {
 								style={[
 									styles.text,
 									{ position: "relative", flex: 1, top: 0, left: 0 },
+									isCurrentChapterCompleted && { color: "rgb(250, 250, 125)" },
 								]}
 								onTextLayout={(event) => onTextLayout(event)}>
 								{response}
 							</Text>
-							{highlightedText == [] ? null : (
+							{!isCurrentChapterCompleted && (highlightedText == [] ? null : (
 								<View
 									style={{ position: "absolute", flex: 1, top: 0, left: 0 }}>
-									<Text
-										style={[styles.text, { color: "rgba(250, 250, 125, .7)" }]}>
+									<Text style={[styles.text, { color: "rgb(250, 250, 125)" }]}>
 										{highlightedText}
 									</Text>
 								</View>
-							)}
+							))}
 						</View>
-						<Pressable
-							onPressIn={handleCompletePressIn}
-							onPress={shouldRenderPressable ? handleModalToggle : null}
-							onPressOut={handleCompletePressOut}
-							style={[
-								styles.completeButtonPressable,
-								completeButtonFinishedStyle,
-								completeButtonPressedIn,
-							]}>
-							<Text style={styles.completeButtonText}>Complete</Text>
-						</Pressable>
+						{isCurrentChapterCompleted ? (
+							<Text
+								style={[
+									styles.completeButtonText,
+									{ color: "#DFB01C", marginBottom: 24, fontSize: 20 },
+								]}>
+								Chapter Completed!
+							</Text>
+						) : (
+							<Pressable
+								onPressIn={handleCompletePressIn}
+								onPress={shouldRenderPressable ? handleModalToggle : null}
+								onPressOut={handleCompletePressOut}
+								style={[
+									styles.completeButtonPressable,
+									completeButtonFinishedStyle,
+									completeButtonPressedIn,
+								]}>
+								<Text style={styles.completeButtonText}>Complete</Text>
+							</Pressable>
+						)}
 						{nextChapterExists && (
 							<TouchableHighlight
 								style={[styles.completeButtonPressable]}

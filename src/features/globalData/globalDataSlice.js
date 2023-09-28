@@ -116,10 +116,10 @@ const globalDataSlice = createSlice({
 
 			//add up chapters completed
 			let completedChaptersCount = 0;
-			BibleData.forEach((testament) => {
+			bibleData.forEach((testament) => {
 				testament.books.forEach((book) => {
 					book.chapters.forEach((chapter) => {
-						if (chapter.completed === "true") {
+						if (chapter.completed === true) {
 							completedChaptersCount++;
 						}
 					});
@@ -129,9 +129,9 @@ const globalDataSlice = createSlice({
 
 			//add up books completed
 			let completedBooksCount = 0;
-			BibleData.forEach((testament) => {
+			bibleData.forEach((testament) => {
 				testament.books.forEach((book) => {
-					if (book.completed === "true") {
+					if (book.completed === true) {
 						completedBooksCount++;
 					}
 				});

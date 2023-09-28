@@ -6,6 +6,7 @@ const HomeScreen = () => {
 	const userProgress = useSelector((state) => state.globalData.userProgress);
 	const points = userProgress.stats.totalPoints;
 	const chapters = userProgress.stats.numChaptersCompleted;
+	const books = userProgress.stats.numBooksCompleted;
 
 	return (
 		<View style={styles.root}>
@@ -21,7 +22,7 @@ const HomeScreen = () => {
 							fontWeight: "800",
 							color: "white",
 							textAlign: "center",
-							margin: 20,
+							margin: 10,
 						}}>
 						You have {points} points
 					</Text>
@@ -31,12 +32,22 @@ const HomeScreen = () => {
 							fontWeight: "800",
 							color: "white",
 							textAlign: "center",
-							margin: 20,
+							margin: 10,
 						}}>
 						You have read {chapters} chapters
 					</Text>
+					<Text
+						style={{
+							fontSize: 20,
+							fontWeight: "800",
+							color: "white",
+							textAlign: "center",
+							margin: 10,
+						}}>
+						You have read {books} books
+					</Text>
 				</View>
-				<Text style={styles.headers}>REWARDS</Text>
+				<Text style={[styles.headers, { marginTop: 20 }]}>REWARDS</Text>
 				<View style={styles.rewardsContainer}>{/* Rewards go here! */}</View>
 			</ScrollView>
 		</View>
@@ -81,6 +92,7 @@ const styles = StyleSheet.create({
 		fontWeight: "900",
 		textAlign: "center",
 		color: "#f5f5f5",
+		marginBottom: 20,
 	},
 });
 

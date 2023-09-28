@@ -206,9 +206,10 @@ const ChooseChapterScreen = () => {
 						//render testaments
 						title={item.testamentName}
 						style={accordionStyle.header}
-						titleStyle={
-							item.selected ? accordionStyle.titleChosen : accordionStyle.title
-						}
+						titleStyle={[
+							item.selected ? accordionStyle.titleChosen : accordionStyle.title,
+							item.completed && { color: "#DFB01C" },
+						]}
 						expanded={item.selected}
 						key={item.testamentName.toString()}
 						onPress={() => handleTestamentPress(index)}
@@ -220,13 +221,17 @@ const ChooseChapterScreen = () => {
 								key={book.bookName.toString()}
 								expanded={book.selected}
 								onPress={() => handleBookPress(index, bookIndex)}
-								style={accordionStyle.header}
+								style={[
+									accordionStyle.header,
+									book.completed && { color: "#DFB01C" },
+								]}
 								right={(props) => (props.isExpanded === false ? null : null)}
-								titleStyle={
+								titleStyle={[
 									book.selected
 										? accordionStyle.titleChosen
-										: accordionStyle.title
-								}>
+										: accordionStyle.title,
+									book.completed && { color: "#DFB01C" },
+								]}>
 								<Chapters
 									bookData={book}
 									testamentIndex={index}
