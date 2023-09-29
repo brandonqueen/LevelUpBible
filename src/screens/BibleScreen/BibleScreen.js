@@ -1,5 +1,6 @@
 import {
 	StyleSheet,
+	Linking,
 	ScrollView,
 	View,
 	Text,
@@ -100,7 +101,9 @@ const BibleScreen = () => {
 
 			setIsLoading(false);
 			const textString = response?.data?.passages.toString();
-			const modifiedText = textString.replace(/\n\s+\n/g, "\n\n");
+			//remove extra line breaks in the text:
+			const noInnerBreaks = textString.replace(/\n\s+\n/g, "\n\n");
+			const modifiedText = noInnerBreaks.replace(/\n+$/, "");
 
 			//superscripting logic
 			function replaceWithSuperscript(inputString) {
@@ -246,6 +249,38 @@ const BibleScreen = () => {
 		}
 	};
 
+	function OpenURLButton({ url }) {
+		const handlePress = async () => {
+			// Check if the device can open the given URL
+			const supported = await Linking.canOpenURL(url);
+
+			if (supported) {
+				// Open the URL
+				await Linking.openURL(url);
+			} else {
+				console.error(`Don't know how to open URL: ${url}`);
+			}
+		};
+
+		return (
+			<Pressable onPress={handlePress}>
+				<Text
+					style={[
+						styles.text,
+						{
+							fontWeight: "700",
+							fontSize: 18,
+							padding: 0,
+							paddingBottom: 30,
+							textAlign: "center",
+						},
+					]}>
+					Learn More
+				</Text>
+			</Pressable>
+		);
+	}
+
 	return (
 		<View style={styles.root}>
 			<View style={styles.header}>
@@ -295,51 +330,67 @@ const BibleScreen = () => {
 							<Text
 								style={[
 									styles.text,
-									{ position: "relative", flex: 1, top: 0, left: 0 },
+									{ position: "relative", top: 0, left: 0 },
 									isCurrentChapterCompleted && { color: "rgb(250, 250, 125)" },
 								]}
 								onTextLayout={(event) => onTextLayout(event)}>
 								{response}
 							</Text>
-							{!isCurrentChapterCompleted && (highlightedText == [] ? null : (
-								<View
-									style={{ position: "absolute", flex: 1, top: 0, left: 0 }}>
-									<Text style={[styles.text, { color: "rgb(250, 250, 125)" }]}>
-										{highlightedText}
-									</Text>
-								</View>
-							))}
+							{!isCurrentChapterCompleted &&
+								(highlightedText == [] ? null : (
+									<View style={{ position: "absolute", top: 0, left: 0 }}>
+										<Text
+											style={[styles.text, { color: "rgb(250, 250, 125)" }]}>
+											{highlightedText}
+										</Text>
+									</View>
+								))}
 						</View>
-						{isCurrentChapterCompleted ? (
+						<View>
 							<Text
-								style={[
-									styles.completeButtonText,
-									{ color: "#DFB01C", marginBottom: 24, fontSize: 20 },
-								]}>
-								Chapter Completed!
+								style={{
+									color: "grey",
+									textAlign: "center",
+									fontSize: 12,
+									padding: 8,
+								}}>
+								ESV brought to you by Crossway / Good News Publishers {"\n"}The
+								Holy Bible, English Standard Version®(ESV®), copyright © 2001
+								by Crossway, a publishing ministry of Good News Publishers. Sign
+								up to receive news and updates about the ESV:
 							</Text>
-						) : (
-							<Pressable
-								onPressIn={handleCompletePressIn}
-								onPress={shouldRenderPressable ? handleModalToggle : null}
-								onPressOut={handleCompletePressOut}
-								style={[
-									styles.completeButtonPressable,
-									completeButtonFinishedStyle,
-									completeButtonPressedIn,
-								]}>
-								<Text style={styles.completeButtonText}>Complete</Text>
-							</Pressable>
-						)}
-						{nextChapterExists && (
-							<TouchableHighlight
-								style={[styles.completeButtonPressable]}
-								activeOpacity={0.8}
-								underlayColor="#695DDA"
-								onPress={handleNextChapterPress}>
-								<Text style={styles.completeButtonText}>Next Chapter</Text>
-							</TouchableHighlight>
-						)}
+							<OpenURLButton url="https://mailchi.mp/23d38157d688/dfka2d5wyd" />
+							{isCurrentChapterCompleted ? (
+								<Text
+									style={[
+										styles.completeButtonText,
+										{ color: "#DFB01C", marginBottom: 24, fontSize: 20 },
+									]}>
+									Chapter Completed!
+								</Text>
+							) : (
+								<Pressable
+									onPressIn={handleCompletePressIn}
+									onPress={shouldRenderPressable ? handleModalToggle : null}
+									onPressOut={handleCompletePressOut}
+									style={[
+										styles.completeButtonPressable,
+										completeButtonFinishedStyle,
+										completeButtonPressedIn,
+									]}>
+									<Text style={styles.completeButtonText}>Take Quiz</Text>
+								</Pressable>
+							)}
+							{nextChapterExists && (
+								<TouchableHighlight
+									style={[styles.completeButtonPressable]}
+									activeOpacity={0.8}
+									underlayColor="#695DDA"
+									onPress={handleNextChapterPress}>
+									<Text style={styles.completeButtonText}>Next Chapter</Text>
+								</TouchableHighlight>
+							)}
+						</View>
 					</ScrollView>
 				)}
 			</View>
@@ -411,7 +462,7 @@ const styles = StyleSheet.create({
 		fontWeight: "800",
 	},
 	completeButtonPressable: {
-		marginBottom: 50,
+		marginBottom: 30,
 		borderRadius: 12,
 		borderStyle: "solid",
 		borderWidth: 2,
