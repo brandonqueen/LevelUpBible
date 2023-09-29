@@ -28,7 +28,7 @@ const initialUserProgress = {
 			completed: false,
 			imageBW: RewardsIcons["law-BW.png"],
 			imageColor: RewardsIcons["law-color.png"],
-			description: `Earned after completing the Law or "Torah", the first five books of the Old Testament: Genesis, Exodus, Leviticus, Numbers, and Deuteronomy.`,
+			description: `Earned after completing the Law or "Torah", the first five books of the Old Testament:  Genesis, Exodus, Leviticus, Numbers, and Deuteronomy.`,
 			earnedDate: "",
 		},
 		{
@@ -36,7 +36,7 @@ const initialUserProgress = {
 			completed: false,
 			imageBW: RewardsIcons["history-BW.png"],
 			imageColor: RewardsIcons["history-color.png"],
-			description: `Earned after completing the history books of the Old Testament: Joshua, Judges, 1 Samuel, 2 Samuel, 1 Kings, and 2 Kings.`,
+			description: `Earned after completing the history books of the Old Testament:  Joshua, Judges, 1 Samuel, 2 Samuel, 1 Kings, and 2 Kings.`,
 			earnedDate: "",
 		},
 		{
@@ -44,7 +44,7 @@ const initialUserProgress = {
 			completed: false,
 			imageBW: RewardsIcons["poetry-BW.png"],
 			imageColor: RewardsIcons["poetry-color.png"],
-			description: `Earned after completing the poetry books of the Old Testament: Job, Psalms, Proverbs, Ecclesiastes, and Song of Solomon.`,
+			description: `Earned after completing the poetry books of the Old Testament:  Job, Psalms, Proverbs, Ecclesiastes, and Song of Solomon.`,
 			earnedDate: "",
 		},
 		{
@@ -52,7 +52,7 @@ const initialUserProgress = {
 			completed: false,
 			imageBW: RewardsIcons["major-prophets-BW.png"],
 			imageColor: RewardsIcons["major-prophets-color.png"],
-			description: `Earned after completing the Old Testament's collection of longer prophetical writings: Isaiah, Jeremiah, Lamentations, Ezekiel, and Daniel.`,
+			description: `Earned after completing the Old Testament's collection of longer prophetical writings:  Isaiah, Jeremiah, Lamentations, Ezekiel, and Daniel.`,
 			earnedDate: "",
 		},
 		{
@@ -60,7 +60,7 @@ const initialUserProgress = {
 			completed: false,
 			imageBW: RewardsIcons["minor-prophets-BW.png"],
 			imageColor: RewardsIcons["minor-prophets-color.png"],
-			description: `Earned after completing the Old Testament's collection of shorter prophetical writings: Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi.`,
+			description: `Earned after completing the Old Testament's collection of shorter prophetical writings:  Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi.`,
 			earnedDate: "",
 		},
 		{
@@ -76,7 +76,7 @@ const initialUserProgress = {
 			completed: false,
 			imageBW: RewardsIcons["gospels-BW.png"],
 			imageColor: RewardsIcons["gospels-color.png"],
-			description: `Earned after completing the four books of the New Testament's gospel account: Matthew, Mark, Luke, and John.`,
+			description: `Earned after completing the four books of the New Testament's gospel account:  Matthew, Mark, Luke, and John.`,
 			earnedDate: "",
 		},
 		{
@@ -84,7 +84,7 @@ const initialUserProgress = {
 			completed: false,
 			imageBW: RewardsIcons["pauline-epistles-BW.png"],
 			imageColor: RewardsIcons["pauline-epistles-color.png"],
-			description: `Earned after completing all the letters from the Apostle Paul in the New Testament: Romans, 1 & 2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1 & 2 Thessalonians, 1 & 2 Timothy, Titus, and Philemon.`,
+			description: `Earned after completing all the letters from the Apostle Paul in the New Testament:  Romans, 1 & 2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1 & 2 Thessalonians, 1 & 2 Timothy, Titus, and Philemon.`,
 			earnedDate: "",
 		},
 		{

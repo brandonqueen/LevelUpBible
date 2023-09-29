@@ -52,7 +52,7 @@ const RewardsScreen = () => {
 					<TouchableHighlight
 						style={[styles.modalButton]}
 						activeOpacity={1}
-						underlayColor="#695DDA"
+						underlayColor="#5d67da"
 						onPress={modalToggle}>
 						<Text style={styles.modalButtonText}>Close</Text>
 					</TouchableHighlight>

@@ -110,19 +110,18 @@ const globalDataSlice = createSlice({
 			const rewards = state.userProgress.rewards;
 			const recentEarnedRewards = state.userProgress.recentEarnedRewards;
 
-			const currentDate = new Date();
-
 			// Get the individual components of the date (month, day, year)
+			const currentDate = new Date();
 			const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
 			const day = String(currentDate.getDate()).padStart(2, "0");
 			const year = String(currentDate.getFullYear()).slice(-2); // Get the last two digits of the year
-
 			// Combine the components into MM/DD/YY format
 			const formattedDate = `${month}/${day}/${year}`;
 
 			/*  
 			~~~ update stats ~~~
 			*/
+
 			//add new points to total
 			stats.totalPoints += points;
 
@@ -149,6 +148,7 @@ const globalDataSlice = createSlice({
 				});
 			});
 			stats.numBooksCompleted = completedBooksCount;
+
 			/*  
 			~~~ update rewards ~~~
 			*/
@@ -174,7 +174,6 @@ const globalDataSlice = createSlice({
 					}
 				}
 			}
-			console.log(recentEarnedRewards);
 			//Law
 			//History
 			//Poetry
