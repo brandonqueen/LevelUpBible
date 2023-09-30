@@ -74,7 +74,7 @@ const initialUserProgress = {
 		},
 		{
 			title: "Gospels",
-			completed: true,
+			completed: false,
 			imageBW: RewardsIcons["gospels-BW.png"],
 			imageColor: RewardsIcons["gospels-color.png"],
 			description: `Earned after completing the four books of the New Testament's gospel account:  Matthew, Mark, Luke, and John.`,
@@ -105,7 +105,7 @@ const initialUserProgress = {
 			earnedDate: "",
 		},
 	],
-	recentEarnedRewards: ["Paul's Letters", "Gospels"],
+	recentEarnedRewards: ["Paul's Letters"],
 };
 
 export default initialUserProgress;

@@ -237,9 +237,9 @@ const styles = StyleSheet.create({
 		width: "95%",
 		flex: 1,
 		flexDirection: "column",
-		borderWidth: 3,
+		borderWidth: 2,
 		borderRadius: 20,
-		borderColor: "#428799",
+		borderColor: "grey",
 		backgroundColor: "rgba(11,14,29, .7)",
 	},
 	viewMore: {
