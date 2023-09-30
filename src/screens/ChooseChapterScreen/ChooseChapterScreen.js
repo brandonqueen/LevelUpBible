@@ -183,6 +183,7 @@ const ChooseChapterScreen = () => {
 				<View style={styles.chapterNumRow}>
 					<FlatList
 						data={chapters}
+						showsVerticalScrollIndicator={false}
 						keyExtractor={(item, index) => item.chapter.toString()}
 						renderItem={({ item }) => {
 							return renderItem(item);
@@ -200,6 +201,7 @@ const ChooseChapterScreen = () => {
 			<Header />
 			<FlatList
 				data={bibleState}
+				showsVerticalScrollIndicator={false}
 				keyExtractor={(item, index) => index.toString()}
 				renderItem={({ item, index }) => (
 					<List.Accordion

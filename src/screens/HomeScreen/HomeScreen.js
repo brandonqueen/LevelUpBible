@@ -5,7 +5,6 @@ import {
 	Image,
 	ScrollView,
 	TouchableOpacity,
-	Pressable,
 	FlatList,
 } from "react-native";
 import graphic from "../../../assets/Images/Logo.png";
@@ -35,19 +34,15 @@ const HomeScreen = () => {
 
 	const RewardsRender = () => {
 		if (recentEarnedRewards.length < 1) {
-			return (
-				<Pressable>
-					<Reward reward={rewards[0]} />
-				</Pressable>
-			);
+			return <Reward reward={rewards[0]} />;
 		} else {
 			const reversedArray = recentEarnedRewards.slice().reverse();
 			const rewardRender = (item) => {
 				const rewardIndex = rewards.findIndex((obj) => obj.title === item);
 				return (
-					<Pressable style={{ marginHorizontal: 10 }}>
+					<View style={{ marginHorizontal: 10 }}>
 						<Reward reward={rewards[rewardIndex]} />
-					</Pressable>
+					</View>
 				);
 			};
 			return (
@@ -235,11 +230,11 @@ const styles = StyleSheet.create({
 	},
 	rewardsContainer: {
 		width: "95%",
-		flex: 1,
+		flex: 0.95,
 		flexDirection: "column",
 		borderWidth: 2,
 		borderRadius: 20,
-		borderColor: "grey",
+		borderColor: "#a38b00",
 		backgroundColor: "rgba(11,14,29, .7)",
 	},
 	viewMore: {

@@ -18,56 +18,12 @@ const RewardsScreen = () => {
 	const rewardsData = userProgress.rewards;
 
 	//local state
-	const [descriptionModalOpen, setDescriptionModalOpen] = useState(false);
-	const [modalReward, setModalReward] = useState(null);
-
-	function openDescription(reward) {
-		setDescriptionModalOpen(true);
-		setModalReward(reward);
-	}
-
-	function modalToggle() {
-		setDescriptionModalOpen(!descriptionModalOpen);
-	}
-
-	const DescriptionModal = () => {
-		return (
-			<ModalPopup
-				modalOpen={descriptionModalOpen}
-				modalToggle={() => modalToggle()}>
-				<ScrollView contentContainerStyle={styles.modalContent}>
-					<Text style={styles.modalHeader}>{modalReward.title}</Text>
-					<Image
-						style={styles.modalRewardImage}
-						source={modalReward.imageColor}
-					/>
-					<Text style={styles.modalRewardDescription}>
-						{modalReward.description}
-					</Text>
-					{modalReward.completed && (
-						<Text style={styles.modalRewardEarned}>
-							Earned on {modalReward.earnedDate}
-						</Text>
-					)}
-					<TouchableHighlight
-						style={[styles.modalButton]}
-						activeOpacity={1}
-						underlayColor="#5d67da"
-						onPress={modalToggle}>
-						<Text style={styles.modalButtonText}>Close</Text>
-					</TouchableHighlight>
-				</ScrollView>
-			</ModalPopup>
-		);
-	};
-
 	const rewardRender = (item) => {
 		return (
 			<View style={styles.rewardContainer}>
 				<Reward
 					style={{ alignItems: "center", justifyContent: "center" }}
 					reward={item}
-					openDescription={() => openDescription(item)}
 				/>
 			</View>
 		);
@@ -85,7 +41,6 @@ const RewardsScreen = () => {
 					return rewardRender(item);
 				}}
 			/>
-			{descriptionModalOpen && <DescriptionModal />}
 		</View>
 	);
 };
