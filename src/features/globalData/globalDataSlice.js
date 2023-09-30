@@ -105,10 +105,10 @@ const globalDataSlice = createSlice({
 		},
 		updateProgress: (state, action) => {
 			const { points } = action.payload;
-			const bibleData = state.bibleData;
-			const stats = state.userProgress.stats;
-			const rewards = state.userProgress.rewards;
-			const recentEarnedRewards = state.userProgress.recentEarnedRewards;
+			const { bibleData } = state;
+			const { stats } = state.userProgress;
+			const { rewards } = state.userProgress;
+			const { recentEarnedRewards } = state.userProgress;
 
 			// Get the individual components of the date (month, day, year)
 			const currentDate = new Date();
@@ -118,9 +118,15 @@ const globalDataSlice = createSlice({
 			// Combine the components into MM/DD/YY format
 			const formattedDate = `${month}/${day}/${year}`;
 
-			/*  
-			~~~ update stats ~~~
+			//////////////
+			//////////////
+
+			/*
+			~~~ update STATS ~~~
 			*/
+
+			//////////////
+			//////////////
 
 			//add new points to total
 			stats.totalPoints += points;
@@ -149,18 +155,52 @@ const globalDataSlice = createSlice({
 			});
 			stats.numBooksCompleted = completedBooksCount;
 
-			/*  
-			~~~ update rewards ~~~
+			//////////////
+			//////////////
+
+			/*
+			~~~ update REWARDS ~~~
 			*/
+
+			//////////////
+			//////////////
+
+			//push reward to recent earned rewards array
+			function pushRewardToRecents(rewardIndex) {
+				if (!recentEarnedRewards.includes(rewards[rewardIndex].title)) {
+					recentEarnedRewards.push(rewards[rewardIndex].title);
+				}
+			}
+
+			//section rewards update function
+			function updateSectionRewards(
+				bookNamesArray,
+				rewardIndex,
+				testamentIndex
+			) {
+				if (rewards[rewardIndex].completed === false) {
+					const sectionArray = bibleData[testamentIndex].books.filter((book) =>
+						bookNamesArray.includes(book.bookName)
+					);
+
+					const isSectionCompleted = sectionArray.every(
+						(book) => book.completed === true
+					);
+
+					if (isSectionCompleted) {
+						rewards[rewardIndex].completed = true;
+						rewards[rewardIndex].earnedDate = formattedDate;
+						pushRewardToRecents(rewardIndex);
+					}
+				}
+			}
 
 			//check first chapter reward, index: [0]
 			if (rewards[0].completed === false) {
 				if (stats.numChaptersCompleted > 0) {
 					rewards[0].completed = true;
 					rewards[0].earnedDate = formattedDate;
-					if (!recentEarnedRewards.includes(rewards[0].title)) {
-						recentEarnedRewards.push(rewards[0].title);
-					}
+					pushRewardToRecents(0);
 				}
 			}
 
@@ -170,207 +210,111 @@ const globalDataSlice = createSlice({
 				if (stats.numBooksCompleted > 0) {
 					rewards[1].completed = true;
 					rewards[1].earnedDate = formattedDate;
-					if (!recentEarnedRewards.includes(rewards[1].title)) {
-						recentEarnedRewards.push(rewards[1].title);
-					}
+					pushRewardToRecents(1);
 				}
 			}
 			//check Law reward, index [2]
-
-			if (rewards[2].completed === false) {
-				const torahNames = [
-					"Genesis",
-					"Exodus",
-					"Leviticus",
-					"Numbers",
-					"Deuteronomy",
-				];
-				const torahBooksArray = bibleData[0].books.filter((book) =>
-					torahNames.includes(book.bookName)
-				);
-
-				const isTorahCompleted = torahBooksArray.every(
-					(book) => book.completed === true
-				);
-				if (isTorahCompleted) {
-					rewards[2].completed = true;
-					if (!recentEarnedRewards.includes(rewards[2].title)) {
-						recentEarnedRewards.push(rewards[2].title);
-					}
-				}
-			}
+			const torahBookNames = [
+				"Genesis",
+				"Exodus",
+				"Leviticus",
+				"Numbers",
+				"Deuteronomy",
+			];
+			const lawRewardIndex = 2;
+			updateSectionRewards(torahBookNames, lawRewardIndex, 0);
 
 			//check History reward, index [3]
-			if (rewards[3].completed === false) {
-				const historyNames = [
-					"Joshua",
-					"Judges",
-					"1 Samuel",
-					"2 Samuel",
-					"1 Kings",
-					"2 Kings",
-				];
-				const historyBooksArray = bibleData[0].books.filter((book) =>
-					historyNames.includes(book.bookName)
-				);
-
-				const isHistoryCompleted = historyBooksArray.every(
-					(book) => book.completed === true
-				);
-				if (isHistoryCompleted) {
-					rewards[3].completed = true;
-					if (!recentEarnedRewards.includes(rewards[3].title)) {
-						recentEarnedRewards.push(rewards[3].title);
-					}
-				}
-			}
+			const historyBookNames = [
+				"Joshua",
+				"Judges",
+				"1 Samuel",
+				"2 Samuel",
+				"1 Kings",
+				"2 Kings",
+			];
+			const historyRewardIndex = 3;
+			updateSectionRewards(historyBookNames, historyRewardIndex, 0);
 
 			//check Poetry reward, index [4]
-			if (rewards[4].completed === false) {
-				const poetryNames = [
-					"Job",
-					"Psalms",
-					"Proverbs",
-					"Ecclesiastes",
-					"Song of Solomon",
-				];
-				const poetryBooksArray = bibleData[0].books.filter((book) =>
-					poetryNames.includes(book.bookName)
-				);
-
-				const isPoetryCompleted = poetryBooksArray.every(
-					(book) => book.completed === true
-				);
-				if (isPoetryCompleted) {
-					rewards[4].completed = true;
-					if (!recentEarnedRewards.includes(rewards[4].title)) {
-						recentEarnedRewards.push(rewards[4].title);
-					}
-				}
-			}
+			const poetryBookNames = [
+				"Job",
+				"Psalms",
+				"Proverbs",
+				"Ecclesiastes",
+				"Song of Solomon",
+			];
+			const poetryRewardIndex = 4;
+			updateSectionRewards(poetryBookNames, poetryRewardIndex, 0);
 
 			//check Major Prophets reward, index [5]
-			if (rewards[5].completed === false) {
-				const majorProphetsNames = [
-					"Isaiah",
-					"Jeremiah",
-					"Lamentations",
-					"Ezekiel",
-					"Daniel",
-				];
-				const majorProphetsBooksArray = bibleData[0].books.filter((book) =>
-					majorProphetsNames.includes(book.bookName)
-				);
-
-				const isMajorProphetsCompleted = majorProphetsBooksArray.every(
-					(book) => book.completed === true
-				);
-				if (isMajorProphetsCompleted) {
-					rewards[5].completed = true;
-					if (!recentEarnedRewards.includes(rewards[5].title)) {
-						recentEarnedRewards.push(rewards[5].title);
-					}
-				}
-			}
+			const majorProphetsBookNames = [
+				"Isaiah",
+				"Jeremiah",
+				"Lamentations",
+				"Ezekiel",
+				"Daniel",
+			];
+			const majorProphetsRewardIndex = 5;
+			updateSectionRewards(majorProphetsBookNames, majorProphetsRewardIndex, 0);
 
 			//check Minor Prophets reward, index [6]
-			if (rewards[6].completed === false) {
-				const minorProphetsNames = [
-					"Hosea",
-					"Joel",
-					"Amos",
-					"Obadiah",
-					"Jonah",
-					"Micah",
-					"Nahum",
-					"Habakkuk",
-					"Zephaniah",
-					"Haggai",
-					"Zechariah",
-					"Malachi",
-				];
-				const minorProphetsBooksArray = bibleData[0].books.filter((book) =>
-					minorProphetsNames.includes(book.bookName)
-				);
-
-				const isMinorProphetsCompleted = minorProphetsBooksArray.every(
-					(book) => book.completed === true
-				);
-				if (isMinorProphetsCompleted) {
-					rewards[6].completed = true;
-					if (!recentEarnedRewards.includes(rewards[6].title)) {
-						recentEarnedRewards.push(rewards[6].title);
-					}
-				}
-			}
+			const minorProphetsBookNames = [
+				"Hosea",
+				"Joel",
+				"Amos",
+				"Obadiah",
+				"Jonah",
+				"Micah",
+				"Nahum",
+				"Habakkuk",
+				"Zephaniah",
+				"Haggai",
+				"Zechariah",
+				"Malachi",
+			];
+			const minorProphetsRewardIndex = 6;
+			updateSectionRewards(minorProphetsBookNames, minorProphetsRewardIndex, 0);
 
 			//check Old Testament reward, index [7]
 			if (rewards[7].completed === false) {
 				if (bibleData[0].completed) {
 					rewards[7].completed = true;
-					if (!recentEarnedRewards.includes(rewards[7].title)) {
-						recentEarnedRewards.push(rewards[7].title);
-					}
+					rewards[7].earnedDate = formattedDate;
+					pushRewardToRecents(7);
 				}
 			}
 
 			//check Gospels reward, index [8]
-			if (rewards[8].completed === false) {
-				const gospelsNames = ["Matthew", "Mark", "Luke", "John"];
-				const gospelsBooksArray = bibleData[1].books.filter((book) =>
-					gospelsNames.includes(book.bookName)
-				);
-
-				const isGospelsCompleted = gospelsBooksArray.every(
-					(book) => book.completed === true
-				);
-				if (isGospelsCompleted) {
-					rewards[8].completed = true;
-					if (!recentEarnedRewards.includes(rewards[8].title)) {
-						recentEarnedRewards.push(rewards[8].title);
-					}
-				}
-			}
+			const gospelsBookNames = ["Matthew", "Mark", "Luke", "John"];
+			const gospelsRewardIndex = 8;
+			updateSectionRewards(gospelsBookNames, gospelsRewardIndex, 1);
 
 			//check Paul's Letters reward, index [9]
-			if (rewards[9].completed === false) {
-				const paulsLettersNames = [
-					"Romans",
-					"1 Corinthians",
-					"2 Corinthians",
-					"Galatians",
-					"Ephesians",
-					"Philippians",
-					"Colossians",
-					"1 Thessalonians",
-					"2 Thessalonians",
-					"1 Timothy",
-					"2 Timothy",
-					"Titus",
-					"Philemon",
-				];
-				const paulsLettersBooksArray = bibleData[1].books.filter((book) =>
-					paulsLettersNames.includes(book.bookName)
-				);
-
-				const isPaulsLettersCompleted = paulsLettersBooksArray.every(
-					(book) => book.completed === true
-				);
-				if (isPaulsLettersCompleted) {
-					rewards[9].completed = true;
-					if (!recentEarnedRewards.includes(rewards[9].title)) {
-						recentEarnedRewards.push(rewards[9].title);
-					}
-				}
-			}
+			const paulsLettersBookNames = [
+				"Romans",
+				"1 Corinthians",
+				"2 Corinthians",
+				"Galatians",
+				"Ephesians",
+				"Philippians",
+				"Colossians",
+				"1 Thessalonians",
+				"2 Thessalonians",
+				"1 Timothy",
+				"2 Timothy",
+				"Titus",
+				"Philemon",
+			];
+			const paulsLettersIndex = 9;
+			updateSectionRewards(paulsLettersBookNames, paulsLettersIndex, 1);
 
 			//check New Testament reward, index [10]
 			if (rewards[10].completed === false) {
 				if (bibleData[1].completed) {
 					rewards[10].completed = true;
-					if (!recentEarnedRewards.includes(rewards[10].title)) {
-						recentEarnedRewards.push(rewards[10].title);
-					}
+					rewards[10].earnedDate = formattedDate;
+					pushRewardToRecents(10);
 				}
 			}
 
@@ -378,9 +322,8 @@ const globalDataSlice = createSlice({
 			if (rewards[11].completed === false) {
 				if (bibleData[0].completed && bibleData[1].completed) {
 					rewards[11].completed = true;
-					if (!recentEarnedRewards.includes(rewards[11].title)) {
-						recentEarnedRewards.push(rewards[11].title);
-					}
+					rewards[11].earnedDate = formattedDate;
+					pushRewardToRecents(11);
 				}
 			}
 		},
