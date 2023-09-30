@@ -5,7 +5,7 @@ import RewardsScreen from "../screens/RewardsScreen/RewardsScreen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import BibleStack from "./BibleStack";
-import ProfileStack from "./ProfileStack";
+import SettingsScreen from "../screens/SettingsScreen/SettingsScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -54,8 +54,8 @@ function BottomTabs() {
 					}}
 				/>
 				<Tab.Screen
-					name="PROFILE"
-					component={ProfileStack}
+					name="SETTINGS"
+					component={SettingsScreen}
 					options={{
 						tabBarIcon: ({ color, size }) => (
 							<FontAwesome name="user" size={size} color={color} />
