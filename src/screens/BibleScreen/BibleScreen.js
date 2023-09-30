@@ -11,7 +11,11 @@ import {
 } from "react-native";
 import { useState, useEffect, useRef } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { setChapterSelected } from "../../features/globalData/globalDataSlice";
+import {
+	setChapterSelected,
+	setChapterCompleted,
+	updateProgress,
+} from "../../features/globalData/globalDataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
@@ -281,6 +285,21 @@ const BibleScreen = () => {
 		);
 	}
 
+	const devCompleteChapter = () => {
+		dispatch(
+			setChapterCompleted({
+				testamentIndex: testamentIndex,
+				bookIndex: bookIndex,
+				chapterIndex: chapterIndex,
+			})
+		);
+		dispatch(
+			updateProgress({
+				points: numOfVerses,
+			})
+		);
+	};
+
 	return (
 		<View style={styles.root}>
 			<View style={styles.header}>
@@ -371,7 +390,8 @@ const BibleScreen = () => {
 							) : (
 								<Pressable
 									onPressIn={handleCompletePressIn}
-									onPress={shouldRenderPressable ? handleModalToggle : null}
+									//onPress={shouldRenderPressable ? handleModalToggle : null}
+									onPress={devCompleteChapter}
 									onPressOut={handleCompletePressOut}
 									style={[
 										styles.completeButtonPressable,
