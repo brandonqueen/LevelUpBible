@@ -39,7 +39,11 @@ const HomeScreen = () => {
 				const reversedArray = recentEarnedRewards.slice().reverse();
 				return reversedArray.map((recentReward) => {
 					const index = rewards.findIndex((obj) => obj.title === recentReward);
-					return <Reward reward={rewards[index]} />;
+					return (
+						<Pressable>
+							<Reward reward={rewards[index]} />
+						</Pressable>
+					);
 				});
 			} else {
 				const reversedTrimmedArray = recentEarnedRewards.slice(-3).reverse();
@@ -65,7 +69,7 @@ const HomeScreen = () => {
 						activeOpacity={0.7}>
 						<Text style={styles.pointsText}>
 							{points}
-							{"\n"}points
+							{"\n"}POINTS
 						</Text>
 					</TouchableOpacity>
 					<View style={styles.percentageContainer}>
@@ -81,11 +85,12 @@ const HomeScreen = () => {
 								shadowColor="#393091"
 								bgColor="rgb(11,14,29)">
 								<Text style={styles.chapterPercentageText}>
-									{chapters}
-									{"\n"}/ 1,189
+									{chapterPercentage}%
 								</Text>
 							</ProgressCircle>
-							<Text style={styles.chapterUnderText}>Chapters</Text>
+							<Text style={styles.chapterUnderText}>
+								{chapters} / 1,189{"\n"}Chapters
+							</Text>
 						</TouchableOpacity>
 						<TouchableOpacity
 							style={{ flexDirection: "column", alignItems: "center" }}
@@ -98,9 +103,11 @@ const HomeScreen = () => {
 								color="#ff383b"
 								shadowColor="#7d191b"
 								bgColor="rgb(11,14,29)">
-								<Text style={styles.bookPercentageText}>{books} / 66</Text>
+								<Text style={styles.bookPercentageText}>{bookPercentage}%</Text>
 							</ProgressCircle>
-							<Text style={styles.bookUnderText}>Books</Text>
+							<Text style={styles.bookUnderText}>
+								{books} / 66{"\n"}Books
+							</Text>
 						</TouchableOpacity>
 					</View>
 				</View>
@@ -170,12 +177,12 @@ const styles = StyleSheet.create({
 		marginBottom: 10,
 	},
 	pointsContainer: {
-		height: 120,
-		width: 120,
+		height: 80,
+		width: 160,
 		borderWidth: 3,
-		borderRadius: 60,
+		borderRadius: 80,
 		borderColor: "#a38b00",
-		marginTop: 8,
+		margin: 8,
 		alignSelf: "center",
 		alignItems: "center",
 		justifyContent: "center",

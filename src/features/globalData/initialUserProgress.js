@@ -1,3 +1,4 @@
+import { onTouchMoveCapture } from "deprecated-react-native-prop-types/DeprecatedViewPropTypes";
 import RewardsIcons from "../../../assets/Images/RewardsIconsLoader";
 
 const initialUserProgress = {
@@ -73,19 +74,19 @@ const initialUserProgress = {
 		},
 		{
 			title: "Gospels",
-			completed: false,
+			completed: true,
 			imageBW: RewardsIcons["gospels-BW.png"],
 			imageColor: RewardsIcons["gospels-color.png"],
 			description: `Earned after completing the four books of the New Testament's gospel account:  Matthew, Mark, Luke, and John.`,
-			earnedDate: "",
+			earnedDate: "9/30/23",
 		},
 		{
 			title: "Paul's Letters",
-			completed: false,
+			completed: true,
 			imageBW: RewardsIcons["pauline-epistles-BW.png"],
 			imageColor: RewardsIcons["pauline-epistles-color.png"],
 			description: `Earned after completing all the letters from the Apostle Paul in the New Testament:  Romans, 1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1 Thessalonians, 2 Thessalonians, 1 Timothy, 2 Timothy, Titus, and Philemon.`,
-			earnedDate: "",
+			earnedDate: "9/30/23",
 		},
 		{
 			title: "New Testament",
@@ -104,7 +105,7 @@ const initialUserProgress = {
 			earnedDate: "",
 		},
 	],
-	recentEarnedRewards: [],
+	recentEarnedRewards: ["Paul's Letters", "Gospels"],
 };
 
 export default initialUserProgress;
