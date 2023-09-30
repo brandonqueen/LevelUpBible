@@ -96,7 +96,7 @@ const initialUserProgress = {
 			earnedDate: "",
 		},
 		{
-			title: "Whole Bile",
+			title: "Whole Bible",
 			completed: false,
 			imageBW: RewardsIcons["WholeBible-BW.png"],
 			imageColor: RewardsIcons["WholeBible-color.png"],
