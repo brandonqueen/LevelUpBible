@@ -82,7 +82,7 @@ const initialUserProgress = {
 		},
 		{
 			title: "Paul's Letters",
-			completed: true,
+			completed: false,
 			imageBW: RewardsIcons["pauline-epistles-BW.png"],
 			imageColor: RewardsIcons["pauline-epistles-color.png"],
 			description: `Earned after completing all the letters from the Apostle Paul in the New Testament:  Romans, 1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1 Thessalonians, 2 Thessalonians, 1 Timothy, 2 Timothy, Titus, and Philemon.`,
@@ -105,7 +105,7 @@ const initialUserProgress = {
 			earnedDate: "",
 		},
 	],
-	recentEarnedRewards: ["Paul's Letters"],
+	recentEarnedRewards: [],
 };
 
 export default initialUserProgress;

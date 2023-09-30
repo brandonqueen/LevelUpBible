@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
 		color: "#7162fc",
 		textAlign: "center",
 		padding: 8,
-		letterSpacing: 0.9,
+		letterSpacing: 0.1,
 	},
 	bookPercentageText: {
 		fontWeight: "900",
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
 		color: "#db3537",
 		textAlign: "center",
 		padding: 8,
-		letterSpacing: 0.8,
+		letterSpacing: 0.1,
 	},
 	rewardsContainer: {
 		width: "95%",
