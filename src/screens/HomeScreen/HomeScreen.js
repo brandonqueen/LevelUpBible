@@ -5,6 +5,8 @@ import {
 	Image,
 	ScrollView,
 	TouchableOpacity,
+	Pressable,
+	FlatList,
 } from "react-native";
 import graphic from "../../../assets/Images/Logo.png";
 import { useSelector } from "react-redux";
@@ -33,25 +35,35 @@ const HomeScreen = () => {
 
 	const RewardsRender = () => {
 		if (recentEarnedRewards.length < 1) {
-			return <Reward reward={rewards[0]} />;
+			return (
+				<Pressable>
+					<Reward reward={rewards[0]} />
+				</Pressable>
+			);
 		} else {
-			if (recentEarnedRewards.length <= 3) {
-				const reversedArray = recentEarnedRewards.slice().reverse();
-				return reversedArray.map((recentReward) => {
-					const index = rewards.findIndex((obj) => obj.title === recentReward);
-					return (
-						<Pressable>
-							<Reward reward={rewards[index]} />
-						</Pressable>
-					);
-				});
-			} else {
-				const reversedTrimmedArray = recentEarnedRewards.slice(-3).reverse();
-				return reversedTrimmedArray.map((recentReward) => {
-					const index = rewards.findIndex((obj) => obj.title === recentReward);
-					return <Reward reward={rewards[index]} />;
-				});
-			}
+			const reversedArray = recentEarnedRewards.slice().reverse();
+			const rewardRender = (item) => {
+				const rewardIndex = rewards.findIndex((obj) => obj.title === item);
+				return (
+					<Pressable style={{ marginHorizontal: 10 }}>
+						<Reward reward={rewards[rewardIndex]} />
+					</Pressable>
+				);
+			};
+			return (
+				<FlatList
+					contentContainerStyle={{
+						flex: 0,
+						minWidth: "100%",
+						justifyContent: "space-evenly",
+						padding: 16,
+					}}
+					horizontal={true}
+					data={reversedArray}
+					keyExtractor={(item, index) => `${item}: ${index}`}
+					renderItem={({ item }) => rewardRender(item)}
+				/>
+			);
 		}
 	};
 
@@ -114,17 +126,9 @@ const HomeScreen = () => {
 				<Text style={[styles.headers, { marginTop: 30 }]}>
 					{recentEarnedRewards.length < 1 ? "NEXT REWARD" : "RECENT REWARDS"}
 				</Text>
-				<TouchableOpacity
-					style={styles.rewardsSectionContainer}
-					activeOpacity={0.7}
-					onPress={() => {
-						navigation.navigate("REWARDS");
-					}}>
+				<View style={styles.rewardsSectionContainer}>
 					<View style={styles.rewardsContainer}>
-						<View
-							style={{ flexDirection: "row", flex: 1, alignItems: "center" }}>
-							<RewardsRender />
-						</View>
+						<RewardsRender />
 					</View>
 					<TouchableOpacity
 						activeOpacity={0.7}
@@ -133,7 +137,7 @@ const HomeScreen = () => {
 						}}>
 						<Text style={styles.viewMore}>view more</Text>
 					</TouchableOpacity>
-				</TouchableOpacity>
+				</View>
 			</View>
 		</ScrollView>
 	);
