@@ -7,14 +7,24 @@ import {
 	Linking,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
+import { useDispatch } from "react-redux";
+import {
+	readBibleAgain,
+	resetAllData,
+} from "../../features/globalData/globalDataSlice";
 const SettingsScreen = () => {
+	//nav
 	const navigation = useNavigation();
+
+	//state
+	const dispatch = useDispatch();
+
+	//Press Handlers
 	const handleReadAgainPress = () => {
-		alert("read again pressed");
+		dispatch(readBibleAgain());
 	};
 	const handleResetAllPress = () => {
-		alert("reset all pressed");
+		dispatch(resetAllData());
 	};
 
 	const handleContactPress = () => {

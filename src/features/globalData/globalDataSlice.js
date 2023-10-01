@@ -9,6 +9,18 @@ const globalDataSlice = createSlice({
 		userProgress: initialUserProgress,
 	},
 	reducers: {
+		readBibleAgain: (state) => {
+			currentPoints = state.userProgress.stats.totalPoints;
+			state.bibleData = initialBibleData;
+			state.userProgress = {
+				...initialUserProgress,
+				stats: { ...initialUserProgress.stats, totalPoints: currentPoints },
+			};
+		},
+		resetAllData: (state) => {
+			state.bibleData = initialBibleData;
+			state.userProgress = initialUserProgress;
+		},
 		setTestamentSelected: (state, action) => {
 			const selectedIndex = action.payload.index;
 			state.bibleData.map((testament, index) => {
@@ -331,6 +343,8 @@ const globalDataSlice = createSlice({
 });
 
 export const {
+	readBibleAgain,
+	resetAllData,
 	setTestamentSelected,
 	setBookSelected,
 	setChapterSelected,
