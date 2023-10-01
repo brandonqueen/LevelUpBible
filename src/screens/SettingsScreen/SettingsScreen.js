@@ -6,25 +6,99 @@ import {
 	TouchableHighlight,
 	Linking,
 } from "react-native";
+import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import {
 	readBibleAgain,
 	resetAllData,
 } from "../../features/globalData/globalDataSlice";
+import ModalPopup from "../../components/ModalPopup/ModalPopup";
+
 const SettingsScreen = () => {
 	//nav
 	const navigation = useNavigation();
 
-	//state
+	//global state setter
 	const dispatch = useDispatch();
 
+	//local state
+	const [modalOpen, setModalOpen] = useState(false);
+	const [modalOption, setModalOption] = useState({});
+
+	const modalOptions = [
+		{
+			option: "readAgain",
+			message:
+				"This will remove all your current rewards as well as your book/chapter progress. \n\nContinue?",
+			color: "#8174fc",
+		},
+		{
+			option: "resetAll",
+			message:
+				"This option will reset ALL progress, including your total points.\n\n Continue?",
+			color: "#fc4c4e",
+		},
+	];
+
+	const VerifyResetModal = () => {
+		return (
+			<ModalPopup modalOpen={modalOpen} modalToggle={modalToggle}>
+				<ScrollView>
+					<Text style={styles.header}>WARNING!{"\n"}⚠️</Text>
+					<Text style={[styles.textDescription, { fontSize: 20 }]}>
+						{modalOption.message}
+					</Text>
+					{modalOption.option === "readAgain" ? (
+						<TouchableHighlight
+							style={[styles.button, { backgroundColor: "#695DDA" }]}
+							onPress={handleReadAgain}
+							activeOpacity={1}
+							underlayColor="#8174fc">
+							<Text style={styles.buttonText}>Read Bible Again</Text>
+						</TouchableHighlight>
+					) : (
+						<TouchableHighlight
+							style={[styles.button, { backgroundColor: "#db3537" }]}
+							onPress={handleResetAll}
+							activeOpacity={1}
+							underlayColor="#fc4c4e">
+							<Text style={styles.buttonText}>Reset All Data</Text>
+						</TouchableHighlight>
+					)}
+					<TouchableHighlight
+						style={[styles.button, { backgroundColor: "#f5f5f5" }]}
+						onPress={modalToggle}>
+						<Text style={[styles.buttonText, { color: "#1c1b1b" }]}>
+							Cancel
+						</Text>
+					</TouchableHighlight>
+				</ScrollView>
+			</ModalPopup>
+		);
+	};
+
 	//Press Handlers
+	const modalToggle = () => {
+		setModalOpen(!modalOpen);
+	};
+
 	const handleReadAgainPress = () => {
+		setModalOpen(!modalOpen);
+		setModalOption(modalOptions[0]);
+	};
+
+	const handleReadAgain = () => {
 		dispatch(readBibleAgain());
+		modalToggle();
 	};
 	const handleResetAllPress = () => {
+		setModalOpen(!modalOpen);
+		setModalOption(modalOptions[1]);
+	};
+	const handleResetAll = () => {
 		dispatch(resetAllData());
+		modalToggle();
 	};
 
 	const handleContactPress = () => {
@@ -33,6 +107,7 @@ const SettingsScreen = () => {
 
 	return (
 		<View style={styles.root}>
+			<VerifyResetModal />
 			<ScrollView
 				style={{ width: "100%", flex: 0 }}
 				showsVerticalScrollIndicator={false}>
@@ -122,6 +197,7 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		color: "#f5f5f5",
 		margin: 24,
+		lineHeight: 40,
 	},
 	optionContainer: {
 		paddingVertical: 12,
