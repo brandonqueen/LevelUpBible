@@ -3,7 +3,7 @@ import {
 	Text,
 	View,
 	ScrollView,
-	Pressable,
+	TouchableHighlight,
 	Linking,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -48,11 +48,13 @@ const SettingsScreen = () => {
 							. (This option is ideal for continuing to gain points with
 							multiple re-readings of the Bible.)
 						</Text>
-						<Pressable
+						<TouchableHighlight
 							style={[styles.button, { backgroundColor: "#695DDA" }]}
-							onPress={handleReadAgainPress}>
+							onPress={handleReadAgainPress}
+							activeOpacity={1}
+							underlayColor="#8174fc">
 							<Text style={styles.buttonText}>Read Bible Again</Text>
-						</Pressable>
+						</TouchableHighlight>
 					</View>
 					<View style={styles.optionContainer}>
 						<Text style={[styles.optionTitle]}>Reset All Data</Text>
@@ -67,11 +69,13 @@ const SettingsScreen = () => {
 								this will also reset your current points back to zero.
 							</Text>
 						</Text>
-						<Pressable
+						<TouchableHighlight
 							style={[styles.button, { backgroundColor: "#db3537" }]}
-							onPress={handleResetAllPress}>
+							onPress={handleResetAllPress}
+							activeOpacity={1}
+							underlayColor="#fc4c4e">
 							<Text style={styles.buttonText}>Reset All Data</Text>
-						</Pressable>
+						</TouchableHighlight>
 					</View>
 					<View style={[styles.optionContainer, { marginBottom: 30 }]}>
 						<Text style={styles.optionTitle}>Contact</Text>
@@ -79,9 +83,13 @@ const SettingsScreen = () => {
 							If you would like to get in touch to report an issue, ask a
 							question, or just to say hello, please click the button below.
 						</Text>
-						<Pressable style={styles.button} onPress={handleContactPress}>
+						<TouchableHighlight
+							style={styles.button}
+							onPress={handleContactPress}
+							activeOpacity={1}
+							underlayColor="#1c1b1b">
 							<Text style={styles.buttonText}>Contact Us</Text>
-						</Pressable>
+						</TouchableHighlight>
 					</View>
 				</View>
 			</ScrollView>

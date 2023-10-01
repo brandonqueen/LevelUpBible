@@ -267,7 +267,7 @@ const BibleScreen = () => {
 		};
 
 		return (
-			<Pressable onPress={handlePress}>
+			<TouchableOpacity onPress={handlePress}>
 				<Text
 					style={[
 						styles.text,
@@ -281,7 +281,7 @@ const BibleScreen = () => {
 					]}>
 					Learn More
 				</Text>
-			</Pressable>
+			</TouchableOpacity>
 		);
 	}
 
