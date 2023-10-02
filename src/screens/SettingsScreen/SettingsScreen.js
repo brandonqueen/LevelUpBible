@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
 	readBibleAgain,
 	resetAllData,
@@ -21,6 +21,8 @@ const SettingsScreen = () => {
 
 	//global state setter
 	const dispatch = useDispatch();
+	const userProgress = useSelector((state) => state.globalData.userProgress);
+	const isBibleCompleted = userProgress.rewards[11].completed;
 
 	//local state
 	const [modalOpen, setModalOpen] = useState(false);
@@ -130,12 +132,16 @@ const SettingsScreen = () => {
 								}}>
 								preserve your current overall points
 							</Text>
-							. (This option is ideal for continuing to gain points with
-							multiple re-readings of the Bible.)
+							. This option is ideal for continuing to grow points with multiple
+							re-readings of the Bible.{"\n\n"} * Only available if the whole Bible has been completed.
 						</Text>
 						<TouchableHighlight
-							style={[styles.button, { backgroundColor: "#695DDA" }]}
-							onPress={handleReadAgainPress}
+							style={[
+								styles.button,
+								{ backgroundColor: "#695DDA" },
+								isBibleCompleted ? null : { opacity: 0.5 },
+							]}
+							onPress={isBibleCompleted ? handleReadAgainPress : null}
 							activeOpacity={1}
 							underlayColor="#8174fc">
 							<Text style={styles.buttonText}>Read Bible Again</Text>
