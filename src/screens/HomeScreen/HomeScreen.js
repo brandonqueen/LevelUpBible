@@ -43,7 +43,7 @@ const HomeScreen = () => {
 	const bookProgressRef = useRef(0);
 	const pointsValueAnim = useSharedValue(0);
 	const pointsText = useDerivedValue(() => {
-		return `${Math.ceil(pointsValueAnim.value)}`;
+		return Math.ceil(pointsValueAnim.value).toLocaleString();
 	});
 
 	useEffect(() => {
@@ -126,8 +126,6 @@ const HomeScreen = () => {
 								circleBackgroundColor={"rgb(11,14,29)"}
 								maxValue={100}
 								valueSuffix={"%"}
-								titleColor={"#6151fc"}
-								titleStyle={{ fontWeight: "900", fontSize: 12 }}
 							/>
 							<Text style={styles.chapterUnderText}>
 								{chapters} / 1,189{"\n"}Chapters
@@ -148,8 +146,6 @@ const HomeScreen = () => {
 								circleBackgroundColor={"rgb(11,14,29)"}
 								maxValue={100}
 								valueSuffix={"%"}
-								titleColor={"#6151fc"}
-								titleStyle={{ fontWeight: "900", fontSize: 12 }}
 							/>
 							<Text style={styles.bookUnderText}>
 								{books} / 66{"\n"}Books
@@ -228,7 +224,7 @@ const styles = StyleSheet.create({
 	},
 	pointsText: {
 		fontWeight: "900",
-		fontSize: 18,
+		fontSize: 20,
 		color: "rgb(255, 198, 99)",
 		textAlign: "center",
 	},
