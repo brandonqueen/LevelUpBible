@@ -1,20 +1,29 @@
 import {
 	StyleSheet,
 	Text,
+	TextInput,
 	View,
 	Image,
 	ScrollView,
 	TouchableOpacity,
 	FlatList,
 } from "react-native";
+import { useRef, useEffect } from "react";
 import graphic from "../../../assets/Images/Logo.png";
 import { useSelector } from "react-redux";
-import ProgressCircle from "react-native-progress-circle";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useIsFocused } from "@react-navigation/native";
 import Reward from "../../components/Reward/Reward";
+import CircularProgress from "react-native-circular-progress-indicator";
+import Animated, {
+	useSharedValue,
+	withTiming,
+	Easing,
+} from "react-native-reanimated";
+import { ReText } from "react-native-redash";
 
 const HomeScreen = () => {
 	const navigation = useNavigation();
+	const isFocused = useIsFocused();
 
 	const userProgress = useSelector((state) => state.globalData.userProgress);
 	const points = userProgress.stats.totalPoints;
@@ -25,8 +34,22 @@ const HomeScreen = () => {
 
 	const bibleChapterNumber = 1189;
 	const bibleBookNumber = 66;
-	const chapterPercentage = Math.ceil(chapters / bibleChapterNumber);
-	const bookPercentage = Math.ceil(books / bibleBookNumber);
+	const chapterPercentage = Math.ceil((chapters / bibleChapterNumber) * 100);
+	const bookPercentage = Math.ceil((books / bibleBookNumber) * 100);
+
+	///ANIMATION LOGIC
+	const chapProgressRef = useRef(0);
+	const bookProgressRef = useRef(0);
+	const pointsAnim = useSharedValue(0);
+
+	useEffect(() => {
+		chapProgressRef.current.reAnimate();
+		bookProgressRef.current.reAnimate();
+		pointsAnim.value = withTiming(points, {
+			duration: 900,
+		});
+	}, [isFocused, pointsAnim]);
+	/// END ANIMATION LOGIC
 
 	const handleProgressPress = () => {
 		navigation.navigate("BIBLE");
@@ -74,27 +97,30 @@ const HomeScreen = () => {
 						style={styles.pointsContainer}
 						onPress={handleProgressPress}
 						activeOpacity={0.7}>
-						<Text style={styles.pointsText}>
-							{points}
-							{"\n"}POINTS
-						</Text>
+						<ReText
+							style={styles.pointsText}
+							text={`${pointsAnim.value} POINTS`}
+						/>
 					</TouchableOpacity>
 					<View style={styles.percentageContainer}>
 						<TouchableOpacity
 							style={{ flexDirection: "column", alignItems: "center" }}
 							onPress={handleProgressPress}
 							activeOpacity={0.7}>
-							<ProgressCircle
-								percent={chapterPercentage}
+							<CircularProgress
+								ref={chapProgressRef}
+								value={chapterPercentage}
 								radius={52}
-								borderWidth={8}
-								color="#6151fc"
-								shadowColor="#393091"
-								bgColor="rgb(11,14,29)">
-								<Text style={styles.chapterPercentageText}>
-									{chapterPercentage}%
-								</Text>
-							</ProgressCircle>
+								duration={900}
+								progressValueColor={"#695DDA"}
+								activeStrokeColor={"#6151fc"}
+								inActiveStrokeColor={"#393091"}
+								circleBackgroundColor={"rgb(11,14,29)"}
+								maxValue={100}
+								valueSuffix={"%"}
+								titleColor={"#6151fc"}
+								titleStyle={{ fontWeight: "900", fontSize: 12 }}
+							/>
 							<Text style={styles.chapterUnderText}>
 								{chapters} / 1,189{"\n"}Chapters
 							</Text>
@@ -103,15 +129,20 @@ const HomeScreen = () => {
 							style={{ flexDirection: "column", alignItems: "center" }}
 							onPress={handleProgressPress}
 							activeOpacity={0.7}>
-							<ProgressCircle
-								percent={bookPercentage}
+							<CircularProgress
+								ref={bookProgressRef}
+								value={bookPercentage}
 								radius={52}
-								borderWidth={8}
-								color="#ff383b"
-								shadowColor="#7d191b"
-								bgColor="rgb(11,14,29)">
-								<Text style={styles.bookPercentageText}>{bookPercentage}%</Text>
-							</ProgressCircle>
+								duration={900}
+								progressValueColor={"#db3537"}
+								activeStrokeColor={"#ff383b"}
+								inActiveStrokeColor={"#7d191b"}
+								circleBackgroundColor={"rgb(11,14,29)"}
+								maxValue={100}
+								valueSuffix={"%"}
+								titleColor={"#6151fc"}
+								titleStyle={{ fontWeight: "900", fontSize: 12 }}
+							/>
 							<Text style={styles.bookUnderText}>
 								{books} / 66{"\n"}Books
 							</Text>
@@ -192,7 +223,6 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 		color: "rgb(255, 198, 99)",
 		textAlign: "center",
-		padding: 8,
 	},
 	percentageContainer: {
 		flexDirection: "row",
