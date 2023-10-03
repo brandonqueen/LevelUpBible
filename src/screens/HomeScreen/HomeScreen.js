@@ -14,10 +14,11 @@ import { useSelector } from "react-redux";
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 import Reward from "../../components/Reward/Reward";
 import CircularProgress from "react-native-circular-progress-indicator";
-import Animated, {
+import {
 	useSharedValue,
 	withTiming,
 	Easing,
+	useDerivedValue,
 } from "react-native-reanimated";
 import { ReText } from "react-native-redash";
 
@@ -40,15 +41,22 @@ const HomeScreen = () => {
 	///ANIMATION LOGIC
 	const chapProgressRef = useRef(0);
 	const bookProgressRef = useRef(0);
-	const pointsAnim = useSharedValue(0);
+	const pointsValueAnim = useSharedValue(0);
+	const pointsText = useDerivedValue(() => {
+		return `${Math.ceil(pointsValueAnim.value)}`;
+	});
 
 	useEffect(() => {
-		chapProgressRef.current.reAnimate();
-		bookProgressRef.current.reAnimate();
-		pointsAnim.value = withTiming(points, {
-			duration: 900,
-		});
-	}, [isFocused, pointsAnim]);
+		if (isFocused) {
+			chapProgressRef.current.reAnimate();
+			bookProgressRef.current.reAnimate();
+			pointsValueAnim.value = 0;
+			pointsValueAnim.value = withTiming(points, {
+				duration: 900,
+				easing: Easing.inOut(Easing.poly(4)),
+			});
+		}
+	}, [isFocused, pointsValueAnim]);
 	/// END ANIMATION LOGIC
 
 	const handleProgressPress = () => {
@@ -97,10 +105,8 @@ const HomeScreen = () => {
 						style={styles.pointsContainer}
 						onPress={handleProgressPress}
 						activeOpacity={0.7}>
-						<ReText
-							style={styles.pointsText}
-							text={`${pointsAnim.value} POINTS`}
-						/>
+						<ReText style={styles.pointsText} text={pointsText} />
+						<Text style={styles.pointsText}>POINTS</Text>
 					</TouchableOpacity>
 					<View style={styles.percentageContainer}>
 						<TouchableOpacity
