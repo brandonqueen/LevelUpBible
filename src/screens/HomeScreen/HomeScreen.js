@@ -53,8 +53,10 @@ const HomeScreen = () => {
 			pointsValueAnim.value = 0;
 			pointsValueAnim.value = withTiming(points, {
 				duration: 900,
-				easing: Easing.inOut(Easing.poly(4)),
+				easing: Easing.inOut(Easing.quad),
 			});
+		} else {
+			pointsValueAnim.value = 0;
 		}
 	}, [isFocused, pointsValueAnim]);
 	/// END ANIMATION LOGIC
