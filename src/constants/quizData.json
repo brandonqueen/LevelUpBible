@@ -1,0 +1,2289 @@
+[
+    {
+        "book": "Genesis",
+        "chapters": [
+            {
+                "chapter": "Chapter 1",
+                "questions": [
+                    {
+                        "question": "What did God create on the first day?",
+                        "options": [
+                            "Light",
+                            "Plants",
+                            "Animals",
+                            "Man and Woman"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Light",
+                            "verse": "Genesis 1:3"
+                        }
+                    },
+                    {
+                        "question": "True or False: God created everything in six days.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 1:31"
+                        }
+                    },
+                    {
+                        "question": "What did God create on the sixth day?",
+                        "options": [
+                            "Land",
+                            "Fish",
+                            "Birds",
+                            "Man and Woman"
+                        ],
+                        "answer": {
+                            "index": 3,
+                            "text": "Man and Woman",
+                            "verse": "Genesis 1:27"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 2",
+                "questions": [
+                    {
+                        "question": "True or False: God rested on the seventh day.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 2:2-3"
+                        }
+                    },
+                    {
+                        "question": "Who named the animals in the Garden of Eden?",
+                        "options": [
+                            "Adam",
+                            "Eve",
+                            "God",
+                            "Serpent"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Adam",
+                            "verse": "Genesis 2:19-20"
+                        }
+                    },
+                    {
+                        "question": "What was the first command God gave to Adam and Eve?",
+                        "options": [
+                            "Do not eat from the tree of knowledge",
+                            "Take care of the animals",
+                            "Build a house",
+                            "Name the stars"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Do not eat from the tree of knowledge",
+                            "verse": "Genesis 2:16-17"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 3",
+                "questions": [
+                    {
+                        "question": "Who tempted Eve to eat the forbidden fruit?",
+                        "options": [
+                            "Adam",
+                            "God",
+                            "Serpent",
+                            "No one"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Serpent",
+                            "verse": "Genesis 3:1-4"
+                        }
+                    },
+                    {
+                        "question": "True or False: Adam and Eve tried to hide from God after eating the fruit.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 3:8-10"
+                        }
+                    },
+                    {
+                        "question": "What consequences did God pronounce for Adam and Eve after they sinned?",
+                        "options": [
+                            "Eternal life",
+                            "Pain in childbirth and toil in work",
+                            "A new garden",
+                            "A crown"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "Pain in childbirth and toil in work",
+                            "verse": "Genesis 3:16-19"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 4",
+                "questions": [
+                    {
+                        "question": "What were the names of Adam and Eve's two sons?",
+                        "options": [
+                            "Cain and Abel",
+                            "Jacob and Esau",
+                            "David and Goliath",
+                            "Moses and Aaron"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Cain and Abel",
+                            "verse": "Genesis 4:1-2"
+                        }
+                    },
+                    {
+                        "question": "True or False: Cain's offering to God was accepted.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "False",
+                            "verse": "Genesis 4:5-7"
+                        }
+                    },
+                    {
+                        "question": "What did Cain do to his brother Abel?",
+                        "options": [
+                            "Hugged him",
+                            "Shared his food",
+                            "Killed him",
+                            "Gave him a gift"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Killed him",
+                            "verse": "Genesis 4:8"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 5",
+                "questions": [
+                    {
+                        "question": "How old was Adam when he had his son Seth?",
+                        "options": [
+                            "130 years",
+                            "30 years",
+                            "70 years",
+                            "90 years"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "130 years",
+                            "verse": "Genesis 5:3"
+                        }
+                    },
+                    {
+                        "question": "True or False: Enoch, one of Adam's descendants, walked with God and was taken away by God.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 5:24"
+                        }
+                    },
+                    {
+                        "question": "How many years did Methuselah live?",
+                        "options": [
+                            "969 years",
+                            "100 years",
+                            "500 years",
+                            "70 years"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "969 years",
+                            "verse": "Genesis 5:27"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 6",
+                "questions": [
+                    {
+                        "question": "Why did God decide to flood the earth during Noah's time?",
+                        "options": [
+                            "Because people were being kind and good to each other",
+                            "Because of widespread wickedness and evil",
+                            "Because there was too much rain",
+                            "Because God was angry with the animals"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "Because of widespread wickedness and evil",
+                            "verse": "Genesis 6:5-7"
+                        }
+                    },
+                    {
+                        "question": "How many of each kind of animal did Noah take on the ark?",
+                        "options": [
+                            "One pair of each kind",
+                            "Two pairs of each kind",
+                            "Five pairs of each kind",
+                            "Ten pairs of each kind"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "One pair of each kind",
+                            "verse": "Genesis 6:19-20"
+                        }
+                    },
+                    {
+                        "question": "True or False: The flood lasted for 40 days and 40 nights.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 7:12"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 7",
+                "questions": [
+                    {
+                        "question": "How many people were on Noah's Ark?",
+                        "options": [
+                            "100",
+                            "1000",
+                            "8",
+                            "80"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "8",
+                            "verse": "Genesis 7:13"
+                        }
+                    },
+                    {
+                        "question": "What did Noah send out from the ark to see if the waters had receded?",
+                        "options": [
+                            "A dove",
+                            "A lion",
+                            "A fish",
+                            "A dog"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "A dove",
+                            "verse": "Genesis 8:8-12"
+                        }
+                    },
+                    {
+                        "question": "True or False: After the flood, God promised never to send a flood to destroy the earth again.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 9:11"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 8",
+                "questions": [
+                    {
+                        "question": "What did Noah offer as a sacrifice to God after leaving the ark?",
+                        "options": [
+                            "A lamb",
+                            "A goat",
+                            "A clean bird",
+                            "A fish"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "A clean bird",
+                            "verse": "Genesis 8:20-21"
+                        }
+                    },
+                    {
+                        "question": "How many days did the dove go out and return before it did not return?",
+                        "options": [
+                            "3 days",
+                            "7 days",
+                            "40 days",
+                            "60 days"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "7 days",
+                            "verse": "Genesis 8:10-12"
+                        }
+                    },
+                    {
+                        "question": "What did God put in the sky as a sign of His covenant with Noah?",
+                        "options": [
+                            "A rainbow",
+                            "A comet",
+                            "A star",
+                            "A cloud"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "A rainbow",
+                            "verse": "Genesis 9:13-16"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 9",
+                "questions": [
+                    {
+                        "question": "What did Noah's son Ham do that displeased him?",
+                        "options": [
+                            "He stole from him",
+                            "He mocked his nakedness",
+                            "He lied to him",
+                            "He left the family"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "He mocked his nakedness",
+                            "verse": "Genesis 9:20-23"
+                        }
+                    },
+                    {
+                        "question": "True or False: God blessed Noah and his sons, telling them to be fruitful and multiply.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 9:1"
+                        }
+                    },
+                    {
+                        "question": "What was the sign of God's covenant with Noah's descendants?",
+                        "options": [
+                            "Circumcision",
+                            "A written contract",
+                            "A rainbow",
+                            "A special handshake"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "A rainbow",
+                            "verse": "Genesis 9:13-16"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 10",
+                "questions": [
+                    {
+                        "question": "What was the name of Noah's great-grandson who founded the city of Babylon?",
+                        "options": [
+                            "Nimrod",
+                            "Seth",
+                            "Japheth",
+                            "Shem"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Nimrod",
+                            "verse": "Genesis 10:8-10"
+                        }
+                    },
+                    {
+                        "question": "How many sons did Noah have?",
+                        "options": [
+                            "3",
+                            "5",
+                            "7",
+                            "9"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "3",
+                            "verse": "Genesis 10:1"
+                        }
+                    },
+                    {
+                        "question": "True or False: The descendants of Noah's sons eventually became the different nations of the world.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 10:32"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 11",
+                "questions": [
+                    {
+                        "question": "Why did the people in the city of Babel decide to build a tall tower?",
+                        "options": [
+                            "To reach the moon",
+                            "To reach the stars",
+                            "To make a name for themselves and not be scattered",
+                            "To hide from God"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "To make a name for themselves and not be scattered",
+                            "verse": "Genesis 11:4"
+                        }
+                    },
+                    {
+                        "question": "True or False: God confused the people's languages at Babel, causing them to speak different languages.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 11:7-9"
+                        }
+                    },
+                    {
+                        "question": "What did God change Abram's name to when He made a covenant with him?",
+                        "options": [
+                            "Abraham",
+                            "Adam",
+                            "Noah",
+                            "Moses"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Abraham",
+                            "verse": "Genesis 17:5"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 12",
+                "questions": [
+                    {
+                        "question": "Why did Abram (later known as Abraham) leave his homeland and his family?",
+                        "options": [
+                            "To explore new lands",
+                            "Because God told him to",
+                            "To escape a famine",
+                            "To find wealth and fortune"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "Because God told him to",
+                            "verse": "Genesis 12:1"
+                        }
+                    },
+                    {
+                        "question": "Where did Abram and his wife Sarai (later known as Sarah) travel to?",
+                        "options": [
+                            "To Canaan",
+                            "To Egypt",
+                            "To Babylon",
+                            "To Jerusalem"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "To Canaan",
+                            "verse": "Genesis 12:5"
+                        }
+                    },
+                    {
+                        "question": "True or False: When Abram and Sarai arrived in Canaan, they immediately received the land as an inheritance from God.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "False",
+                            "verse": "Genesis 12:6-7"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 13",
+                "questions": [
+                    {
+                        "question": "Who was Abram's nephew?",
+                        "options": [
+                            "Isaac",
+                            "Noah",
+                            "Lot",
+                            "Jacob"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Lot",
+                            "verse": "Genesis 13:1-5"
+                        }
+                    },
+                    {
+                        "question": "Why did Abram and Lot decide to part ways and go in different directions?",
+                        "options": [
+                            "They had an argument",
+                            "They had too much wealth",
+                            "They wanted to explore new lands",
+                            "God commanded them to"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "They had too much wealth",
+                            "verse": "Genesis 13:6-9"
+                        }
+                    },
+                    {
+                        "question": "Where did Lot choose to settle after separating from Abram?",
+                        "options": [
+                            "Canaan",
+                            "Sodom and Gomorrah",
+                            "Egypt",
+                            "The wilderness"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "Sodom and Gomorrah",
+                            "verse": "Genesis 13:10-12"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 14",
+                "questions": [
+                    {
+                        "question": "True or False: Lot was captured by enemy kings and taken captive.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 14:12"
+                        }
+                    },
+                    {
+                        "question": "Who rescued Lot from his captors?",
+                        "options": [
+                            "Abraham and his servants",
+                            "Angels",
+                            "The enemy kings",
+                            "Lot's family"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Abraham and his servants",
+                            "verse": "Genesis 14:14-16"
+                        }
+                    },
+                    {
+                        "question": "What did Melchizedek, the king of Salem, bring to Abram as a blessing?",
+                        "options": [
+                            "Bread and wine",
+                            "Gold and silver",
+                            "A new robe",
+                            "A crown"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Bread and wine",
+                            "verse": "Genesis 14:18-20"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 15",
+                "questions": [
+                    {
+                        "question": "What did God promise to Abram regarding his descendants?",
+                        "options": [
+                            "They would become a great nation",
+                            "They would be cursed",
+                            "They would be scattered",
+                            "They would have no descendants"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "They would become a great nation",
+                            "verse": "Genesis 15:5"
+                        }
+                    },
+                    {
+                        "question": "How did God confirm His covenant with Abram?",
+                        "options": [
+                            "By giving him a new name",
+                            "By sending a rainbow",
+                            "By a smoking oven and a burning torch",
+                            "By writing it on stone tablets"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "By a smoking oven and a burning torch",
+                            "verse": "Genesis 15:17"
+                        }
+                    },
+                    {
+                        "question": "True or False: God told Abram that his descendants would be strangers in a foreign land and enslaved for 400 years.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 15:13"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 16",
+                "questions": [
+                    {
+                        "question": "What did Sarai, Abram's wife, do when she couldn't have children?",
+                        "options": [
+                            "She adopted a child",
+                            "She prayed to God for a miracle",
+                            "She gave her servant Hagar to Abram as a wife",
+                            "She became sad and stopped talking"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "She gave her servant Hagar to Abram as a wife",
+                            "verse": "Genesis 16:2"
+                        }
+                    },
+                    {
+                        "question": "What was the name of the son born to Hagar and Abram?",
+                        "options": [
+                            "Isaac",
+                            "Ishmael",
+                            "Jacob",
+                            "Esau"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "Ishmael",
+                            "verse": "Genesis 16:15"
+                        }
+                    },
+                    {
+                        "question": "How did Hagar describe God after He spoke to her?",
+                        "options": [
+                            "The God of miracles",
+                            "The God who sees",
+                            "The God of love",
+                            "The God of thunder"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "The God who sees",
+                            "verse": "Genesis 16:13"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 17",
+                "questions": [
+                    {
+                        "question": "What did God change Abram's name to when He made a covenant with him?",
+                        "options": [
+                            "Abraham",
+                            "Adam",
+                            "Noah",
+                            "Moses"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Abraham",
+                            "verse": "Genesis 17:5"
+                        }
+                    },
+                    {
+                        "question": "What was the sign of God's covenant with Abraham and his descendants?",
+                        "options": [
+                            "Circumcision",
+                            "A rainbow",
+                            "A star",
+                            "A special handshake"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Circumcision",
+                            "verse": "Genesis 17:10-11"
+                        }
+                    },
+                    {
+                        "question": "What did God promise to give to Abraham and Sarah in their old age?",
+                        "options": [
+                            "A new house",
+                            "A new land",
+                            "A son named Isaac",
+                            "A large army"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "A son named Isaac",
+                            "verse": "Genesis 17:19"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 18",
+                "questions": [
+                    {
+                        "question": "Who visited Abraham and Sarah in the form of three men?",
+                        "options": [
+                            "Angels",
+                            "Kings",
+                            "Prophets",
+                            "Strangers"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Angels",
+                            "verse": "Genesis 18:2"
+                        }
+                    },
+                    {
+                        "question": "What did Sarah do when she heard that she would have a son?",
+                        "options": [
+                            "She laughed",
+                            "She cried",
+                            "She danced",
+                            "She fainted"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "She laughed",
+                            "verse": "Genesis 18:12"
+                        }
+                    },
+                    {
+                        "question": "What did Abraham ask God to spare if there were righteous people in Sodom and Gomorrah?",
+                        "options": [
+                            "The animals",
+                            "The houses",
+                            "The cities",
+                            "The rivers"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "The cities",
+                            "verse": "Genesis 18:23-32"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 19",
+                "questions": [
+                    {
+                        "question": "What happened to the cities of Sodom and Gomorrah?",
+                        "options": [
+                            "They were destroyed by fire and brimstone from God",
+                            "They were flooded",
+                            "They were attacked by a neighboring army",
+                            "They prospered and grew"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "They were destroyed by fire and brimstone from God",
+                            "verse": "Genesis 19:24-25"
+                        }
+                    },
+                    {
+                        "question": "Who turned into a pillar of salt when looking back at the destruction of Sodom?",
+                        "options": [
+                            "Lot's wife",
+                            "Lot",
+                            "Abraham",
+                            "Sarah"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Lot's wife",
+                            "verse": "Genesis 19:26"
+                        }
+                    },
+                    {
+                        "question": "Where did Lot and his daughters flee to after leaving Sodom?",
+                        "options": [
+                            "Egypt",
+                            "The mountains",
+                            "Canaan",
+                            "A new city"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "The mountains",
+                            "verse": "Genesis 19:30-33"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 20",
+                "questions": [
+                    {
+                        "question": "What did Abraham tell King Abimelech about his wife Sarah?",
+                        "options": [
+                            "That she was his sister",
+                            "That she was his daughter",
+                            "That she was his cousin",
+                            "That she was his servant"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "That she was his sister",
+                            "verse": "Genesis 20:2"
+                        }
+                    },
+                    {
+                        "question": "True or False: God prevented King Abimelech from touching Sarah because she was married to Abraham.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 20:6"
+                        }
+                    },
+                    {
+                        "question": "What did King Abimelech give to Abraham as a gesture of reconciliation?",
+                        "options": [
+                            "Gold and silver",
+                            "Sheep and cattle",
+                            "Land and servants",
+                            "His daughter in marriage"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "Sheep and cattle",
+                            "verse": "Genesis 20:14-15"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 21",
+                "questions": [
+                    {
+                        "question": "What did Sarah give birth to in her old age?",
+                        "options": [
+                            "A son named Isaac",
+                            "A daughter named Rebecca",
+                            "Twins",
+                            "Triplets"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "A son named Isaac",
+                            "verse": "Genesis 21:2"
+                        }
+                    },
+                    {
+                        "question": "True or False: Sarah was initially happy when Hagar and Ishmael were sent away.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 21:9-10"
+                        }
+                    },
+                    {
+                        "question": "What did Abraham do when he made a covenant with Abimelech at Beersheba?",
+                        "options": [
+                            "Built a well",
+                            "Offered a sacrifice",
+                            "Planted a garden",
+                            "Exchanged gifts"
+                        ],
+                        "answer": {
+                            "index": 3,
+                            "text": "Exchanged gifts",
+                            "verse": "Genesis 21:27-32"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 22",
+                "questions": [
+                    {
+                        "question": "What did God ask Abraham to do with his son Isaac as a test of faith?",
+                        "options": [
+                            "Sacrifice him on a mountain",
+                            "Send him away to a distant land",
+                            "Teach him a new skill",
+                            "Give him a new name"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Sacrifice him on a mountain",
+                            "verse": "Genesis 22:2"
+                        }
+                    },
+                    {
+                        "question": "True or False: God provided a ram as a substitute sacrifice instead of Isaac.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 22:13"
+                        }
+                    },
+                    {
+                        "question": "What did Abraham name the place where he was willing to sacrifice Isaac?",
+                        "options": [
+                            "Mount Sinai",
+                            "Mount Zion",
+                            "Mount Moriah",
+                            "Mount Horeb"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Mount Moriah",
+                            "verse": "Genesis 22:14"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 23",
+                "questions": [
+                    {
+                        "question": "What did Abraham purchase from the Hittites in Chapter 23?",
+                        "options": [
+                            "A house",
+                            "A field with a cave",
+                            "Cattle and sheep",
+                            "A new well"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "A field with a cave",
+                            "verse": "Genesis 23:16-20"
+                        }
+                    },
+                    {
+                        "question": "Why did Abraham want to buy a burial place for Sarah?",
+                        "options": [
+                            "To build a house",
+                            "To create a garden",
+                            "To have a place to bury his family",
+                            "To mine for precious stones"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "To have a place to bury his family",
+                            "verse": "Genesis 23:4"
+                        }
+                    },
+                    {
+                        "question": "Who offered to give Abraham the burial place for free, but he insisted on paying for it?",
+                        "options": [
+                            "King Abimelech",
+                            "Lot",
+                            "Ephron the Hittite",
+                            "Isaac"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Ephron the Hittite",
+                            "verse": "Genesis 23:11-13"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 24",
+                "questions": [
+                    {
+                        "question": "What task did Abraham give to his servant Eliezer in Chapter 24?",
+                        "options": [
+                            "To find a wife for Isaac",
+                            "To tend to the flocks",
+                            "To build a new house",
+                            "To find a new land to settle in"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "To find a wife for Isaac",
+                            "verse": "Genesis 24:2-4"
+                        }
+                    },
+                    {
+                        "question": "Who was the woman chosen as a potential wife for Isaac?",
+                        "options": [
+                            "Sarah",
+                            "Rebecca",
+                            "Rachel",
+                            "Leah"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "Rebecca",
+                            "verse": "Genesis 24:15-16"
+                        }
+                    },
+                    {
+                        "question": "True or False: Rebecca agreed to marry Isaac and left with Eliezer to meet him.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 24:57-58"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 25",
+                "questions": [
+                    {
+                        "question": "What were the names of Isaac and Rebekah's twin sons?",
+                        "options": [
+                            "Jacob and Esau",
+                            "Cain and Abel",
+                            "Abraham and Isaac",
+                            "Joseph and Benjamin"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Jacob and Esau",
+                            "verse": "Genesis 25:24-26"
+                        }
+                    },
+                    {
+                        "question": "What did Esau sell to Jacob for a bowl of stew?",
+                        "options": [
+                            "His birthright",
+                            "His clothing",
+                            "His sheep",
+                            "His land"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "His birthright",
+                            "verse": "Genesis 25:29-34"
+                        }
+                    },
+                    {
+                        "question": "True or False: Isaac prayed to God for Rebekah to have children, and God answered his prayer.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 25:21"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 26",
+                "questions": [
+                    {
+                        "question": "Where did Isaac and his family go during a famine?",
+                        "options": [
+                            "Egypt",
+                            "Canaan",
+                            "Gerar",
+                            "Sodom"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Gerar",
+                            "verse": "Genesis 26:1-2"
+                        }
+                    },
+                    {
+                        "question": "What did Isaac do in Gerar that was similar to what his father Abraham did?",
+                        "options": [
+                            "Dug wells for water",
+                            "Built a great house",
+                            "Started a new religion",
+                            "Went into hiding"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Dug wells for water",
+                            "verse": "Genesis 26:17-18"
+                        }
+                    },
+                    {
+                        "question": "True or False: Isaac deceived Abimelech, the king of Gerar, about his wife Rebekah being his sister.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 26:7"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 27",
+                "questions": [
+                    {
+                        "question": "Who tricked Isaac into giving him the blessing intended for Esau?",
+                        "options": [
+                            "Jacob",
+                            "Rebekah",
+                            "Laban",
+                            "Abimelech"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Jacob",
+                            "verse": "Genesis 27:1-29"
+                        }
+                    },
+                    {
+                        "question": "What did Esau plan to do to Jacob in anger after the blessing was given to Jacob?",
+                        "options": [
+                            "Hug him",
+                            "Forgive him",
+                            "Kill him",
+                            "Give him a gift"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Kill him",
+                            "verse": "Genesis 27:41"
+                        }
+                    },
+                    {
+                        "question": "What did Rebekah suggest to Jacob to protect him from Esau's anger?",
+                        "options": [
+                            "Run away to a distant land",
+                            "Fight Esau in a duel",
+                            "Visit their relatives in Egypt",
+                            "Stay with Laban for a while"
+                        ],
+                        "answer": {
+                            "index": 3,
+                            "text": "Stay with Laban for a while",
+                            "verse": "Genesis 27:43-45"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 28",
+                "questions": [
+                    {
+                        "question": "Where did Jacob have a dream of a ladder reaching up to heaven with angels going up and down?",
+                        "options": [
+                            "In a cave",
+                            "By a river",
+                            "In his father's house",
+                            "On a mountain"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "By a river",
+                            "verse": "Genesis 28:10-12"
+                        }
+                    },
+                    {
+                        "question": "What did Jacob name the place of his dream?",
+                        "options": [
+                            "Mount Sinai",
+                            "Bethel",
+                            "Jerusalem",
+                            "Golgotha"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "Bethel",
+                            "verse": "Genesis 28:19"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jacob married Leah and Rachel, who were sisters.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 29:20-30"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 29",
+                "questions": [
+                    {
+                        "question": "What job did Jacob agree to do in exchange for marrying Rachel?",
+                        "options": [
+                            "Tend Laban's sheep for seven years",
+                            "Build Laban a new house",
+                            "Give Laban all his possessions",
+                            "Go on a long journey"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Tend Laban's sheep for seven years",
+                            "verse": "Genesis 29:18"
+                        }
+                    },
+                    {
+                        "question": "Why was Leah given to Jacob in marriage before Rachel?",
+                        "options": [
+                            "Because Leah was older",
+                            "Because Leah was more beautiful",
+                            "Because Rachel was sick",
+                            "Because Jacob preferred Leah"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Because Leah was older",
+                            "verse": "Genesis 29:23"
+                        }
+                    },
+                    {
+                        "question": "How many sons did Jacob have with Leah and Rachel, excluding the sons born to their maidservants?",
+                        "options": [
+                            "10",
+                            "12",
+                            "8",
+                            "5"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "10",
+                            "verse": "Genesis 29:31-35; 30:22-24"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 30",
+                "questions": [
+                    {
+                        "question": "What did Rachel give to Jacob to have children when she couldn't?",
+                        "options": [
+                            "A special prayer",
+                            "A magic potion",
+                            "Her maidservant Bilhah",
+                            "A lucky charm"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Her maidservant Bilhah",
+                            "verse": "Genesis 30:1-3"
+                        }
+                    },
+                    {
+                        "question": "What did Leah give to Jacob to have children when Rachel had Bilhah?",
+                        "options": [
+                            "A special prayer",
+                            "A magic potion",
+                            "Her maidservant Zilpah",
+                            "A lucky charm"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Her maidservant Zilpah",
+                            "verse": "Genesis 30:9-10"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jacob's flock increased in size due to a unique breeding technique involving striped sticks.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 30:37-39"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 31",
+                "questions": [
+                    {
+                        "question": "Why did Jacob decide to leave Laban's household?",
+                        "options": [
+                            "Because Laban was angry with him",
+                            "Because he missed his family",
+                            "Because God told him to",
+                            "Because he wanted to start a new business"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Because Laban was angry with him",
+                            "verse": "Genesis 31:1-2"
+                        }
+                    },
+                    {
+                        "question": "What did Rachel steal from Laban's house before leaving?",
+                        "options": [
+                            "Money",
+                            "A valuable gem",
+                            "Laban's idols",
+                            "A secret recipe"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Laban's idols",
+                            "verse": "Genesis 31:19-20"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jacob and Laban made a covenant to never harm each other before parting ways.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 31:44-54"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 32",
+                "questions": [
+                    {
+                        "question": "Who did Jacob wrestle with at Peniel during the night?",
+                        "options": [
+                            "Esau",
+                            "An angel of God",
+                            "Laban",
+                            "A wild animal"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "An angel of God",
+                            "verse": "Genesis 32:24-30"
+                        }
+                    },
+                    {
+                        "question": "What did Jacob's hip socket become after wrestling with the angel?",
+                        "options": [
+                            "Dislocated",
+                            "Broken",
+                            "Strengthened",
+                            "Twisted"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Dislocated",
+                            "verse": "Genesis 32:25-31"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jacob was afraid to meet Esau, his brother, after wrestling with the angel.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 32:7-8"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 33",
+                "questions": [
+                    {
+                        "question": "How did Esau react when he saw Jacob after their long separation?",
+                        "options": [
+                            "He hugged Jacob and wept",
+                            "He attacked Jacob with anger",
+                            "He ignored Jacob and walked away",
+                            "He laughed at Jacob"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "He hugged Jacob and wept",
+                            "verse": "Genesis 33:4"
+                        }
+                    },
+                    {
+                        "question": "What gift did Jacob offer to Esau as a gesture of reconciliation?",
+                        "options": [
+                            "A gold necklace",
+                            "A herd of cattle",
+                            "A fine robe",
+                            "A precious jewel"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "A herd of cattle",
+                            "verse": "Genesis 33:8-11"
+                        }
+                    },
+                    {
+                        "question": "Where did Jacob and Esau part ways after their meeting?",
+                        "options": [
+                            "In Canaan",
+                            "In Egypt",
+                            "In Gerar",
+                            "In the wilderness"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "In Gerar",
+                            "verse": "Genesis 33:16-17"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 34",
+                "questions": [
+                    {
+                        "question": "Why did Jacob's daughter Dinah go out to visit the daughters of the land?",
+                        "options": [
+                            "To attend a wedding",
+                            "To make new friends",
+                            "To buy food",
+                            "To see the sights"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "To make new friends",
+                            "verse": "Genesis 34:1-3"
+                        }
+                    },
+                    {
+                        "question": "What happened to Dinah that caused her brothers to become angry with the people of the land?",
+                        "options": [
+                            "She was kidnapped and mistreated",
+                            "She became a queen",
+                            "She found a hidden treasure",
+                            "She fell in love with a local"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "She was kidnapped and mistreated",
+                            "verse": "Genesis 34:2-7"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jacob's sons Simeon and Levi made a peaceful agreement with the people of the land after Dinah's mistreatment.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "False",
+                            "verse": "Genesis 34:13-31"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 35",
+                "questions": [
+                    {
+                        "question": "Where did Jacob and his family go to after leaving Shechem?",
+                        "options": [
+                            "Egypt",
+                            "Canaan",
+                            "Bethel",
+                            "Jerusalem"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Bethel",
+                            "verse": "Genesis 35:1-3"
+                        }
+                    },
+                    {
+                        "question": "What did God change Jacob's name to during his encounter at Bethel?",
+                        "options": [
+                            "Israel",
+                            "Ephraim",
+                            "Benjamin",
+                            "Judah"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Israel",
+                            "verse": "Genesis 35:10"
+                        }
+                    },
+                    {
+                        "question": "What significant event happened at the oak tree near Shechem?",
+                        "options": [
+                            "Jacob's birth",
+                            "Dinah's wedding",
+                            "The death of Rachel",
+                            "A great battle"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "The death of Rachel",
+                            "verse": "Genesis 35:8"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 36",
+                "questions": [
+                    {
+                        "question": "Who were the descendants of Esau listed in Chapter 36?",
+                        "options": [
+                            "The twelve tribes of Israel",
+                            "The kings of Egypt",
+                            "The dukes of Edom",
+                            "The prophets of Israel"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "The dukes of Edom",
+                            "verse": "Genesis 36:1-43"
+                        }
+                    },
+                    {
+                        "question": "What did Esau and his descendants become known as?",
+                        "options": [
+                            "The Israelites",
+                            "The Edomites",
+                            "The Egyptians",
+                            "The Amorites"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "The Edomites",
+                            "verse": "Genesis 36:1-9"
+                        }
+                    },
+                    {
+                        "question": "True or False: Esau and his brother Jacob reconciled and lived together in peace.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "False",
+                            "verse": "Genesis 36:6-7"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 37",
+                "questions": [
+                    {
+                        "question": "Who was Joseph's father?",
+                        "options": [
+                            "Isaac",
+                            "Abraham",
+                            "Jacob",
+                            "Esau"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Jacob",
+                            "verse": "Genesis 37:3"
+                        }
+                    },
+                    {
+                        "question": "What did Joseph's brothers do to him out of jealousy?",
+                        "options": [
+                            "They sold him into slavery",
+                            "They made him a leader",
+                            "They gave him a special gift",
+                            "They sent him on a journey"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "They sold him into slavery",
+                            "verse": "Genesis 37:12-28"
+                        }
+                    },
+                    {
+                        "question": "What did Joseph's brothers dip in goat's blood to deceive their father Jacob?",
+                        "options": [
+                            "A robe",
+                            "A staff",
+                            "A ring",
+                            "A scroll"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "A robe",
+                            "verse": "Genesis 37:31-32"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 38",
+                "questions": [
+                    {
+                        "question": "Who was Judah's first son, and what happened to him?",
+                        "options": [
+                            "Er, he died because of his wickedness",
+                            "Reuben, he became a great leader",
+                            "Benjamin, he went on a long journey",
+                            "Simeon, he became a farmer"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Er, he died because of his wickedness",
+                            "verse": "Genesis 38:7"
+                        }
+                    },
+                    {
+                        "question": "What did Tamar, Judah's daughter-in-law, do to conceive a child by him?",
+                        "options": [
+                            "She dressed as a prostitute and tricked him",
+                            "She prayed to God for a miracle",
+                            "She offered a sacrifice at the temple",
+                            "She asked for his help directly"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "She dressed as a prostitute and tricked him",
+                            "verse": "Genesis 38:14-18"
+                        }
+                    },
+                    {
+                        "question": "True or False: Tamar was later found to be righteous, and her actions were justified.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 38:24-26"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 39",
+                "questions": [
+                    {
+                        "question": "Where did Joseph end up after being sold into slavery by his brothers?",
+                        "options": [
+                            "In the land of Canaan",
+                            "In the land of Egypt",
+                            "In the land of Edom",
+                            "In the land of Philistia"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "In the land of Egypt",
+                            "verse": "Genesis 39:1"
+                        }
+                    },
+                    {
+                        "question": "What role did Joseph serve in the house of Potiphar, an officer of Pharaoh?",
+                        "options": [
+                            "A shepherd",
+                            "A cook",
+                            "A manager of household affairs",
+                            "A scribe"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "A manager of household affairs",
+                            "verse": "Genesis 39:4"
+                        }
+                    },
+                    {
+                        "question": "What did Potiphar's wife falsely accuse Joseph of, leading to his imprisonment?",
+                        "options": [
+                            "Theft",
+                            "Murder",
+                            "Adultery",
+                            "Disobedience"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Adultery",
+                            "verse": "Genesis 39:6-20"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 40",
+                "questions": [
+                    {
+                        "question": "What two individuals were imprisoned with Joseph in Egypt?",
+                        "options": [
+                            "Pharaoh and his wife",
+                            "The captain of the guard and his servant",
+                            "The baker and the butler (cupbearer)",
+                            "The king and the queen"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "The baker and the butler (cupbearer)",
+                            "verse": "Genesis 40:1-3"
+                        }
+                    },
+                    {
+                        "question": "What did the cupbearer's dream in prison signify?",
+                        "options": [
+                            "His release from prison and restoration to his former position",
+                            "His impending death",
+                            "A great harvest in Egypt",
+                            "A famine in the land"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "His release from prison and restoration to his former position",
+                            "verse": "Genesis 40:12-13"
+                        }
+                    },
+                    {
+                        "question": "What happened to the baker's dream interpretation in prison?",
+                        "options": [
+                            "He was released from prison",
+                            "He was executed and hanged",
+                            "He became a servant in Pharaoh's palace",
+                            "He was forgotten in prison"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "He was executed and hanged",
+                            "verse": "Genesis 40:16-22"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 41",
+                "questions": [
+                    {
+                        "question": "What did Pharaoh dream about that troubled him?",
+                        "options": [
+                            "A mighty army marching through Egypt",
+                            "A river overflowing and flooding the land",
+                            "Seven fat cows and seven lean cows",
+                            "A giant eagle soaring in the sky"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Seven fat cows and seven lean cows",
+                            "verse": "Genesis 41:1-4"
+                        }
+                    },
+                    {
+                        "question": "Who interpreted Pharaoh's dreams and provided the meaning?",
+                        "options": [
+                            "Joseph",
+                            "Potiphar",
+                            "Pharaoh's magicians",
+                            "The chief baker"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Joseph",
+                            "verse": "Genesis 41:15-16"
+                        }
+                    },
+                    {
+                        "question": "What role was Joseph given in Egypt after interpreting Pharaoh's dreams?",
+                        "options": [
+                            "Prime Minister",
+                            "Royal Guard",
+                            "Head Scribe",
+                            "Captain of the Army"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Prime Minister",
+                            "verse": "Genesis 41:40-41"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 42",
+                "questions": [
+                    {
+                        "question": "Why did Joseph's brothers go to Egypt?",
+                        "options": [
+                            "To visit Joseph",
+                            "To buy grain because of a famine",
+                            "To attend a festival",
+                            "To seek Pharaoh's counsel"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "To buy grain because of a famine",
+                            "verse": "Genesis 42:1-3"
+                        }
+                    },
+                    {
+                        "question": "How did Joseph treat his brothers when he first recognized them in Egypt?",
+                        "options": [
+                            "He welcomed them with open arms",
+                            "He accused them of being spies",
+                            "He demanded gifts and tribute",
+                            "He ordered them to leave Egypt immediately"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "He accused them of being spies",
+                            "verse": "Genesis 42:7-9"
+                        }
+                    },
+                    {
+                        "question": "True or False: Joseph secretly returned the money his brothers had paid for the grain in their sacks.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 42:25-28"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 43",
+                "questions": [
+                    {
+                        "question": "Why did Jacob reluctantly agree to send Benjamin to Egypt with his brothers?",
+                        "options": [
+                            "To meet Pharaoh",
+                            "To retrieve the money they had left behind",
+                            "To find a wife",
+                            "To seek Joseph's release"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "To retrieve the money they had left behind",
+                            "verse": "Genesis 43:12"
+                        }
+                    },
+                    {
+                        "question": "What gift did the brothers bring to give to the ruler of Egypt (Joseph)?",
+                        "options": [
+                            "A sack of gold",
+                            "The finest wine",
+                            "A precious gem",
+                            "The best fruits and nuts"
+                        ],
+                        "answer": {
+                            "index": 3,
+                            "text": "The best fruits and nuts",
+                            "verse": "Genesis 43:11-12"
+                        }
+                    },
+                    {
+                        "question": "True or False: Joseph revealed his identity to his brothers during their second visit to Egypt.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 45:1-3"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 44",
+                "questions": [
+                    {
+                        "question": "What did Joseph hide in Benjamin's sack as they prepared to leave Egypt?",
+                        "options": [
+                            "A silver cup",
+                            "A map to Canaan",
+                            "A message for their father",
+                            "A valuable gem"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "A silver cup",
+                            "verse": "Genesis 44:1-2"
+                        }
+                    },
+                    {
+                        "question": "Who offered to stay behind as a slave when the cup was discovered in Benjamin's sack?",
+                        "options": [
+                            "Simeon",
+                            "Reuben",
+                            "Judah",
+                            "Gad"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Judah",
+                            "verse": "Genesis 44:16"
+                        }
+                    },
+                    {
+                        "question": "What did Judah say to Joseph when he pleaded for Benjamin's release?",
+                        "options": [
+                            "He promised to return with a great gift",
+                            "He recounted their father's grief over losing Joseph",
+                            "He offered to take Benjamin's place as a slave",
+                            "He asked for mercy and forgiveness"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "He recounted their father's grief over losing Joseph",
+                            "verse": "Genesis 44:18-34"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 45",
+                "questions": [
+                    {
+                        "question": "How did Joseph reveal his identity to his brothers in Egypt?",
+                        "options": [
+                            "He sent them a letter",
+                            "He appeared before them and wept",
+                            "He sent a messenger",
+                            "He appeared in a dream"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "He appeared before them and wept",
+                            "verse": "Genesis 45:1-3"
+                        }
+                    },
+                    {
+                        "question": "What did Joseph instruct his brothers to do after revealing himself?",
+                        "options": [
+                            "To leave Egypt immediately",
+                            "To bring their father and their families to Egypt",
+                            "To build a monument in his honor",
+                            "To return the silver cup"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "To bring their father and their families to Egypt",
+                            "verse": "Genesis 45:9-10"
+                        }
+                    },
+                    {
+                        "question": "True or False: Joseph's brothers were afraid that he would seek revenge on them for selling him into slavery.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 45:15"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 46",
+                "questions": [
+                    {
+                        "question": "Why did Jacob and his family move to Egypt?",
+                        "options": [
+                            "To escape a famine",
+                            "To visit relatives",
+                            "To explore a new land",
+                            "To avoid a war"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "To escape a famine",
+                            "verse": "Genesis 46:1-4"
+                        }
+                    },
+                    {
+                        "question": "How many of Jacob's family members went to Egypt with him?",
+                        "options": [
+                            "70",
+                            "100",
+                            "12",
+                            "200"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "70",
+                            "verse": "Genesis 46:26-27"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jacob and Joseph were reunited in Egypt after many years of separation.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 46:28-30"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 47",
+                "questions": [
+                    {
+                        "question": "What did Joseph do to help his family when they came to Egypt?",
+                        "options": [
+                            "He gave them a new home",
+                            "He provided them with food and land in Goshen",
+                            "He gave them gold and silver",
+                            "He arranged marriages for them"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "He provided them with food and land in Goshen",
+                            "verse": "Genesis 47:11-12"
+                        }
+                    },
+                    {
+                        "question": "What did the people of Egypt eventually do during the famine?",
+                        "options": [
+                            "They migrated to Canaan",
+                            "They revolted against Pharaoh",
+                            "They sold their land and themselves to Pharaoh",
+                            "They prayed to the gods for relief"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "They sold their land and themselves to Pharaoh",
+                            "verse": "Genesis 47:19-21"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jacob blessed Pharaoh before leaving his presence.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 47:10"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 48",
+                "questions": [
+                    {
+                        "question": "Who did Jacob bless and adopt as his own sons?",
+                        "options": [
+                            "Joseph's sons, Ephraim and Manasseh",
+                            "Reuben and Simeon",
+                            "Benjamin and Judah",
+                            "Issachar and Gad"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "Joseph's sons, Ephraim and Manasseh",
+                            "verse": "Genesis 48:5"
+                        }
+                    },
+                    {
+                        "question": "What did Jacob do when he blessed Ephraim and Manasseh?",
+                        "options": [
+                            "He laid his hands on their heads and prayed",
+                            "He gave them a large inheritance of land",
+                            "He anointed them with oil",
+                            "He offered sacrifices to God"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "He laid his hands on their heads and prayed",
+                            "verse": "Genesis 48:14-16"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jacob's eyesight was still good when he blessed Joseph's sons.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "False",
+                            "verse": "Genesis 48:10-11"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 49",
+                "questions": [
+                    {
+                        "question": "What did Jacob do on his deathbed in Chapter 49?",
+                        "options": [
+                            "He gave blessings and prophecies to his sons",
+                            "He wrote a letter to Pharaoh",
+                            "He composed a song",
+                            "He carved a memorial"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "He gave blessings and prophecies to his sons",
+                            "verse": "Genesis 49:1-28"
+                        }
+                    },
+                    {
+                        "question": "Which of Jacob's sons was given the blessing of leadership and rulership?",
+                        "options": [
+                            "Reuben",
+                            "Simeon",
+                            "Judah",
+                            "Issachar"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Judah",
+                            "verse": "Genesis 49:8-10"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jacob's body was embalmed and placed in a coffin in Egypt.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 50:25-26"
+                        }
+                    }
+                ]
+            },
+            {
+                "chapter": "Chapter 50",
+                "questions": [
+                    {
+                        "question": "After Jacob's death, how did Joseph's brothers fearfully react to him?",
+                        "options": [
+                            "They asked for his forgiveness",
+                            "They plotted to harm him",
+                            "They bowed down to him",
+                            "They left Egypt in haste"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "They bowed down to him",
+                            "verse": "Genesis 50:18-21"
+                        }
+                    },
+                    {
+                        "question": "What did Joseph request of his brothers before he died?",
+                        "options": [
+                            "That they bury him in Egypt",
+                            "That they return to Canaan",
+                            "That they bring Benjamin to him",
+                            "That they forgive one another"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "That they carry his bones to Canaan when they leave Egypt",
+                            "verse": "Genesis 50:24-25"
+                        }
+                    },
+                    {
+                        "question": "True or False: Joseph lived to be over 150 years old.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Genesis 50:26"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

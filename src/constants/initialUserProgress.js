@@ -1,5 +1,5 @@
 import { onTouchMoveCapture } from "deprecated-react-native-prop-types/DeprecatedViewPropTypes";
-import RewardsIcons from "../../../assets/Images/RewardsIconsLoader";
+import RewardsIcons from "../../assets/Images/RewardsIconsLoader";
 
 const initialUserProgress = {
 	stats: {

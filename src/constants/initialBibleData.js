@@ -1655,3 +1655,5 @@ export const initialBibleData = [
 		],
 	},
 ];
+
+export default initialBibleData;

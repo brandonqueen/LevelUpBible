@@ -52,7 +52,7 @@ const HomeScreen = () => {
 			bookProgressRef.current.reAnimate();
 			pointsValueAnim.value = 0;
 			pointsValueAnim.value = withTiming(points, {
-				duration: 900,
+				duration: 1100,
 				easing: Easing.inOut(Easing.quad),
 			});
 		} else {
