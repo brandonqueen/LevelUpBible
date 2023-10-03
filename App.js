@@ -3,14 +3,14 @@ import React from "react";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
 import { PaperProvider } from "react-native-paper";
-import InitialStackNavigator from "./src/navigation/InitialStackNavigator.js";
+import BottomTabs from "./src/navigation/BottomTabs.js";
 
 const App = () => {
 	return (
 		<Provider store={store}>
 			<PaperProvider>
 				<SafeAreaView style={styles.root}>
-					<InitialStackNavigator />
+					<BottomTabs />
 					<StatusBar barStyle="light-content" />
 				</SafeAreaView>
 			</PaperProvider>
