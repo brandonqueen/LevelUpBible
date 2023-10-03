@@ -21,7 +21,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
 import axios from "axios";
 import QuizModal from "../../components/QuizModal/QuizModal";
-import quizJSON from "./test.json";
+import quizJSON from "../../constants/quizData.json";
 
 const BibleScreen = () => {
 	//global state getter
@@ -40,6 +40,10 @@ const BibleScreen = () => {
 	const bookName = route.params?.bookName;
 	const chapterNum = route.params?.chapter;
 	const chapterIndex = chapterNum - 1;
+
+	//get Quiz section
+	const quizBookIndex = quizJSON.findIndex((obj) => obj.book === bookName);
+	const quizSection = quizJSON[quizBookIndex]?.chapters[chapterIndex];
 
 	//current chapter completed status
 	const isCurrentChapterCompleted =
@@ -390,8 +394,12 @@ const BibleScreen = () => {
 							) : (
 								<Pressable
 									onPressIn={handleCompletePressIn}
-									//onPress={shouldRenderPressable ? handleModalToggle : null}
-									onPress={devCompleteChapter}
+									onPress={
+										shouldRenderPressable && quizSection
+											? handleModalToggle
+											: devCompleteChapter
+									}
+									//onPress={devCompleteChapter}
 									onPressOut={handleCompletePressOut}
 									style={[
 										styles.completeButtonPressable,
@@ -418,10 +426,11 @@ const BibleScreen = () => {
 				<QuizModal
 					modalOpen={modalOpen}
 					modalToggle={handleModalToggle}
-					QuizData={quizJSON}
+					QuizData={quizSection}
 					numOfVerses={numOfVerses}
 					testamentIndex={testamentIndex}
 					bookIndex={bookIndex}
+					bookName={bookName}
 					chapterIndex={chapterIndex}
 				/>
 			)}

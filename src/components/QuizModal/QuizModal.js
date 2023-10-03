@@ -25,6 +25,7 @@ const QuizModal = ({
 	numOfVerses,
 	testamentIndex,
 	bookIndex,
+	bookName,
 	chapterIndex,
 }) => {
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -42,7 +43,11 @@ const QuizModal = ({
 	const QuizContent = () => {
 		return (
 			<View>
-				<Text style={styles.heading}>Quiz 🤓📖</Text>
+				<Text style={styles.heading}>  Quiz 🤓{"\n"}
+					<Text style={{ fontWeight: "300", fontSize: 22 }}>{`${bookName} ${
+						chapterIndex + 1
+					}`}</Text>
+				</Text>
 				<View style={styles.modalQuestionContainer}>
 					<Text
 						style={[
@@ -257,10 +262,10 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		alignItems: "center",
 		position: "absolute",
-		top: "15%",
+		top: "12%",
 		left: "2.5%",
 		right: "2.5%",
-		bottom: "15%",
+		bottom: "12%",
 		padding: 16,
 		borderRadius: 20,
 		backgroundColor: "#352b8c",
@@ -277,8 +282,9 @@ const styles = StyleSheet.create({
 		color: "#f5f5f5",
 		textAlign: "center",
 		padding: 12,
-		fontSize: 24,
+		fontSize: 26,
 		fontWeight: "900",
+		lineHeight: 28,
 	},
 	modalQuestionContainer: {
 		flex: 1,
