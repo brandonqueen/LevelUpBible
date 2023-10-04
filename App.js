@@ -4,16 +4,22 @@ import { Provider } from "react-redux";
 import { store } from "./store.js";
 import { PaperProvider } from "react-native-paper";
 import BottomTabs from "./src/navigation/BottomTabs.js";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
+
+let persistor = persistStore(store);
 
 const App = () => {
 	return (
 		<Provider store={store}>
-			<PaperProvider>
-				<SafeAreaView style={styles.root}>
-					<BottomTabs />
-					<StatusBar barStyle="light-content" />
-				</SafeAreaView>
-			</PaperProvider>
+			<PersistGate loading={null} persistor={persistor}>
+				<PaperProvider>
+					<SafeAreaView style={styles.root}>
+						<BottomTabs />
+						<StatusBar barStyle="light-content" />
+					</SafeAreaView>
+				</PaperProvider>
+			</PersistGate>
 		</Provider>
 	);
 };
