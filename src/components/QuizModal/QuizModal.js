@@ -43,7 +43,9 @@ const QuizModal = ({
 	const QuizContent = () => {
 		return (
 			<View>
-				<Text style={styles.heading}>  Quiz 🤓{"\n"}
+				<Text style={styles.heading}>
+					{" "}
+					Quiz 🤓{"\n"}
 					<Text style={{ fontWeight: "300", fontSize: 22 }}>{`${bookName} ${
 						chapterIndex + 1
 					}`}</Text>
@@ -113,13 +115,6 @@ const QuizModal = ({
 						You answered all the questions correctly and have added{" "}
 						{numOfVerses} points to your overall score! {"\n\n"} Rejoice! 🙌 🎉
 					</Text>
-					{/* <Text
-						style={[
-							styles.modalQuestionText,
-							{ textAlign: "center", marginVertical: 24, fontWeight: "800" },
-						]}>
-						Click below to exit the quiz.
-					</Text> */}
 				</View>
 				<View style={styles.bottomButtonsCompleteContainer}>
 					<TouchableHighlight

@@ -21,11 +21,13 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
 import axios from "axios";
 import QuizModal from "../../components/QuizModal/QuizModal";
+import NoQuizModal from "../../components/NoQuizModal/NoQuizModal";
 import quizJSON from "../../constants/quizData.json";
 
 const BibleScreen = () => {
 	//global state getter
 	const bibleState = useSelector((state) => state.globalData.bibleData);
+	const userProgress = useSelector((state) => state.globalData.userProgress);
 
 	//global state setter
 	const dispatch = useDispatch();
@@ -63,7 +65,9 @@ const BibleScreen = () => {
 	const [completeButtonFinishedStyle, setCompleteButtonFinishedStyle] =
 		useState({});
 	const [completeButtonPressedIn, setCompleteButtonPressedIn] = useState({});
-	const [modalOpen, setModalOpen] = useState(false);
+	const [quizModalOpen, setQuizModalOpen] = useState(false);
+	const [noQuizModalOpen, setNoQuizModalOpen] = useState(false);
+	const [awardArrayCopy, setAwardArrayCopy] = useState([]);
 
 	//API call
 	const fetchData = async () => {
@@ -233,8 +237,10 @@ const BibleScreen = () => {
 		setCompleteButtonPressedIn(null);
 	};
 
-	const handleModalToggle = () => {
-		setModalOpen(!modalOpen);
+	const handleQuizModalToggle = () => {
+		const currentAwardsArray = userProgress.recentEarnedAwards;
+		console.log(currentAwardsArray);
+		setQuizModalOpen(!quizModalOpen);
 	};
 
 	const handleNextChapterPress = () => {
@@ -302,6 +308,10 @@ const BibleScreen = () => {
 				points: numOfVerses,
 			})
 		);
+	};
+
+	const handleNoQuizModalToggle = () => {
+		alert("wow!");
 	};
 
 	return (
@@ -396,7 +406,7 @@ const BibleScreen = () => {
 									onPressIn={handleCompletePressIn}
 									onPress={
 										shouldRenderPressable && quizSection
-											? handleModalToggle
+											? handleQuizModalToggle
 											: devCompleteChapter
 									}
 									//onPress={devCompleteChapter}
@@ -422,10 +432,10 @@ const BibleScreen = () => {
 					</ScrollView>
 				)}
 			</View>
-			{modalOpen && (
+			{quizModalOpen && (
 				<QuizModal
-					modalOpen={modalOpen}
-					modalToggle={handleModalToggle}
+					modalOpen={quizModalOpen}
+					modalToggle={handleQuizModalToggle}
 					QuizData={quizSection}
 					numOfVerses={numOfVerses}
 					testamentIndex={testamentIndex}
@@ -433,6 +443,9 @@ const BibleScreen = () => {
 					bookName={bookName}
 					chapterIndex={chapterIndex}
 				/>
+			)}
+			{noQuizModalOpen && (
+				<NoQuizModal modalOpen={true} modalToggle={handleNoQuizModalToggle} />
 			)}
 		</View>
 	);
@@ -505,31 +518,5 @@ const styles = StyleSheet.create({
 		fontWeight: "800",
 		textAlign: "center",
 		padding: 16,
-	},
-	modalQuestionContainer: {
-		flex: 1,
-		padding: 10,
-	},
-	modalQuestionText: {
-		color: "#f5f5f5",
-		fontWeight: "600",
-		fontSize: 22,
-	},
-	modalChoicesContainer: {
-		flex: 1,
-		padding: 10,
-	},
-	modalChoiceContainer: {
-		borderWidth: 1,
-		borderStyle: "solid",
-		borderColor: "#695DDA",
-		backgroundColor: "rgba(11,14,29, .6)",
-		borderRadius: 8,
-		padding: 12,
-		marginVertical: 8,
-	},
-	modalButtonsContainer: {
-		backgroundColor: "yellow",
-		flexDirection: "row",
 	},
 });
