@@ -22,7 +22,7 @@ const ModalPopup = ({ children, modalOpen, modalToggle }) => {
 						{
 							...StyleSheet.absoluteFill,
 						},
-						//{ backgroundColor: "rgba(0,0,0,0.3)" },
+						// { backgroundColor: "rgba(0,0,0,0.3)" },
 					]}
 				/>
 			</TouchableWithoutFeedback>

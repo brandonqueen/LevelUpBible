@@ -16,6 +16,7 @@ import {
 	updateProgress,
 } from "../../features/globalData/globalDataSlice";
 import { BlurView } from "expo-blur";
+import QuizSuccess from "../QuizSuccess/QuizSuccess";
 import correctImg from "../../../assets/Images/CORRECT!!.png";
 
 const QuizModal = ({
@@ -27,6 +28,7 @@ const QuizModal = ({
 	bookIndex,
 	bookName,
 	chapterIndex,
+	rewards,
 }) => {
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [selectedChoiceIndex, setSelectedChoiceIndex] = useState(null);
@@ -93,37 +95,6 @@ const QuizModal = ({
 						<Text style={styles.modalQuestionText}>
 							{answeredIncorrectly ? "Start Over" : "Next"}
 						</Text>
-					</TouchableHighlight>
-				</View>
-			</View>
-		);
-	};
-
-	const QuizSuccess = () => {
-		return (
-			<View>
-				<Text style={[styles.heading, { fontSize: 28 }]}>HOORAY! 🥳</Text>
-				<View style={styles.pointsContainer}>
-					<Text style={styles.points}>+{numOfVerses}pts</Text>
-				</View>
-				<View style={styles.modalQuestionContainer}>
-					<Text
-						style={[
-							styles.modalQuestionText,
-							{ textAlign: "center", marginVertical: 16 },
-						]}>
-						You answered all the questions correctly and have added{" "}
-						{numOfVerses} points to your overall score! {"\n\n"} Rejoice! 🙌 🎉
-					</Text>
-				</View>
-				<View style={styles.bottomButtonsCompleteContainer}>
-					<TouchableHighlight
-						key={"exit button"}
-						style={styles.exitButton}
-						activeOpacity={1}
-						underlayColor="rgb(232, 91, 70)"
-						onPress={modalToggle}>
-						<Text style={styles.completeButtonText}>Exit</Text>
 					</TouchableHighlight>
 				</View>
 			</View>
@@ -244,7 +215,15 @@ const QuizModal = ({
 			</TouchableWithoutFeedback>
 			<View style={styles.container}>
 				<ScrollView showsVerticalScrollIndicator={false}>
-					{quizComplete ? <QuizSuccess /> : <QuizContent />}
+					{quizComplete ? (
+						<QuizSuccess
+							numOfVerses={numOfVerses}
+							modalToggle={modalToggle}
+							rewards={rewards}
+						/>
+					) : (
+						<QuizContent />
+					)}
 				</ScrollView>
 			</View>
 		</Modal>

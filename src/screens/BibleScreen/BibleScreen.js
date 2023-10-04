@@ -52,6 +52,9 @@ const BibleScreen = () => {
 		bibleState[testamentIndex].books[bookIndex].chapters[chapterIndex]
 			.completed;
 
+	//current awards array
+	let currentRewardsArray = userProgress.recentEarnedRewards;
+
 	//local state
 	const [nextChapterExists, setNextChapterExists] = useState(true);
 	const [isLoading, setIsLoading] = useState(true);
@@ -238,8 +241,6 @@ const BibleScreen = () => {
 	};
 
 	const handleQuizModalToggle = () => {
-		const currentAwardsArray = userProgress.recentEarnedAwards;
-		console.log(currentAwardsArray);
 		setQuizModalOpen(!quizModalOpen);
 	};
 
@@ -295,23 +296,9 @@ const BibleScreen = () => {
 		);
 	}
 
-	const devCompleteChapter = () => {
-		dispatch(
-			setChapterCompleted({
-				testamentIndex: testamentIndex,
-				bookIndex: bookIndex,
-				chapterIndex: chapterIndex,
-			})
-		);
-		dispatch(
-			updateProgress({
-				points: numOfVerses,
-			})
-		);
-	};
-
+	const currentQuizBooks = quizJSON.map((book) => book.book);
 	const handleNoQuizModalToggle = () => {
-		alert("wow!");
+		setNoQuizModalOpen(!noQuizModalOpen);
 	};
 
 	return (
@@ -407,9 +394,8 @@ const BibleScreen = () => {
 									onPress={
 										shouldRenderPressable && quizSection
 											? handleQuizModalToggle
-											: devCompleteChapter
+											: handleNoQuizModalToggle
 									}
-									//onPress={devCompleteChapter}
 									onPressOut={handleCompletePressOut}
 									style={[
 										styles.completeButtonPressable,
@@ -432,6 +418,19 @@ const BibleScreen = () => {
 					</ScrollView>
 				)}
 			</View>
+			{noQuizModalOpen && (
+				<NoQuizModal
+					modalOpen={noQuizModalOpen}
+					modalToggle={handleNoQuizModalToggle}
+					currentQuizBooks={currentQuizBooks}
+					numOfVerses={numOfVerses}
+					testamentIndex={testamentIndex}
+					bookIndex={bookIndex}
+					bookName={bookName}
+					chapterIndex={chapterIndex}
+					rewards={currentRewardsArray}
+				/>
+			)}
 			{quizModalOpen && (
 				<QuizModal
 					modalOpen={quizModalOpen}
@@ -442,10 +441,8 @@ const BibleScreen = () => {
 					bookIndex={bookIndex}
 					bookName={bookName}
 					chapterIndex={chapterIndex}
+					rewards={currentRewardsArray}
 				/>
-			)}
-			{noQuizModalOpen && (
-				<NoQuizModal modalOpen={true} modalToggle={handleNoQuizModalToggle} />
 			)}
 		</View>
 	);
