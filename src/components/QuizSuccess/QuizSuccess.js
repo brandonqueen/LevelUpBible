@@ -1,7 +1,29 @@
 import { StyleSheet, Text, View, TouchableHighlight } from "react-native";
 import React from "react";
+import { useSelector } from "react-redux";
 
-const QuizSuccess = ({ numOfVerses, rewards, modalToggle }) => {
+const QuizSuccess = ({ numOfVerses, newRewards, modalToggle }) => {
+	const rewardState = useSelector(
+		(state) => state.globalData.userProgress.rewards
+	);
+
+	const NewRewards = () => {
+		newRewards.map((newReward) => {
+			rewardIndex = rewardState.findIndex(
+				(rewardObj) => rewardObj.title === newReward
+			);
+			const newRewardToRender = rewardState[rewardIndex];
+			return (
+				<View>
+					<Text style={styles.modalQuestionText}>
+						You've also earned a new Reward!
+					</Text>
+					<Reward reward={newRewardToRender}></Reward>
+				</View>
+			);
+		});
+	};
+
 	return (
 		<View>
 			<Text style={[styles.heading, { fontSize: 28 }]}>HOORAY! 🥳</Text>
@@ -15,7 +37,15 @@ const QuizSuccess = ({ numOfVerses, rewards, modalToggle }) => {
 						{ textAlign: "center", marginVertical: 16 },
 					]}>
 					You answered all the questions correctly and have added {numOfVerses}{" "}
-					points to your overall score! {"\n\n"} Rejoice! 🙌 🎉
+					points to your overall score!
+				</Text>
+				{newRewards && <NewRewards />}
+				<Text
+					style={[
+						styles.modalQuestionText,
+						{ textAlign: "center", marginVertical: 16 },
+					]}>
+					Rejoice! 🙌 🎉
 				</Text>
 			</View>
 			<View style={styles.bottomButtonsCompleteContainer}>

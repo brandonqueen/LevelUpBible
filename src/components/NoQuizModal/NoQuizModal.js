@@ -1,6 +1,6 @@
 import { StyleSheet, Text, ScrollView, TouchableHighlight } from "react-native";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
 	setChapterCompleted,
 	updateProgress,
@@ -22,11 +22,21 @@ const NoQuizModal = ({
 }) => {
 	//state
 	const [confirmedRead, setConfirmedRead] = useState(false);
+	const [newRewards, setNewRewards] = useState([]);
 
 	//global state setter
 	const dispatch = useDispatch();
+	const userProgress = useSelector((state) => state.globalData.userProgress);
 
 	const handleConfirmPressed = () => {
+		const updatedRewardsArray = userProgress.recentEarnedRewards;
+		const newlyEarnedRewards = updatedRewardsArray.filter(
+			(item) => !rewards.includes(item)
+		);
+		if (newlyEarnedRewards) {
+			setNewRewards(newlyEarnedRewards);
+		}
+
 		dispatch(
 			setChapterCompleted({
 				testamentIndex: testamentIndex,
@@ -126,7 +136,7 @@ const NoQuizModal = ({
 				<QuizSuccess
 					numOfVerses={numOfVerses}
 					modalToggle={modalToggle}
-					rewards={rewards}
+					newRewards={newRewards}
 				/>
 			) : (
 				<ConfirmPage />

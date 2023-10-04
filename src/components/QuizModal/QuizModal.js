@@ -10,7 +10,7 @@ import {
 	TouchableHighlight,
 	Pressable,
 } from "react-native";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
 	setChapterCompleted,
 	updateProgress,
@@ -35,6 +35,7 @@ const QuizModal = ({
 	const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
 	const [answeredIncorrectly, setAnsweredIncorrectly] = useState(false);
 	const [quizComplete, setQuizComplete] = useState(false);
+	const [newRewards, setNewRewards] = useState([]);
 
 	const numberOfQuestions = QuizData?.questions?.length;
 	const currentQuestion = QuizData?.questions[currentQuestionIndex];
@@ -172,6 +173,16 @@ const QuizModal = ({
 		if (answeredCorrectly) {
 			if (currentQuestionIndex + 1 === numberOfQuestions) {
 				//Quiz completed!
+				const userProgress = useSelector(
+					(state) => state.globalData.userProgress
+				);
+				const updatedRewardsArray = userProgress.recentEarnedRewards;
+				const newlyEarnedRewards = updatedRewardsArray.filter(
+					(item) => !rewards.includes(item)
+				);
+				if (newlyEarnedRewards) {
+					setNewRewards(newlyEarnedRewards);
+				}
 				dispatch(
 					setChapterCompleted({
 						testamentIndex: testamentIndex,
@@ -219,7 +230,7 @@ const QuizModal = ({
 						<QuizSuccess
 							numOfVerses={numOfVerses}
 							modalToggle={modalToggle}
-							rewards={rewards}
+							newRewards={newRewards}
 						/>
 					) : (
 						<QuizContent />
