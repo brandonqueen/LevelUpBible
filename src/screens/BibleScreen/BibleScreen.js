@@ -41,9 +41,7 @@ const BibleScreen = () => {
 	const chapterIndex = chapterNum - 1;
 
 	//get Quiz section
-	//const quizBookIndex = quizJSON.findIndex((obj) => obj.book === bookName);
-	//const quizSection = quizJSON[quizBookIndex]?.chapters[chapterIndex];
-	const quizSection = quizMap[`${bookName}`].chapters[chapterIndex];
+	const quizSection = quizMap?.[bookName]?.chapters?.[chapterIndex] ?? null;
 
 	//current chapter completed status
 	const isCurrentChapterCompleted =
