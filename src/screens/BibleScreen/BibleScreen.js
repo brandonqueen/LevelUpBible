@@ -11,11 +11,7 @@ import {
 } from "react-native";
 import { useState, useEffect, useRef } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import {
-	setChapterSelected,
-	setChapterCompleted,
-	updateProgress,
-} from "../../features/globalData/globalDataSlice";
+import { setChapterSelected } from "../../features/globalData/globalDataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
@@ -73,7 +69,6 @@ const BibleScreen = () => {
 	const [completeButtonPressedIn, setCompleteButtonPressedIn] = useState({});
 	const [quizModalOpen, setQuizModalOpen] = useState(false);
 	const [noQuizModalOpen, setNoQuizModalOpen] = useState(false);
-	const [awardArrayCopy, setAwardArrayCopy] = useState([]);
 
 	//API call
 	const fetchData = async () => {
