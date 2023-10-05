@@ -7,7 +7,7 @@
     "icon": "./assets/Images/LevelUpLogoIcon.png",
     "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/Images/Logo.png",
+      "image": "./assets/Images/LevelUpSplash.png",
       "resizeMode": "contain",
       "backgroundColor": "#161e39"
     },

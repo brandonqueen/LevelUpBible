@@ -6,7 +6,7 @@ import {
 } from "react-native";
 import { BlurView } from "expo-blur";
 
-const ModalPopup = ({ children, modalOpen, modalToggle }) => {
+const ModalPopup = ({ children, modalOpen, modalToggle, backgroundColor }) => {
 	return (
 		<Modal
 			animationType="fade"
@@ -26,7 +26,13 @@ const ModalPopup = ({ children, modalOpen, modalToggle }) => {
 					]}
 				/>
 			</TouchableWithoutFeedback>
-			<View style={styles.container}>{children}</View>
+			<View
+				style={[
+					styles.container,
+					backgroundColor && { backgroundColor: backgroundColor },
+				]}>
+				{children}
+			</View>
 		</Modal>
 	);
 };
