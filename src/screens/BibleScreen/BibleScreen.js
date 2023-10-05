@@ -18,7 +18,6 @@ import { ProgressBar } from "react-native-paper";
 import axios from "axios";
 import QuizModal from "../../components/Quiz Components/QuizModal/QuizModal";
 import NoQuizModal from "../../components/Quiz Components/NoQuizModal/NoQuizModal";
-// import quizJSON from "../../constants/quizData/quizData.json";
 import { quizMap } from "../../constants/quizData/quizMap";
 
 const BibleScreen = () => {
