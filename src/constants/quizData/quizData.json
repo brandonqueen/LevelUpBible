@@ -2322,12 +2322,164 @@
     },
     {
         "book": "Exodus",
+        "chapters": []
+    },
+    {
+        "book": "Leviticus",
+        "chapters": []
+    },
+    {
+        "book": "Numbers",
+        "chapters": []
+    },
+    {
+        "book": "Deuteronomy",
+        "chapters": []
+    },
+    {
+        "book": "Joshua",
+        "chapters": []
+    },
+    {
+        "book": "Judges",
+        "chapters": []
+    },
+    {
+        "book": "Ruth",
+        "chapters": []
+    },
+    {
+        "book": "1 Samuel",
+        "chapters": []
+    },
+    {
+        "book": "2 Samuel",
+        "chapters": []
+    },
+    {
+        "book": "1 Kings",
+        "chapters": []
+    },
+    {
+        "book": "2 Kings",
+        "chapters": []
+    },
+    {
+        "book": "1 Chronicles",
+        "chapters": []
+    },
+    {
+        "book": "2 Chronicles",
+        "chapters": []
+    },
+    {
+        "book": "Ezra",
+        "chapters": []
+    },
+    {
+        "book": "Nehemiah",
+        "chapters": []
+    },
+    {
+        "book": "Esther",
+        "chapters": []
+    },
+    {
+        "book": "Job",
+        "chapters": []
+    },
+    {
+        "book": "Psalms",
+        "chapters": []
+    },
+    {
+        "book": "Proverbs",
+        "chapters": []
+    },
+    {
+        "book": "Ecclesiastes",
+        "chapters": []
+    },
+    {
+        "book": "Song of Solomon",
+        "chapters": []
+    },
+    {
+        "book": "Isaiah",
+        "chapters": []
+    },
+    {
+        "book": "Jeremiah",
+        "chapters": []
+    },
+    {
+        "book": "Lamentations",
+        "chapters": []
+    },
+    {
+        "book": "Ezekiel",
+        "chapters": []
+    },
+    {
+        "book": "Daniel",
+        "chapters": []
+    },
+    {
+        "book": "Hosea",
+        "chapters": []
+    },
+    {
+        "book": "Joel",
+        "chapters": []
+    },
+    {
+        "book": "Amos",
+        "chapters": []
+    },
+    {
+        "book": "Obadiah",
+        "chapters": []
+    },
+    {
+        "book": "Jonah",
+        "chapters": []
+    },
+    {
+        "book": "Micah",
+        "chapters": []
+    },
+    {
+        "book": "Nahum",
+        "chapters": []
+    },
+    {
+        "book": "Habakkuk",
+        "chapters": []
+    },
+    {
+        "book": "Zephaniah",
+        "chapters": []
+    },
+    {
+        "book": "Haggai",
+        "chapters": []
+    },
+    {
+        "book": "Zechariah",
+        "chapters": []
+    },
+    {
+        "book": "Malachi",
+        "chapters": []
+    },
+    {
+        "book": "Matthew",
         "chapters": [
             {
                 "chapter": "1",
                 "questions": [
                     {
-                        "question": "True or False: The Israelites were enslaved in Egypt during this time.",
+                        "question": "True or False: Jesus is a descendant of David.",
                         "options": [
                             "True",
                             "False"
@@ -2335,35 +2487,35 @@
                         "answer": {
                             "index": 0,
                             "text": "True",
-                            "verse": "Exodus 1:11-14"
+                            "verse": "Matthew 1:1"
                         }
                     },
                     {
-                        "question": "Who was the Pharaoh of Egypt mentioned in Exodus 1?",
+                        "question": "Who was the father of Joseph, the husband of Mary?",
                         "options": [
-                            "Pharaoh Ramses II",
-                            "Pharaoh Tutankhamun",
-                            "Pharaoh Amenhotep III",
-                            "Pharaoh Thutmose I"
+                            "Jacob",
+                            "Eleazar",
+                            "David",
+                            "Abraham"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "Pharaoh Ramses II",
-                            "verse": "Exodus 1:11"
+                            "text": "Jacob",
+                            "verse": "Matthew 1:16"
                         }
                     },
                     {
-                        "question": "What did the midwives do to defy Pharaoh's command in Exodus 1?",
+                        "question": "How many generations were there from Abraham to David?",
                         "options": [
-                            "They refused to attend to childbirths",
-                            "They hid the Israelite babies",
-                            "They reported every Israelite birth to Pharaoh",
-                            "They took Egyptian babies and presented them as Israelite"
+                            "14 generations",
+                            "12 generations",
+                            "20 generations",
+                            "16 generations"
                         ],
                         "answer": {
-                            "index": 1,
-                            "text": "They hid the Israelite babies",
-                            "verse": "Exodus 1:17-21"
+                            "index": 0,
+                            "text": "14 generations",
+                            "verse": "Matthew 1:17"
                         }
                     }
                 ]
@@ -2372,45 +2524,43 @@
                 "chapter": "2",
                 "questions": [
                     {
-                        "question": "What did Moses' mother do to save him when he was born in Exodus 2?",
+                        "question": "Who visited Jesus after his birth?",
                         "options": [
-                            "She left him in the river to be found by Pharaoh's daughter",
-                            "She placed him in a basket and hid him in the house",
-                            "She sent him to live with a distant relative",
-                            "She sacrificed him to the gods of Egypt"
+                            "Shepherds",
+                            "Wise men",
+                            "Kings",
+                            "Prophets"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "She placed him in a basket and hid him in the house",
-                            "verse": "Exodus 2:2-3"
+                            "text": "Wise men",
+                            "verse": "Matthew 2:1"
                         }
                     },
                     {
-                        "question": "Who found and adopted Moses as her son in Exodus 2?",
+                        "question": "True or False: Herod was thrilled to hear about Jesus’s birth.",
                         "options": [
-                            "Pharaoh's wife",
-                            "Pharaoh's daughter",
-                            "One of the Egyptian servants",
-                            "Moses' real mother"
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "Pharaoh's daughter",
-                            "verse": "Exodus 2:5-10"
+                            "text": "False",
+                            "verse": "Matthew 2:3"
                         }
                     },
                     {
-                        "question": "Where did Moses flee to after killing an Egyptian in Exodus 2?",
+                        "question": "Where did Joseph take Mary and Jesus to escape from Herod?",
                         "options": [
-                            "Midian",
-                            "Canaan",
-                            "Goshen",
-                            "Sinai"
+                            "Egypt",
+                            "Nazareth",
+                            "Jerusalem",
+                            "Bethlehem"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "Midian",
-                            "verse": "Exodus 2:15"
+                            "text": "Egypt",
+                            "verse": "Matthew 2:13"
                         }
                     }
                 ]
@@ -2419,45 +2569,43 @@
                 "chapter": "3",
                 "questions": [
                     {
-                        "question": "Where did Moses encounter the burning bush in Exodus 3?",
+                        "question": "Who was preaching in the wilderness of Judea?",
                         "options": [
-                            "Mount Sinai",
-                            "Mount Horeb",
-                            "Mount Nebo",
-                            "Mount Zion"
+                            "Jesus",
+                            "John the Baptist",
+                            "Peter",
+                            "Paul"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "Mount Horeb",
-                            "verse": "Exodus 3:1-2"
+                            "text": "John the Baptist",
+                            "verse": "Matthew 3:1"
                         }
                     },
                     {
-                        "question": "What name did God reveal to Moses at the burning bush in Exodus 3?",
+                        "question": "True or False: John the Baptist wore clothes of camel's hair and ate locusts and wild honey.",
                         "options": [
-                            "Jehovah",
-                            "El Shaddai",
-                            "Yahweh",
-                            "Adonai"
+                            "True",
+                            "False"
                         ],
                         "answer": {
-                            "index": 2,
-                            "text": "Yahweh",
-                            "verse": "Exodus 3:14"
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Matthew 3:4"
                         }
                     },
                     {
-                        "question": "What was Moses' initial response when God called him to lead the Israelites out of Egypt in Exodus 3?",
+                        "question": "Who did John the Baptist say would come after him?",
                         "options": [
-                            "He immediately agreed",
-                            "He was afraid and made excuses",
-                            "He asked for a sign",
-                            "He ignored God's call"
+                            "The Messiah",
+                            "King Herod",
+                            "A prophet",
+                            "An angel"
                         ],
                         "answer": {
-                            "index": 1,
-                            "text": "He was afraid and made excuses",
-                            "verse": "Exodus 3:11-12"
+                            "index": 0,
+                            "text": "The Messiah",
+                            "verse": "Matthew 3:11"
                         }
                     }
                 ]
@@ -2466,45 +2614,43 @@
                 "chapter": "4",
                 "questions": [
                     {
-                        "question": "What miraculous sign did God give Moses to perform before Pharaoh in Exodus 4?",
+                        "question": "Who tempted Jesus in the wilderness?",
                         "options": [
-                            "Turning water into blood",
-                            "Parting the Red Sea",
-                            "Changing a staff into a snake",
-                            "Healing the sick"
+                            "The Pharisees",
+                            "The devil",
+                            "John the Baptist",
+                            "The disciples"
                         ],
                         "answer": {
-                            "index": 2,
-                            "text": "Changing a staff into a snake",
-                            "verse": "Exodus 4:2-4"
+                            "index": 1,
+                            "text": "The devil",
+                            "verse": "Matthew 4:1"
                         }
                     },
                     {
-                        "question": "Who served as Moses' spokesperson when he confronted Pharaoh in Exodus 4?",
+                        "question": "True or False: Jesus fasted for 30 days and 30 nights.",
                         "options": [
-                            "Aaron, his brother",
-                            "Miriam, his sister",
-                            "Pharaoh's daughter",
-                            "A Hebrew elder"
+                            "True",
+                            "False"
                         ],
                         "answer": {
-                            "index": 0,
-                            "text": "Aaron, his brother",
-                            "verse": "Exodus 4:14-16"
+                            "index": 1,
+                            "text": "False",
+                            "verse": "Matthew 4:2"
                         }
                     },
                     {
-                        "question": "What was the purpose of the circumcision mentioned in Exodus 4?",
+                        "question": "What was Jesus's first public message?",
                         "options": [
-                            "A sign of the covenant with God",
-                            "A traditional custom in Egypt",
-                            "A form of punishment",
-                            "A medical procedure"
+                            "Rejoice for the kingdom of heaven is near",
+                            "Repent for the kingdom of heaven is near",
+                            "Give to the poor",
+                            "Love your enemies"
                         ],
                         "answer": {
-                            "index": 0,
-                            "text": "A sign of the covenant with God",
-                            "verse": "Exodus 4:24-26"
+                            "index": 1,
+                            "text": "Repent for the kingdom of heaven is near",
+                            "verse": "Matthew 4:17"
                         }
                     }
                 ]
@@ -2513,45 +2659,43 @@
                 "chapter": "5",
                 "questions": [
                     {
-                        "question": "How did Pharaoh respond when Moses and Aaron first requested that the Israelites be allowed to go into the wilderness to worship in Exodus 5?",
+                        "question": "Who will inherit the earth according to Jesus?",
                         "options": [
-                            "He agreed immediately",
-                            "He granted their request",
-                            "He refused and increased their workload",
-                            "He called for a negotiation"
+                            "The meek",
+                            "The merciful",
+                            "The peacemakers",
+                            "Those who mourn"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "The meek",
+                            "verse": "Matthew 5:5"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jesus came to abolish the Law and the Prophets.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "False",
+                            "verse": "Matthew 5:17"
+                        }
+                    },
+                    {
+                        "question": "What should you do if someone strikes you on the right cheek?",
+                        "options": [
+                            "Strike back",
+                            "Go to the court",
+                            "Turn to them the other cheek also",
+                            "Seek revenge later"
                         ],
                         "answer": {
                             "index": 2,
-                            "text": "He refused and increased their workload",
-                            "verse": "Exodus 5:6-9"
-                        }
-                    },
-                    {
-                        "question": "Who did the Israelite foremen blame for their increased hardships in Exodus 5?",
-                        "options": [
-                            "Moses and Aaron",
-                            "Pharaoh",
-                            "Themselves",
-                            "God"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "Moses and Aaron",
-                            "verse": "Exodus 5:20-21"
-                        }
-                    },
-                    {
-                        "question": "What did Moses and Aaron say to God when the Israelites' situation worsened in Exodus 5?",
-                        "options": [
-                            "They questioned God's plan",
-                            "They praised God for His wisdom",
-                            "They demanded a miracle",
-                            "They asked for guidance"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "They questioned God's plan",
-                            "verse": "Exodus 5:22-23"
+                            "text": "Turn to them the other cheek also",
+                            "verse": "Matthew 5:39"
                         }
                     }
                 ]
@@ -2560,45 +2704,43 @@
                 "chapter": "6",
                 "questions": [
                     {
-                        "question": "What did God promise to do in response to Moses' concerns about Pharaoh's hardness of heart in Exodus 6?",
+                        "question": "What should you not do when you give to the needy?",
                         "options": [
-                            "God promised to perform miracles",
-                            "God promised to harden Pharaoh's heart further",
-                            "God promised to bring plagues upon Egypt",
-                            "God promised to replace Pharaoh with Moses"
+                            "Give secretly",
+                            "Announce it with trumpets",
+                            "Give generously",
+                            "Help those in need"
                         ],
                         "answer": {
-                            "index": 0,
-                            "text": "God promised to perform miracles",
-                            "verse": "Exodus 6:1-8"
+                            "index": 1,
+                            "text": "Announce it with trumpets",
+                            "verse": "Matthew 6:2"
                         }
                     },
                     {
-                        "question": "How many sons did Levi, one of Jacob's sons, have in Exodus 6?",
+                        "question": "True or False: Jesus instructs us to store up treasures in heaven.",
                         "options": [
-                            "1 son",
-                            "2 sons",
-                            "3 sons",
-                            "4 sons"
-                        ],
-                        "answer": {
-                            "index": 3,
-                            "text": "4 sons",
-                            "verse": "Exodus 6:16-19"
-                        }
-                    },
-                    {
-                        "question": "Who was Aaron's wife mentioned in Exodus 6?",
-                        "options": [
-                            "Zipporah",
-                            "Miriam",
-                            "Tamar",
-                            "Leah"
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "Zipporah",
-                            "verse": "Exodus 6:23"
+                            "text": "True",
+                            "verse": "Matthew 6:20"
+                        }
+                    },
+                    {
+                        "question": "What should you seek first?",
+                        "options": [
+                            "The kingdom of God and his righteousness",
+                            "Riches and wealth",
+                            "Power and dominion",
+                            "Knowledge and wisdom"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "The kingdom of God and his righteousness",
+                            "verse": "Matthew 6:33"
                         }
                     }
                 ]
@@ -2607,45 +2749,43 @@
                 "chapter": "7",
                 "questions": [
                     {
-                        "question": "What was the first sign or wonder that Aaron performed before Pharaoh in Exodus 7?",
+                        "question": "True or False: Jesus said, 'Do not judge, or you too will be judged.'",
                         "options": [
-                            "Turning the Nile into blood",
-                            "Summoning frogs",
-                            "Bringing darkness",
-                            "Sending locusts"
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "Turning the Nile into blood",
-                            "verse": "Exodus 7:19-21"
+                            "text": "True",
+                            "verse": "Matthew 7:1"
                         }
                     },
                     {
-                        "question": "How did Pharaoh's magicians replicate the first sign in Exodus 7?",
+                        "question": "What will happen to everyone who hears Jesus’s words and puts them into practice?",
                         "options": [
-                            "They couldn't replicate it",
-                            "They turned water into blood from another source",
-                            "They used an illusion",
-                            "They prayed to their gods"
+                            "They will be like a wise man who built his house on the rock",
+                            "They will be like a foolish man who built his house on the sand",
+                            "They will be lost",
+                            "They will be judged"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "They will be like a wise man who built his house on the rock",
+                            "verse": "Matthew 7:24"
+                        }
+                    },
+                    {
+                        "question": "Which gate is wide and leads to destruction?",
+                        "options": [
+                            "Narrow gate",
+                            "Wide gate",
+                            "Golden gate",
+                            "Small gate"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "They turned water into blood from another source",
-                            "verse": "Exodus 7:22"
-                        }
-                    },
-                    {
-                        "question": "What was the purpose of the plagues brought upon Egypt in Exodus 7?",
-                        "options": [
-                            "To test Pharaoh's power",
-                            "To punish Egypt for enslaving the Israelites",
-                            "To demonstrate God's sovereignty",
-                            "To prove Moses and Aaron's authority"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "To demonstrate God's sovereignty",
-                            "verse": "Exodus 7:5"
+                            "text": "Wide gate",
+                            "verse": "Matthew 7:13"
                         }
                     }
                 ]
@@ -2654,45 +2794,43 @@
                 "chapter": "8",
                 "questions": [
                     {
-                        "question": "Which creature did the second plague of Egypt bring upon the land in Exodus 8?",
+                        "question": "Who approached Jesus to ask for healing for his servant?",
                         "options": [
-                            "Locusts",
-                            "Frogs",
-                            "Flies",
-                            "Hail"
+                            "A Pharisee",
+                            "A centurion",
+                            "A tax collector",
+                            "A fisherman"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "Frogs",
-                            "verse": "Exodus 8:6-7"
+                            "text": "A centurion",
+                            "verse": "Matthew 8:5"
                         }
                     },
                     {
-                        "question": "How did Pharaoh initially react when the frogs were brought upon Egypt in Exodus 8?",
+                        "question": "True or False: Jesus healed a man with leprosy by saying the word.",
                         "options": [
-                            "He immediately freed the Israelites",
-                            "He requested Moses to remove the frogs",
-                            "He hardened his heart",
-                            "He fled from Egypt"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "He requested Moses to remove the frogs",
-                            "verse": "Exodus 8:8"
-                        }
-                    },
-                    {
-                        "question": "What did the magicians do when they couldn't replicate the third plague in Exodus 8?",
-                        "options": [
-                            "They confessed their faith in God",
-                            "They tried to replicate it using magic",
-                            "They blamed Moses and Aaron",
-                            "They retired from their profession"
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "They confessed their faith in God",
-                            "verse": "Exodus 8:19"
+                            "text": "True",
+                            "verse": "Matthew 8:3"
+                        }
+                    },
+                    {
+                        "question": "What did Jesus and his disciples run into while crossing the lake?",
+                        "options": [
+                            "A storm",
+                            "A fleet of fishing boats",
+                            "A group of Pharisees",
+                            "A large crowd"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "A storm",
+                            "verse": "Matthew 8:24"
                         }
                     }
                 ]
@@ -2701,45 +2839,43 @@
                 "chapter": "9",
                 "questions": [
                     {
-                        "question": "What was the sixth plague that struck Egypt in Exodus 9?",
+                        "question": "How did the paralyzed man get in front of Jesus?",
                         "options": [
-                            "Hail",
-                            "Locusts",
-                            "Frogs",
-                            "Boils"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "Hail",
-                            "verse": "Exodus 9:18-25"
-                        }
-                    },
-                    {
-                        "question": "How did Pharaoh respond to the devastation caused by the hail in Exodus 9?",
-                        "options": [
-                            "He begged Moses to stop it",
-                            "He continued to harden his heart",
-                            "He released the Israelites",
-                            "He fled from Egypt"
+                            "He walked",
+                            "His friends brought him on a mat",
+                            "He was carried by angels",
+                            "Jesus found him on the street"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "He continued to harden his heart",
-                            "verse": "Exodus 9:34-35"
+                            "text": "His friends brought him on a mat",
+                            "verse": "Matthew 9:2"
                         }
                     },
                     {
-                        "question": "What did the Israelites do to protect their firstborn sons from the tenth plague in Exodus 9?",
+                        "question": "True or False: The disciples of John fast often, but Jesus's disciples do not.",
                         "options": [
-                            "They offered sacrifices to God",
-                            "They hid their sons in caves",
-                            "They asked Pharaoh for protection",
-                            "They sent their sons to live with the Egyptians"
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "They offered sacrifices to God",
-                            "verse": "Exodus 12:21-23"
+                            "text": "True",
+                            "verse": "Matthew 9:14"
+                        }
+                    },
+                    {
+                        "question": "Who touched the edge of Jesus’s cloak and got healed?",
+                        "options": [
+                            "A blind man",
+                            "A woman who had been subject to bleeding for twelve years",
+                            "A Canaanite woman",
+                            "A lame man"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "A woman who had been subject to bleeding for twelve years",
+                            "verse": "Matthew 9:20"
                         }
                     }
                 ]
@@ -2748,45 +2884,43 @@
                 "chapter": "10",
                 "questions": [
                     {
-                        "question": "Which plague involved a thick darkness covering the land of Egypt in Exodus 10?",
+                        "question": "Who was NOT one of the twelve apostles that Jesus sent out with the following instructions?",
                         "options": [
-                            "The first plague",
-                            "The second plague",
-                            "The ninth plague",
-                            "The eighth plague"
+                            "Thomas",
+                            "Matthew",
+                            "Bartholomew",
+                            "Caleb"
                         ],
                         "answer": {
-                            "index": 2,
-                            "text": "The ninth plague",
-                            "verse": "Exodus 10:21-23"
+                            "index": 3,
+                            "text": "Caleb",
+                            "verse": "Matthew 10:2-4"
                         }
                     },
                     {
-                        "question": "What did Pharaoh initially offer to allow the Israelites to do in Exodus 10?",
+                        "question": "What were the twelve apostles instructed NOT to take on their journey?",
                         "options": [
-                            "To leave Egypt without their livestock",
-                            "To leave Egypt temporarily",
-                            "To worship their God in Egypt",
-                            "To join the Egyptian army"
+                            "Bread or extra clothing",
+                            "A staff and extra sandals",
+                            "Extra tunic",
+                            "All of the above"
                         ],
                         "answer": {
-                            "index": 2,
-                            "text": "To worship their God in Egypt",
-                            "verse": "Exodus 10:8-11"
+                            "index": 3,
+                            "text": "All of the above",
+                            "verse": "Matthew 10:9-10"
                         }
                     },
                     {
-                        "question": "How many plagues had struck Egypt by the time of the events in Exodus 10?",
+                        "question": "True or False: Jesus told the apostles that he sends them out as sheep among wolves.",
                         "options": [
-                            "7 plagues",
-                            "9 plagues",
-                            "10 plagues",
-                            "12 plagues"
+                            "True",
+                            "False"
                         ],
                         "answer": {
-                            "index": 1,
-                            "text": "9 plagues",
-                            "verse": "Exodus 10:14"
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Matthew 10:16"
                         }
                     }
                 ]
@@ -2795,45 +2929,43 @@
                 "chapter": "11",
                 "questions": [
                     {
-                        "question": "What was the final plague that struck Egypt in Exodus 11?",
+                        "question": "True or False: John the Baptist sent his disciples to ask Jesus if he was the one who is to come.",
                         "options": [
-                            "Frogs",
-                            "Locusts",
-                            "Death of the firstborn",
-                            "Hail"
+                            "True",
+                            "False"
                         ],
                         "answer": {
-                            "index": 2,
-                            "text": "Death of the firstborn",
-                            "verse": "Exodus 11:4-5"
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Matthew 11:3"
                         }
                     },
                     {
-                        "question": "How did the Israelites prepare for the Passover in Exodus 11?",
+                        "question": "Jesus stated that among those born of women, there has not risen anyone greater than whom?",
                         "options": [
-                            "They built a wall around their homes",
-                            "They slaughtered a lamb and painted its blood on their doorposts",
-                            "They fled to the wilderness",
-                            "They fasted and prayed"
+                            "Moses",
+                            "John the Baptist",
+                            "David",
+                            "Solomon"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "They slaughtered a lamb and painted its blood on their doorposts",
-                            "verse": "Exodus 12:21-22"
+                            "text": "John the Baptist",
+                            "verse": "Matthew 11:11"
                         }
                     },
                     {
-                        "question": "What did Moses tell Pharaoh would happen at midnight in Exodus 11?",
+                        "question": "Which city did Jesus denounce for not repenting?",
                         "options": [
-                            "A great earthquake",
-                            "A thick darkness",
-                            "A cry of anguish throughout Egypt",
-                            "A swarm of locusts"
+                            "Nazareth",
+                            "Bethlehem",
+                            "Jerusalem",
+                            "Chorazin"
                         ],
                         "answer": {
-                            "index": 2,
-                            "text": "A cry of anguish throughout Egypt",
-                            "verse": "Exodus 11:4-6"
+                            "index": 3,
+                            "text": "Chorazin",
+                            "verse": "Matthew 11:21"
                         }
                     }
                 ]
@@ -2842,45 +2974,43 @@
                 "chapter": "12",
                 "questions": [
                     {
-                        "question": "What did the Israelites eat during the Passover meal in Exodus 12?",
+                        "question": "Which prophet's words did Jesus quote when the Pharisees accused his disciples of breaking the Sabbath?",
                         "options": [
-                            "Unleavened bread and bitter herbs",
-                            "Roasted lamb and unleavened bread",
-                            "Fruits and vegetables",
-                            "Fish and honey"
+                            "Isaiah",
+                            "Hosea",
+                            "Jeremiah",
+                            "Daniel"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "Roasted lamb and unleavened bread",
-                            "verse": "Exodus 12:8-9"
+                            "text": "Hosea",
+                            "verse": "Matthew 12:7"
                         }
                     },
                     {
-                        "question": "What was the purpose of the blood on the doorposts during the Passover in Exodus 12?",
+                        "question": "Who is described as being greater than the temple?",
                         "options": [
-                            "To protect the house from wild animals",
-                            "To ward off evil spirits",
-                            "To mark the houses of the Israelites",
-                            "To signify God's protection and pass over the house"
-                        ],
-                        "answer": {
-                            "index": 3,
-                            "text": "To signify God's protection and pass over the house",
-                            "verse": "Exodus 12:12-13"
-                        }
-                    },
-                    {
-                        "question": "How long were the Israelites instructed to eat unleavened bread in Exodus 12?",
-                        "options": [
-                            "One day",
-                            "Seven days",
-                            "Forty days",
-                            "One year"
+                            "John the Baptist",
+                            "Jesus",
+                            "David",
+                            "Solomon"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "Seven days",
-                            "verse": "Exodus 12:15"
+                            "text": "Jesus",
+                            "verse": "Matthew 12:6"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jesus stated that the sign of Jonah will be given to this generation.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Matthew 12:39"
                         }
                     }
                 ]
@@ -2889,45 +3019,43 @@
                 "chapter": "13",
                 "questions": [
                     {
-                        "question": "What did God instruct the Israelites to do with their firstborn sons in Exodus 13?",
+                        "question": "What did the farmer in Jesus’ parable sow?",
                         "options": [
-                            "Sacrifice them to God",
-                            "Dedicate them to the priesthood",
-                            "Redeem them with a sacrifice",
-                            "Send them to live with the Egyptians"
+                            "Wheat",
+                            "Seed",
+                            "Weeds",
+                            "Barley"
                         ],
                         "answer": {
-                            "index": 2,
-                            "text": "Redeem them with a sacrifice",
-                            "verse": "Exodus 13:11-13"
+                            "index": 1,
+                            "text": "Seed",
+                            "verse": "Matthew 13:3"
                         }
                     },
                     {
-                        "question": "How did God lead the Israelites during their journey in the wilderness in Exodus 13?",
+                        "question": "True or False: Jesus explained all parables to the crowds.",
                         "options": [
-                            "By a pillar of fire at night and a cloud by day",
-                            "By sending angels to guide them",
-                            "By speaking directly to Moses",
-                            "By providing a map"
+                            "True",
+                            "False"
                         ],
                         "answer": {
-                            "index": 0,
-                            "text": "By a pillar of fire at night and a cloud by day",
-                            "verse": "Exodus 13:21-22"
+                            "index": 1,
+                            "text": "False",
+                            "verse": "Matthew 13:34"
                         }
                     },
                     {
-                        "question": "What did Moses take with him when he left Egypt in Exodus 13?",
+                        "question": "Which of these was NOT a place where the seed fell in the parable of the sower?",
                         "options": [
-                            "Gold and silver",
-                            "His staff and a robe",
-                            "The Ark of the Covenant",
-                            "A scroll with the Ten Commandments"
+                            "Among thorns",
+                            "On rocky places",
+                            "In a fertile field",
+                            "In a desert"
                         ],
                         "answer": {
-                            "index": 2,
-                            "text": "The Ark of the Covenant",
-                            "verse": "Exodus 13:19"
+                            "index": 3,
+                            "text": "In a desert",
+                            "verse": "Matthew 13:4-8"
                         }
                     }
                 ]
@@ -2936,45 +3064,43 @@
                 "chapter": "14",
                 "questions": [
                     {
-                        "question": "What did the Israelites do when they saw Pharaoh's army approaching in Exodus 14?",
+                        "question": "How did John the Baptist die?",
                         "options": [
-                            "They surrendered immediately",
-                            "They prayed for deliverance",
-                            "They complained and blamed Moses",
-                            "They prepared for battle"
+                            "He was crucified",
+                            "He was beheaded",
+                            "He died of old age",
+                            "He was stoned"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "He was beheaded",
+                            "verse": "Matthew 14:10"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jesus fed 5,000 men, besides women and children, with five loaves and two fish.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 0,
+                            "text": "True",
+                            "verse": "Matthew 14:21"
+                        }
+                    },
+                    {
+                        "question": "Who walked on water towards Jesus?",
+                        "options": [
+                            "John",
+                            "Matthew",
+                            "Peter",
+                            "Andrew"
                         ],
                         "answer": {
                             "index": 2,
-                            "text": "They complained and blamed Moses",
-                            "verse": "Exodus 14:10-12"
-                        }
-                    },
-                    {
-                        "question": "How did God part the Red Sea for the Israelites to cross in Exodus 14?",
-                        "options": [
-                            "By sending a powerful wind",
-                            "By raising the sea floor",
-                            "By creating a bridge of ice",
-                            "By using a tidal wave"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "By sending a powerful wind",
-                            "verse": "Exodus 14:21-22"
-                        }
-                    },
-                    {
-                        "question": "What happened to Pharaoh's army when they pursued the Israelites into the Red Sea in Exodus 14?",
-                        "options": [
-                            "They drowned as the waters returned",
-                            "They escaped to safety",
-                            "They conquered the Israelites",
-                            "They turned back in fear"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "They drowned as the waters returned",
-                            "verse": "Exodus 14:26-28"
+                            "text": "Peter",
+                            "verse": "Matthew 14:29"
                         }
                     }
                 ]
@@ -2983,327 +3109,308 @@
                 "chapter": "15",
                 "questions": [
                     {
-                        "question": "What did Moses and the Israelites do after crossing the Red Sea in Exodus 15?",
+                        "question": "Who accused Jesus’ disciples of breaking the tradition of the elders?",
                         "options": [
-                            "They celebrated with a song of praise",
-                            "They continued their journey without pause",
-                            "They mourned the loss of the Egyptian soldiers",
-                            "They complained about the harsh conditions"
+                            "Pharisees and teachers of the law",
+                            "Zealots",
+                            "Essenes",
+                            "Sadducees"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "They celebrated with a song of praise",
-                            "verse": "Exodus 15:1-21"
+                            "text": "Pharisees and teachers of the law",
+                            "verse": "Matthew 15:2"
                         }
                     },
                     {
-                        "question": "What did the bitter water at Marah become after Moses threw a piece of wood into it in Exodus 15?",
+                        "question": "True or False: Jesus initially rejected the request of the Canaanite woman because she was not an Israelite.",
                         "options": [
-                            "Sweet and drinkable",
-                            "Boiling hot",
-                            "Stagnant and undrinkable",
-                            "Turned into wine"
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "Sweet and drinkable",
-                            "verse": "Exodus 15:25"
+                            "text": "True",
+                            "verse": "Matthew 15:24"
                         }
                     },
                     {
-                        "question": "What did the Israelites find in the wilderness of Shur in Exodus 15?",
+                        "question": "What did Jesus feed the four thousand men, besides women and children, with?",
                         "options": [
-                            "A hidden treasure",
-                            "A fertile valley",
-                            "A spring of water",
-                            "A lush garden"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "A spring of water",
-                            "verse": "Exodus 15:27"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "16",
-                "questions": [
-                    {
-                        "question": "What did God provide for the Israelites to eat in the wilderness in Exodus 16?",
-                        "options": [
-                            "Manna from heaven",
-                            "Fish from the river",
-                            "Bread from Egypt",
-                            "Meat from quails"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "Manna from heaven",
-                            "verse": "Exodus 16:4-15"
-                        }
-                    },
-                    {
-                        "question": "How often did God instruct the Israelites to gather manna in Exodus 16?",
-                        "options": [
-                            "Once a week",
-                            "Every morning",
-                            "Every evening",
-                            "Every 10 days"
+                            "Five loaves of bread and two fish",
+                            "Seven loaves of bread and a few small fish",
+                            "Ten loaves of bread and five fish",
+                            "Three loaves of bread and seven fish"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "Every morning",
-                            "verse": "Exodus 16:21"
-                        }
-                    },
-                    {
-                        "question": "What happened if the Israelites tried to keep manna overnight in Exodus 16?",
-                        "options": [
-                            "It stayed fresh and edible",
-                            "It turned into honey",
-                            "It attracted wild animals",
-                            "It became rotten and full of worms"
-                        ],
-                        "answer": {
-                            "index": 3,
-                            "text": "It became rotten and full of worms",
-                            "verse": "Exodus 16:20"
+                            "text": "Seven loaves of bread and a few small fish",
+                            "verse": "Matthew 15:34-38"
                         }
                     }
                 ]
             },
             {
-                "chapter": "17",
-                "questions": [
-                    {
-                        "question": "What did Moses strike to bring water out of it for the thirsty Israelites in Exodus 17?",
-                        "options": [
-                            "A rock",
-                            "A tree",
-                            "The ground",
-                            "A well"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "A rock",
-                            "verse": "Exodus 17:5-6"
-                        }
-                    },
-                    {
-                        "question": "Who did the Israelites battle against in Rephidim in Exodus 17?",
-                        "options": [
-                            "The Amalekites",
-                            "The Egyptians",
-                            "Themselves",
-                            "The Canaanites"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "The Amalekites",
-                            "verse": "Exodus 17:8-13"
-                        }
-                    },
-                    {
-                        "question": "What did Moses name the place where water came from the rock in Exodus 17?",
-                        "options": [
-                            "Bethlehem",
-                            "Marah",
-                            "Meribah",
-                            "Elim"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "Meribah",
-                            "verse": "Exodus 17:7"
-                        }
-                    }
-                ]
+                "question": "Who declared Jesus to be 'the Messiah, the Son of the living God'?",
+                "options": [
+                    "Peter",
+                    "John",
+                    "Andrew",
+                    "Matthew"
+                ],
+                "answer": {
+                    "index": 0,
+                    "text": "Peter",
+                    "verse": "Matthew 16:16"
+                }
             },
             {
-                "chapter": "18",
-                "questions": [
-                    {
-                        "question": "Who came to visit Moses in the wilderness in Exodus 18?",
-                        "options": [
-                            "Aaron",
-                            "Pharaoh",
-                            "Jethro (Moses' father-in-law)",
-                            "Joshua"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "Jethro (Moses' father-in-law)",
-                            "verse": "Exodus 18:1-5"
-                        }
-                    },
-                    {
-                        "question": "What advice did Jethro give to Moses in Exodus 18?",
-                        "options": [
-                            "To delegate leadership responsibilities to others",
-                            "To confront Pharaoh immediately",
-                            "To build a new tabernacle",
-                            "To make alliances with neighboring tribes"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "To delegate leadership responsibilities to others",
-                            "verse": "Exodus 18:17-23"
-                        }
-                    },
-                    {
-                        "question": "What role did Aaron serve in the Israelite camp in Exodus 18?",
-                        "options": [
-                            "Military commander",
-                            "High priest",
-                            "Chief judge",
-                            "Chief musician"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "High priest",
-                            "verse": "Exodus 18:12"
-                        }
-                    }
-                ]
+                "question": "True or False: Jesus praised Peter’s declaration and referred to him as a rock on which He will build His church.",
+                "options": [
+                    "True",
+                    "False"
+                ],
+                "answer": {
+                    "index": 0,
+                    "text": "True",
+                    "verse": "Matthew 16:18"
+                }
             },
             {
-                "chapter": "19",
-                "questions": [
-                    {
-                        "question": "What did God ask Moses to tell the Israelites in Exodus 19?",
-                        "options": [
-                            "To prepare for battle",
-                            "To consecrate themselves and be ready to meet God on Mount Sinai",
-                            "To build a new tabernacle",
-                            "To choose a new leader"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "To consecrate themselves and be ready to meet God on Mount Sinai",
-                            "verse": "Exodus 19:10-11"
-                        }
-                    },
-                    {
-                        "question": "What descended upon Mount Sinai when God appeared to the Israelites in Exodus 19?",
-                        "options": [
-                            "Thick darkness",
-                            "A mighty earthquake",
-                            "A pillar of fire",
-                            "A dense fog"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "Thick darkness",
-                            "verse": "Exodus 19:16-18"
-                        }
-                    },
-                    {
-                        "question": "What commandment did God give to the Israelites as part of the covenant at Mount Sinai in Exodus 19?",
-                        "options": [
-                            "You shall not steal",
-                            "You shall not murder",
-                            "You shall not bear false witness",
-                            "You shall have no other gods before me"
-                        ],
-                        "answer": {
-                            "index": 3,
-                            "text": "You shall have no other gods before me",
-                            "verse": "Exodus 20:3"
-                        }
-                    }
-                ]
+                "question": "What did Jesus begin to show his disciples after Peter's declaration?",
+                "options": [
+                    "His wealth",
+                    "His plan to build a physical church",
+                    "He must go to Jerusalem and suffer",
+                    "He will become a king"
+                ],
+                "answer": {
+                    "index": 2,
+                    "text": "He must go to Jerusalem and suffer",
+                    "verse": "Matthew 16:21"
+                }
+            }
+        ]
+    },
+    {
+        "chapter": "17",
+        "questions": [
+            {
+                "question": "Who appeared with Jesus during the transfiguration?",
+                "options": [
+                    "Moses and Elijah",
+                    "Abraham and Isaac",
+                    "David and Solomon",
+                    "Adam and Noah"
+                ],
+                "answer": {
+                    "index": 0,
+                    "text": "Moses and Elijah",
+                    "verse": "Matthew 17:3"
+                }
             },
             {
-                "chapter": "20",
-                "questions": [
-                    {
-                        "question": "How many commandments did God give to Moses on Mount Sinai in Exodus 20?",
-                        "options": [
-                            "Five commandments",
-                            "Ten commandments",
-                            "Fifteen commandments",
-                            "Twenty commandments"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "Ten commandments",
-                            "verse": "Exodus 20:1-17"
-                        }
-                    },
-                    {
-                        "question": "Which commandment instructs honoring one's parents in Exodus 20?",
-                        "options": [
-                            "The first commandment",
-                            "The third commandment",
-                            "The fifth commandment",
-                            "The seventh commandment"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "The fifth commandment",
-                            "verse": "Exodus 20:12"
-                        }
-                    },
-                    {
-                        "question": "What is the commandment against bearing false witness in Exodus 20?",
-                        "options": [
-                            "The fourth commandment",
-                            "The seventh commandment",
-                            "The eighth commandment",
-                            "The ninth commandment"
-                        ],
-                        "answer": {
-                            "index": 3,
-                            "text": "The ninth commandment",
-                            "verse": "Exodus 20:16"
-                        }
-                    }
-                ]
+                "question": "True or False: The disciples were frightened when they heard the voice from the cloud during the transfiguration.",
+                "options": [
+                    "True",
+                    "False"
+                ],
+                "answer": {
+                    "index": 0,
+                    "text": "True",
+                    "verse": "Matthew 17:6"
+                }
+            },
+            {
+                "question": "Who did Jesus say would pay the temple tax for Him and Peter?",
+                "options": [
+                    "A fish",
+                    "A tax collector",
+                    "A rich young man",
+                    "A Roman soldier"
+                ],
+                "answer": {
+                    "index": 0,
+                    "text": "A fish",
+                    "verse": "Matthew 17:27"
+                }
+            }
+        ]
+    },
+    {
+        "chapter": "18",
+        "questions": [
+            {
+                "question": "Who is the greatest in the kingdom of heaven according to Jesus?",
+                "options": [
+                    "A humble child",
+                    "A wise elder",
+                    "A rich man",
+                    "A Jewish priest"
+                ],
+                "answer": {
+                    "index": 0,
+                    "text": "A humble child",
+                    "verse": "Matthew 18:4"
+                }
+            },
+            {
+                "question": "What does Jesus say about a shepherd with a lost sheep?",
+                "options": [
+                    "He leaves the ninety-nine in the mountains to go search for the one that wandered off",
+                    "He ignores the one and stays with the ninety-nine",
+                    "He hires someone to find the lost sheep",
+                    "He sacrifices the one to protect the ninety-nine"
+                ],
+                "answer": {
+                    "index": 0,
+                    "text": "He leaves the ninety-nine in the mountains to go search for the one that wandered off",
+                    "verse": "Matthew 18:12"
+                }
+            },
+            {
+                "question": "True or False: Jesus instructs to forgive a brother or sister who sins against you seventy-seven times.",
+                "options": [
+                    "True",
+                    "False"
+                ],
+                "answer": {
+                    "index": 0,
+                    "text": "True",
+                    "verse": "Matthew 18:22"
+                }
+            }
+        ]
+    },
+    {
+        "chapter": "19",
+        "questions": [
+            {
+                "question": "Why did Moses permit divorce according to Jesus?",
+                "options": [
+                    "Because of marital unfaithfulness",
+                    "Because of the hardness of people’s hearts",
+                    "Because of financial issues",
+                    "Because of religious differences"
+                ],
+                "answer": {
+                    "index": 1,
+                    "text": "Because of the hardness of people’s hearts",
+                    "verse": "Matthew 19:8"
+                }
+            },
+            {
+                "question": "True or False: Jesus blessed the children brought to Him and said that the kingdom of heaven belongs to such as these.",
+                "options": [
+                    "True",
+                    "False"
+                ],
+                "answer": {
+                    "index": 0,
+                    "text": "True",
+                    "verse": "Matthew 19:14"
+                }
+            },
+            {
+                "question": "What did Jesus say was necessary to gain eternal life?",
+                "options": [
+                    "Keeping the commandments",
+                    "Becoming wealthy",
+                    "Having social influence",
+                    "Building a temple"
+                ],
+                "answer": {
+                    "index": 0,
+                    "text": "Keeping the commandments",
+                    "verse": "Matthew 19:17"
+                }
+            }
+        ]
+    },
+    {
+        "chapter": "20",
+        "questions": [
+            {
+                "question": "In the parable of the workers in the vineyard, what did the landowner pay each worker?",
+                "options": [
+                    "One denarius",
+                    "Two denarii",
+                    "Three denarii",
+                    "Four denarii"
+                ],
+                "answer": {
+                    "index": 0,
+                    "text": "One denarius",
+                    "verse": "Matthew 20:2"
+                }
+            },
+            {
+                "question": "True or False: James and John asked Jesus for seats at His right and left in His kingdom.",
+                "options": [
+                    "True",
+                    "False"
+                ],
+                "answer": {
+                    "index": 1,
+                    "text": "False",
+                    "verse": "Matthew 20:20"
+                }
+            },
+            {
+                "question": "What did Jesus say about rulers and those who are great among His followers?",
+                "options": [
+                    "They must be served by others",
+                    "They must become servants",
+                    "They must be honored",
+                    "They must govern with authority"
+                ],
+                "answer": {
+                    "index": 1,
+                    "text": "They must become servants",
+                    "verse": "Matthew 20:26"
+                }
             },
             {
                 "chapter": "21",
                 "questions": [
                     {
-                        "question": "What is the punishment for injuring a pregnant woman during a fight in Exodus 21?",
+                        "question": "What did Jesus ride into Jerusalem?",
                         "options": [
-                            "A fine of silver",
-                            "Imprisonment for one year",
-                            "Life for life",
-                            "A public apology"
+                            "A horse",
+                            "A donkey",
+                            "A camel",
+                            "A chariot"
                         ],
                         "answer": {
-                            "index": 2,
-                            "text": "Life for life",
-                            "verse": "Exodus 21:22-25"
+                            "index": 1,
+                            "text": "A donkey",
+                            "verse": "Matthew 21:5"
                         }
                     },
                     {
-                        "question": "How long does a Hebrew servant serve if he willingly becomes a servant in Exodus 21?",
+                        "question": "True or False: The fig tree that Jesus cursed withered at once.",
                         "options": [
-                            "Until the next Jubilee year",
-                            "Seven years",
-                            "For life",
-                            "One year"
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "Until the next Jubilee year",
-                            "verse": "Exodus 21:2-6"
+                            "text": "True",
+                            "verse": "Matthew 21:19"
                         }
                     },
                     {
-                        "question": "What is the penalty for striking or cursing one's parents in Exodus 21?",
+                        "question": "Which group of people tried to trap Jesus with their questions?",
                         "options": [
-                            "A stern warning",
-                            "A fine",
-                            "Death",
-                            "Banishment from the community"
+                            "Pharisees",
+                            "Sadducees",
+                            "Essenes",
+                            "Zealots"
                         ],
                         "answer": {
-                            "index": 2,
-                            "text": "Death",
-                            "verse": "Exodus 21:15, 17"
+                            "index": 0,
+                            "text": "Pharisees",
+                            "verse": "Matthew 21:24-27"
                         }
                     }
                 ]
@@ -3312,45 +3419,43 @@
                 "chapter": "22",
                 "questions": [
                     {
-                        "question": "What should a thief do if he cannot repay what he has stolen in Exodus 22?",
+                        "question": "In the parable of the wedding banquet, who were invited first?",
                         "options": [
-                            "Flee to another city",
-                            "Offer a sacrifice",
-                            "Work as a servant until the debt is paid",
-                            "Be sold as a slave"
-                        ],
-                        "answer": {
-                            "index": 3,
-                            "text": "Be sold as a slave",
-                            "verse": "Exodus 22:3"
-                        }
-                    },
-                    {
-                        "question": "What is the penalty for practicing sorcery or witchcraft in Exodus 22?",
-                        "options": [
-                            "Exile to a distant land",
-                            "A fine of gold",
-                            "Death",
-                            "Public humiliation"
+                            "The poor",
+                            "The rich",
+                            "The king's subjects",
+                            "The neighboring nations"
                         ],
                         "answer": {
                             "index": 2,
-                            "text": "Death",
-                            "verse": "Exodus 22:18"
+                            "text": "The king's subjects",
+                            "verse": "Matthew 22:3"
                         }
                     },
                     {
-                        "question": "What should a person do if they find their neighbor's lost property in Exodus 22?",
+                        "question": "True or False: Jesus said that the Pharisees knew the Scriptures and the power of God.",
                         "options": [
-                            "Keep it as a reward",
-                            "Return it to their neighbor",
-                            "Sell it and split the profit",
-                            "Offer it as a sacrifice"
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "Return it to their neighbor",
-                            "verse": "Exodus 22:9"
+                            "text": "False",
+                            "verse": "Matthew 22:29"
+                        }
+                    },
+                    {
+                        "question": "Which commandment did Jesus say was the greatest?",
+                        "options": [
+                            "Honor your father and mother",
+                            "Do not murder",
+                            "Love your neighbor as yourself",
+                            "You shall have no other gods before me"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "Love your neighbor as yourself",
+                            "verse": "Matthew 22:39"
                         }
                     }
                 ]
@@ -3359,45 +3464,43 @@
                 "chapter": "23",
                 "questions": [
                     {
-                        "question": "What is the Sabbath day in Exodus 23?",
+                        "question": "Who sits in Moses’ seat?",
                         "options": [
-                            "The seventh day of the week",
-                            "The first day of the week",
-                            "The third day of the week",
-                            "The last day of the week"
+                            "Disciples",
+                            "Pharisees and Teachers of the Law",
+                            "Sadducees",
+                            "Zealots"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "Pharisees and Teachers of the Law",
+                            "verse": "Matthew 23:2"
+                        }
+                    },
+                    {
+                        "question": "True or False: Jesus told the crowds and disciples to practice and observe everything the Pharisees and Teachers of the Law tell them.",
+                        "options": [
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "The seventh day of the week",
-                            "verse": "Exodus 23:12"
+                            "text": "True",
+                            "verse": "Matthew 23:3"
                         }
                     },
                     {
-                        "question": "What does God promise to do for the Israelites if they obey His commands in Exodus 23?",
+                        "question": "What does Jesus say about those who exalt themselves?",
                         "options": [
-                            "Send them into exile",
-                            "Bless their bread and water, and take sickness away from them",
-                            "Abandon them",
-                            "Give them riches and power"
+                            "They will be exalted",
+                            "They will be humbled",
+                            "They will be praised",
+                            "They will be rich"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "Bless their bread and water, and take sickness away from them",
-                            "verse": "Exodus 23:25"
-                        }
-                    },
-                    {
-                        "question": "What should the Israelites not do to a stranger in Exodus 23?",
-                        "options": [
-                            "Love them as themselves",
-                            "Oppress or mistreat them",
-                            "Avoid them completely",
-                            "Offer them sacrifices"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "Oppress or mistreat them",
-                            "verse": "Exodus 23:9"
+                            "text": "They will be humbled",
+                            "verse": "Matthew 23:12"
                         }
                     }
                 ]
@@ -3406,45 +3509,43 @@
                 "chapter": "24",
                 "questions": [
                     {
-                        "question": "What did Moses sprinkle on the people in Exodus 24?",
+                        "question": "Who asked Jesus about the sign of His coming and the end of the age?",
                         "options": [
-                            "Blood from sacrifices",
-                            "Water from a well",
-                            "Oil from an olive tree",
-                            "Sand from the desert"
+                            "The Pharisees",
+                            "The disciples",
+                            "The multitudes",
+                            "The Sadducees"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "The disciples",
+                            "verse": "Matthew 24:3"
+                        }
+                    },
+                    {
+                        "question": "What will happen to the sun, moon, and stars during the tribulation period?",
+                        "options": [
+                            "They will shine brighter",
+                            "They will fall from the sky",
+                            "The sun will be darkened, and the moon will not give its light; the stars will fall from the sky",
+                            "They will remain the same"
+                        ],
+                        "answer": {
+                            "index": 2,
+                            "text": "The sun will be darkened, and the moon will not give its light; the stars will fall from the sky",
+                            "verse": "Matthew 24:29"
+                        }
+                    },
+                    {
+                        "question": "True or False: The Son of Man will come at an hour when you do not expect him.",
+                        "options": [
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "Blood from sacrifices",
-                            "verse": "Exodus 24:8"
-                        }
-                    },
-                    {
-                        "question": "Who accompanied Moses when he went up the mountain to receive the tablets of the covenant in Exodus 24?",
-                        "options": [
-                            "Aaron and Miriam",
-                            "Joshua and Caleb",
-                            "Elders of Israel",
-                            "Pharaoh's servants"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "Elders of Israel",
-                            "verse": "Exodus 24:9-10"
-                        }
-                    },
-                    {
-                        "question": "How many days and nights did Moses stay on the mountain in Exodus 24?",
-                        "options": [
-                            "3 days and 3 nights",
-                            "7 days and 7 nights",
-                            "40 days and 40 nights",
-                            "1 day and 1 night"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "40 days and 40 nights",
-                            "verse": "Exodus 24:18"
+                            "text": "True",
+                            "verse": "Matthew 24:44"
                         }
                     }
                 ]
@@ -3453,45 +3554,43 @@
                 "chapter": "25",
                 "questions": [
                     {
-                        "question": "What was the primary purpose of the tabernacle described in Exodus 25?",
+                        "question": "In the parable of the ten virgins, what differentiated the wise virgins from the foolish ones?",
                         "options": [
-                            "To serve as a place of worship",
-                            "To house the Israelites",
-                            "To store food",
-                            "To keep the Ark of the Covenant safe"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "To serve as a place of worship",
-                            "verse": "Exodus 25:8"
-                        }
-                    },
-                    {
-                        "question": "What materials were used to make the Ark of the Covenant in Exodus 25?",
-                        "options": [
-                            "Wood and stone",
-                            "Bronze and iron",
-                            "Gold-plated acacia wood",
-                            "Silver and copper"
+                            "Their clothing",
+                            "Their lamps",
+                            "Bringing extra oil",
+                            "Praying more"
                         ],
                         "answer": {
                             "index": 2,
-                            "text": "Gold-plated acacia wood",
-                            "verse": "Exodus 25:10-11"
+                            "text": "Bringing extra oil",
+                            "verse": "Matthew 25:4"
                         }
                     },
                     {
-                        "question": "What was placed inside the Ark of the Covenant in Exodus 25?",
+                        "question": "What does the man going on a journey give his servants in the parable?",
                         "options": [
-                            "A scroll with the Ten Commandments",
-                            "Aaron's staff that budded",
-                            "A jar of manna",
-                            "A golden idol"
+                            "Sheep",
+                            "Bags of gold",
+                            "Jars of oil",
+                            "Candles"
                         ],
                         "answer": {
-                            "index": 0,
-                            "text": "A scroll with the Ten Commandments",
-                            "verse": "Exodus 25:16"
+                            "index": 1,
+                            "text": "Bags of gold",
+                            "verse": "Matthew 25:15"
+                        }
+                    },
+                    {
+                        "question": "True or False: The sheep are placed on the left and the goats on the right.",
+                        "options": [
+                            "True",
+                            "False"
+                        ],
+                        "answer": {
+                            "index": 1,
+                            "text": "False",
+                            "verse": "Matthew 25:33"
                         }
                     }
                 ]
@@ -3500,45 +3599,43 @@
                 "chapter": "26",
                 "questions": [
                     {
-                        "question": "What was the outer covering of the tabernacle made of in Exodus 26?",
+                        "question": "Who anointed Jesus with a very expensive fragrant oil?",
                         "options": [
-                            "Leather",
-                            "Silver",
-                            "Fine linen curtains",
-                            "Wood"
+                            "A disciple",
+                            "A Pharisee",
+                            "A woman",
+                            "A priest"
                         ],
                         "answer": {
                             "index": 2,
-                            "text": "Fine linen curtains",
-                            "verse": "Exodus 26:1"
+                            "text": "A woman",
+                            "verse": "Matthew 26:7"
                         }
                     },
                     {
-                        "question": "How many boards made of acacia wood were used to make the south side of the tabernacle in Exodus 26?",
+                        "question": "What did Judas agree to do in exchange for thirty pieces of silver?",
                         "options": [
-                            "10 boards",
-                            "15 boards",
-                            "20 boards",
-                            "25 boards"
+                            "Protect Jesus",
+                            "Betray Jesus",
+                            "Defend Jesus",
+                            "Follow Jesus"
                         ],
                         "answer": {
-                            "index": 2,
-                            "text": "20 boards",
-                            "verse": "Exodus 26:18"
+                            "index": 1,
+                            "text": "Betray Jesus",
+                            "verse": "Matthew 26:15"
                         }
                     },
                     {
-                        "question": "What separated the Holy Place from the Most Holy Place in Exodus 26?",
+                        "question": "True or False: All the disciples remained faithful to Jesus during His arrest.",
                         "options": [
-                            "A thick curtain",
-                            "A wall of stone",
-                            "A trench filled with water",
-                            "A row of pillars"
+                            "True",
+                            "False"
                         ],
                         "answer": {
-                            "index": 0,
-                            "text": "A thick curtain",
-                            "verse": "Exodus 26:31-33"
+                            "index": 1,
+                            "text": "False",
+                            "verse": "Matthew 26:56"
                         }
                     }
                 ]
@@ -3547,45 +3644,43 @@
                 "chapter": "27",
                 "questions": [
                     {
-                        "question": "What was the purpose of the bronze altar in Exodus 27?",
+                        "question": "What did Judas do with the thirty pieces of silver after Jesus was condemned?",
                         "options": [
-                            "To store the Ark of the Covenant",
-                            "To offer sacrifices to God",
-                            "To hold the showbread",
-                            "To house the priests"
+                            "He kept them",
+                            "He bought a field",
+                            "He threw them into the temple",
+                            "He donated them"
                         ],
                         "answer": {
-                            "index": 1,
-                            "text": "To offer sacrifices to God",
-                            "verse": "Exodus 27:1-2"
+                            "index": 2,
+                            "text": "He threw them into the temple",
+                            "verse": "Matthew 27:5"
                         }
                     },
                     {
-                        "question": "How were the seven lamps on the lampstand in Exodus 27 to be kept burning?",
+                        "question": "True or False: Pilate tried to persuade the crowd to release Jesus.",
                         "options": [
-                            "By pouring oil on them daily",
-                            "By using electricity",
-                            "By sunlight",
-                            "By constant prayer"
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "By pouring oil on them daily",
-                            "verse": "Exodus 27:20-21"
+                            "text": "True",
+                            "verse": "Matthew 27:20-23"
                         }
                     },
                     {
-                        "question": "What materials were used to make the court of the tabernacle in Exodus 27?",
+                        "question": "What was put above Jesus’ head on the cross?",
                         "options": [
-                            "Silver and bronze",
-                            "Wood and stone",
-                            "Fine linen and gold",
-                            "Bronze and hangings of fine woven linen"
+                            "A crown of thorns",
+                            "A sign stating 'This is Jesus, the King of the Jews.'",
+                            "A sign stating 'This is Jesus, the prophet.'",
+                            "A sign stating 'This is Jesus, the savior of the world.'"
                         ],
                         "answer": {
-                            "index": 3,
-                            "text": "Bronze and hangings of fine woven linen",
-                            "verse": "Exodus 27:9-18"
+                            "index": 1,
+                            "text": "A sign stating 'This is Jesus, the King of the Jews.'",
+                            "verse": "Matthew 27:37"
                         }
                     }
                 ]
@@ -3594,613 +3689,151 @@
                 "chapter": "28",
                 "questions": [
                     {
-                        "question": "What was the breastplate of judgment for the high priest in Exodus 28 made of?",
+                        "question": "Who went to look at the tomb the first day of the week?",
                         "options": [
-                            "Bronze",
-                            "Leather",
-                            "Precious stones",
-                            "Iron"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "Precious stones",
-                            "verse": "Exodus 28:15-21"
-                        }
-                    },
-                    {
-                        "question": "What was the purpose of the Urim and Thummim in Exodus 28?",
-                        "options": [
-                            "To light the lamps in the tabernacle",
-                            "To communicate with God and make decisions",
-                            "To measure the dimensions of the tabernacle",
-                            "To store manna from heaven"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "To communicate with God and make decisions",
-                            "verse": "Exodus 28:30"
-                        }
-                    },
-                    {
-                        "question": "What was the significance of the bells on the hem of the high priest's robe in Exodus 28?",
-                        "options": [
-                            "To make music during ceremonies",
-                            "To warn the people when the high priest entered the Most Holy Place",
-                            "To symbolize wealth",
-                            "To attract attention"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "To warn the people when the high priest entered the Most Holy Place",
-                            "verse": "Exodus 28:35"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "29",
-                "questions": [
-                    {
-                        "question": "What did Moses do to consecrate Aaron and his sons as priests in Exodus 29?",
-                        "options": [
-                            "Washed them with water",
-                            "Anointed them with oil",
-                            "Placed a crown on their heads",
-                            "Gave them new clothing"
+                            "Mary Magdalene and the other Mary",
+                            "Peter and John",
+                            "Judas and Peter",
+                            "Nicodemus and Joseph of Arimathea"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "Washed them with water",
-                            "verse": "Exodus 29:4"
+                            "text": "Mary Magdalene and the other Mary",
+                            "verse": "Matthew 28:1"
                         }
                     },
                     {
-                        "question": "What offering did Aaron and his sons present as a sin offering in Exodus 29?",
+                        "question": "True or False: The angel rolled back the stone from the tomb's entrance and sat on it.",
                         "options": [
-                            "A lamb without blemish",
-                            "A bull without blemish",
-                            "A dove",
-                            "A loaf of bread"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "A bull without blemish",
-                            "verse": "Exodus 29:10-11"
-                        }
-                    },
-                    {
-                        "question": "How long were Aaron and his sons instructed to remain at the entrance of the tabernacle in Exodus 29?",
-                        "options": [
-                            "One hour",
-                            "One day",
-                            "Seven days",
-                            "One month"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "Seven days",
-                            "verse": "Exodus 29:30-35"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "30",
-                "questions": [
-                    {
-                        "question": "What was the purpose of the golden altar in Exodus 30?",
-                        "options": [
-                            "To offer burnt sacrifices",
-                            "To burn incense before the Lord",
-                            "To store the manna from heaven",
-                            "To display the Ten Commandments"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "To burn incense before the Lord",
-                            "verse": "Exodus 30:1-10"
-                        }
-                    },
-                    {
-                        "question": "What special oil was used for anointing the tabernacle and its furnishings in Exodus 30?",
-                        "options": [
-                            "Olive oil",
-                            "Coconut oil",
-                            "Cedarwood oil",
-                            "Holy anointing oil"
-                        ],
-                        "answer": {
-                            "index": 3,
-                            "text": "Holy anointing oil",
-                            "verse": "Exodus 30:22-29"
-                        }
-                    },
-                    {
-                        "question": "What did the bronze basin in Exodus 30 serve as?",
-                        "options": [
-                            "A place for washing hands and feet",
-                            "A container for manna",
-                            "A storage vessel for gold",
-                            "A seat for the priests"
+                            "True",
+                            "False"
                         ],
                         "answer": {
                             "index": 0,
-                            "text": "A place for washing hands and feet",
-                            "verse": "Exodus 30:18-20"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "31",
-                "questions": [
-                    {
-                        "question": "Who was filled with the Spirit of God and given wisdom, understanding, and knowledge to create the tabernacle and its furnishings in Exodus 31?",
-                        "options": [
-                            "Moses",
-                            "Aaron",
-                            "Bezalel",
-                            "Pharaoh"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "Bezalel",
-                            "verse": "Exodus 31:2-3"
+                            "text": "True",
+                            "verse": "Matthew 28:2"
                         }
                     },
                     {
-                        "question": "What was the penalty for working on the Sabbath day in Exodus 31?",
+                        "question": "What were the instructions given by Jesus to his disciples in Galilee?",
                         "options": [
-                            "A warning",
-                            "Exile from the community",
-                            "Death",
-                            "A fine"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "Death",
-                            "verse": "Exodus 31:14-15"
-                        }
-                    },
-                    {
-                        "question": "What did God give to Moses on Mount Sinai in Exodus 31?",
-                        "options": [
-                            "A new name",
-                            "The Ten Commandments",
-                            "A staff",
-                            "A crown"
+                            "To wait for His return",
+                            "To go and make disciples of all nations",
+                            "To establish the first church in Jerusalem",
+                            "To stay in Galilee"
                         ],
                         "answer": {
                             "index": 1,
-                            "text": "The Ten Commandments",
-                            "verse": "Exodus 31:18"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "32",
-                "questions": [
-                    {
-                        "question": "What did the Israelites create and worship when Moses delayed on the mountain in Exodus 32?",
-                        "options": [
-                            "A golden calf",
-                            "A wooden idol",
-                            "A stone monument",
-                            "A bronze serpent"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "A golden calf",
-                            "verse": "Exodus 32:4"
-                        }
-                    },
-                    {
-                        "question": "What did Moses do when he saw the Israelites worshiping the golden calf in Exodus 32?",
-                        "options": [
-                            "Joined them in worship",
-                            "Blessed the calf",
-                            "Smashed the tablets of the covenant",
-                            "Prayed for forgiveness"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "Smashed the tablets of the covenant",
-                            "verse": "Exodus 32:19"
-                        }
-                    },
-                    {
-                        "question": "Who interceded with God on behalf of the Israelites after their sin with the golden calf in Exodus 32?",
-                        "options": [
-                            "Pharaoh",
-                            "Aaron",
-                            "Moses",
-                            "Bezalel"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "Moses",
-                            "verse": "Exodus 32:11-14"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "33",
-                "questions": [
-                    {
-                        "question": "How did God communicate with Moses in Exodus 33?",
-                        "options": [
-                            "Through dreams",
-                            "Face to face",
-                            "Through a burning bush",
-                            "Through a messenger"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "Face to face",
-                            "verse": "Exodus 33:11"
-                        }
-                    },
-                    {
-                        "question": "What did Moses ask God to show him in Exodus 33?",
-                        "options": [
-                            "His glory",
-                            "His power",
-                            "His anger",
-                            "His mercy"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "His glory",
-                            "verse": "Exodus 33:18"
-                        }
-                    },
-                    {
-                        "question": "What did God promise Moses in Exodus 33 after he asked to see His glory?",
-                        "options": [
-                            "To reveal His face",
-                            "To make him rich",
-                            "To destroy the Israelites",
-                            "To show him His back"
-                        ],
-                        "answer": {
-                            "index": 3,
-                            "text": "To show him His back",
-                            "verse": "Exodus 33:23"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "34",
-                "questions": [
-                    {
-                        "question": "What did God instruct Moses to do to replace the tablets of the covenant that were broken in Exodus 34?",
-                        "options": [
-                            "Carve new tablets and bring them up the mountain",
-                            "Make a new golden calf",
-                            "Leave the tablets broken",
-                            "Ask the Israelites to make new tablets"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "Carve new tablets and bring them up the mountain",
-                            "verse": "Exodus 34:1-4"
-                        }
-                    },
-                    {
-                        "question": "What did God proclaim about Himself in Exodus 34?",
-                        "options": [
-                            "A God of wrath and judgment",
-                            "A God of mercy and grace",
-                            "A God of silence",
-                            "A God of war"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "A God of mercy and grace",
-                            "verse": "Exodus 34:6-7"
-                        }
-                    },
-                    {
-                        "question": "What happened to Moses' face after he spoke with God on the mountain in Exodus 34?",
-                        "options": [
-                            "It remained unchanged",
-                            "It became radiant and shone with light",
-                            "It turned pale",
-                            "It was covered with a veil"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "It became radiant and shone with light",
-                            "verse": "Exodus 34:29-30"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "35",
-                "questions": [
-                    {
-                        "question": "What did the people willingly bring as contributions for the construction of the tabernacle in Exodus 35?",
-                        "options": [
-                            "Silver and gold",
-                            "Weapons for war",
-                            "Animals for sacrifice",
-                            "Precious gems"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "Silver and gold",
-                            "verse": "Exodus 35:22"
-                        }
-                    },
-                    {
-                        "question": "Who was filled with the Spirit of God and given skill, ability, and knowledge for all kinds of crafts in Exodus 35?",
-                        "options": [
-                            "Moses",
-                            "Aaron",
-                            "Bezalel",
-                            "Pharaoh"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "Bezalel",
-                            "verse": "Exodus 35:30-31"
-                        }
-                    },
-                    {
-                        "question": "What was the primary purpose of the tabernacle and its furnishings in Exodus 35?",
-                        "options": [
-                            "To serve as a place of worship and sacrifice",
-                            "To store valuable treasures",
-                            "To provide shelter for the people",
-                            "To serve as a royal palace"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "To serve as a place of worship and sacrifice",
-                            "verse": "Exodus 35:1-3"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "36",
-                "questions": [
-                    {
-                        "question": "What did the skilled workers do with the contributions brought by the people in Exodus 36?",
-                        "options": [
-                            "They kept them for themselves",
-                            "They distributed them equally among the people",
-                            "They used them to build the tabernacle",
-                            "They returned them to the people"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "They used them to build the tabernacle",
-                            "verse": "Exodus 36:3"
-                        }
-                    },
-                    {
-                        "question": "What covered the tabernacle and its furnishings in Exodus 36?",
-                        "options": [
-                            "A thick cloud",
-                            "Fine linen curtains",
-                            "Leather hides",
-                            "Animal skins"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "Fine linen curtains",
-                            "verse": "Exodus 36:8-19"
-                        }
-                    },
-                    {
-                        "question": "How did Moses bless the people when the tabernacle was completed in Exodus 36?",
-                        "options": [
-                            "He gave them gold and silver",
-                            "He anointed them with oil",
-                            "He prayed for them",
-                            "He raised his hands and pronounced a blessing"
-                        ],
-                        "answer": {
-                            "index": 3,
-                            "text": "He raised his hands and pronounced a blessing",
-                            "verse": "Exodus 39:43"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "37",
-                "questions": [
-                    {
-                        "question": "What was the purpose of the Ark of the Covenant in Exodus 37?",
-                        "options": [
-                            "To serve as a throne for Moses",
-                            "To store the manna from heaven",
-                            "To house the Ten Commandments",
-                            "To hold the priests' garments"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "To house the Ten Commandments",
-                            "verse": "Exodus 37:1-5"
-                        }
-                    },
-                    {
-                        "question": "What was the mercy seat on the Ark of the Covenant made of in Exodus 37?",
-                        "options": [
-                            "Bronze",
-                            "Gold",
-                            "Wood",
-                            "Silver"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "Gold",
-                            "verse": "Exodus 37:6-9"
-                        }
-                    },
-                    {
-                        "question": "What did the lampstand in Exodus 37 have that provided light inside the tabernacle?",
-                        "options": [
-                            "Oil lamps",
-                            "Candles",
-                            "Electric bulbs",
-                            "Seven lamps with oil"
-                        ],
-                        "answer": {
-                            "index": 3,
-                            "text": "Seven lamps with oil",
-                            "verse": "Exodus 37:17-24"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "38",
-                "questions": [
-                    {
-                        "question": "What did the bronze altar in Exodus 38 serve as?",
-                        "options": [
-                            "A table for bread",
-                            "A place for burnt offerings",
-                            "A seat for the priests",
-                            "A container for water"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "A place for burnt offerings",
-                            "verse": "Exodus 38:1-7"
-                        }
-                    },
-                    {
-                        "question": "What materials were used to make the court of the tabernacle in Exodus 38?",
-                        "options": [
-                            "Bronze and fine linen",
-                            "Silver and gold",
-                            "Wood and stone",
-                            "Precious gems"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "Bronze and fine linen",
-                            "verse": "Exodus 38:9-18"
-                        }
-                    },
-                    {
-                        "question": "How much silver was used for the hooks and bands of the pillars in the court of the tabernacle in Exodus 38?",
-                        "options": [
-                            "100 shekels",
-                            "1,000 shekels",
-                            "10,000 shekels",
-                            "None"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "1,000 shekels",
-                            "verse": "Exodus 38:27"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "39",
-                "questions": [
-                    {
-                        "question": "What did the high priest wear on his forehead in Exodus 39?",
-                        "options": [
-                            "A crown of thorns",
-                            "A golden plate with the inscription 'Holiness to the Lord'",
-                            "A veil",
-                            "A feathered headdress"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "A golden plate with the inscription 'Holiness to the Lord'",
-                            "verse": "Exodus 39:30-31"
-                        }
-                    },
-                    {
-                        "question": "What did the Israelites do when Moses blessed them after the completion of the tabernacle in Exodus 39?",
-                        "options": [
-                            "They offered sacrifices",
-                            "They celebrated with a feast",
-                            "They left the camp",
-                            "They mourned and fasted"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "They offered sacrifices",
-                            "verse": "Exodus 39:32-43"
-                        }
-                    },
-                    {
-                        "question": "Where did Moses set up the tabernacle in Exodus 39?",
-                        "options": [
-                            "In the wilderness",
-                            "On Mount Sinai",
-                            "In the Promised Land",
-                            "In the city of Jerusalem"
-                        ],
-                        "answer": {
-                            "index": 0,
-                            "text": "In the wilderness",
-                            "verse": "Exodus 39:32-43"
-                        }
-                    }
-                ]
-            },
-            {
-                "chapter": "40",
-                "questions": [
-                    {
-                        "question": "What filled the tabernacle when it was set up in Exodus 40?",
-                        "options": [
-                            "Smoke and darkness",
-                            "Joyful music",
-                            "A cloud and the glory of the Lord",
-                            "Fire and lightning"
-                        ],
-                        "answer": {
-                            "index": 2,
-                            "text": "A cloud and the glory of the Lord",
-                            "verse": "Exodus 40:34-35"
-                        }
-                    },
-                    {
-                        "question": "How long did the cloud cover the tabernacle in Exodus 40?",
-                        "options": [
-                            "One hour",
-                            "One day",
-                            "One week",
-                            "Continually, day and night"
-                        ],
-                        "answer": {
-                            "index": 3,
-                            "text": "Continually, day and night",
-                            "verse": "Exodus 40:36-38"
-                        }
-                    },
-                    {
-                        "question": "Who entered the tabernacle after it was consecrated in Exodus 40?",
-                        "options": [
-                            "The Israelites",
-                            "Moses and Aaron",
-                            "The foreign nations",
-                            "No one was allowed to enter"
-                        ],
-                        "answer": {
-                            "index": 1,
-                            "text": "Moses and Aaron",
-                            "verse": "Exodus 40:9-10"
+                            "text": "To go and make disciples of all nations",
+                            "verse": "Matthew 28:19"
                         }
                     }
                 ]
             }
         ]
+    },
+    {
+        "book": "Mark",
+        "chapters": []
+    },
+    {
+        "book": "Luke",
+        "chapters": []
+    },
+    {
+        "book": "John",
+        "chapters": []
+    },
+    {
+        "book": "Acts",
+        "chapters": []
+    },
+    {
+        "book": "Romans",
+        "chapters": []
+    },
+    {
+        "book": "1 Corinthians",
+        "chapters": []
+    },
+    {
+        "book": "2 Corinthians",
+        "chapters": []
+    },
+    {
+        "book": "Galatians",
+        "chapters": []
+    },
+    {
+        "book": "Ephesians",
+        "chapters": []
+    },
+    {
+        "book": "Philippians",
+        "chapters": []
+    },
+    {
+        "book": "Colossians",
+        "chapters": []
+    },
+    {
+        "book": "1 Thessalonians",
+        "chapters": []
+    },
+    {
+        "book": "2 Thessalonians",
+        "chapters": []
+    },
+    {
+        "book": "1 Timothy",
+        "chapters": []
+    },
+    {
+        "book": "2 Timothy",
+        "chapters": []
+    },
+    {
+        "book": "Titus",
+        "chapters": []
+    },
+    {
+        "book": "Philemon",
+        "chapters": []
+    },
+    {
+        "book": "Hebrews",
+        "chapters": []
+    },
+    {
+        "book": "James",
+        "chapters": []
+    },
+    {
+        "book": "1 Peter",
+        "chapters": []
+    },
+    {
+        "book": "2 Peter",
+        "chapters": []
+    },
+    {
+        "book": "1 John",
+        "chapters": []
+    },
+    {
+        "book": "2 John",
+        "chapters": []
+    },
+    {
+        "book": "3 John",
+        "chapters": []
+    },
+    {
+        "book": "Jude",
+        "chapters": []
+    },
+    {
+        "book": "Revelation",
+        "chapters": []
     }
 ]
