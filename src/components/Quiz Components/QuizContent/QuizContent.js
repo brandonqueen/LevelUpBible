@@ -1,10 +1,17 @@
-import { StyleSheet, Text, View, TouchableHighlight } from "react-native";
+import {
+	StyleSheet,
+	Text,
+	View,
+	Pressable,
+	TouchableHighlight,
+	TouchableOpacity,
+} from "react-native";
 import { useDispatch } from "react-redux";
 import {
 	setChapterCompleted,
 	updateProgress,
 } from "../../../features/globalData/globalDataSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import QuizChoices from "../QuizChoices/QuizChoices";
 
 const QuizContent = ({
@@ -25,6 +32,7 @@ const QuizContent = ({
 	const [selectedChoiceIndex, setSelectedChoiceIndex] = useState(null);
 	const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
 	const [answeredIncorrectly, setAnsweredIncorrectly] = useState(false);
+	const [buttonHighlightColor, setButtonHighlightColor] = useState(null);
 
 	const numberOfQuestions = QuizData?.questions?.length;
 	const currentQuestion = QuizData?.questions[currentQuestionIndex];
@@ -39,6 +47,15 @@ const QuizContent = ({
 		} else {
 			setAnsweredCorrectly(false);
 			setAnsweredIncorrectly(true);
+		}
+	};
+
+	const handleButtonHighlight = () => {
+		if (answeredCorrectly) {
+			setButtonHighlightColor({ backgroundColor: "#60c75d" });
+		}
+		if (answeredIncorrectly) {
+			setButtonHighlightColor({ backgroundColor: "#1d1e21" });
 		}
 	};
 
@@ -66,10 +83,10 @@ const QuizContent = ({
 				);
 				setQuizComplete(true);
 			} else if (currentQuestionIndex + 1 < numberOfQuestions) {
-				setCurrentQuestionIndex(currentQuestionIndex + 1);
 				setSelectedChoiceIndex(null);
 				setAnsweredCorrectly(false);
 				setAnsweredIncorrectly(false);
+				setCurrentQuestionIndex(currentQuestionIndex + 1);
 			}
 		}
 	};
@@ -119,23 +136,24 @@ const QuizContent = ({
 					onPress={modalToggle}>
 					<Text style={styles.modalQuestionText}>Cancel</Text>
 				</TouchableHighlight>
-				<TouchableHighlight
+				<Pressable
 					style={[
 						styles.disabledNextButton,
 						answeredCorrectly && styles.activeNextButton,
 						answeredIncorrectly && styles.startOverButton,
+						buttonHighlightColor,
 					]}
-					activeOpacity={1}
-					underlayColor={answeredCorrectly ? "#60c75d" : "#1d1e21"}
 					onPress={
 						answeredCorrectly || answeredIncorrectly
 							? () => handleSubmit()
 							: null
-					}>
+					}
+					onPressIn={handleButtonHighlight}
+					onPressOut={() => setButtonHighlightColor(null)}>
 					<Text style={styles.modalQuestionText}>
 						{answeredIncorrectly ? "Start Over" : "Next"}
 					</Text>
-				</TouchableHighlight>
+				</Pressable>
 			</View>
 		</View>
 	);
@@ -165,19 +183,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 		padding: 10,
 	},
-	modalChoiceContainer: {
-		borderWidth: 1,
-		borderStyle: "solid",
-		borderColor: "#695DDA",
-		backgroundColor: "rgba(11,14,29, .6)",
-		borderRadius: 8,
-		padding: 12,
-		marginVertical: 8,
-	},
-	modalButtonsContainer: {
-		backgroundColor: "yellow",
-		flexDirection: "row",
-	},
 	bottomButtonsContainer: {
 		marginVertical: 16,
 		flex: 1,
@@ -202,7 +207,7 @@ const styles = StyleSheet.create({
 		borderRadius: 8,
 		justifyContent: "center",
 		alignItems: "center",
-		backgroundColor: "rgba(11,14,29, .6)",
+		backgroundColor: "rgb(11,14,29)",
 		borderColor: "#56b553",
 		borderWidth: 2,
 	},

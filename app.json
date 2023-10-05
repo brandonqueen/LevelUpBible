@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/Images/LevelUpLogoIcon.png",
     "userInterfaceStyle": "dark",
+    "owner": "levelupbible",
     "splash": {
       "image": "./assets/Images/LevelUpSplash.png",
       "resizeMode": "contain",
@@ -25,6 +26,17 @@
     },
     "web": {
       "favicon": "./assets/Images/LevelUpLogoIcon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8a051174-aeb3-4c13-889f-6f1ebafb2339"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/8a051174-aeb3-4c13-889f-6f1ebafb2339"
     }
   }
 }

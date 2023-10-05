@@ -133,7 +133,8 @@ const SettingsScreen = () => {
 								preserve your current overall points
 							</Text>
 							. This option is ideal for continuing to grow points with multiple
-							re-readings of the Bible.{"\n\n"} * Only available if the whole Bible has been completed.
+							re-readings of the Bible.{"\n\n"} * Only available if the whole
+							Bible has been completed.
 						</Text>
 						<TouchableHighlight
 							style={[
