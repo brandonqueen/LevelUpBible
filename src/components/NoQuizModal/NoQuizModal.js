@@ -11,8 +11,8 @@ import QuizSuccess from "../QuizSuccess/QuizSuccess";
 const NoQuizModal = ({
 	modalOpen,
 	modalToggle,
-	currentQuizBooks,
 	numOfVerses,
+	currentQuizBooks,
 	testamentIndex,
 	bookIndex,
 	bookName,

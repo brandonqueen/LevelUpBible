@@ -10,7 +10,7 @@ import {
 	TouchableHighlight,
 	Pressable,
 } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
 	setChapterCompleted,
 	updateProgress,

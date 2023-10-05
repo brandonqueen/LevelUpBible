@@ -18,7 +18,8 @@ import { ProgressBar } from "react-native-paper";
 import axios from "axios";
 import QuizModal from "../../components/QuizModal/QuizModal";
 import NoQuizModal from "../../components/NoQuizModal/NoQuizModal";
-import quizJSON from "../../constants/quizData/quizData.json";
+// import quizJSON from "../../constants/quizData/quizData.json";
+import { quizMap } from "../../constants/quizData/quizMap";
 
 const BibleScreen = () => {
 	//global state getter
@@ -40,8 +41,10 @@ const BibleScreen = () => {
 	const chapterIndex = chapterNum - 1;
 
 	//get Quiz section
-	const quizBookIndex = quizJSON.findIndex((obj) => obj.book === bookName);
-	const quizSection = quizJSON[quizBookIndex]?.chapters[chapterIndex];
+	//const quizBookIndex = quizJSON.findIndex((obj) => obj.book === bookName);
+	//const quizSection = quizJSON[quizBookIndex]?.chapters[chapterIndex];
+	const quizSection = quizMap[`${bookName}`];
+	console.log(quizMap["Genesis"]);
 
 	//current chapter completed status
 	const isCurrentChapterCompleted =
@@ -294,7 +297,14 @@ const BibleScreen = () => {
 		);
 	}
 
-	const currentQuizBooks = quizJSON.map((book) => book.book);
+	const currentQuizBooks = Object.keys(quizMap).filter((bookName) => {
+		const bookData = quizMap[bookName];
+		return (
+			bookData &&
+			Array.isArray(bookData.chapters) &&
+			bookData.chapters.length > 0
+		);
+	});
 	const handleNoQuizModalToggle = () => {
 		setNoQuizModalOpen(!noQuizModalOpen);
 	};
@@ -391,7 +401,7 @@ const BibleScreen = () => {
 								<Pressable
 									onPressIn={handleCompletePressIn}
 									onPress={
-										shouldRenderPressable && quizSection
+										shouldRenderPressable && quizSection.chapters
 											? handleQuizModalToggle
 											: handleNoQuizModalToggle
 									}

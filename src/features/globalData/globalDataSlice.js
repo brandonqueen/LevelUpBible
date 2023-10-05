@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import initialBibleData from "../../constants/initialBibleData";
-import initialUserProgress from "../../constants/initialUserProgress";
+import initialBibleData from "../../constants/initialStateConstants/initialBibleData";
+import initialUserProgress from "../../constants/initialStateConstants/initialUserProgress";
 
 const globalDataSlice = createSlice({
 	name: "globalData",
