@@ -48,7 +48,7 @@ const NoQuizModal = ({
 		const otherBooks = currentQuizBooks.slice(0, -1);
 
 		return (
-			<ScrollView>
+			<ScrollView showsVerticalScrollIndicator={false}>
 				<Text style={styles.header}>Quiz Coming Soon 🧐</Text>
 				<Text style={styles.textDescription}>
 					We currently do not have a quiz for {bookName}. We currently have

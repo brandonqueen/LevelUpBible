@@ -17,10 +17,9 @@ const NewRewards = ({ newRewards }) => {
 					? "You also earned new Rewards!"
 					: "You also earned a new Reward!"}
 			</Text>
-            <View style={{flexDirection: "row", flex: 1}}>
-            <NewRewardsRender newRewards={newRewards} />
-            </View>
-			
+			<View style={{ flexDirection: "row", flex: 1 }}>
+				<NewRewardsRender newRewards={newRewards} />
+			</View>
 		</View>
 	);
 };
@@ -31,7 +30,7 @@ const NewRewardsRender = ({ newRewards }) => {
 	);
 	return (
 		<>
-			{newRewards.map((newReward, index) => {
+			{newRewards?.map((newReward, index) => {
 				const rewardIndex = rewardState.findIndex(
 					(rewardObj) => rewardObj.title === newReward
 				);
@@ -53,7 +52,7 @@ const QuizSuccess = ({ numOfVerses, rewards, modalToggle }) => {
 	);
 
 	return (
-		<ScrollView>
+		<ScrollView showsVerticalScrollIndicator={false}>
 			<Text style={[styles.heading, { fontSize: 28 }]}>HOORAY! 🥳</Text>
 			<View style={styles.pointsContainer}>
 				<Text style={styles.points}>

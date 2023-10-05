@@ -347,6 +347,7 @@ const BibleScreen = () => {
 						ref={scrollViewRef}
 						style={styles.scroll}
 						onScroll={handleScroll}
+						showsVerticalScrollIndicator={false}
 						scrollEventThrottle={16}>
 						<Text style={styles.heading}>{`${bookName} ${chapterNum}`}</Text>
 						<View>

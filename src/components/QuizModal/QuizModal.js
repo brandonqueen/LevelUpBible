@@ -219,7 +219,7 @@ const QuizModal = ({
 						<QuizSuccess
 							numOfVerses={numOfVerses}
 							modalToggle={modalToggle}
-							newards={rewards}
+							rewards={rewards}
 						/>
 					) : (
 						<QuizContent />
