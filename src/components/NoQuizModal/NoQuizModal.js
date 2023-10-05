@@ -5,7 +5,6 @@ import {
 	setChapterCompleted,
 	updateProgress,
 } from "../../features/globalData/globalDataSlice";
-import React from "react";
 import ModalPopup from "../ModalPopup/ModalPopup";
 import QuizSuccess from "../QuizSuccess/QuizSuccess";
 
@@ -22,21 +21,12 @@ const NoQuizModal = ({
 }) => {
 	//state
 	const [confirmedRead, setConfirmedRead] = useState(false);
-	const [newRewards, setNewRewards] = useState([]);
 
 	//global state setter
 	const dispatch = useDispatch();
 	const userProgress = useSelector((state) => state.globalData.userProgress);
 
 	const handleConfirmPressed = () => {
-		const updatedRewardsArray = userProgress.recentEarnedRewards;
-		const newlyEarnedRewards = updatedRewardsArray.filter(
-			(item) => !rewards.includes(item)
-		);
-		if (newlyEarnedRewards) {
-			setNewRewards(newlyEarnedRewards);
-		}
-
 		dispatch(
 			setChapterCompleted({
 				testamentIndex: testamentIndex,
@@ -96,47 +86,13 @@ const NoQuizModal = ({
 		);
 	};
 
-	const PointsPage = () => {
-		return (
-			<ScrollView>
-				<View>
-					<Text style={[styles.heading, { fontSize: 28 }]}>HOORAY! 🥳</Text>
-					<View style={styles.pointsContainer}>
-						<Text style={styles.points}>+{numOfVerses}pts</Text>
-					</View>
-					<View style={styles.modalQuestionContainer}>
-						<Text
-							style={[
-								styles.modalQuestionText,
-								{ textAlign: "center", marginVertical: 16 },
-							]}>
-							You answered all the questions correctly and have added{" "}
-							{numOfVerses} points to your overall score! {"\n\n"} Rejoice! 🙌
-							🎉
-						</Text>
-					</View>
-					<View style={styles.bottomButtonsCompleteContainer}>
-						<TouchableHighlight
-							key={"exit button"}
-							style={styles.exitButton}
-							activeOpacity={1}
-							underlayColor="rgb(232, 91, 70)"
-							onPress={modalToggle}>
-							<Text style={styles.completeButtonText}>Exit</Text>
-						</TouchableHighlight>
-					</View>
-				</View>
-			</ScrollView>
-		);
-	};
-
 	return (
 		<ModalPopup modalOpen={modalOpen} modalToggle={modalToggle}>
 			{confirmedRead ? (
 				<QuizSuccess
 					numOfVerses={numOfVerses}
 					modalToggle={modalToggle}
-					newRewards={newRewards}
+					rewards={rewards}
 				/>
 			) : (
 				<ConfirmPage />

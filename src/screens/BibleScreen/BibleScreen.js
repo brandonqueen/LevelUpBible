@@ -54,7 +54,9 @@ const BibleScreen = () => {
 
 	//current awards array
 	const rewardsArray = userProgress.recentEarnedRewards;
-	const currentRewardsArray = useRef(JSON.parse(JSON.stringify(rewardsArray)));
+	const currentRewardsArray = useRef(
+		JSON.parse(JSON.stringify(rewardsArray))
+	).current;
 
 	//local state
 	const [nextChapterExists, setNextChapterExists] = useState(true);
@@ -429,7 +431,7 @@ const BibleScreen = () => {
 					bookIndex={bookIndex}
 					bookName={bookName}
 					chapterIndex={chapterIndex}
-					rewards={currentRewardsArray.current}
+					rewards={currentRewardsArray}
 				/>
 			)}
 			{quizModalOpen && (
@@ -442,7 +444,7 @@ const BibleScreen = () => {
 					bookIndex={bookIndex}
 					bookName={bookName}
 					chapterIndex={chapterIndex}
-					rewards={currentRewardsArray.current}
+					rewards={currentRewardsArray}
 				/>
 			)}
 		</View>

@@ -1,34 +1,65 @@
-import { StyleSheet, Text, View, TouchableHighlight } from "react-native";
+import {
+	StyleSheet,
+	Text,
+	View,
+	TouchableHighlight,
+	ScrollView,
+} from "react-native";
 import React from "react";
 import { useSelector } from "react-redux";
+import Reward from "../Reward/Reward";
 
-const QuizSuccess = ({ numOfVerses, newRewards, modalToggle }) => {
+const NewRewards = ({ newRewards }) => {
+	return (
+		<View style={{ flex: 1, marginVertical: 12 }}>
+			<Text style={[styles.modalQuestionText, { paddingBottom: 16 }]}>
+				{newRewards.length > 1
+					? "You also earned new Rewards!"
+					: "You also earned a new Reward!"}
+			</Text>
+            <View style={{flexDirection: "row", flex: 1}}>
+            <NewRewardsRender newRewards={newRewards} />
+            </View>
+			
+		</View>
+	);
+};
+
+const NewRewardsRender = ({ newRewards }) => {
 	const rewardState = useSelector(
 		(state) => state.globalData.userProgress.rewards
 	);
+	return (
+		<>
+			{newRewards.map((newReward, index) => {
+				const rewardIndex = rewardState.findIndex(
+					(rewardObj) => rewardObj.title === newReward
+				);
+				const newRewardToRender = rewardState[rewardIndex];
 
-	const NewRewards = () => {
-		newRewards.map((newReward) => {
-			rewardIndex = rewardState.findIndex(
-				(rewardObj) => rewardObj.title === newReward
-			);
-			const newRewardToRender = rewardState[rewardIndex];
-			return (
-				<View>
-					<Text style={styles.modalQuestionText}>
-						You've also earned a new Reward!
-					</Text>
-					<Reward reward={newRewardToRender}></Reward>
-				</View>
-			);
-		});
-	};
+				return (
+					<Reward key={"New Reward Index" + index} reward={newRewardToRender} />
+				);
+			})}
+		</>
+	);
+};
+
+const QuizSuccess = ({ numOfVerses, rewards, modalToggle }) => {
+	const userProgress = useSelector((state) => state.globalData.userProgress);
+	const updatedRewardsArray = userProgress.recentEarnedRewards;
+	const newlyEarnedRewards = updatedRewardsArray.filter(
+		(item) => !rewards.includes(item)
+	);
 
 	return (
-		<View>
+		<ScrollView>
 			<Text style={[styles.heading, { fontSize: 28 }]}>HOORAY! 🥳</Text>
 			<View style={styles.pointsContainer}>
-				<Text style={styles.points}>+{numOfVerses}pts</Text>
+				<Text style={styles.points}>
+					{`+${numOfVerses}`}
+					{"\nPOINTS"}
+				</Text>
 			</View>
 			<View style={styles.modalQuestionContainer}>
 				<Text
@@ -39,7 +70,9 @@ const QuizSuccess = ({ numOfVerses, newRewards, modalToggle }) => {
 					You answered all the questions correctly and have added {numOfVerses}{" "}
 					points to your overall score!
 				</Text>
-				{newRewards && <NewRewards />}
+				{newlyEarnedRewards.length > 0 && (
+					<NewRewards newRewards={newlyEarnedRewards} />
+				)}
 				<Text
 					style={[
 						styles.modalQuestionText,
@@ -58,7 +91,7 @@ const QuizSuccess = ({ numOfVerses, newRewards, modalToggle }) => {
 					<Text style={styles.completeButtonText}>Exit</Text>
 				</TouchableHighlight>
 			</View>
-		</View>
+		</ScrollView>
 	);
 };
 
@@ -74,13 +107,12 @@ const styles = StyleSheet.create({
 		lineHeight: 28,
 	},
 	pointsContainer: {
+		height: 80,
+		width: 160,
 		borderWidth: 3,
-		borderRadius: 65,
+		borderRadius: 80,
 		borderColor: "#a38b00",
-		padding: 12,
-		margin: 12,
-		width: 130,
-		height: 130,
+		margin: 8,
 		alignSelf: "center",
 		alignItems: "center",
 		justifyContent: "center",
@@ -88,7 +120,7 @@ const styles = StyleSheet.create({
 	},
 	points: {
 		fontWeight: "900",
-		fontSize: 23,
+		fontSize: 20,
 		color: "rgb(255, 198, 99)",
 		textAlign: "center",
 	},
