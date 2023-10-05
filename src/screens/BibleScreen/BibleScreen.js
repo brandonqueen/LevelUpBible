@@ -43,8 +43,7 @@ const BibleScreen = () => {
 	//get Quiz section
 	//const quizBookIndex = quizJSON.findIndex((obj) => obj.book === bookName);
 	//const quizSection = quizJSON[quizBookIndex]?.chapters[chapterIndex];
-	const quizSection = quizMap[`${bookName}`];
-	console.log(quizMap["Genesis"]);
+	const quizSection = quizMap[`${bookName}`].chapters[chapterIndex];
 
 	//current chapter completed status
 	const isCurrentChapterCompleted =
@@ -401,7 +400,7 @@ const BibleScreen = () => {
 								<Pressable
 									onPressIn={handleCompletePressIn}
 									onPress={
-										shouldRenderPressable && quizSection.chapters
+										shouldRenderPressable && quizSection
 											? handleQuizModalToggle
 											: handleNoQuizModalToggle
 									}
