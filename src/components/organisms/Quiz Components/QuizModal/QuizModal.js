@@ -19,7 +19,7 @@ const QuizModal = ({
 
 	return (
 		<ModalPopup
-			backgroundColor={"#352b8c"}
+			backgroundColor={"#342a86"}
 			modalOpen={modalOpen}
 			modalToggle={modalToggle}>
 			<ScrollView
