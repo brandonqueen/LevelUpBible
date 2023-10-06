@@ -4,11 +4,11 @@
     "slug": "LevelUpBible",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/Images/LevelUpLogoIcon.png",
+    "icon": "./assets/Images/icon.png",
     "userInterfaceStyle": "dark",
     "owner": "levelupbible",
     "splash": {
-      "image": "./assets/Images/LevelUpSplash.png",
+      "image": "./assets/Images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#161e39"
     },
@@ -20,7 +20,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/Images/LevelUpLogoIcon.png",
+        "foregroundImage": "./assets/Images/adaptive-icon.png",
         "backgroundColor": "#161e39"
       }
     },
