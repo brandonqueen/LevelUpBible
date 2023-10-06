@@ -6,18 +6,18 @@ import {
 	ScrollView,
 	TouchableOpacity,
 } from "react-native";
-import { useRef, useEffect } from "react";
-import graphic from "../../../assets/Images/Logo.png";
-import { useSelector } from "react-redux";
-import { useNavigation, useIsFocused } from "@react-navigation/native";
-import CircularProgress from "react-native-circular-progress-indicator";
 import {
 	useSharedValue,
 	withTiming,
 	Easing,
 	useDerivedValue,
 } from "react-native-reanimated";
+import { useRef, useEffect } from "react";
 import { ReText } from "react-native-redash";
+import { useSelector } from "react-redux";
+import { useNavigation, useIsFocused } from "@react-navigation/native";
+import CircularProgress from "react-native-circular-progress-indicator";
+import graphic from "../../../assets/Images/Logo.png";
 import HomeRewardsRender from "../../components/molecules/HomeRewardsRender/HomeRewardsRender";
 
 const HomeScreen = () => {

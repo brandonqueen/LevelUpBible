@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View, FlatList, ScrollView } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 import Reward from "../../components/atoms/Reward/Reward";
 
 const RewardsScreen = () => {
-	//global state
+	//access global state
 	const userProgress = useSelector((state) => state.globalData.userProgress);
 	const rewardsData = userProgress.rewards;
 

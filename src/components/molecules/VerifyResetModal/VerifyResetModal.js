@@ -1,4 +1,4 @@
-import { StyleSheet, Text, ScrollView, TouchableHighlight } from "react-native";
+import { StyleSheet, Text, ScrollView } from "react-native";
 import ModalPopup from "../ModalPopup";
 import StyledTextButton from "../../atoms/StyledTextButton/StyledTextButton";
 

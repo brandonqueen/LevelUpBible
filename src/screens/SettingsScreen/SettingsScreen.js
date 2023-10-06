@@ -1,18 +1,11 @@
 import {
-	StyleSheet,
-	Text,
-	View,
-	ScrollView,
-	TouchableHighlight,
-	Linking,
-} from "react-native";
-import { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { useDispatch, useSelector } from "react-redux";
-import {
 	readBibleAgain,
 	resetAllData,
 } from "../../features/globalData/globalDataSlice";
+import { StyleSheet, Text, View, ScrollView, Linking } from "react-native";
+import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { useDispatch, useSelector } from "react-redux";
 import VerifyResetModal from "../../components/molecules/VerifyResetModal/VerifyResetModal";
 import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
 
