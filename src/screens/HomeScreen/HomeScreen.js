@@ -5,13 +5,11 @@ import {
 	Image,
 	ScrollView,
 	TouchableOpacity,
-	FlatList,
 } from "react-native";
 import { useRef, useEffect } from "react";
 import graphic from "../../../assets/Images/Logo.png";
 import { useSelector } from "react-redux";
 import { useNavigation, useIsFocused } from "@react-navigation/native";
-import Reward from "../../components/atoms/Reward/Reward";
 import CircularProgress from "react-native-circular-progress-indicator";
 import {
 	useSharedValue,

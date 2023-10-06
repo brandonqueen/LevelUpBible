@@ -4,9 +4,9 @@ import Reward from "../../atoms/Reward/Reward";
 const HomeRewardsRender = ({ recentEarnedRewards, rewards }) => {
 	if (recentEarnedRewards.length < 1) {
 		//if no rewards yet, render default (unearned) first reward, darkened
-        return <Reward reward={rewards[0]} />;
+		return <Reward reward={rewards[0]} />;
 	} else {
-        //if rewards exist, render them!
+		//if rewards exist, render them!
 		const reversedArray = recentEarnedRewards.slice().reverse();
 		const rewardRender = (item) => {
 			const rewardIndex = rewards.findIndex((obj) => obj.title === item);
