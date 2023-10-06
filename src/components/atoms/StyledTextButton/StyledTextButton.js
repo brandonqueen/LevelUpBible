@@ -21,7 +21,7 @@ const StyledTextButton = ({
 			borderWidth: borderWidth,
 			borderColor: borderColor,
 			margin: margin,
-			width: "50%",
+			width: 185,
 			alignSelf: "center",
 		},
 		text: {

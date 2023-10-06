@@ -6,6 +6,7 @@ import {
 	TouchableHighlight,
 } from "react-native";
 import ModalPopup from "../ModalPopup";
+import StyledTextButton from "../../atoms/StyledTextButton/StyledTextButton";
 
 const RewardDescriptionModal = ({
 	descriptionModalOpen,
@@ -23,13 +24,14 @@ const RewardDescriptionModal = ({
 						Earned on {reward.earnedDate}
 					</Text>
 				)}
-				<TouchableHighlight
-					style={[styles.modalButton]}
-					activeOpacity={1}
-					underlayColor="#5d67da"
+				<StyledTextButton
+					backgroundPressedColor={"#5d67da"}
+					borderWidth={2}
+					borderColor={"#695DDA"}
+					margin={20}
 					onPress={modalToggle}>
-					<Text style={styles.modalButtonText}>Close</Text>
-				</TouchableHighlight>
+					Close
+				</StyledTextButton>
 			</ScrollView>
 		</ModalPopup>
 	);
@@ -68,7 +70,6 @@ const styles = StyleSheet.create({
 		color: "#DFB01C",
 		fontWeight: "800",
 		fontSize: 19,
-		//textAlign: "center",
 		alignSelf: "flex-start",
 		padding: 18,
 	},
