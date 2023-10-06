@@ -3,12 +3,12 @@ import { useState } from "react";
 
 const StyledTextButton = ({
 	children,
+	textColor,
 	backgroundColor,
 	backgroundPressedColor,
 	borderWidth,
 	borderColor,
 	margin,
-	textColor,
 	onPress,
 }) => {
 	const [pressedHighlightColor, setPressedHighlightColor] = useState(null);

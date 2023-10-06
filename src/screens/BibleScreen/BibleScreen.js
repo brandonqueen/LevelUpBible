@@ -7,7 +7,7 @@ import {
 	ActivityIndicator,
 	Pressable,
 	TouchableOpacity,
-	TouchableHighlight,
+	Image,
 } from "react-native";
 import { useState, useEffect, useRef } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -20,6 +20,8 @@ import QuizModal from "../../components/organisms/Quiz Components/QuizModal/Quiz
 import NoQuizModal from "../../components/organisms/Quiz Components/NoQuizModal/NoQuizModal";
 import { quizMap } from "../../constants/quizData/quizMap";
 import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
+import { useNetInfo } from "@react-native-community/netinfo";
+import capybara from "../../../assets/Images/capybara.png";
 
 const BibleScreen = () => {
 	//global state getter
@@ -70,7 +72,10 @@ const BibleScreen = () => {
 	const [quizModalOpen, setQuizModalOpen] = useState(false);
 	const [noQuizModalOpen, setNoQuizModalOpen] = useState(false);
 
-	//API call
+	//Network connection
+	const isConnected = useNetInfo().isConnected;
+
+	//API CALL TO FETCH BIBLE TEXT
 	const fetchData = async () => {
 		try {
 			const passage = () => {
@@ -342,7 +347,14 @@ const BibleScreen = () => {
 					}}></View>
 			</View>
 			<View style={styles.card}>
-				{isLoading ? (
+				{error || !isConnected ? (
+					<View style={styles.noConnectionContainer}>
+						<Image source={capybara} style={styles.capybara}></Image>
+						<Text style={styles.heading}>
+							Please check your internet connection and try again.
+						</Text>
+					</View>
+				) : isLoading ? (
 					<ActivityIndicator size="large" style={{ alignSelf: "center" }} />
 				) : (
 					<ScrollView
@@ -483,6 +495,16 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		flex: 9,
 		marginVertical: 12,
+	},
+	noConnectionContainer: {
+		width: "100%",
+		flex: 1,
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	capybara: {
+		width: 300,
+		height: 300,
 	},
 	scroll: {
 		flex: 1,
