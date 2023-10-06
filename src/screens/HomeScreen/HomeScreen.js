@@ -1,7 +1,6 @@
 import {
 	StyleSheet,
 	Text,
-	TextInput,
 	View,
 	Image,
 	ScrollView,
@@ -12,7 +11,7 @@ import { useRef, useEffect } from "react";
 import graphic from "../../../assets/Images/Logo.png";
 import { useSelector } from "react-redux";
 import { useNavigation, useIsFocused } from "@react-navigation/native";
-import Reward from "../../components/Reward/Reward";
+import Reward from "../../components/atoms/Reward/Reward";
 import CircularProgress from "react-native-circular-progress-indicator";
 import {
 	useSharedValue,
@@ -21,11 +20,14 @@ import {
 	useDerivedValue,
 } from "react-native-reanimated";
 import { ReText } from "react-native-redash";
+import HomeRewardsRender from "../../components/molecules/HomeRewardsRender/HomeRewardsRender";
 
 const HomeScreen = () => {
+	//navigation
 	const navigation = useNavigation();
 	const isFocused = useIsFocused();
 
+	//global state
 	const userProgress = useSelector((state) => state.globalData.userProgress);
 	const points = userProgress.stats.totalPoints;
 	const chapters = userProgress.stats.numChaptersCompleted;
@@ -33,6 +35,7 @@ const HomeScreen = () => {
 	const rewards = userProgress.rewards;
 	const recentEarnedRewards = userProgress.recentEarnedRewards;
 
+	//progress calculation data
 	const bibleChapterNumber = 1189;
 	const bibleBookNumber = 66;
 	const chapterPercentage = Math.ceil((chapters / bibleChapterNumber) * 100);
@@ -46,6 +49,7 @@ const HomeScreen = () => {
 		return Math.ceil(pointsValueAnim.value).toLocaleString();
 	});
 
+	//start animation on screen focus
 	useEffect(() => {
 		if (isFocused) {
 			chapProgressRef.current.reAnimate();
@@ -61,38 +65,13 @@ const HomeScreen = () => {
 	}, [isFocused, pointsValueAnim]);
 	/// END ANIMATION LOGIC
 
+	//press handler
 	const handleProgressPress = () => {
 		navigation.navigate("BIBLE");
 	};
 
-	const RewardsRender = () => {
-		if (recentEarnedRewards.length < 1) {
-			return <Reward reward={rewards[0]} />;
-		} else {
-			const reversedArray = recentEarnedRewards.slice().reverse();
-			const rewardRender = (item) => {
-				const rewardIndex = rewards.findIndex((obj) => obj.title === item);
-				return (
-					<View style={{ marginHorizontal: 10 }}>
-						<Reward reward={rewards[rewardIndex]} />
-					</View>
-				);
-			};
-			return (
-				<FlatList
-					contentContainerStyle={{
-						flex: 0,
-						minWidth: "100%",
-						justifyContent: "space-evenly",
-						padding: 16,
-					}}
-					horizontal={true}
-					data={reversedArray}
-					keyExtractor={(item, index) => `${item}: ${index}`}
-					renderItem={({ item }) => rewardRender(item)}
-				/>
-			);
-		}
+	const handleRewardPressed = () => {
+		navigation.navigate("REWARDS");
 	};
 
 	return (
@@ -101,8 +80,8 @@ const HomeScreen = () => {
 				<Image source={graphic} style={styles.graphic} />
 			</View>
 			<View style={styles.mainContent}>
-				<View style={styles.progressContainer}>
-					<Text style={styles.headers}>YOUR PROGRESS</Text>
+				<View style={styles.progressSectionContainer}>
+					<Text style={styles.progressHeader}>YOUR PROGRESS</Text>
 					<TouchableOpacity
 						style={styles.pointsContainer}
 						onPress={handleProgressPress}
@@ -110,9 +89,9 @@ const HomeScreen = () => {
 						<ReText style={styles.pointsText} text={pointsText} />
 						<Text style={styles.pointsText}>POINTS</Text>
 					</TouchableOpacity>
-					<View style={styles.percentageContainer}>
+					<View style={styles.percentageCirclesContainer}>
 						<TouchableOpacity
-							style={{ flexDirection: "column", alignItems: "center" }}
+							style={styles.progressCircleContainer}
 							onPress={handleProgressPress}
 							activeOpacity={0.7}>
 							<CircularProgress
@@ -127,12 +106,12 @@ const HomeScreen = () => {
 								maxValue={100}
 								valueSuffix={"%"}
 							/>
-							<Text style={styles.chapterUnderText}>
+							<Text style={styles.chapterInfoUnderCircle}>
 								{chapters} / 1,189{"\n"}Chapters
 							</Text>
 						</TouchableOpacity>
 						<TouchableOpacity
-							style={{ flexDirection: "column", alignItems: "center" }}
+							style={styles.progressCircleContainer}
 							onPress={handleProgressPress}
 							activeOpacity={0.7}>
 							<CircularProgress
@@ -147,24 +126,23 @@ const HomeScreen = () => {
 								maxValue={100}
 								valueSuffix={"%"}
 							/>
-							<Text style={styles.bookUnderText}>
+							<Text style={styles.bookInfoUnderCircle}>
 								{books} / 66{"\n"}Books
 							</Text>
 						</TouchableOpacity>
 					</View>
 				</View>
-				<Text style={[styles.headers, { marginTop: 30 }]}>
+				<Text style={styles.rewardsHeader}>
 					{recentEarnedRewards.length < 1 ? "NEXT REWARD" : "RECENT REWARDS"}
 				</Text>
 				<View style={styles.rewardsSectionContainer}>
 					<View style={styles.rewardsContainer}>
-						<RewardsRender />
+						<HomeRewardsRender
+							recentEarnedRewards={recentEarnedRewards}
+							rewards={rewards}
+						/>
 					</View>
-					<TouchableOpacity
-						activeOpacity={0.7}
-						onPress={() => {
-							navigation.navigate("REWARDS");
-						}}>
+					<TouchableOpacity activeOpacity={0.7} onPress={handleRewardPressed}>
 						<Text style={styles.viewMore}>view more</Text>
 					</TouchableOpacity>
 				</View>
@@ -195,15 +173,19 @@ const styles = StyleSheet.create({
 		flexDirection: "column",
 		margin: 8,
 	},
-	progressContainer: {
+	progressSectionContainer: {
 		flex: 0,
+	},
+	progressCircleContainer: {
+		flexDirection: "column",
+		alignItems: "center",
 	},
 	rewardsSectionContainer: {
 		flex: 1,
 		alignItems: "center",
 		justifyContent: "center",
 	},
-	headers: {
+	progressHeader: {
 		fontSize: 30,
 		fontWeight: "900",
 		textAlign: "center",
@@ -228,7 +210,7 @@ const styles = StyleSheet.create({
 		color: "rgb(255, 198, 99)",
 		textAlign: "center",
 	},
-	percentageContainer: {
+	percentageCirclesContainer: {
 		flexDirection: "row",
 		justifyContent: "space-around",
 	},
@@ -239,7 +221,7 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		padding: 8,
 	},
-	chapterUnderText: {
+	chapterInfoUnderCircle: {
 		fontWeight: "700",
 		fontSize: 18,
 		color: "#7162fc",
@@ -254,13 +236,21 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		padding: 8,
 	},
-	bookUnderText: {
+	bookInfoUnderCircle: {
 		fontWeight: "700",
 		fontSize: 18,
 		color: "#db3537",
 		textAlign: "center",
 		padding: 8,
 		letterSpacing: 0.1,
+	},
+	rewardsHeader: {
+		fontSize: 30,
+		fontWeight: "900",
+		textAlign: "center",
+		color: "#f5f5f5",
+		marginBottom: 10,
+		marginTop: 30,
 	},
 	rewardsContainer: {
 		width: "95%",

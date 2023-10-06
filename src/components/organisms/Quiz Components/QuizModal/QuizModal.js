@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { ScrollView } from "react-native";
 import QuizSuccess from "../QuizSuccess/QuizSuccess";
-import ModalPopup from "../../ModalPopup/ModalPopup";
+import ModalPopup from "../../../molecules/ModalPopup/ModalPopup";
 import QuizContent from "../QuizContent/QuizContent";
-import QuizChoices from "../QuizChoices/QuizChoices";
 
 const QuizModal = ({
 	modalOpen,

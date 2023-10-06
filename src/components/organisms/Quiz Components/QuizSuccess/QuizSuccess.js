@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import React from "react";
 import { useSelector } from "react-redux";
-import Reward from "../../Reward/Reward";
+import Reward from "../../../atoms/Reward/Reward";
 
 const NewRewards = ({ newRewards }) => {
 	return (

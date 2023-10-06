@@ -13,7 +13,7 @@ import {
 	readBibleAgain,
 	resetAllData,
 } from "../../features/globalData/globalDataSlice";
-import ModalPopup from "../../components/ModalPopup/ModalPopup";
+import ModalPopup from "../../components/molecules/ModalPopup/ModalPopup";
 
 const SettingsScreen = () => {
 	//nav

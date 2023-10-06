@@ -8,7 +8,7 @@ import {
 	TouchableHighlight,
 } from "react-native";
 import { useState } from "react";
-import ModalPopup from "../ModalPopup/ModalPopup";
+import ModalPopup from "../../molecules/ModalPopup/ModalPopup";
 
 const Reward = ({ reward }) => {
 	const [descriptionModalOpen, setDescriptionModalOpen] = useState(false);

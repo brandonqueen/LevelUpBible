@@ -1,16 +1,6 @@
-import {
-	StyleSheet,
-	Text,
-	View,
-	FlatList,
-	Image,
-	ScrollView,
-	TouchableHighlight,
-} from "react-native";
-import { useState } from "react";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import { useSelector } from "react-redux";
-import Reward from "../../components/Reward/Reward";
-import ModalPopup from "../../components/ModalPopup/ModalPopup.js";
+import Reward from "../../components/atoms/Reward/Reward";
 
 const RewardsScreen = () => {
 	//global state

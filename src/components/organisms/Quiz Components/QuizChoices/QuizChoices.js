@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import React from "react";
-import correctImg from "../../../../assets/Images/CORRECT!!.png";
+import correctImg from "../../../../../assets/Images/CORRECT!!.png";
 
 const QuizChoices = ({
 	currentQuestion,

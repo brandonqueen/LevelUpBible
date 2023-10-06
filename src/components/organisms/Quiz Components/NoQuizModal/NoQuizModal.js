@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
 	setChapterCompleted,
 	updateProgress,
-} from "../../../features/globalData/globalDataSlice";
-import ModalPopup from "../../ModalPopup/ModalPopup";
+} from "../../../../features/globalData/globalDataSlice";
+import ModalPopup from "../../../molecules/ModalPopup/ModalPopup";
 import QuizSuccess from "../QuizSuccess/QuizSuccess";
 
 const NoQuizModal = ({

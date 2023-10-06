@@ -4,14 +4,13 @@ import {
 	View,
 	Pressable,
 	TouchableHighlight,
-	TouchableOpacity,
 } from "react-native";
 import { useDispatch } from "react-redux";
 import {
 	setChapterCompleted,
 	updateProgress,
-} from "../../../features/globalData/globalDataSlice";
-import { useEffect, useState } from "react";
+} from "../../../../features/globalData/globalDataSlice";
+import { useState } from "react";
 import QuizChoices from "../QuizChoices/QuizChoices";
 
 const QuizContent = ({
