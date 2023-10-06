@@ -25,7 +25,7 @@ const SettingsScreen = () => {
 
 	//get current global state
 	const userProgress = useSelector((state) => state.globalData.userProgress);
-	const isBibleCompleted = true; //userProgress.rewards[11].completed;
+	const isBibleCompleted = userProgress.rewards[11].completed;
 
 	//local state
 	const [modalOpen, setModalOpen] = useState(false);
@@ -36,12 +36,12 @@ const SettingsScreen = () => {
 		{
 			option: "readAgain",
 			message:
-				"This will remove all your current rewards as well as your book/chapter progress. \n\nContinue?",
+				"This will remove all your current rewards as well as your book/chapter progress. \n\nDo you wish to continue?",
 		},
 		{
 			option: "resetAll",
 			message:
-				"This option will reset ALL progress, including your total points.\n\n Continue?",
+				"This option will reset ALL progress, including your total points.\n\nDo you wish to continue?",
 		},
 	];
 
