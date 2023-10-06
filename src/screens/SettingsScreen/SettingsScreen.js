@@ -14,6 +14,7 @@ import {
 	resetAllData,
 } from "../../features/globalData/globalDataSlice";
 import VerifyResetModal from "../../components/molecules/VerifyResetModal/VerifyResetModal";
+import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
 
 const SettingsScreen = () => {
 	//nav
@@ -24,7 +25,7 @@ const SettingsScreen = () => {
 
 	//get current global state
 	const userProgress = useSelector((state) => state.globalData.userProgress);
-	const isBibleCompleted = userProgress.rewards[11].completed;
+	const isBibleCompleted = true; //userProgress.rewards[11].completed;
 
 	//local state
 	const [modalOpen, setModalOpen] = useState(false);
@@ -36,13 +37,11 @@ const SettingsScreen = () => {
 			option: "readAgain",
 			message:
 				"This will remove all your current rewards as well as your book/chapter progress. \n\nContinue?",
-			color: "#8174fc",
 		},
 		{
 			option: "resetAll",
 			message:
 				"This option will reset ALL progress, including your total points.\n\n Continue?",
-			color: "#fc4c4e",
 		},
 	];
 
@@ -56,7 +55,7 @@ const SettingsScreen = () => {
 		setModalOption(modalOptions[0]);
 	};
 
-	const handleReadAgain = () => {
+	const handleReadAgainConfirm = () => {
 		dispatch(readBibleAgain());
 		modalToggle();
 	};
@@ -64,7 +63,7 @@ const SettingsScreen = () => {
 		setModalOpen(!modalOpen);
 		setModalOption(modalOptions[1]);
 	};
-	const handleResetAll = () => {
+	const handleResetAllConfirm = () => {
 		dispatch(resetAllData());
 		modalToggle();
 	};
@@ -79,79 +78,61 @@ const SettingsScreen = () => {
 				modalOpen={modalOpen}
 				modalToggle={modalToggle}
 				modalOption={modalOption}
-				handleReadAgain={handleReadAgain}
-				handleResetAll={handleResetAll}
+				handleReadAgain={handleReadAgainConfirm}
+				handleResetAll={handleResetAllConfirm}
 			/>
 			<ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
 				<Text style={styles.header}>Settings</Text>
-				<View
-					style={{
-						width: "100%",
-						alignItems: "flex-start",
-						justifyContent: "flex-start",
-					}}>
+				<View>
 					<View style={styles.optionContainer}>
 						<Text style={[styles.optionTitle]}>Read Again</Text>
 						<Text style={styles.textDescription}>
 							Reset chapter, book and rewards progress but{" "}
-							<Text
-								style={{
-									fontWeight: "800",
-									fontSize: 18,
-									color: "#7b6efa",
-								}}>
+							<Text style={styles.readAgainTextHighlight}>
 								preserve your current overall points
 							</Text>
 							. This option is ideal for continuing to grow points with multiple
-							re-readings of the Bible.{"\n\n"} * Only available if the whole
-							Bible has been completed.
+							re-readings of the Bible.{"\n\n"}( Only available if the whole
+							Bible has been completed. )
 						</Text>
-						<TouchableHighlight
-							style={[
-								styles.button,
-								{ backgroundColor: "#695DDA" },
-								isBibleCompleted ? null : { opacity: 0.5 },
-							]}
-							onPress={isBibleCompleted ? handleReadAgainPress : null}
-							activeOpacity={1}
-							underlayColor="#8174fc">
-							<Text style={styles.buttonText}>Read Bible Again</Text>
-						</TouchableHighlight>
+						<StyledTextButton
+							backgroundColor={"#695DDA"}
+							margin={24}
+							backgroundPressedColor={isBibleCompleted && "#8174fc"}
+							opacity={isBibleCompleted ? null : 0.5}
+							onPress={isBibleCompleted ? handleReadAgainPress : null}>
+							Read Bible Again
+						</StyledTextButton>
 					</View>
 					<View style={styles.optionContainer}>
 						<Text style={[styles.optionTitle]}>Reset All Data</Text>
 						<Text style={styles.textDescription}>
 							Reset all data. Same as option above but{" "}
-							<Text
-								style={{
-									fontWeight: "800",
-									fontSize: 18,
-									color: "#db3537",
-								}}>
+							<Text style={styles.resetAllTextHighlight}>
 								this will also reset your current points back to zero.
 							</Text>
 						</Text>
-						<TouchableHighlight
-							style={[styles.button, { backgroundColor: "#db3537" }]}
+						<StyledTextButton
 							onPress={handleResetAllPress}
-							activeOpacity={1}
-							underlayColor="#fc4c4e">
-							<Text style={styles.buttonText}>Reset All Data</Text>
-						</TouchableHighlight>
+							backgroundColor={"#db3537"}
+							backgroundPressedColor={"#fc4c4e"}
+							margin={24}>
+							Reset All Data
+						</StyledTextButton>
 					</View>
-					<View style={[styles.optionContainer, { marginBottom: 30 }]}>
+					<View style={styles.contactContainer}>
 						<Text style={styles.optionTitle}>Contact</Text>
 						<Text style={styles.textDescription}>
 							If you would like to get in touch to report an issue, ask a
 							question, or just to say hello, please click the button below.
 						</Text>
-						<TouchableHighlight
-							style={styles.button}
+						<StyledTextButton
 							onPress={handleContactPress}
-							activeOpacity={1}
-							underlayColor="#1c1b1b">
-							<Text style={styles.buttonText}>Contact Us</Text>
-						</TouchableHighlight>
+							backgroundColor={"#0f0f0f"}
+							backgroundPressedColor={"#1c1b1b"}
+							margin={24}>
+							Contact Us
+						</StyledTextButton>
 					</View>
 				</View>
 			</ScrollView>
@@ -200,18 +181,20 @@ const styles = StyleSheet.create({
 		textAlign: "left",
 		paddingHorizontal: 16,
 	},
-	button: {
-		margin: 24,
-		borderRadius: 12,
-		backgroundColor: "#0f0f0f",
-		width: 200,
-		alignSelf: "center",
-	},
-	buttonText: {
-		color: "white",
-		fontSize: 18,
+	readAgainTextHighlight: {
 		fontWeight: "800",
-		textAlign: "center",
-		padding: 16,
+		fontSize: 18,
+		color: "#7b6efa",
+	},
+	resetAllTextHighlight: {
+		fontWeight: "800",
+		fontSize: 18,
+		color: "#db3537",
+	},
+	contactContainer: {
+		paddingVertical: 12,
+		justifyContent: "flex-start",
+		alignItems: "flex-start",
+		marginBottom: 30,
 	},
 });

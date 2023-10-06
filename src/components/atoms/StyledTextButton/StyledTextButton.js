@@ -1,19 +1,27 @@
-import { Text, Pressable } from "react-native";
+import { Text, Pressable, View } from "react-native";
 import { useState } from "react";
 
 const StyledTextButton = ({
 	children,
 	textColor,
+	opacity,
 	backgroundColor,
 	backgroundPressedColor,
 	borderWidth,
 	borderColor,
 	margin,
+	width,
 	onPress,
 }) => {
 	const [pressedHighlightColor, setPressedHighlightColor] = useState(null);
 
 	const styles = {
+		container: {
+			alignItems: "center",
+			justifyContent: "center",
+			alignSelf: "center",
+			opacity: opacity,
+		},
 		pressable: {
 			borderRadius: 12,
 			borderStyle: "solid",
@@ -42,15 +50,21 @@ const StyledTextButton = ({
 	};
 
 	return (
-		<Pressable
-			style={[styles.pressable, { backgroundColor: pressedHighlightColor }]}
-			onPress={onPress}
-			onPressIn={pressIn}
-			onPressOut={pressOut}>
-			<Text style={[styles.text, textColor && { color: textColor }]}>
-				{children}
-			</Text>
-		</Pressable>
+		<View style={styles.container}>
+			<Pressable
+				style={[
+					styles.pressable,
+					width && { width: width },
+					pressedHighlightColor && { backgroundColor: pressedHighlightColor },
+				]}
+				onPress={onPress}
+				onPressIn={pressIn}
+				onPressOut={pressOut}>
+				<Text style={[styles.text, textColor && { color: textColor }]}>
+					{children}
+				</Text>
+			</Pressable>
+		</View>
 	);
 };
 

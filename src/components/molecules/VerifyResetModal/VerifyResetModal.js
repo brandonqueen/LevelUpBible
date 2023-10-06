@@ -1,5 +1,6 @@
 import { StyleSheet, Text, ScrollView, TouchableHighlight } from "react-native";
 import ModalPopup from "../ModalPopup";
+import StyledTextButton from "../../atoms/StyledTextButton/StyledTextButton";
 
 const VerifyResetModal = ({
 	modalOpen,
@@ -12,31 +13,33 @@ const VerifyResetModal = ({
 		<ModalPopup modalOpen={modalOpen} modalToggle={modalToggle}>
 			<ScrollView>
 				<Text style={styles.header}>WARNING!{"\n"}⚠️</Text>
-				<Text style={[styles.textDescription, { fontSize: 20 }]}>
-					{modalOption.message}
-				</Text>
+				<Text style={styles.textDescription}>{modalOption.message}</Text>
 				{modalOption.option === "readAgain" ? (
-					<TouchableHighlight
-						style={[styles.button, { backgroundColor: "#695DDA" }]}
-						onPress={handleReadAgain}
-						activeOpacity={1}
-						underlayColor="#8174fc">
-						<Text style={styles.buttonText}>Read Bible Again</Text>
-					</TouchableHighlight>
+					<StyledTextButton
+						backgroundColor={"#695DDA"}
+						backgroundPressedColor={"#8174fc"}
+						borderWidth={0}
+						margin={24}
+						onPress={handleReadAgain}>
+						Read Bible Again
+					</StyledTextButton>
 				) : (
-					<TouchableHighlight
-						style={[styles.button, { backgroundColor: "#db3537" }]}
-						onPress={handleResetAll}
-						activeOpacity={1}
-						underlayColor="#fc4c4e">
-						<Text style={styles.buttonText}>Reset All Data</Text>
-					</TouchableHighlight>
+					<StyledTextButton
+						backgroundColor={"#db3537"}
+						backgroundPressedColor={"#fc4c4e"}
+						margin={24}
+						onPress={handleResetAll}>
+						Reset All Data
+					</StyledTextButton>
 				)}
-				<TouchableHighlight
-					style={[styles.button, { backgroundColor: "#f5f5f5" }]}
+				<StyledTextButton
+					textColor={"#1c1b1b"}
+					backgroundColor={"#f5f5f5"}
+					backgroundPressedColor={"#cbcbcb"}
+					margin={15}
 					onPress={modalToggle}>
-					<Text style={[styles.buttonText, { color: "#1c1b1b" }]}>Cancel</Text>
-				</TouchableHighlight>
+					Cancel
+				</StyledTextButton>
 			</ScrollView>
 		</ModalPopup>
 	);
@@ -56,22 +59,8 @@ const styles = StyleSheet.create({
 	textDescription: {
 		color: "#f5f5f5",
 		fontWeight: "400",
-		fontSize: 16,
+		fontSize: 20,
 		textAlign: "left",
 		paddingHorizontal: 16,
-	},
-	button: {
-		margin: 24,
-		borderRadius: 12,
-		backgroundColor: "#0f0f0f",
-		width: 200,
-		alignSelf: "center",
-	},
-	buttonText: {
-		color: "white",
-		fontSize: 18,
-		fontWeight: "800",
-		textAlign: "center",
-		padding: 16,
 	},
 });
