@@ -13,14 +13,16 @@ import {
 	readBibleAgain,
 	resetAllData,
 } from "../../features/globalData/globalDataSlice";
-import ModalPopup from "../../components/molecules/ModalPopup/ModalPopup";
+import VerifyResetModal from "../../components/molecules/VerifyResetModal/VerifyResetModal";
 
 const SettingsScreen = () => {
 	//nav
 	const navigation = useNavigation();
 
-	//global state setter
+	//global state updater
 	const dispatch = useDispatch();
+
+	//get current global state
 	const userProgress = useSelector((state) => state.globalData.userProgress);
 	const isBibleCompleted = userProgress.rewards[11].completed;
 
@@ -28,6 +30,7 @@ const SettingsScreen = () => {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [modalOption, setModalOption] = useState({});
 
+	//This will be parsed to render options
 	const modalOptions = [
 		{
 			option: "readAgain",
@@ -42,43 +45,6 @@ const SettingsScreen = () => {
 			color: "#fc4c4e",
 		},
 	];
-
-	const VerifyResetModal = () => {
-		return (
-			<ModalPopup modalOpen={modalOpen} modalToggle={modalToggle}>
-				<ScrollView>
-					<Text style={styles.header}>WARNING!{"\n"}⚠️</Text>
-					<Text style={[styles.textDescription, { fontSize: 20 }]}>
-						{modalOption.message}
-					</Text>
-					{modalOption.option === "readAgain" ? (
-						<TouchableHighlight
-							style={[styles.button, { backgroundColor: "#695DDA" }]}
-							onPress={handleReadAgain}
-							activeOpacity={1}
-							underlayColor="#8174fc">
-							<Text style={styles.buttonText}>Read Bible Again</Text>
-						</TouchableHighlight>
-					) : (
-						<TouchableHighlight
-							style={[styles.button, { backgroundColor: "#db3537" }]}
-							onPress={handleResetAll}
-							activeOpacity={1}
-							underlayColor="#fc4c4e">
-							<Text style={styles.buttonText}>Reset All Data</Text>
-						</TouchableHighlight>
-					)}
-					<TouchableHighlight
-						style={[styles.button, { backgroundColor: "#f5f5f5" }]}
-						onPress={modalToggle}>
-						<Text style={[styles.buttonText, { color: "#1c1b1b" }]}>
-							Cancel
-						</Text>
-					</TouchableHighlight>
-				</ScrollView>
-			</ModalPopup>
-		);
-	};
 
 	//Press Handlers
 	const modalToggle = () => {
@@ -109,10 +75,14 @@ const SettingsScreen = () => {
 
 	return (
 		<View style={styles.root}>
-			<VerifyResetModal />
-			<ScrollView
-				style={{ width: "100%", flex: 0 }}
-				showsVerticalScrollIndicator={false}>
+			<VerifyResetModal
+				modalOpen={modalOpen}
+				modalToggle={modalToggle}
+				modalOption={modalOption}
+				handleReadAgain={handleReadAgain}
+				handleResetAll={handleResetAll}
+			/>
+			<ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
 				<Text style={styles.header}>Settings</Text>
 				<View
 					style={{
@@ -197,6 +167,10 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		alignItems: "center",
 		padding: 10,
+	},
+	container: {
+		width: "100%",
+		flex: 0,
 	},
 	header: {
 		fontSize: 30,

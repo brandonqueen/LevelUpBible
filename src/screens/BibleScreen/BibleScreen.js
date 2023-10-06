@@ -19,6 +19,7 @@ import axios from "axios";
 import QuizModal from "../../components/organisms/Quiz Components/QuizModal/QuizModal";
 import NoQuizModal from "../../components/organisms/Quiz Components/NoQuizModal/NoQuizModal";
 import { quizMap } from "../../constants/quizData/quizMap";
+import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
 
 const BibleScreen = () => {
 	//global state getter
@@ -371,7 +372,7 @@ const BibleScreen = () => {
 									</View>
 								))}
 						</View>
-						<View>
+						<View style={styles.bottomSection}>
 							<Text
 								style={{
 									color: "grey",
@@ -411,13 +412,13 @@ const BibleScreen = () => {
 								</Pressable>
 							)}
 							{nextChapterExists && (
-								<TouchableHighlight
-									style={[styles.completeButtonPressable]}
-									activeOpacity={0.8}
-									underlayColor="#695DDA"
+								<StyledTextButton
+									backgroundPressedColor={"#695DDA"}
+									borderWidth={2}
+									borderColor={"#695DDA"}
 									onPress={handleNextChapterPress}>
-									<Text style={styles.completeButtonText}>Next Chapter</Text>
-								</TouchableHighlight>
+									Next Chapter
+								</StyledTextButton>
 							)}
 						</View>
 					</ScrollView>
@@ -520,5 +521,8 @@ const styles = StyleSheet.create({
 		fontWeight: "800",
 		textAlign: "center",
 		padding: 16,
+	},
+	bottomSection: {
+		marginBottom: 45,
 	},
 });
