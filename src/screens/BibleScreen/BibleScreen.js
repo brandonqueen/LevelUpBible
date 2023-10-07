@@ -5,30 +5,29 @@ import {
 	View,
 	Text,
 	ActivityIndicator,
-	Pressable,
 	TouchableOpacity,
 	Image,
 } from "react-native";
 import { useState, useEffect, useRef } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { setChapterSelected } from "../../features/globalData/globalDataSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { setChapterSelected } from "../../features/globalData/globalDataSlice";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
-import axios from "axios";
-import QuizModal from "../../components/organisms/Quiz Components/QuizModal/QuizModal";
-import NoQuizModal from "../../components/organisms/Quiz Components/NoQuizModal/NoQuizModal";
+import { useNetInfo } from "@react-native-community/netinfo";
 import { quizMap } from "../../constants/quizData/quizMap";
 import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
-import { useNetInfo } from "@react-native-community/netinfo";
+import NoQuizModal from "../../components/organisms/Quiz Components/NoQuizModal/NoQuizModal";
+import QuizModal from "../../components/organisms/Quiz Components/QuizModal/QuizModal";
 import capybara from "../../../assets/Images/capybara.png";
+import axios from "axios";
 
 const BibleScreen = () => {
-	//global state getter
+	//get global state
 	const bibleState = useSelector((state) => state.globalData.bibleData);
 	const userProgress = useSelector((state) => state.globalData.userProgress);
 
-	//global state setter
+	//global state dispatch
 	const dispatch = useDispatch();
 
 	//nav
@@ -42,8 +41,8 @@ const BibleScreen = () => {
 	const chapterNum = route.params?.chapter;
 	const chapterIndex = chapterNum - 1;
 
-	//get Quiz section
-	const quizSection = quizMap?.[bookName]?.chapters?.[chapterIndex] ?? null;
+	//get quiz data for current book and chapter
+	const quizData = quizMap?.[bookName]?.chapters?.[chapterIndex] ?? null;
 
 	//current chapter completed status
 	const isCurrentChapterCompleted =
@@ -55,6 +54,23 @@ const BibleScreen = () => {
 	const currentRewardsArray = useRef(
 		JSON.parse(JSON.stringify(rewardsArray))
 	).current;
+
+	//Get current Bible books for which quiz data exists
+	const currentQuizBooks = Object.keys(quizMap).filter((bookName) => {
+		const bookData = quizMap[bookName];
+		return (
+			bookData &&
+			Array.isArray(bookData.chapters) &&
+			bookData.chapters.length > 0
+		);
+	});
+
+	//Variables for scroll logic (highlighting, progress bar onScroll, etc.)
+	const onTextLayout = (event) => {
+		const lines = event?.nativeEvent.lines;
+		setLinesData(lines);
+	};
+	const scrollViewRef = useRef(null);
 
 	//local state
 	const [nextChapterExists, setNextChapterExists] = useState(true);
@@ -69,7 +85,7 @@ const BibleScreen = () => {
 	const [quizModalOpen, setQuizModalOpen] = useState(false);
 	const [noQuizModalOpen, setNoQuizModalOpen] = useState(false);
 
-	//Network connection
+	//Check network connection
 	const isConnected = useNetInfo().isConnected;
 
 	//API CALL TO FETCH BIBLE TEXT
@@ -146,7 +162,7 @@ const BibleScreen = () => {
 		}
 	};
 
-	// //Update onChange
+	// //Get Bible text on chapter set
 	useEffect(() => {
 		const nextChapterNumIndex = chapterNum;
 		if (
@@ -160,13 +176,7 @@ const BibleScreen = () => {
 		}
 		fetchData();
 	}, [chapterNum]);
-
-	const onTextLayout = (event) => {
-		const lines = event?.nativeEvent.lines;
-		setLinesData(lines);
-	};
-
-	const scrollViewRef = useRef(null);
+	//END API CALL LOGIC
 
 	const handleScroll = (event) => {
 		// Progress Bar Logic
@@ -224,8 +234,13 @@ const BibleScreen = () => {
 		}
 	};
 
+	//Press handler functions
 	const handleQuizModalToggle = () => {
 		setQuizModalOpen(!quizModalOpen);
+	};
+
+	const handleNoQuizModalToggle = () => {
+		setNoQuizModalOpen(!noQuizModalOpen);
 	};
 
 	const handleNextChapterPress = () => {
@@ -279,18 +294,6 @@ const BibleScreen = () => {
 			</TouchableOpacity>
 		);
 	}
-
-	const currentQuizBooks = Object.keys(quizMap).filter((bookName) => {
-		const bookData = quizMap[bookName];
-		return (
-			bookData &&
-			Array.isArray(bookData.chapters) &&
-			bookData.chapters.length > 0
-		);
-	});
-	const handleNoQuizModalToggle = () => {
-		setNoQuizModalOpen(!noQuizModalOpen);
-	};
 
 	return (
 		<View style={styles.root}>
@@ -380,13 +383,7 @@ const BibleScreen = () => {
 							</Text>
 							<OpenURLButton url="https://mailchi.mp/23d38157d688/dfka2d5wyd" />
 							{isCurrentChapterCompleted ? (
-								<Text
-									style={[
-										styles.completeButtonText,
-										{ color: "#DFB01C", marginBottom: 24, fontSize: 20 },
-									]}>
-									Chapter Completed!
-								</Text>
+								<Text style={styles.completeText}>Chapter Completed!</Text>
 							) : (
 								<View>
 									<StyledTextButton
@@ -398,7 +395,7 @@ const BibleScreen = () => {
 										borderColor={shouldRenderPressable ? "#DFB01C" : "#695DDA"}
 										margin={12}
 										onPress={
-											shouldRenderPressable && quizSection
+											shouldRenderPressable && quizData
 												? handleQuizModalToggle
 												: handleNoQuizModalToggle
 										}>
@@ -437,7 +434,7 @@ const BibleScreen = () => {
 				<QuizModal
 					modalOpen={quizModalOpen}
 					modalToggle={handleQuizModalToggle}
-					QuizData={quizSection}
+					QuizData={quizData}
 					numOfVerses={numOfVerses}
 					testamentIndex={testamentIndex}
 					bookIndex={bookIndex}
@@ -514,5 +511,13 @@ const styles = StyleSheet.create({
 	},
 	bottomSection: {
 		marginBottom: 45,
+	},
+	completeText: {
+		fontWeight: "800",
+		textAlign: "center",
+		padding: 16,
+		color: "#DFB01C",
+		marginBottom: 24,
+		fontSize: 20,
 	},
 });
