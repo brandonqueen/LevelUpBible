@@ -66,9 +66,6 @@ const BibleScreen = () => {
 	const [linesData, setLinesData] = useState([]);
 	const [scrollY, setScrollY] = useState(0);
 	const [shouldRenderPressable, setShouldRenderPressable] = useState(false);
-	const [completeButtonFinishedStyle, setCompleteButtonFinishedStyle] =
-		useState({});
-	const [completeButtonPressedIn, setCompleteButtonPressedIn] = useState({});
 	const [quizModalOpen, setQuizModalOpen] = useState(false);
 	const [noQuizModalOpen, setNoQuizModalOpen] = useState(false);
 
@@ -182,14 +179,9 @@ const BibleScreen = () => {
 
 		if (contentHeight - offsetY - scrollViewHeight > 15) {
 			setShouldRenderPressable(false);
-			setCompleteButtonFinishedStyle({});
 		} else if (contentHeight - offsetY - scrollViewHeight <= 15) {
 			setTimeout(() => {
 				setShouldRenderPressable(true);
-				setCompleteButtonFinishedStyle({
-					backgroundColor: "#DFB01C",
-					borderColor: "#DFB01C",
-				});
 			}, 500);
 		}
 
@@ -230,17 +222,6 @@ const BibleScreen = () => {
 		if (contentHeight - offsetY - scrollViewHeight <= 15) {
 			setHighlightedText(response);
 		}
-	};
-
-	const handleCompletePressIn = () => {
-		setCompleteButtonPressedIn({
-			backgroundColor: "#f0cd51",
-			borderColor: "#f0cd51",
-		});
-	};
-
-	const handleCompletePressOut = () => {
-		setCompleteButtonPressedIn(null);
 	};
 
 	const handleQuizModalToggle = () => {
@@ -407,27 +388,30 @@ const BibleScreen = () => {
 									Chapter Completed!
 								</Text>
 							) : (
-								<Pressable
-									onPressIn={handleCompletePressIn}
-									onPress={
-										shouldRenderPressable && quizSection
-											? handleQuizModalToggle
-											: handleNoQuizModalToggle
-									}
-									onPressOut={handleCompletePressOut}
-									style={[
-										styles.completeButtonPressable,
-										completeButtonFinishedStyle,
-										completeButtonPressedIn,
-									]}>
-									<Text style={styles.completeButtonText}>Take Quiz</Text>
-								</Pressable>
+								<View>
+									<StyledTextButton
+										backgroundColor={shouldRenderPressable ? "#DFB01C" : null}
+										backgroundPressedColor={
+											shouldRenderPressable ? "#f0cd51" : null
+										}
+										borderWidth={2}
+										borderColor={shouldRenderPressable ? "#DFB01C" : "#695DDA"}
+										margin={12}
+										onPress={
+											shouldRenderPressable && quizSection
+												? handleQuizModalToggle
+												: handleNoQuizModalToggle
+										}>
+										Take Quiz
+									</StyledTextButton>
+								</View>
 							)}
 							{nextChapterExists && (
 								<StyledTextButton
 									backgroundPressedColor={"#695DDA"}
 									borderWidth={2}
 									borderColor={"#695DDA"}
+									margin={30}
 									onPress={handleNextChapterPress}>
 									Next Chapter
 								</StyledTextButton>
@@ -527,22 +511,6 @@ const styles = StyleSheet.create({
 		padding: 12,
 		fontSize: 24,
 		fontWeight: "800",
-	},
-	completeButtonPressable: {
-		marginBottom: 30,
-		borderRadius: 12,
-		borderStyle: "solid",
-		borderWidth: 2,
-		borderColor: "#695DDA",
-		width: "50%",
-		alignSelf: "center",
-	},
-	completeButtonText: {
-		color: "white",
-		fontSize: 18,
-		fontWeight: "800",
-		textAlign: "center",
-		padding: 16,
 	},
 	bottomSection: {
 		marginBottom: 45,

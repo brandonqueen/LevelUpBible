@@ -14,6 +14,8 @@ const StyledTextButton = ({
 	onPress,
 }) => {
 	const [pressedHighlightColor, setPressedHighlightColor] = useState(null);
+	const [pressedHighlightColorBorder, setPressedHighlightColorBorder] =
+		useState(null);
 
 	const styles = {
 		container: {
@@ -43,6 +45,7 @@ const StyledTextButton = ({
 
 	const pressIn = () => {
 		setPressedHighlightColor(backgroundPressedColor);
+		setPressedHighlightColorBorder(backgroundPressedColor);
 	};
 
 	const pressOut = () => {
@@ -56,6 +59,9 @@ const StyledTextButton = ({
 					styles.pressable,
 					width && { width: width },
 					pressedHighlightColor && { backgroundColor: pressedHighlightColor },
+					pressedHighlightColorBorder && {
+						borderColor: pressedHighlightColorBorder,
+					},
 				]}
 				onPress={onPress}
 				onPressIn={pressIn}
