@@ -50,6 +50,7 @@ const StyledTextButton = ({
 
 	const pressOut = () => {
 		setPressedHighlightColor(null);
+		setPressedHighlightColorBorder(null);
 	};
 
 	return (

@@ -1,13 +1,7 @@
-import {
-	StyleSheet,
-	Text,
-	View,
-	TouchableHighlight,
-	ScrollView,
-} from "react-native";
-import React from "react";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { useSelector } from "react-redux";
 import Reward from "../../../atoms/Reward/Reward";
+import StyledTextButton from "../../../atoms/StyledTextButton/StyledTextButton";
 
 const NewRewards = ({ newRewards }) => {
 	return (
@@ -53,7 +47,7 @@ const QuizSuccess = ({ numOfVerses, rewards, modalToggle }) => {
 
 	return (
 		<ScrollView showsVerticalScrollIndicator={false}>
-			<Text style={[styles.heading, { fontSize: 28 }]}>HOORAY! 🥳</Text>
+			<Text style={styles.heading}>HOORAY! 🥳</Text>
 			<View style={styles.pointsContainer}>
 				<Text style={styles.points}>
 					{`+${numOfVerses}`}
@@ -61,34 +55,24 @@ const QuizSuccess = ({ numOfVerses, rewards, modalToggle }) => {
 				</Text>
 			</View>
 			<View style={styles.modalQuestionContainer}>
-				<Text
-					style={[
-						styles.modalQuestionText,
-						{ textAlign: "center", marginVertical: 16 },
-					]}>
+				<Text style={styles.text}>
 					You answered all the questions correctly and have added {numOfVerses}{" "}
 					points to your overall score!
 				</Text>
 				{newlyEarnedRewards.length > 0 && (
 					<NewRewards newRewards={newlyEarnedRewards} />
 				)}
-				<Text
-					style={[
-						styles.modalQuestionText,
-						{ textAlign: "center", marginVertical: 16 },
-					]}>
-					Rejoice! 🙌 🎉
-				</Text>
+				<Text style={styles.text}>Rejoice! 🙌 🎉</Text>
 			</View>
-			<View style={styles.bottomButtonsCompleteContainer}>
-				<TouchableHighlight
-					key={"exit button"}
-					style={styles.exitButton}
-					activeOpacity={1}
-					underlayColor="rgb(232, 91, 70)"
+			<View style={styles.buttonContainer}>
+				<StyledTextButton
+					backgroundColor={"rgb(207, 75, 56)"}
+					backgroundPressedColor={"rgb(232, 91, 70)"}
+					margin={12}
+					width={160}
 					onPress={modalToggle}>
-					<Text style={styles.completeButtonText}>Exit</Text>
-				</TouchableHighlight>
+					Exit
+				</StyledTextButton>
 			</View>
 		</ScrollView>
 	);
@@ -101,13 +85,14 @@ const styles = StyleSheet.create({
 		color: "#f5f5f5",
 		textAlign: "center",
 		padding: 12,
-		fontSize: 26,
+		marginTop: 12,
+		fontSize: 28,
 		fontWeight: "900",
 		lineHeight: 28,
 	},
 	pointsContainer: {
-		height: 80,
-		width: 160,
+		height: 65,
+		width: 150,
 		borderWidth: 3,
 		borderRadius: 80,
 		borderColor: "#a38b00",
@@ -119,7 +104,7 @@ const styles = StyleSheet.create({
 	},
 	points: {
 		fontWeight: "900",
-		fontSize: 20,
+		fontSize: 18,
 		color: "rgb(255, 198, 99)",
 		textAlign: "center",
 	},
@@ -127,26 +112,15 @@ const styles = StyleSheet.create({
 		flex: 1,
 		padding: 10,
 	},
-	modalQuestionText: {
+	text: {
 		color: "white",
 		fontWeight: "600",
 		fontSize: 20,
+		textAlign: "center",
+		marginVertical: 16,
 	},
-	bottomButtonsCompleteContainer: {
+	buttonContainer: {
 		flexDirection: "column",
 		alignItems: "center",
-	},
-	exitButton: {
-		width: "50%",
-		marginBottom: 35,
-		borderRadius: 12,
-		backgroundColor: "rgb(207, 75, 56)",
-	},
-	completeButtonText: {
-		color: "white",
-		fontSize: 18,
-		fontWeight: "800",
-		textAlign: "center",
-		padding: 16,
 	},
 });
