@@ -1,6 +1,5 @@
 import {
 	StyleSheet,
-	Linking,
 	ScrollView,
 	View,
 	Text,
@@ -17,6 +16,8 @@ import { ProgressBar } from "react-native-paper";
 import { useNetInfo } from "@react-native-community/netinfo";
 import { quizMap } from "../../constants/quizData/quizMap";
 import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
+import LearnMoreButton from "../../components/molecules/LearnMoreButton/LearnMoreButton";
+import globalStyles from "../../constants/globalStyles";
 import NoQuizModal from "../../components/organisms/Quiz Components/NoQuizModal/NoQuizModal";
 import QuizModal from "../../components/organisms/Quiz Components/QuizModal/QuizModal";
 import capybara from "../../../assets/Images/capybara.png";
@@ -235,6 +236,10 @@ const BibleScreen = () => {
 	};
 
 	//Press handler functions
+	const handleGoBack = () => {
+		navigation.navigate("ChooseChapter", { prevScreen: "BibleScreen" });
+	};
+
 	const handleQuizModalToggle = () => {
 		setQuizModalOpen(!quizModalOpen);
 	};
@@ -263,72 +268,24 @@ const BibleScreen = () => {
 		}
 	};
 
-	function OpenURLButton({ url }) {
-		const handlePress = async () => {
-			// Check if the device can open the given URL
-			const supported = await Linking.canOpenURL(url);
-
-			if (supported) {
-				// Open the URL
-				await Linking.openURL(url);
-			} else {
-				console.error(`Don't know how to open URL: ${url}`);
-			}
-		};
-
-		return (
-			<TouchableOpacity onPress={handlePress}>
-				<Text
-					style={[
-						styles.text,
-						{
-							fontWeight: "700",
-							fontSize: 18,
-							padding: 0,
-							paddingBottom: 30,
-							textAlign: "center",
-						},
-					]}>
-					Learn More
-				</Text>
-			</TouchableOpacity>
-		);
-	}
-
 	return (
 		<View style={styles.root}>
 			<View style={styles.header}>
-				<TouchableOpacity
-					onPress={() =>
-						navigation.navigate("ChooseChapter", { prevScreen: "BibleScreen" })
-					}
-					style={{
-						flex: 1,
-						height: "100%",
-						alignItems: "flex-start",
-						justifyContent: "center",
-						paddingLeft: 8,
-					}}>
-					<FontAwesome5 name="chevron-left" size={24} color="#f5f5f5" />
+				<TouchableOpacity onPress={handleGoBack} style={styles.goBackArrow}>
+					<FontAwesome5
+						name="chevron-left"
+						size={24}
+						color={globalStyles.white}
+					/>
 				</TouchableOpacity>
-				<View
-					style={{
-						flex: 5,
-						alignItems: "center",
-						justifyContent: "center",
-						height: "100%",
-					}}>
+				<View style={styles.progressBarContainer}>
 					<ProgressBar
 						animatedValue={scrollY}
-						color="#695DDA"
+						color={globalStyles.purple}
 						style={styles.progressBar}
 					/>
 				</View>
-				<View
-					style={{
-						flex: 1,
-						height: "100%",
-					}}></View>
+				<View style={styles.emptyView}></View>
 			</View>
 			<View style={styles.card}>
 				{error || !isConnected ? (
@@ -350,49 +307,44 @@ const BibleScreen = () => {
 						<Text style={styles.heading}>{`${bookName} ${chapterNum}`}</Text>
 						<View>
 							<Text
-								style={[
-									styles.text,
-									{ position: "relative", top: 0, left: 0 },
-									isCurrentChapterCompleted && { color: "rgb(250, 250, 125)" },
-								]}
+								style={
+									isCurrentChapterCompleted ? styles.textFinal : styles.text
+								}
 								onTextLayout={(event) => onTextLayout(event)}>
 								{response}
 							</Text>
 							{!isCurrentChapterCompleted &&
 								(highlightedText == [] ? null : (
-									<View style={{ position: "absolute", top: 0, left: 0 }}>
-										<Text
-											style={[styles.text, { color: "rgb(250, 250, 125)" }]}>
-											{highlightedText}
-										</Text>
+									<View style={styles.highlightTextContainer}>
+										<Text style={styles.highlightText}>{highlightedText}</Text>
 									</View>
 								))}
 						</View>
 						<View style={styles.bottomSection}>
-							<Text
-								style={{
-									color: "grey",
-									textAlign: "center",
-									fontSize: 12,
-									padding: 8,
-								}}>
+							<Text style={styles.copyrightText}>
 								ESV brought to you by Crossway / Good News Publishers {"\n"}The
 								Holy Bible, English Standard Version®(ESV®), copyright © 2001
 								by Crossway, a publishing ministry of Good News Publishers. Sign
 								up to receive news and updates about the ESV:
 							</Text>
-							<OpenURLButton url="https://mailchi.mp/23d38157d688/dfka2d5wyd" />
+							<LearnMoreButton url="https://mailchi.mp/23d38157d688/dfka2d5wyd" />
 							{isCurrentChapterCompleted ? (
 								<Text style={styles.completeText}>Chapter Completed!</Text>
 							) : (
 								<View>
 									<StyledTextButton
-										backgroundColor={shouldRenderPressable ? "#DFB01C" : null}
+										backgroundColor={
+											shouldRenderPressable ? globalStyles.gold : null
+										}
 										backgroundPressedColor={
-											shouldRenderPressable ? "#f0cd51" : null
+											shouldRenderPressable ? globalStyles.goldHighlight : null
 										}
 										borderWidth={2}
-										borderColor={shouldRenderPressable ? "#DFB01C" : "#695DDA"}
+										borderColor={
+											shouldRenderPressable
+												? globalStyles.gold
+												: globalStyles.purple
+										}
 										margin={12}
 										onPress={
 											shouldRenderPressable && quizData
@@ -405,9 +357,9 @@ const BibleScreen = () => {
 							)}
 							{nextChapterExists && (
 								<StyledTextButton
-									backgroundPressedColor={"#695DDA"}
+									backgroundPressedColor={globalStyles.purple}
 									borderWidth={2}
-									borderColor={"#695DDA"}
+									borderColor={globalStyles.purple}
 									margin={30}
 									onPress={handleNextChapterPress}>
 									Next Chapter
@@ -460,15 +412,32 @@ const styles = StyleSheet.create({
 		flex: 0.5,
 		flexDirection: "row",
 	},
+	goBackArrow: {
+		flex: 1,
+		height: "100%",
+		alignItems: "flex-start",
+		justifyContent: "center",
+		paddingLeft: 8,
+	},
+	progressBarContainer: {
+		flex: 5,
+		alignItems: "center",
+		justifyContent: "center",
+		height: "100%",
+	},
 	progressBar: {
 		height: 8,
 		width: 250,
 		borderRadius: 12,
 	},
+	emptyView: {
+		flex: 1,
+		height: "100%",
+	},
 	card: {
 		width: "95%",
 		height: "95%",
-		backgroundColor: "rgb(11,14,29)",
+		backgroundColor: globalStyles.darkBackground,
 		borderRadius: 12,
 		paddingHorizontal: 8,
 		paddingVertical: 20,
@@ -495,7 +464,34 @@ const styles = StyleSheet.create({
 		flexWrap: "wrap",
 	},
 	text: {
-		color: "#f5f5f5",
+		color: globalStyles.white,
+		fontSize: 20,
+		fontWeight: "400",
+		letterSpacing: 0.3,
+		lineHeight: 32,
+		padding: 16,
+		position: "relative",
+		top: 0,
+		left: 0,
+	},
+	textFinal: {
+		color: globalStyles.textHighlight,
+		fontSize: 20,
+		fontWeight: "400",
+		letterSpacing: 0.3,
+		lineHeight: 32,
+		padding: 16,
+		position: "relative",
+		top: 0,
+		left: 0,
+	},
+	highlightTextContainer: {
+		position: "absolute",
+		top: 0,
+		left: 0,
+	},
+	highlightText: {
+		color: globalStyles.textHighlight,
 		fontSize: 20,
 		fontWeight: "400",
 		letterSpacing: 0.3,
@@ -503,7 +499,7 @@ const styles = StyleSheet.create({
 		padding: 16,
 	},
 	heading: {
-		color: "#f5f5f5",
+		color: globalStyles.white,
 		textAlign: "center",
 		padding: 12,
 		fontSize: 24,
@@ -512,11 +508,17 @@ const styles = StyleSheet.create({
 	bottomSection: {
 		marginBottom: 45,
 	},
+	copyrightText: {
+		color: "grey",
+		textAlign: "center",
+		fontSize: 12,
+		padding: 8,
+	},
 	completeText: {
 		fontWeight: "800",
 		textAlign: "center",
 		padding: 16,
-		color: "#DFB01C",
+		color: globalStyles.gold,
 		marginBottom: 24,
 		fontSize: 20,
 	},
