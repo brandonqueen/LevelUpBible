@@ -1,5 +1,6 @@
-import { Text, Pressable, View } from "react-native";
+import { Text, Pressable, View, StyleSheet } from "react-native";
 import { useState } from "react";
+import colors from "../../../constants/colors";
 
 const StyledTextButton = ({
 	children,
@@ -13,35 +14,10 @@ const StyledTextButton = ({
 	width,
 	onPress,
 }) => {
+	//LOCAL STATE
 	const [pressedHighlightColor, setPressedHighlightColor] = useState(null);
 	const [pressedHighlightColorBorder, setPressedHighlightColorBorder] =
 		useState(null);
-
-	const styles = {
-		container: {
-			alignItems: "center",
-			justifyContent: "center",
-			alignSelf: "center",
-			opacity: opacity,
-		},
-		pressable: {
-			borderRadius: 12,
-			borderStyle: "solid",
-			backgroundColor: backgroundColor,
-			borderWidth: borderWidth,
-			borderColor: borderColor,
-			margin: margin,
-			width: 185,
-			alignSelf: "center",
-		},
-		text: {
-			color: "white",
-			fontSize: 18,
-			fontWeight: "800",
-			textAlign: "center",
-			padding: 16,
-		},
-	};
 
 	const pressIn = () => {
 		setPressedHighlightColor(backgroundPressedColor);
@@ -54,11 +30,15 @@ const StyledTextButton = ({
 	};
 
 	return (
-		<View style={styles.container}>
+		<View style={[styles.container, opacity && { opacity: opacity }]}>
 			<Pressable
 				style={[
 					styles.pressable,
 					width && { width: width },
+					backgroundColor && { backgroundColor: backgroundColor },
+					borderWidth && { borderWidth: borderWidth },
+					borderColor && { borderColor: borderColor },
+					margin && { margin: margin },
 					pressedHighlightColor && { backgroundColor: pressedHighlightColor },
 					pressedHighlightColorBorder && {
 						borderColor: pressedHighlightColorBorder,
@@ -76,3 +56,24 @@ const StyledTextButton = ({
 };
 
 export default StyledTextButton;
+
+const styles = StyleSheet.create({
+	container: {
+		alignItems: "center",
+		justifyContent: "center",
+		alignSelf: "center",
+	},
+	pressable: {
+		borderRadius: 12,
+		borderStyle: "solid",
+		width: 185,
+		alignSelf: "center",
+	},
+	text: {
+		color: colors.text,
+		fontSize: 18,
+		fontWeight: "800",
+		textAlign: "center",
+		padding: 16,
+	},
+});
