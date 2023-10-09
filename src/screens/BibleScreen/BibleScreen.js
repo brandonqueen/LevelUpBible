@@ -210,7 +210,7 @@ const BibleScreen = () => {
 			return line && lineYEnd < offsetY;
 		});
 
-		//extract the text (from the raw API data) for lines out of view
+		//extract the text (from the raw data) for lines out of view
 		linesOutOfViewText = linesOutOfViewRaw.map((line) => line.text);
 
 		//function to compare array in state with array of text "out of view"

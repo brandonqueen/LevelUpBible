@@ -17,7 +17,7 @@ import {
 	useIsFocused,
 	useFocusEffect,
 } from "@react-navigation/native";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { ReText } from "react-native-redash";
 import HomeRewardsRender from "../../components/molecules/HomeRewardsRender/HomeRewardsRender";
@@ -53,8 +53,8 @@ const HomeScreen = () => {
 	});
 
 	//start animation on screen focus
-	useFocusEffect(
-		React.useCallback(() => {
+	useEffect(() => {
+		if (isFocused) {
 			chapProgressRef.current.reAnimate();
 			bookProgressRef.current.reAnimate();
 			pointsValueAnim.value = 0;
@@ -62,12 +62,10 @@ const HomeScreen = () => {
 				duration: 1100,
 				easing: Easing.inOut(Easing.quad),
 			});
-
-			return () => {
-				pointsValueAnim.value = 0;
-			};
-		}, [points, pointsValueAnim])
-	);
+		} else {
+			pointsValueAnim.value = 0;
+		}
+	}, [isFocused, points, pointsValueAnim]);
 	/// END ANIMATION LOGIC
 
 	//PRESS HANDLERS
