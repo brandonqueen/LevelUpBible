@@ -1,12 +1,13 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-import HomeScreen from "../screens/HomeScreen";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, StyleSheet } from "react-native";
+import SettingsScreen from "../screens/SettingsScreen/SettingsScreen";
 import RewardsScreen from "../screens/RewardsScreen/RewardsScreen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import BibleStack from "./BibleStack";
-import SettingsScreen from "../screens/SettingsScreen/SettingsScreen";
+import HomeScreen from "../screens/HomeScreen";
+import colors from "../constants/colors";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +16,7 @@ function BottomTabs() {
 		...DefaultTheme,
 		colors: {
 			...DefaultTheme.colors,
-			background: "rgb(22,30,57)",
+			background: colors.primary,
 		},
 	};
 	return (
@@ -26,11 +27,11 @@ function BottomTabs() {
 					safeAreaInsets={{ bottom: 0 }}
 					screenOptions={{
 						headerShown: false,
-						tabBarInactiveTintColor: "#f5f5f5",
-						tabBarActiveTintColor: "#695DDA",
+						tabBarInactiveTintColor: colors.text,
+						tabBarActiveTintColor: colors.secondary,
 						tabBarLabelStyle: { padding: 0 },
 						tabBarStyle: {
-							backgroundColor: "rgb(22,30,57)",
+							backgroundColor: colors.primary,
 							borderTopWidth: 0,
 						},
 					}}>
