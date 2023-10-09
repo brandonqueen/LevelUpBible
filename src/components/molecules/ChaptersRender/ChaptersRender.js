@@ -18,7 +18,7 @@ const ChaptersRender = ({
 	const { chapters } = bookData;
 
 	return (
-		<ScrollView horizontal={true} style={styles.root}>
+		<View style={styles.root}>
 			<View style={styles.chapterNumRow}>
 				<FlatList
 					data={chapters}
@@ -43,7 +43,7 @@ const ChaptersRender = ({
 					numColumns={5}
 				/>
 			</View>
-		</ScrollView>
+		</View>
 	);
 };
 

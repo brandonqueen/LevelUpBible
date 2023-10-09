@@ -43,6 +43,7 @@ const BibleScreen = () => {
 	//LOCAL STATE
 	const [nextChapterExists, setNextChapterExists] = useState(true);
 	const [isLoading, setIsLoading] = useState(true);
+	const [isConnected, setIsConnected] = useState(true);
 	const [error, setError] = useState("");
 	const [response, setResponse] = useState("");
 	const [numOfVerses, setNumOfVerses] = useState(null);
@@ -87,7 +88,15 @@ const BibleScreen = () => {
 	const scrollViewRef = useRef(null);
 
 	//Check network connection
-	const isConnected = useNetInfo().isConnected;
+	const netInfo = useNetInfo();
+
+	useEffect(() => {
+		const timerId = setTimeout(() => {
+			setIsConnected(netInfo.isConnected);
+			setIsLoading(false);
+		}, 1000);
+		return () => clearTimeout(timerId);
+	}, [netInfo]);
 
 	///////
 	/////	API CALL TO FETCH BIBLE TEXT
@@ -309,7 +318,7 @@ const BibleScreen = () => {
 						showsVerticalScrollIndicator={false}
 						scrollEventThrottle={16}>
 						<Text style={styles.heading}>{`${bookName} ${chapterNum}`}</Text>
-						<View>
+						<View style={styles.passageContainer}>
 							<Text
 								style={
 									isCurrentChapterCompleted ? styles.textFinal : styles.text
@@ -484,8 +493,8 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	passageContainer: {
-		flexDirection: "row",
-		flexWrap: "wrap",
+		width: "100%",
+		flex: 0,
 	},
 	textFinal: {
 		color: colors.textHighlight,
@@ -502,6 +511,9 @@ const styles = StyleSheet.create({
 		position: "absolute",
 		top: 0,
 		left: 0,
+		height: "100%",
+		width: "100%",
+		overflow: "hidden",
 	},
 	highlightText: {
 		color: colors.textHighlight,
