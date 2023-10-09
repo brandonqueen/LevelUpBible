@@ -152,7 +152,7 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
 	root: {
-		flex: 1,
+		flex: 0,
 	},
 	topBar: {
 		height: 90,

@@ -24,7 +24,7 @@ function BottomTabs() {
 			<View style={styles.container}>
 				<Tab.Navigator
 					initialRouteName="HOME"
-					safeAreaInsets={{ bottom: 0 }}
+					safeAreaInsets={{ bottom: 8 }}
 					screenOptions={{
 						headerShown: false,
 						tabBarInactiveTintColor: colors.text,
