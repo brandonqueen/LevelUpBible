@@ -17,10 +17,10 @@ import { useNetInfo } from "@react-native-community/netinfo";
 import { quizMap } from "../../constants/quizData/quizMap";
 import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
 import LearnMoreButton from "../../components/molecules/LearnMoreButton/LearnMoreButton";
-import globalStyles from "../../constants/colors";
 import NoQuizModal from "../../components/organisms/Quiz Components/NoQuizModal/NoQuizModal";
 import QuizModal from "../../components/organisms/Quiz Components/QuizModal/QuizModal";
 import capybara from "../../../assets/Images/capybara.png";
+import colors from "../../constants/colors";
 import axios from "axios";
 
 const BibleScreen = () => {
@@ -272,16 +272,12 @@ const BibleScreen = () => {
 		<View style={styles.root}>
 			<View style={styles.header}>
 				<TouchableOpacity onPress={handleGoBack} style={styles.goBackArrow}>
-					<FontAwesome5
-						name="chevron-left"
-						size={24}
-						color={globalStyles.white}
-					/>
+					<FontAwesome5 name="chevron-left" size={24} color={colors.text} />
 				</TouchableOpacity>
 				<View style={styles.progressBarContainer}>
 					<ProgressBar
 						animatedValue={scrollY}
-						color={globalStyles.purple}
+						color={colors.secondary}
 						style={styles.progressBar}
 					/>
 				</View>
@@ -334,16 +330,14 @@ const BibleScreen = () => {
 								<View>
 									<StyledTextButton
 										backgroundColor={
-											shouldRenderPressable ? globalStyles.gold : null
+											shouldRenderPressable ? colors.tertiary : null
 										}
 										backgroundPressedColor={
-											shouldRenderPressable ? globalStyles.goldHighlight : null
+											shouldRenderPressable ? colors.tertiaryLight : null
 										}
 										borderWidth={2}
 										borderColor={
-											shouldRenderPressable
-												? globalStyles.gold
-												: globalStyles.purple
+											shouldRenderPressable ? colors.tertiary : colors.secondary
 										}
 										margin={12}
 										onPress={
@@ -357,9 +351,9 @@ const BibleScreen = () => {
 							)}
 							{nextChapterExists && (
 								<StyledTextButton
-									backgroundPressedColor={globalStyles.purple}
+									backgroundPressedColor={colors.secondary}
 									borderWidth={2}
-									borderColor={globalStyles.purple}
+									borderColor={colors.secondary}
 									margin={30}
 									onPress={handleNextChapterPress}>
 									Next Chapter
@@ -437,7 +431,7 @@ const styles = StyleSheet.create({
 	card: {
 		width: "95%",
 		height: "95%",
-		backgroundColor: globalStyles.darkBackground,
+		backgroundColor: colors.primaryDark,
 		borderRadius: 12,
 		paddingHorizontal: 8,
 		paddingVertical: 20,
@@ -464,7 +458,7 @@ const styles = StyleSheet.create({
 		flexWrap: "wrap",
 	},
 	text: {
-		color: globalStyles.white,
+		color: colors.text,
 		fontSize: 20,
 		fontWeight: "400",
 		letterSpacing: 0.3,
@@ -475,7 +469,7 @@ const styles = StyleSheet.create({
 		left: 0,
 	},
 	textFinal: {
-		color: globalStyles.textHighlight,
+		color: colors.textHighlight,
 		fontSize: 20,
 		fontWeight: "400",
 		letterSpacing: 0.3,
@@ -491,7 +485,7 @@ const styles = StyleSheet.create({
 		left: 0,
 	},
 	highlightText: {
-		color: globalStyles.textHighlight,
+		color: colors.textHighlight,
 		fontSize: 20,
 		fontWeight: "400",
 		letterSpacing: 0.3,
@@ -499,7 +493,7 @@ const styles = StyleSheet.create({
 		padding: 16,
 	},
 	heading: {
-		color: globalStyles.white,
+		color: colors.text,
 		textAlign: "center",
 		padding: 12,
 		fontSize: 24,
@@ -509,7 +503,7 @@ const styles = StyleSheet.create({
 		marginBottom: 45,
 	},
 	copyrightText: {
-		color: "grey",
+		color: colors.textGrey,
 		textAlign: "center",
 		fontSize: 12,
 		padding: 8,
@@ -518,7 +512,7 @@ const styles = StyleSheet.create({
 		fontWeight: "800",
 		textAlign: "center",
 		padding: 16,
-		color: globalStyles.gold,
+		color: colors.tertiary,
 		marginBottom: 24,
 		fontSize: 20,
 	},

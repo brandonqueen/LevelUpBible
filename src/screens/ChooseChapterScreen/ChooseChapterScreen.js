@@ -1,27 +1,34 @@
-import React, { useState, useEffect } from "react";
 import {
-	Text,
-	StyleSheet,
-	View,
-	FlatList,
-	Pressable,
-	ScrollView,
-} from "react-native";
-import { useSelector, useDispatch } from "react-redux";
+	useNavigation,
+	useIsFocused,
+	useRoute,
+} from "@react-navigation/native";
 import {
 	setTestamentSelected,
 	setBookSelected,
 	setChapterSelected,
 	resetBibleSelection,
 } from "../../features/globalData/globalDataSlice";
+import { StyleSheet, View, FlatList } from "react-native";
+import { useSelector, useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
 import { List } from "react-native-paper";
-import {
-	useNavigation,
-	useIsFocused,
-	useRoute,
-} from "@react-navigation/native";
+import ChooseChapterHeader from "../../components/molecules/ChooseChapterHeader/ChooseChapterHeader";
+import colors from "../../constants/colors";
+import ChaptersRender from "../../components/molecules/ChaptersRender/ChaptersRender";
 
 const ChooseChapterScreen = () => {
+	//NAVIGATION
+	const navigation = useNavigation();
+
+	//GLOBAL STATE
+	const dispatch = useDispatch();
+	const bibleState = useSelector((state) => state.globalData.bibleData);
+
+	//LOCAL STATE
+	const [headerTestamentChosen, setHeaderTestamentChosen] = useState(false);
+	const [headerBookChosen, setHeaderBookChosen] = useState(false);
+
 	//logic to avoid reset of selected book when navigating back from the Bible Screen
 	const isFocused = useIsFocused();
 	const route = useRoute();
@@ -33,25 +40,9 @@ const ChooseChapterScreen = () => {
 		navigation.setParams({ prevScreen: "" });
 	}, [isFocused]);
 
-	//local state
-	const [headerTestamentChosen, setHeaderTestamentChosen] = useState(false);
-	const [headerBookChosen, setHeaderBookChosen] = useState(false);
-
-	//global state setter
-	const dispatch = useDispatch();
-
-	//global state getter
-	const bibleState = useSelector((state) => state.globalData.bibleData);
-
-	//nav
-	const navigation = useNavigation();
-
-	//press handlers
+	//PRESS HANDLERS
 	const handleTestamentPress = (index) => {
-		//set global state
 		dispatch(setTestamentSelected({ index: index }));
-
-		//set header state of a book chosen to false
 		setHeaderBookChosen(false);
 
 		//handle header switching logic
@@ -72,7 +63,6 @@ const ChooseChapterScreen = () => {
 	};
 
 	const handleBookPress = (testamentIndex, bookIndex) => {
-		//set global state
 		dispatch(
 			setBookSelected({ testamentIndex: testamentIndex, bookIndex: bookIndex })
 		);
@@ -119,86 +109,14 @@ const ChooseChapterScreen = () => {
 		setHeaderBookChosen(false);
 	};
 
-	//Header component
-	const Header = () => {
-		if (headerBookChosen) {
-			return (
-				<Pressable onPress={handleHeaderPress}>
-					<Text style={styles.header}>Choose Chapter</Text>
-				</Pressable>
-			);
-		} else if (headerTestamentChosen) {
-			return (
-				<Pressable onPress={handleHeaderPress}>
-					<Text style={styles.header}>Choose Book</Text>
-				</Pressable>
-			);
-		} else {
-			return (
-				<Pressable onPress={handleHeaderPress}>
-					<Text style={styles.header}>Choose Testament</Text>
-				</Pressable>
-			);
-		}
-	};
-
-	//styles for Accordion lists
-	const accordionStyle = {
-		header: {
-			backgroundColor: "rgb(22,30,57)",
-			borderWidth: 0,
-			borderColor: "transparent",
-		},
-		title: {
-			color: "rgba(210, 210, 210, 0.80)",
-			fontSize: 25,
-			fontWeight: "800",
-		},
-		titleChosen: {
-			color: "white",
-			fontSize: 25,
-			fontWeight: "800",
-		},
-	};
-
-	//Chapters component
-	const Chapters = ({ bookData, testamentIndex, bookIndex }) => {
-		const { chapters } = bookData;
-
-		const renderItem = (item) => {
-			return (
-				<Pressable
-					style={{ width: "20%", aspectRatio: 1 }}
-					onPress={() => handleChapterPress(testamentIndex, bookIndex, item)}>
-					<Text
-						style={[styles.chapters, item.completed && { color: "#DFB01C" }]}>
-						{item.chapter}
-					</Text>
-				</Pressable>
-			);
-		};
-
-		return (
-			<ScrollView horizontal={true} style={{ padding: 8 }}>
-				<View style={styles.chapterNumRow}>
-					<FlatList
-						data={chapters}
-						showsVerticalScrollIndicator={false}
-						keyExtractor={(item, index) => item.chapter.toString()}
-						renderItem={({ item }) => {
-							return renderItem(item);
-						}}
-						numColumns={5}
-					/>
-				</View>
-			</ScrollView>
-		);
-	};
-
 	//ChooseChapterScreen main render
 	return (
 		<View style={styles.root}>
-			<Header />
+			<ChooseChapterHeader
+				headerBookChosen={headerBookChosen}
+				headerTestamentChosen={headerTestamentChosen}
+				handleHeaderPress={handleHeaderPress}
+			/>
 			<FlatList
 				data={bibleState}
 				showsVerticalScrollIndicator={false}
@@ -207,11 +125,14 @@ const ChooseChapterScreen = () => {
 					<List.Accordion
 						//render testaments
 						title={item.testamentName}
-						style={accordionStyle.header}
-						titleStyle={[
-							item.selected ? accordionStyle.titleChosen : accordionStyle.title,
-							item.completed && { color: "#DFB01C" },
-						]}
+						style={styles.accordionHeader}
+						titleStyle={
+							!item.completed
+								? item.selected
+									? styles.accordionTitleChosen
+									: styles.accordionTitle
+								: styles.accordionTitleComplete
+						}
 						expanded={item.selected}
 						key={item.testamentName.toString()}
 						onPress={() => handleTestamentPress(index)}
@@ -223,21 +144,20 @@ const ChooseChapterScreen = () => {
 								key={book.bookName.toString()}
 								expanded={book.selected}
 								onPress={() => handleBookPress(index, bookIndex)}
-								style={[
-									accordionStyle.header,
-									book.completed && { color: "#DFB01C" },
-								]}
+								style={styles.accordionHeader}
 								right={(props) => (props.isExpanded === false ? null : null)}
-								titleStyle={[
-									book.selected
-										? accordionStyle.titleChosen
-										: accordionStyle.title,
-									book.completed && { color: "#DFB01C" },
-								]}>
-								<Chapters
+								titleStyle={
+									!book.completed
+										? book.selected
+											? styles.accordionTitleChosen
+											: styles.accordionTitle
+										: styles.accordionTitleComplete
+								}>
+								<ChaptersRender
 									bookData={book}
 									testamentIndex={index}
 									bookIndex={bookIndex}
+									handleChapterPress={handleChapterPress}
 								/>
 							</List.Accordion>
 						))}
@@ -253,23 +173,25 @@ const styles = StyleSheet.create({
 		flex: 1,
 		padding: 10,
 	},
-	header: {
-		color: "#f5f5f5",
-		fontWeight: "800",
-		fontSize: 30,
-		padding: 24,
-		textAlign: "center",
+	accordionHeader: {
+		backgroundColor: colors.primary,
+		borderWidth: 0,
+		borderColor: "transparent",
 	},
-	chapters: {
-		color: "#f5f5f5",
-		opacity: 0.8,
-		fontSize: 24,
+	accordionTitle: {
+		color: colors.textGrey,
+		fontSize: 25,
 		fontWeight: "800",
-		paddingVertical: 12,
 	},
-	chapterNumRow: {
-		minWidth: "100%",
-		paddingLeft: 15,
+	accordionTitleChosen: {
+		color: colors.text,
+		fontSize: 25,
+		fontWeight: "800",
+	},
+	accordionTitleComplete: {
+		color: colors.tertiary,
+		fontSize: 25,
+		fontWeight: "800",
 	},
 });
 

@@ -4,7 +4,7 @@ export default colors = {
 	primaryDarkTranslucent: "rgba(11, 14, 29, 0.7)",
 	text: "#f5f5f5",
 	textHighlight: "#fafa7d",
-	textGrey: "#c9c9c9",
+	textGrey: "rgba(210, 210, 210, 0.8)",
 	secondary: "#695DDA",
 	secondaryLight: "#6151fc",
 	secondaryLighter: "#7162fc",

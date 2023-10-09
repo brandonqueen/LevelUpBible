@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import globalStyles from "../../../constants/colors";
+import colors from "../../../constants/colors";
 
 function LearnMoreButton({ url }) {
 	const handlePress = async () => {
@@ -25,7 +25,7 @@ export default LearnMoreButton;
 
 const styles = StyleSheet.create({
 	learnMoreText: {
-		color: globalStyles.white,
+		color: colors.text,
 		letterSpacing: 0.3,
 		lineHeight: 32,
 		fontWeight: "700",
