@@ -27,11 +27,10 @@ const styles = StyleSheet.create({
 	learnMoreText: {
 		color: colors.text,
 		letterSpacing: 0.3,
-		lineHeight: 32,
 		fontWeight: "700",
 		fontSize: 18,
-		padding: 0,
-		paddingBottom: 30,
+		padding: 8,
+		paddingBottom: 22,
 		textAlign: "center",
 	},
 });

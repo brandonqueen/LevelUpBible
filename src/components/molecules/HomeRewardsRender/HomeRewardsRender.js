@@ -9,7 +9,7 @@ const HomeRewardsRender = ({ recentEarnedRewards, rewards }) => {
 		//take rewards in order of most recent first
 		const reversedArray = recentEarnedRewards.slice().reverse();
 
-		//if rewards exist, render them!
+		//and if rewards exist, render them!
 		return (
 			<FlatList
 				contentContainerStyle={{
