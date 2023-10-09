@@ -24,14 +24,7 @@ import colors from "../../constants/colors";
 import axios from "axios";
 
 const BibleScreen = () => {
-	//get global state
-	const bibleState = useSelector((state) => state.globalData.bibleData);
-	const userProgress = useSelector((state) => state.globalData.userProgress);
-
-	//global state dispatch
-	const dispatch = useDispatch();
-
-	//nav
+	//NAVIGATION
 	const route = useRoute();
 	const navigation = useNavigation();
 
@@ -41,6 +34,26 @@ const BibleScreen = () => {
 	const bookName = route.params?.bookName;
 	const chapterNum = route.params?.chapter;
 	const chapterIndex = chapterNum - 1;
+
+	//GLOBAL STATE
+	const bibleState = useSelector((state) => state.globalData.bibleData);
+	const userProgress = useSelector((state) => state.globalData.userProgress);
+	const dispatch = useDispatch();
+
+	//LOCAL STATE
+	const [nextChapterExists, setNextChapterExists] = useState(true);
+	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState("");
+	const [response, setResponse] = useState("");
+	const [numOfVerses, setNumOfVerses] = useState(null);
+	const [highlightedText, setHighlightedText] = useState([]);
+	const [linesData, setLinesData] = useState([]);
+	const [scrollY, setScrollY] = useState(0);
+	const [shouldRenderPressable, setShouldRenderPressable] = useState(false);
+	const [quizModalOpen, setQuizModalOpen] = useState(false);
+	const [noQuizModalOpen, setNoQuizModalOpen] = useState(false);
+
+	//OTHER VARIABLES
 
 	//get quiz data for current book and chapter
 	const quizData = quizMap?.[bookName]?.chapters?.[chapterIndex] ?? null;
@@ -73,23 +86,11 @@ const BibleScreen = () => {
 	};
 	const scrollViewRef = useRef(null);
 
-	//local state
-	const [nextChapterExists, setNextChapterExists] = useState(true);
-	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState("");
-	const [response, setResponse] = useState("");
-	const [numOfVerses, setNumOfVerses] = useState(null);
-	const [highlightedText, setHighlightedText] = useState([]);
-	const [linesData, setLinesData] = useState([]);
-	const [scrollY, setScrollY] = useState(0);
-	const [shouldRenderPressable, setShouldRenderPressable] = useState(false);
-	const [quizModalOpen, setQuizModalOpen] = useState(false);
-	const [noQuizModalOpen, setNoQuizModalOpen] = useState(false);
-
 	//Check network connection
 	const isConnected = useNetInfo().isConnected;
 
-	//API CALL TO FETCH BIBLE TEXT
+	///////
+	/////	API CALL TO FETCH BIBLE TEXT
 	const fetchData = async () => {
 		try {
 			const passage = () => {
@@ -163,7 +164,7 @@ const BibleScreen = () => {
 		}
 	};
 
-	// //Get Bible text on chapter set
+	//Load Bible text on chapter set
 	useEffect(() => {
 		const nextChapterNumIndex = chapterNum;
 		if (
@@ -177,13 +178,19 @@ const BibleScreen = () => {
 		}
 		fetchData();
 	}, [chapterNum]);
-	//END API CALL LOGIC
+	/////
+	/////// END API CALL LOGIC
 
+	//SCROLL HANDLER
 	const handleScroll = (event) => {
 		// Progress Bar Logic
-		const offsetY = event.nativeEvent.contentOffset.y; //dynamic: how far, in pixels, you have scrolled vertically
-		const contentHeight = event.nativeEvent.contentSize.height; //static: size, in pixels, of the content (visible and invisible) contained in the ScrollView
-		const scrollViewHeight = event.nativeEvent.layoutMeasurement.height; //static: visible height, in pixels, of ScrollView container
+
+		//offsetY - dynamic: how far, in pixels, you have scrolled vertically
+		const offsetY = event.nativeEvent.contentOffset.y;
+		//contentHeight - static: size, in pixels, of the content (visible and invisible) contained in the ScrollView
+		const contentHeight = event.nativeEvent.contentSize.height;
+		//scrollViewHeight - static: visible height, in pixels, of ScrollView container
+		const scrollViewHeight = event.nativeEvent.layoutMeasurement.height;
 
 		const scrollProgress = offsetY / (contentHeight - scrollViewHeight);
 		setScrollY(scrollProgress);
@@ -203,10 +210,10 @@ const BibleScreen = () => {
 			return line && lineYEnd < offsetY;
 		});
 
-		//extract just the text from the raw data for lines out of view
+		//extract the text (from the raw API data) for lines out of view
 		linesOutOfViewText = linesOutOfViewRaw.map((line) => line.text);
 
-		//function to compare array in state with array of text out of view
+		//function to compare array in state with array of text "out of view"
 		function isArrayContained(array1, array2) {
 			// Convert both arrays to sets for efficient comparison
 			const set1 = new Set(array1);
@@ -234,6 +241,7 @@ const BibleScreen = () => {
 			setHighlightedText(response);
 		}
 	};
+	//END SCROLL HANDLER
 
 	//Press handler functions
 	const handleGoBack = () => {
@@ -413,6 +421,17 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		paddingLeft: 8,
 	},
+	text: {
+		color: colors.text,
+		fontSize: 20,
+		fontWeight: "400",
+		letterSpacing: 0.3,
+		lineHeight: 32,
+		padding: 16,
+		position: "relative",
+		top: 0,
+		left: 0,
+	},
 	progressBarContainer: {
 		flex: 5,
 		alignItems: "center",
@@ -450,23 +469,19 @@ const styles = StyleSheet.create({
 		width: 300,
 		height: 300,
 	},
+	heading: {
+		color: colors.text,
+		textAlign: "center",
+		padding: 12,
+		fontSize: 24,
+		fontWeight: "800",
+	},
 	scroll: {
 		flex: 1,
 	},
 	passageContainer: {
 		flexDirection: "row",
 		flexWrap: "wrap",
-	},
-	text: {
-		color: colors.text,
-		fontSize: 20,
-		fontWeight: "400",
-		letterSpacing: 0.3,
-		lineHeight: 32,
-		padding: 16,
-		position: "relative",
-		top: 0,
-		left: 0,
 	},
 	textFinal: {
 		color: colors.textHighlight,
@@ -491,13 +506,6 @@ const styles = StyleSheet.create({
 		letterSpacing: 0.3,
 		lineHeight: 32,
 		padding: 16,
-	},
-	heading: {
-		color: colors.text,
-		textAlign: "center",
-		padding: 12,
-		fontSize: 24,
-		fontWeight: "800",
 	},
 	bottomSection: {
 		marginBottom: 45,

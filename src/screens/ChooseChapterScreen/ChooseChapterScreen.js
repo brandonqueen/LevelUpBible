@@ -109,7 +109,7 @@ const ChooseChapterScreen = () => {
 		setHeaderBookChosen(false);
 	};
 
-	//ChooseChapterScreen main render
+	//MAIN RENDER/RETURN
 	return (
 		<View style={styles.root}>
 			<ChooseChapterHeader
