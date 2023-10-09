@@ -5,8 +5,9 @@ import {
 import { StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import QuizChoices from "../QuizChoices/QuizChoices";
 import StyledTextButton from "../../../atoms/StyledTextButton/StyledTextButton";
+import QuizChoices from "../QuizChoices/QuizChoices";
+import colors from "../../../../constants/colors";
 
 const QuizContent = ({
 	modalToggle,
@@ -18,20 +19,21 @@ const QuizContent = ({
 	setQuizComplete,
 	numOfVerses,
 }) => {
-	//global state setter
+	//GLOBAL STATE
 	const dispatch = useDispatch();
 
-	//local state
+	//LOCAL STATE
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [selectedChoiceIndex, setSelectedChoiceIndex] = useState(null);
 	const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
 	const [answeredIncorrectly, setAnsweredIncorrectly] = useState(false);
 
+	//OTHER VARIABLES
 	const numberOfQuestions = QuizData?.questions?.length;
 	const currentQuestion = QuizData?.questions[currentQuestionIndex];
 	const correctAnswerIndex = currentQuestion?.answer?.index;
 
-	//Press handler functions
+	//PRESS HANDLERS
 	const handleChoicePress = (index) => {
 		setSelectedChoiceIndex(index);
 		if (index === correctAnswerIndex) {
@@ -105,8 +107,8 @@ const QuizContent = ({
 			</View>
 			<View style={styles.bottomButtonsContainer}>
 				<StyledTextButton
-					backgroundColor={"#e85b46"}
-					backgroundPressedColor={"#fc7662"}
+					backgroundColor={colors.quarternary}
+					backgroundPressedColor={colors.quarternaryLight}
 					width={125}
 					onPress={modalToggle}>
 					Cancel
@@ -115,18 +117,20 @@ const QuizContent = ({
 					opacity={!(answeredCorrectly || answeredIncorrectly) ? 0.6 : 1}
 					backgroundColor={
 						!(answeredCorrectly || answeredIncorrectly)
-							? "rgb(11,14,29)"
-							: (answeredCorrectly && "#56b553") ||
-							  (answeredIncorrectly && "rgb(11,14,29)")
+							? colors.primaryDark
+							: (answeredCorrectly && colors.secondaryLight) ||
+							  (answeredIncorrectly && colors.quinary)
 					}
 					backgroundPressedColor={
 						!(answeredCorrectly || answeredIncorrectly)
 							? null
-							: (answeredCorrectly && "#60c75d") ||
-							  (answeredIncorrectly && "#1d1e21")
+							: (answeredCorrectly && colors.secondaryLighter) ||
+							  (answeredIncorrectly && colors.quinaryLight)
 					}
 					borderWidth={2}
-					borderColor={answeredIncorrectly ? "rgb(11,14,29)" : "#56b553"}
+					borderColor={
+						answeredIncorrectly ? colors.quinary : colors.secondaryLight
+					}
 					width={!answeredIncorrectly ? 125 : 150}
 					onPress={
 						!(answeredCorrectly || answeredIncorrectly)
@@ -144,7 +148,7 @@ export default QuizContent;
 
 const styles = StyleSheet.create({
 	heading: {
-		color: "#f5f5f5",
+		color: colors.text,
 		textAlign: "center",
 		paddingTop: 12,
 		fontSize: 26,
@@ -163,13 +167,13 @@ const styles = StyleSheet.create({
 		padding: 10,
 	},
 	modalQuestionNumber: {
-		color: "white",
+		color: colors.text,
 		fontSize: 20,
 		fontWeight: "800",
 		marginBottom: 8,
 	},
 	modalQuestionText: {
-		color: "white",
+		color: colors.text,
 		fontWeight: "600",
 		fontSize: 20,
 	},

@@ -345,13 +345,17 @@ const BibleScreen = () => {
 										}
 										borderWidth={2}
 										borderColor={
-											shouldRenderPressable ? colors.tertiary : colors.secondary
+											shouldRenderPressable
+												? colors.tertiary
+												: colors.secondaryLight
 										}
 										margin={12}
 										onPress={
-											shouldRenderPressable && quizData
-												? handleQuizModalToggle
-												: handleNoQuizModalToggle
+											shouldRenderPressable
+												? quizData
+													? handleQuizModalToggle
+													: handleNoQuizModalToggle
+												: null
 										}>
 										Take Quiz
 									</StyledTextButton>
@@ -361,7 +365,7 @@ const BibleScreen = () => {
 								<StyledTextButton
 									backgroundPressedColor={colors.secondary}
 									borderWidth={2}
-									borderColor={colors.secondary}
+									borderColor={colors.secondaryLight}
 									margin={30}
 									onPress={handleNextChapterPress}>
 									Next Chapter

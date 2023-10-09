@@ -20,9 +20,9 @@ const RewardDescriptionModal = ({
 					</Text>
 				)}
 				<StyledTextButton
-					backgroundPressedColor={colors.secondaryLight}
+					backgroundPressedColor={colors.secondary}
 					borderWidth={2}
-					borderColor={colors.secondary}
+					borderColor={colors.secondaryLight}
 					margin={20}
 					onPress={modalToggle}>
 					Close

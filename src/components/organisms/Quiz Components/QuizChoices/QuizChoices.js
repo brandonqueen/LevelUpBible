@@ -21,7 +21,9 @@ const QuizChoices = ({
 					style={[
 						styles.modalChoiceContainer,
 						isSelected &&
-							(isCorrect ? styles.correctChoice : styles.incorrectChoice),
+							(isCorrect
+								? styles.correctChoiceText
+								: styles.incorrectChoiceText),
 					]}
 					onPress={
 						answeredCorrectly || answeredIncorrectly
@@ -75,11 +77,11 @@ const styles = StyleSheet.create({
 		fontWeight: "600",
 		fontSize: 20,
 	},
-	incorrectChoice: {
+	incorrectChoiceText: {
 		backgroundColor: colors.quarternaryDarkTranslucent,
 		borderColor: colors.quarternaryLight,
 	},
-	correctChoice: {
+	correctChoiceText: {
 		backgroundColor: "rgba(25, 110, 24, .7)",
 		borderColor: "rgb(37, 171, 36)",
 	},
