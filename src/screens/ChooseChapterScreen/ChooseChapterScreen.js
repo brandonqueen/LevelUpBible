@@ -171,7 +171,7 @@ const ChooseChapterScreen = () => {
 const styles = StyleSheet.create({
 	root: {
 		flex: 1,
-		padding: 10,
+		paddingHorizontal: 10,
 	},
 	accordionHeader: {
 		backgroundColor: colors.primary,

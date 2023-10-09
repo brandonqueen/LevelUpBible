@@ -12,8 +12,12 @@ import {
 	Easing,
 	useDerivedValue,
 } from "react-native-reanimated";
-import { useNavigation, useIsFocused } from "@react-navigation/native";
-import { useRef, useEffect } from "react";
+import {
+	useNavigation,
+	useIsFocused,
+	useFocusEffect,
+} from "@react-navigation/native";
+import React, { useRef } from "react";
 import { useSelector } from "react-redux";
 import { ReText } from "react-native-redash";
 import HomeRewardsRender from "../../components/molecules/HomeRewardsRender/HomeRewardsRender";
@@ -49,8 +53,8 @@ const HomeScreen = () => {
 	});
 
 	//start animation on screen focus
-	useEffect(() => {
-		if (isFocused) {
+	useFocusEffect(
+		React.useCallback(() => {
 			chapProgressRef.current.reAnimate();
 			bookProgressRef.current.reAnimate();
 			pointsValueAnim.value = 0;
@@ -58,10 +62,12 @@ const HomeScreen = () => {
 				duration: 1100,
 				easing: Easing.inOut(Easing.quad),
 			});
-		} else {
-			pointsValueAnim.value = 0;
-		}
-	}, [isFocused, pointsValueAnim]);
+
+			return () => {
+				pointsValueAnim.value = 0;
+			};
+		}, [points, pointsValueAnim])
+	);
 	/// END ANIMATION LOGIC
 
 	//PRESS HANDLERS
@@ -157,8 +163,7 @@ const styles = StyleSheet.create({
 	topBar: {
 		height: 90,
 		width: "100%",
-		marginTop: 8,
-		marginBottom: 16,
+		marginVertical: 8,
 		justifyContent: "flex-end",
 		alignItems: "center",
 	},
