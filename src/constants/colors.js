@@ -9,9 +9,11 @@ export default colors = {
 	tertiary: "#DFB01C",
 	tertiaryLight: "#f0cd51",
 	tertiaryDark: "#a38b00",
+	tertiaryDarkTranslucent: "rgba(163, 139, 0, .7)",
 	quarternary: "#db3537",
 	quarternaryLight: "#ff383b",
 	quarternaryDark: "#7d191b",
+	quarternaryDarkTranslucent: "rgba(110, 29, 24, .8)",
 	quinary: "#0f0f0f",
 	quinaryLight: "#1c1b1b",
 

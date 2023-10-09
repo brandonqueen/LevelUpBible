@@ -2,11 +2,11 @@ import {
 	setChapterCompleted,
 	updateProgress,
 } from "../../../../features/globalData/globalDataSlice";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
-import ModalPopup from "../../../molecules/ModalPopup/ModalPopup";
-import QuizSuccess from "../QuizSuccess/QuizSuccess";
+import { useState } from "react";
 import NoQuizConfirm from "../NoQuizConfirm/NoQuizConfirm";
+import QuizSuccess from "../QuizSuccess/QuizSuccess";
+import ModalPopup from "../../../molecules/ModalPopup/ModalPopup";
 
 const NoQuizModal = ({
 	modalOpen,
@@ -19,13 +19,13 @@ const NoQuizModal = ({
 	chapterIndex,
 	rewards,
 }) => {
-	//global state
+	//GLOBAL STATE
 	const dispatch = useDispatch();
 
-	//local state
+	//LOCAL STATE
 	const [confirmedRead, setConfirmedRead] = useState(false);
 
-	//Press handler function
+	//PRESS HANDLER
 	const handleConfirmPressed = () => {
 		dispatch(
 			setChapterCompleted({
