@@ -12,20 +12,21 @@ import {
 	Easing,
 	useDerivedValue,
 } from "react-native-reanimated";
-import { useRef, useEffect } from "react";
-import { ReText } from "react-native-redash";
-import { useSelector } from "react-redux";
 import { useNavigation, useIsFocused } from "@react-navigation/native";
+import { useRef, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { ReText } from "react-native-redash";
+import HomeRewardsRender from "../../components/molecules/HomeRewardsRender/HomeRewardsRender";
 import CircularProgress from "react-native-circular-progress-indicator";
 import graphic from "../../../assets/Images/Logo.png";
-import HomeRewardsRender from "../../components/molecules/HomeRewardsRender/HomeRewardsRender";
+import colors from "../../constants/colors";
 
 const HomeScreen = () => {
-	//navigation
+	//NAVIGATION
 	const navigation = useNavigation();
 	const isFocused = useIsFocused();
 
-	//global state
+	//GLOBAL STATE
 	const userProgress = useSelector((state) => state.globalData.userProgress);
 	const points = userProgress.stats.totalPoints;
 	const chapters = userProgress.stats.numChaptersCompleted;
@@ -33,13 +34,13 @@ const HomeScreen = () => {
 	const rewards = userProgress.rewards;
 	const recentEarnedRewards = userProgress.recentEarnedRewards;
 
-	//progress calculation data
+	//DATA TO CALCULATE BIBLE READING PROGRESS
 	const bibleChapterNumber = 1189;
 	const bibleBookNumber = 66;
 	const chapterPercentage = Math.ceil((chapters / bibleChapterNumber) * 100);
 	const bookPercentage = Math.ceil((books / bibleBookNumber) * 100);
 
-	///ANIMATION LOGIC
+	///BEGIN ANIMATION LOGIC (chapter percentages and points ticker)
 	const chapProgressRef = useRef(0);
 	const bookProgressRef = useRef(0);
 	const pointsValueAnim = useSharedValue(0);
@@ -63,7 +64,7 @@ const HomeScreen = () => {
 	}, [isFocused, pointsValueAnim]);
 	/// END ANIMATION LOGIC
 
-	//press handler
+	//PRESS HANDLERS
 	const handleProgressPress = () => {
 		navigation.navigate("BIBLE");
 	};
@@ -87,7 +88,7 @@ const HomeScreen = () => {
 						<ReText style={styles.pointsText} text={pointsText} />
 						<Text style={styles.pointsText}>POINTS</Text>
 					</TouchableOpacity>
-					<View style={styles.percentageCirclesContainer}>
+					<View style={styles.progressCirclesContainer}>
 						<TouchableOpacity
 							style={styles.progressCircleContainer}
 							onPress={handleProgressPress}
@@ -97,10 +98,10 @@ const HomeScreen = () => {
 								value={chapterPercentage}
 								radius={52}
 								duration={900}
-								progressValueColor={"#695DDA"}
-								activeStrokeColor={"#6151fc"}
-								inActiveStrokeColor={"#393091"}
-								circleBackgroundColor={"rgb(11,14,29)"}
+								progressValueColor={colors.secondary}
+								activeStrokeColor={colors.secondaryLight}
+								inActiveStrokeColor={colors.secondaryDark}
+								circleBackgroundColor={colors.primaryDark}
 								maxValue={100}
 								valueSuffix={"%"}
 							/>
@@ -117,10 +118,10 @@ const HomeScreen = () => {
 								value={bookPercentage}
 								radius={52}
 								duration={900}
-								progressValueColor={"#db3537"}
-								activeStrokeColor={"#ff383b"}
-								inActiveStrokeColor={"#7d191b"}
-								circleBackgroundColor={"rgb(11,14,29)"}
+								progressValueColor={colors.quarternary}
+								activeStrokeColor={colors.quarternaryLight}
+								inActiveStrokeColor={colors.quarternaryDark}
+								circleBackgroundColor={colors.primaryDark}
 								maxValue={100}
 								valueSuffix={"%"}
 							/>
@@ -174,15 +175,6 @@ const styles = StyleSheet.create({
 	progressSectionContainer: {
 		flex: 0,
 	},
-	progressCircleContainer: {
-		flexDirection: "column",
-		alignItems: "center",
-	},
-	rewardsSectionContainer: {
-		flex: 1,
-		alignItems: "center",
-		justifyContent: "center",
-	},
 	progressHeader: {
 		fontSize: 30,
 		fontWeight: "900",
@@ -195,22 +187,26 @@ const styles = StyleSheet.create({
 		width: 160,
 		borderWidth: 3,
 		borderRadius: 80,
-		borderColor: "#a38b00",
+		borderColor: colors.tertiaryDark,
 		margin: 8,
 		alignSelf: "center",
 		alignItems: "center",
 		justifyContent: "center",
-		backgroundColor: "rgba(11,14,29, .6)",
+		backgroundColor: colors.primaryDarkTranslucent,
 	},
 	pointsText: {
 		fontWeight: "900",
 		fontSize: 20,
-		color: "rgb(255, 198, 99)",
+		color: colors.tertiaryLight,
 		textAlign: "center",
 	},
-	percentageCirclesContainer: {
+	progressCirclesContainer: {
 		flexDirection: "row",
 		justifyContent: "space-around",
+	},
+	progressCircleContainer: {
+		flexDirection: "column",
+		alignItems: "center",
 	},
 	chapterPercentageText: {
 		fontWeight: "900",
@@ -222,7 +218,7 @@ const styles = StyleSheet.create({
 	chapterInfoUnderCircle: {
 		fontWeight: "700",
 		fontSize: 18,
-		color: "#7162fc",
+		color: colors.secondaryLighter,
 		textAlign: "center",
 		padding: 8,
 		letterSpacing: 0.1,
@@ -230,14 +226,14 @@ const styles = StyleSheet.create({
 	bookPercentageText: {
 		fontWeight: "900",
 		fontSize: 16,
-		color: "#db3537",
+		color: colors.quarternary,
 		textAlign: "center",
 		padding: 8,
 	},
 	bookInfoUnderCircle: {
 		fontWeight: "700",
 		fontSize: 18,
-		color: "#db3537",
+		color: colors.quarternary,
 		textAlign: "center",
 		padding: 8,
 		letterSpacing: 0.1,
@@ -246,9 +242,14 @@ const styles = StyleSheet.create({
 		fontSize: 30,
 		fontWeight: "900",
 		textAlign: "center",
-		color: "#f5f5f5",
+		color: colors.text,
 		marginBottom: 10,
 		marginTop: 30,
+	},
+	rewardsSectionContainer: {
+		flex: 1,
+		alignItems: "center",
+		justifyContent: "center",
 	},
 	rewardsContainer: {
 		width: "95%",
@@ -256,13 +257,13 @@ const styles = StyleSheet.create({
 		flexDirection: "column",
 		borderWidth: 2,
 		borderRadius: 20,
-		borderColor: "#a38b00",
-		backgroundColor: "rgba(11,14,29, .7)",
+		borderColor: colors.tertiaryDark,
+		backgroundColor: colors.primaryDarkTranslucent,
 	},
 	viewMore: {
 		fontWeight: "800",
 		fontSize: 18,
-		color: "#d9d9d9",
+		color: colors.textGrey,
 		textAlign: "center",
 		padding: 10,
 	},

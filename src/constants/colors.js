@@ -1,9 +1,18 @@
 export default colors = {
 	primary: "#161e39",
 	primaryDark: "#0b0e1d",
+	primaryDarkTranslucent: "rgba(11, 14, 29, 0.7)",
 	text: "#f5f5f5",
 	textHighlight: "#fafa7d",
+	textGrey: "#c9c9c9",
 	secondary: "#695DDA",
+	secondaryLight: "#6151fc",
+	secondaryLighter: "#7162fc",
+	secondaryDark: "#393091",
 	tertiary: "#DFB01C",
 	tertiaryLight: "#f0cd51",
+	tertiaryDark: "#a38b00",
+	quarternary: "#db3537",
+	quarternaryLight: "#ff383b",
+	quarternaryDark: "#7d191b",
 };
