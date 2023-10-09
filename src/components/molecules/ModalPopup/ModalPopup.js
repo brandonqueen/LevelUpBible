@@ -5,6 +5,7 @@ import {
 	TouchableWithoutFeedback,
 } from "react-native";
 import { BlurView } from "expo-blur";
+import colors from "../../../constants/colors";
 
 const ModalPopup = ({ children, modalOpen, modalToggle, backgroundColor }) => {
 	return (
@@ -13,17 +14,12 @@ const ModalPopup = ({ children, modalOpen, modalToggle, backgroundColor }) => {
 			transparent={true}
 			visible={modalOpen}
 			onRequestClose={modalToggle}
-			style={{ justifyContent: "center", alignItems: "center" }}>
+			style={styles.root}>
 			<TouchableWithoutFeedback onPress={modalToggle}>
 				<BlurView
 					intensity={30}
 					tint="dark"
-					style={[
-						{
-							...StyleSheet.absoluteFill,
-						},
-						// { backgroundColor: "rgba(0,0,0,0.3)" },
-					]}
+					style={{ ...StyleSheet.absoluteFill }}
 				/>
 			</TouchableWithoutFeedback>
 			<View
@@ -38,6 +34,10 @@ const ModalPopup = ({ children, modalOpen, modalToggle, backgroundColor }) => {
 };
 
 const styles = StyleSheet.create({
+	root: {
+		justifyContent: "center",
+		alignItems: "center",
+	},
 	container: {
 		flex: 1,
 		justifyContent: "center",
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
 		bottom: "13%",
 		padding: 16,
 		borderRadius: 20,
-		backgroundColor: "rgb(11,14,29)",
+		backgroundColor: colors.primaryDark,
 		shadowColor: "#000",
 		shadowOffset: {
 			width: 0,

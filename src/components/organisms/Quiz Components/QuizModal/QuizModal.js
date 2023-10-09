@@ -3,6 +3,7 @@ import { ScrollView } from "react-native";
 import QuizSuccess from "../QuizSuccess/QuizSuccess";
 import ModalPopup from "../../../molecules/ModalPopup/ModalPopup";
 import QuizContent from "../QuizContent/QuizContent";
+import colors from "../../../../constants/colors";
 
 const QuizModal = ({
 	modalOpen,
@@ -19,7 +20,7 @@ const QuizModal = ({
 
 	return (
 		<ModalPopup
-			backgroundColor={"#342a86"}
+			backgroundColor={colors.quizBackground}
 			modalOpen={modalOpen}
 			modalToggle={modalToggle}>
 			<ScrollView

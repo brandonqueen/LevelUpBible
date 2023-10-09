@@ -1,12 +1,7 @@
-import {
-	StyleSheet,
-	Text,
-	ScrollView,
-	Image,
-	TouchableHighlight,
-} from "react-native";
-import ModalPopup from "../ModalPopup";
+import { StyleSheet, Text, ScrollView, Image } from "react-native";
 import StyledTextButton from "../../atoms/StyledTextButton/StyledTextButton";
+import ModalPopup from "../ModalPopup";
+import colors from "../../../constants/colors";
 
 const RewardDescriptionModal = ({
 	descriptionModalOpen,
@@ -25,9 +20,9 @@ const RewardDescriptionModal = ({
 					</Text>
 				)}
 				<StyledTextButton
-					backgroundPressedColor={"#5d67da"}
+					backgroundPressedColor={colors.secondaryLight}
 					borderWidth={2}
-					borderColor={"#695DDA"}
+					borderColor={colors.secondary}
 					margin={20}
 					onPress={modalToggle}>
 					Close
@@ -50,8 +45,8 @@ const styles = StyleSheet.create({
 		textTransform: "uppercase",
 		fontWeight: "900",
 		textAlign: "center",
-		color: "#f5f5f5",
-		margin: 24,
+		color: colors.text,
+		marginVertical: 24,
 	},
 	modalRewardImage: {
 		height: 130,
@@ -59,15 +54,14 @@ const styles = StyleSheet.create({
 		margin: 18,
 	},
 	modalRewardDescription: {
-		color: "#f5f5f5",
+		color: colors.text,
 		fontWeight: "600",
 		fontSize: 18,
-		//textAlign: "center",
 		padding: 18,
 		lineHeight: 26,
 	},
 	modalRewardEarned: {
-		color: "#DFB01C",
+		color: colors.tertiary,
 		fontWeight: "800",
 		fontSize: 19,
 		alignSelf: "flex-start",
@@ -78,12 +72,12 @@ const styles = StyleSheet.create({
 		borderRadius: 12,
 		borderStyle: "solid",
 		borderWidth: 2,
-		borderColor: "#695DDA",
+		borderColor: colors.secondary,
 		width: 150,
 		alignSelf: "center",
 	},
 	modalButtonText: {
-		color: "#f5f5f5",
+		color: colors.text,
 		fontSize: 18,
 		fontWeight: "800",
 		textAlign: "center",
