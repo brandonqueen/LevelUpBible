@@ -1,6 +1,7 @@
 import { StyleSheet, Text, ScrollView } from "react-native";
-import ModalPopup from "../ModalPopup";
 import StyledTextButton from "../../atoms/StyledTextButton/StyledTextButton";
+import ModalPopup from "../ModalPopup";
+import colors from "../../../constants/colors";
 
 const VerifyResetModal = ({
 	modalOpen,
@@ -16,26 +17,27 @@ const VerifyResetModal = ({
 				<Text style={styles.textDescription}>{modalOption.message}</Text>
 				{modalOption.option === "readAgain" ? (
 					<StyledTextButton
-						backgroundColor={"#695DDA"}
-						backgroundPressedColor={"#8174fc"}
-						borderWidth={0}
+						borderColor={colors.secondaryLight}
+						borderWidth={2}
+						backgroundPressedColor={colors.secondaryLighter}
 						margin={24}
 						onPress={handleReadAgain}>
 						Read Bible Again
 					</StyledTextButton>
 				) : (
 					<StyledTextButton
-						backgroundColor={"#db3537"}
-						backgroundPressedColor={"#fc4c4e"}
+						borderColor={colors.quarternary}
+						borderWidth={2}
+						backgroundPressedColor={colors.quarternaryLight}
 						margin={24}
 						onPress={handleResetAll}>
 						Reset All Data
 					</StyledTextButton>
 				)}
 				<StyledTextButton
-					textColor={"#1c1b1b"}
-					backgroundColor={"#f5f5f5"}
-					backgroundPressedColor={"#cbcbcb"}
+					textColor={colors.text}
+					backgroundColor={colors.quarternaryDark}
+					backgroundPressedColor={colors.quarternary}
 					margin={15}
 					onPress={modalToggle}>
 					Cancel
@@ -52,12 +54,12 @@ const styles = StyleSheet.create({
 		fontSize: 30,
 		fontWeight: "900",
 		textAlign: "center",
-		color: "#f5f5f5",
+		color: colors.text,
 		margin: 24,
 		lineHeight: 40,
 	},
 	textDescription: {
-		color: "#f5f5f5",
+		color: colors.text,
 		fontWeight: "400",
 		fontSize: 20,
 		textAlign: "left",

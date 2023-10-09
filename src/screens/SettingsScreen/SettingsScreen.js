@@ -25,7 +25,7 @@ const SettingsScreen = () => {
 		{
 			option: "readAgain",
 			message:
-				"This will remove all your current rewards as well as your book/chapter progress. \n\nDo you wish to continue?",
+				"This will remove all your current rewards as well as your book/chapter progress, but will NOT reset your total points. \n\nDo you wish to continue?",
 		},
 		{
 			option: "resetAll",
@@ -81,13 +81,15 @@ const SettingsScreen = () => {
 								preserve your current overall points
 							</Text>
 							. This option is ideal for continuing to grow points with multiple
-							re-readings of the Bible.{"\n\n"}( Only available if the whole
-							Bible has been completed. )
+							re-readings of the Bible.{"\n\n"}(Only available if the whole
+							Bible has been completed.)
 						</Text>
 						<StyledTextButton
-							backgroundColor={colors.secondary}
+							backgroundColor={colors.secondaryLight}
 							margin={24}
-							backgroundPressedColor={isBibleCompleted && colors.secondaryLight}
+							backgroundPressedColor={
+								isBibleCompleted && colors.secondaryLighter
+							}
 							opacity={isBibleCompleted ? null : 0.5}
 							onPress={isBibleCompleted ? handleReadAgainPress : null}>
 							Read Bible Again
@@ -110,7 +112,7 @@ const SettingsScreen = () => {
 						</StyledTextButton>
 					</View>
 					<View style={styles.contactContainer}>
-						<Text style={styles.optionTitle}>Contact</Text>
+						<Text style={styles.optionTitle}>Contact Us</Text>
 						<Text style={styles.textDescription}>
 							If you would like to get in touch to report an issue, ask a
 							question, or just to say hello, please click the button below.
