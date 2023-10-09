@@ -3,27 +3,23 @@ import {
 	resetAllData,
 } from "../../features/globalData/globalDataSlice";
 import { StyleSheet, Text, View, ScrollView, Linking } from "react-native";
-import { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import VerifyResetModal from "../../components/molecules/VerifyResetModal/VerifyResetModal";
 import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
+import colors from "../../constants/colors";
 
 const SettingsScreen = () => {
-	//nav
-	const navigation = useNavigation();
-
-	//global state updater
+	//GLOBAL STATE
 	const dispatch = useDispatch();
-
-	//get current global state
 	const userProgress = useSelector((state) => state.globalData.userProgress);
 	const isBibleCompleted = userProgress.rewards[11].completed;
 
-	//local state
+	//LOCAL STATE
 	const [modalOpen, setModalOpen] = useState(false);
 	const [modalOption, setModalOption] = useState({});
 
+	///OTHER VARIABLES
 	//This will be parsed to render options
 	const modalOptions = [
 		{
@@ -89,9 +85,9 @@ const SettingsScreen = () => {
 							Bible has been completed. )
 						</Text>
 						<StyledTextButton
-							backgroundColor={"#695DDA"}
+							backgroundColor={colors.secondary}
 							margin={24}
-							backgroundPressedColor={isBibleCompleted && "#8174fc"}
+							backgroundPressedColor={isBibleCompleted && colors.secondaryLight}
 							opacity={isBibleCompleted ? null : 0.5}
 							onPress={isBibleCompleted ? handleReadAgainPress : null}>
 							Read Bible Again
@@ -107,8 +103,8 @@ const SettingsScreen = () => {
 						</Text>
 						<StyledTextButton
 							onPress={handleResetAllPress}
-							backgroundColor={"#db3537"}
-							backgroundPressedColor={"#fc4c4e"}
+							backgroundColor={colors.quarternary}
+							backgroundPressedColor={colors.quarternaryLight}
 							margin={24}>
 							Reset All Data
 						</StyledTextButton>
@@ -121,8 +117,8 @@ const SettingsScreen = () => {
 						</Text>
 						<StyledTextButton
 							onPress={handleContactPress}
-							backgroundColor={"#0f0f0f"}
-							backgroundPressedColor={"#1c1b1b"}
+							backgroundColor={colors.quinary}
+							backgroundPressedColor={colors.quinaryLight}
 							margin={24}>
 							Contact Us
 						</StyledTextButton>
@@ -150,7 +146,7 @@ const styles = StyleSheet.create({
 		fontSize: 30,
 		fontWeight: "900",
 		textAlign: "center",
-		color: "#f5f5f5",
+		color: colors.text,
 		margin: 24,
 		lineHeight: 40,
 	},
@@ -160,7 +156,7 @@ const styles = StyleSheet.create({
 		alignItems: "flex-start",
 	},
 	optionTitle: {
-		color: "#f5f5f5",
+		color: colors.text,
 		fontWeight: "800",
 		fontSize: 24,
 		textAlign: "left",
@@ -168,7 +164,7 @@ const styles = StyleSheet.create({
 		paddingLeft: 10,
 	},
 	textDescription: {
-		color: "#f5f5f5",
+		color: colors.text,
 		fontWeight: "400",
 		fontSize: 16,
 		textAlign: "left",
@@ -177,12 +173,12 @@ const styles = StyleSheet.create({
 	readAgainTextHighlight: {
 		fontWeight: "800",
 		fontSize: 18,
-		color: "#7b6efa",
+		color: colors.secondaryLighter,
 	},
 	resetAllTextHighlight: {
 		fontWeight: "800",
 		fontSize: 18,
-		color: "#db3537",
+		color: colors.quarternary,
 	},
 	contactContainer: {
 		paddingVertical: 12,

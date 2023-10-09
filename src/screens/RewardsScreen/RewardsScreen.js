@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 import Reward from "../../components/atoms/Reward/Reward";
+import colors from "../../constants/colors";
 
 const RewardsScreen = () => {
-	//access global state
+	//GLOBAL STATE
 	const userProgress = useSelector((state) => state.globalData.userProgress);
 	const rewardsData = userProgress.rewards;
 
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
 		fontSize: 30,
 		fontWeight: "900",
 		textAlign: "center",
-		color: "#f5f5f5",
+		color: colors.text,
 		margin: 24,
 	},
 	rewardContainer: {

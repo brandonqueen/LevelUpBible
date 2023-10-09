@@ -15,4 +15,6 @@ export default colors = {
 	quarternary: "#db3537",
 	quarternaryLight: "#ff383b",
 	quarternaryDark: "#7d191b",
+	quinary: "#0f0f0f",
+	quinaryLight: "#1c1b1b",
 };
