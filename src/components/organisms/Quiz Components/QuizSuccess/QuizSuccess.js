@@ -1,47 +1,13 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { useSelector } from "react-redux";
-import Reward from "../../../atoms/Reward/Reward";
 import StyledTextButton from "../../../atoms/StyledTextButton/StyledTextButton";
-
-const NewRewards = ({ newRewards }) => {
-	return (
-		<View style={{ flex: 1, marginVertical: 12 }}>
-			<Text style={[styles.modalQuestionText, { paddingBottom: 16 }]}>
-				{newRewards.length > 1
-					? "You also earned new Rewards!"
-					: "You also earned a new Reward!"}
-			</Text>
-			<View style={{ flexDirection: "row", flex: 1 }}>
-				<NewRewardsRender newRewards={newRewards} />
-			</View>
-		</View>
-	);
-};
-
-const NewRewardsRender = ({ newRewards }) => {
-	const rewardState = useSelector(
-		(state) => state.globalData.userProgress.rewards
-	);
-	return (
-		<>
-			{newRewards?.map((newReward, index) => {
-				const rewardIndex = rewardState.findIndex(
-					(rewardObj) => rewardObj.title === newReward
-				);
-				const newRewardToRender = rewardState[rewardIndex];
-
-				return (
-					<Reward key={"New Reward Index" + index} reward={newRewardToRender} />
-				);
-			})}
-		</>
-	);
-};
+import colors from "../../../../constants/colors";
+import QuizSuccessRewards from "../QuizSuccessRewards/QuizSuccessRewards";
 
 const QuizSuccess = ({ numOfVerses, rewards, modalToggle }) => {
 	const userProgress = useSelector((state) => state.globalData.userProgress);
 	const updatedRewardsArray = userProgress.recentEarnedRewards;
-	const newlyEarnedRewards = updatedRewardsArray.filter(
+	const newRewards = updatedRewardsArray.filter(
 		(item) => !rewards.includes(item)
 	);
 
@@ -56,18 +22,17 @@ const QuizSuccess = ({ numOfVerses, rewards, modalToggle }) => {
 			</View>
 			<View style={styles.modalQuestionContainer}>
 				<Text style={styles.text}>
-					You answered all the questions correctly and have added {numOfVerses}{" "}
-					points to your overall score!
+					You have added {numOfVerses} points to your total score!
 				</Text>
-				{newlyEarnedRewards.length > 0 && (
-					<NewRewards newRewards={newlyEarnedRewards} />
+				{newRewards.length > 0 && (
+					<QuizSuccessRewards newRewards={newRewards} />
 				)}
 				<Text style={styles.text}>Rejoice! 🙌 🎉</Text>
 			</View>
 			<View style={styles.buttonContainer}>
 				<StyledTextButton
-					backgroundColor={"rgb(207, 75, 56)"}
-					backgroundPressedColor={"rgb(232, 91, 70)"}
+					backgroundColor={colors.quarternary}
+					backgroundPressedColor={colors.quarternaryLight}
 					margin={12}
 					width={160}
 					onPress={modalToggle}>
@@ -82,7 +47,7 @@ export default QuizSuccess;
 
 const styles = StyleSheet.create({
 	heading: {
-		color: "#f5f5f5",
+		color: colors.text,
 		textAlign: "center",
 		padding: 12,
 		marginTop: 12,
@@ -95,17 +60,17 @@ const styles = StyleSheet.create({
 		width: 150,
 		borderWidth: 3,
 		borderRadius: 80,
-		borderColor: "#a38b00",
+		borderColor: colors.tertiaryDark,
 		margin: 8,
 		alignSelf: "center",
 		alignItems: "center",
 		justifyContent: "center",
-		backgroundColor: "rgba(11,14,29, .6)",
+		backgroundColor: colors.primaryDarkTranslucent,
 	},
 	points: {
 		fontWeight: "900",
 		fontSize: 18,
-		color: "rgb(255, 198, 99)",
+		color: colors.tertiaryLight,
 		textAlign: "center",
 	},
 	modalQuestionContainer: {
@@ -113,7 +78,7 @@ const styles = StyleSheet.create({
 		padding: 10,
 	},
 	text: {
-		color: "white",
+		color: colors.text,
 		fontWeight: "600",
 		fontSize: 20,
 		textAlign: "center",

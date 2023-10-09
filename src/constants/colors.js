@@ -20,5 +20,5 @@ export default colors = {
 	text: "#f5f5f5",
 	textHighlight: "#fafa7d",
 	textGrey: "rgba(210, 210, 210, 0.8)",
-	quizBackground: "#342a86",
+	quizBackground: "#29206e",
 };
