@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import globalStyles from "../../../constants/globalStyles";
+import globalStyles from "../../../constants/colors";
 
 function LearnMoreButton({ url }) {
 	const handlePress = async () => {

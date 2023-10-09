@@ -17,7 +17,7 @@ import { useNetInfo } from "@react-native-community/netinfo";
 import { quizMap } from "../../constants/quizData/quizMap";
 import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
 import LearnMoreButton from "../../components/molecules/LearnMoreButton/LearnMoreButton";
-import globalStyles from "../../constants/globalStyles";
+import globalStyles from "../../constants/colors";
 import NoQuizModal from "../../components/organisms/Quiz Components/NoQuizModal/NoQuizModal";
 import QuizModal from "../../components/organisms/Quiz Components/QuizModal/QuizModal";
 import capybara from "../../../assets/Images/capybara.png";
