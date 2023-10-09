@@ -20,20 +20,15 @@ const QuizSuccessRewards = ({ newRewards }) => {
 					scrollEnabled={false}
 					data={newRewards}
 					horizontal={true}
-					keyExtractor={(item, index) => {
-						`New reward index: ${index}`;
-					}}
+					keyExtractor={(item, index) => `New reward index: ${index}`}
 					renderItem={({ item, index }) => {
 						const rewardIndex = rewardState.findIndex(
 							(rewardObj) => rewardObj.title === item
 						);
 						const newRewardToRender = rewardState[rewardIndex];
 						return (
-							<View key={`RewardIndex: ${index}`} style={styles.reward}>
-								<Reward
-									key={`RewardIndex: ${index}`}
-									reward={newRewardToRender}
-								/>
+							<View style={styles.reward}>
+								<Reward reward={newRewardToRender} />
 							</View>
 						);
 					}}
