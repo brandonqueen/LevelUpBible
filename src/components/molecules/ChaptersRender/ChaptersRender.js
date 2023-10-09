@@ -14,6 +14,7 @@ const ChaptersRender = ({
 	bookIndex,
 	handleChapterPress,
 }) => {
+	//GET CHAPTER DATA FROM BOOKDATA
 	const { chapters } = bookData;
 
 	return (

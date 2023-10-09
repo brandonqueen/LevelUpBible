@@ -1,4 +1,5 @@
 import { StyleSheet, Text, Pressable } from "react-native";
+import colors from "../../../constants/colors";
 
 const ChooseChapterHeader = ({
 	headerBookChosen,
@@ -30,7 +31,7 @@ export default ChooseChapterHeader;
 
 const styles = StyleSheet.create({
 	header: {
-		color: "#f5f5f5",
+		color: colors.text,
 		fontWeight: "800",
 		fontSize: 30,
 		padding: 24,
