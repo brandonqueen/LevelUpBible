@@ -1021,7 +1021,7 @@
                     "options": [
                         "He bought it from a local landowner",
                         "He received it as a gift",
-                        "He dug a grave in his own field",
+                        "He dug a grave in his field",
                         "He borrowed it from a friend"
                     ],
                     "answer": {
@@ -2134,7 +2134,7 @@
             "chapter": "48",
             "questions": [
                 {
-                    "question": "In Genesis 48, who did Jacob bless as he blessed his own firstborn?",
+                    "question": "In Genesis 48, whom did Jacob bless as he blessed his own firstborn?",
                     "options": [
                         "Reuben",
                         "Simeon",
@@ -2226,7 +2226,7 @@
             "chapter": "50",
             "questions": [
                 {
-                    "question": "Where was Jacob buried after his death in Genesis 50?",
+                    "question": "Where was Jacob buried in Genesis 50?",
                     "options": [
                         "In Egypt",
                         "In a grove of trees",
