@@ -2,8 +2,7 @@ import {
 	StyleSheet,
 	Text,
 	View,
-	Pressable,
-	ScrollView,
+	TouchableOpacity,
 	FlatList,
 } from "react-native";
 import colors from "../../../constants/colors";
@@ -26,7 +25,7 @@ const ChaptersRender = ({
 					keyExtractor={(item, index) => item.chapter.toString()}
 					renderItem={({ item }) => {
 						return (
-							<Pressable
+							<TouchableOpacity
 								style={styles.chapterPressable}
 								onPress={() =>
 									handleChapterPress(testamentIndex, bookIndex, item)
@@ -37,7 +36,7 @@ const ChaptersRender = ({
 									}>
 									{item.chapter}
 								</Text>
-							</Pressable>
+							</TouchableOpacity>
 						);
 					}}
 					numColumns={5}
