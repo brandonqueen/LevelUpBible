@@ -17,9 +17,9 @@
                     }
                 },
                 {
-                    "question": "Who was the father of Joseph, the husband of Mary?",
+                    "question": "Who was Mary's husband?",
                     "options": [
-                        "Jacob",
+                        "Joseph",
                         "Eleazar",
                         "David",
                         "Abraham"
@@ -123,14 +123,14 @@
                 {
                     "question": "Who did John the Baptist say would come after him?",
                     "options": [
-                        "The Messiah",
+                        "Somebody mightier",
                         "King Herod",
                         "A prophet",
                         "An angel"
                     ],
                     "answer": {
                         "index": 0,
-                        "text": "The Messiah",
+                        "text": "Somebody mightier",
                         "verse": "Matthew 3:11"
                     }
                 }
@@ -140,7 +140,7 @@
             "chapter": "4",
             "questions": [
                 {
-                    "question": "Who tempted Jesus in the wilderness?",
+                    "question": "In Matthew 4, who tempted Jesus in the wilderness?",
                     "options": [
                         "The Pharisees",
                         "The devil",
@@ -168,7 +168,7 @@
                 {
                     "question": "What was Jesus's first public message?",
                     "options": [
-                        "Rejoice for the kingdom of heaven is near",
+                        "God is very pleased with you all",
                         "Repent for the kingdom of heaven is near",
                         "Give to the poor",
                         "Love your enemies"
@@ -287,7 +287,7 @@
                     }
                 },
                 {
-                    "question": "What will happen to everyone who hears Jesus’s words and puts them into practice?",
+                    "question": "What will happen to everyone who hears Jesus’s words and acts on them?",
                     "options": [
                         "They will be like a wise man who built his house on the rock",
                         "They will be like a foolish man who built his house on the sand",
@@ -301,17 +301,17 @@
                     }
                 },
                 {
-                    "question": "Which gate is wide and leads to destruction?",
+                    "question": "What does Jesus say about a narrow gate?",
                     "options": [
-                        "Narrow gate",
-                        "Wide gate",
-                        "Golden gate",
-                        "Small gate"
+                        "It leads to life",
+                        "It leads to destruction",
+                        "It is easy to find",
+                        "Everyone will enter through it"
                     ],
                     "answer": {
-                        "index": 1,
-                        "text": "Wide gate",
-                        "verse": "Matthew 7:13"
+                        "index": 0,
+                        "text": "It leads to life",
+                        "verse": "Matthew 7:14"
                     }
                 }
             ]
@@ -334,7 +334,7 @@
                     }
                 },
                 {
-                    "question": "True or False: Jesus healed a man with leprosy by saying the word.",
+                    "question": "True or False: Jesus healed a man with leprosy by reaching out his hand and saying the word.",
                     "options": [
                         "True",
                         "False"
@@ -351,7 +351,7 @@
                         "A storm",
                         "A fleet of fishing boats",
                         "A group of Pharisees",
-                        "A large crowd"
+                        "A large fish"
                     ],
                     "answer": {
                         "index": 0,
@@ -368,25 +368,25 @@
                     "question": "How did the paralyzed man get in front of Jesus?",
                     "options": [
                         "He walked",
-                        "His friends brought him on a mat",
                         "He was carried by angels",
+                        "His friends brought him on a mat",
                         "Jesus found him on the street"
                     ],
                     "answer": {
-                        "index": 1,
+                        "index": 2,
                         "text": "His friends brought him on a mat",
                         "verse": "Matthew 9:2"
                     }
                 },
                 {
-                    "question": "True or False: The disciples of John fast often, but Jesus's disciples do not.",
+                    "question": "True or False: The disciples of John fast often, and so do Jesus's disciples.",
                     "options": [
                         "True",
                         "False"
                     ],
                     "answer": {
-                        "index": 0,
-                        "text": "True",
+                        "index": 1,
+                        "text": "False",
                         "verse": "Matthew 9:14"
                     }
                 },
@@ -438,7 +438,7 @@
                     }
                 },
                 {
-                    "question": "True or False: Jesus told the apostles that he sends them out as sheep among wolves.",
+                    "question": "True or False: Jesus told the apostles that he was going to send them out as sheep among wolves.",
                     "options": [
                         "True",
                         "False"
@@ -455,7 +455,7 @@
             "chapter": "11",
             "questions": [
                 {
-                    "question": "True or False: John the Baptist sent his disciples to ask Jesus if he was the one who is to come.",
+                    "question": "True or False: John the Baptist sent disciples to ask Jesus if he was the one to come.",
                     "options": [
                         "True",
                         "False"
@@ -500,42 +500,42 @@
             "chapter": "12",
             "questions": [
                 {
-                    "question": "Which prophet's words did Jesus quote when the Pharisees accused his disciples of breaking the Sabbath?",
+                    "question": "Who approached Jesus while he was speaking to the crowd?",
                     "options": [
-                        "Isaiah",
-                        "Hosea",
-                        "Jeremiah",
-                        "Daniel"
+                        "His mother and brothers",
+                        "His disciples",
+                        "Pharisees",
+                        "Roman soldiers"
                     ],
                     "answer": {
-                        "index": 1,
-                        "text": "Hosea",
-                        "verse": "Matthew 12:7"
+                        "index": 0,
+                        "text": "His mother and brothers",
+                        "verse": "Matthew 12:46"
                     }
                 },
                 {
-                    "question": "Who is described as being greater than the temple?",
-                    "options": [
-                        "John the Baptist",
-                        "Jesus",
-                        "David",
-                        "Solomon"
-                    ],
-                    "answer": {
-                        "index": 1,
-                        "text": "Jesus",
-                        "verse": "Matthew 12:6"
-                    }
-                },
-                {
-                    "question": "True or False: Jesus stated that the sign of Jonah will be given to this generation.",
+                    "question": "True or False: The Pharisees said that Jesus drove out demons by the power of God, but didn't understand how.",
                     "options": [
                         "True",
                         "False"
                     ],
                     "answer": {
-                        "index": 0,
-                        "text": "True",
+                        "index": 1,
+                        "text": "False",
+                        "verse": "Matthew 12:24"
+                    }
+                },
+                {
+                    "question": "To whom will be given the sign of the prophet Jonah?",
+                    "options": [
+                        "The discerning",
+                        "The devil",
+                        "This wicked generation",
+                        "Jesus' disciples"
+                    ],
+                    "answer": {
+                        "index": 2,
+                        "text": "This wicked generation",
                         "verse": "Matthew 12:39"
                     }
                 }
@@ -574,8 +574,8 @@
                     "question": "Which of these was NOT a place where the seed fell in the parable of the sower?",
                     "options": [
                         "Among thorns",
-                        "On rocky places",
-                        "In a fertile field",
+                        "On rocky ground",
+                        "On good soil",
                         "In a desert"
                     ],
                     "answer": {
@@ -637,14 +637,14 @@
                 {
                     "question": "Who accused Jesus’ disciples of breaking the tradition of the elders?",
                     "options": [
-                        "Pharisees and teachers of the law",
+                        "Pharisees and scribes",
                         "Zealots",
-                        "Essenes",
-                        "Sadducees"
+                        "A Roman cohort",
+                        "Sadducees and chief priests"
                     ],
                     "answer": {
                         "index": 0,
-                        "text": "Pharisees and teachers of the law",
+                        "text": "Pharisees and scribes",
                         "verse": "Matthew 15:2"
                     }
                 },
@@ -661,7 +661,7 @@
                     }
                 },
                 {
-                    "question": "What did Jesus feed the four thousand men, besides women and children, with?",
+                    "question": "With what did Jesus feed the four thousand men (besides the women and children)?",
                     "options": [
                         "Five loaves of bread and two fish",
                         "Seven loaves of bread and a few small fish",
@@ -680,7 +680,7 @@
             "chapter": "16",
             "questions": [
                 {
-                    "question": "Who declared Jesus to be 'the Messiah, the Son of the living God'?",
+                    "question": "Who declared Jesus to be 'the Christ, the Son of the living God'?",
                     "options": [
                         "Peter",
                         "John",
@@ -694,7 +694,7 @@
                     }
                 },
                 {
-                    "question": "True or False: Jesus praised Peter’s declaration and referred to him as a rock on which He will build His church.",
+                    "question": "True or False: Jesus praised Peter’s declaration and referred to him as a rock on which He would build His church.",
                     "options": [
                         "True",
                         "False"
@@ -709,9 +709,9 @@
                     "question": "What did Jesus begin to show his disciples after Peter's declaration?",
                     "options": [
                         "His wealth",
-                        "His plan to build a physical church",
-                        "He must go to Jerusalem and suffer",
-                        "He will become a king"
+                        "His plans to build a church building",
+                        "That he had to go to Jerusalem and suffer",
+                        "That he would lead an army to overthrow Rome"
                     ],
                     "answer": {
                         "index": 2,
@@ -730,7 +730,7 @@
                         "Moses and Elijah",
                         "Abraham and Isaac",
                         "David and Solomon",
-                        "Adam and Noah"
+                        "Shane and Shane"
                     ],
                     "answer": {
                         "index": 0,
@@ -739,7 +739,19 @@
                     }
                 },
                 {
-                    "question": "True or False: The disciples were frightened when they heard the voice from the cloud during the transfiguration.",
+                    "question": "True or False: The disciples felt peaceful when they heard the voice from the cloud during the transfiguration.",
+                    "options": [
+                        "True",
+                        "False"
+                    ],
+                    "answer": {
+                        "index": 1,
+                        "text": "False",
+                        "verse": "Matthew 17:6"
+                    }
+                },
+                {
+                    "question": "True or False: Jesus instructed Peter to find a coin in the mouth of a fish to pay the temple tax.",
                     "options": [
                         "True",
                         "False"
@@ -747,20 +759,6 @@
                     "answer": {
                         "index": 0,
                         "text": "True",
-                        "verse": "Matthew 17:6"
-                    }
-                },
-                {
-                    "question": "Who did Jesus say would pay the temple tax for Him and Peter?",
-                    "options": [
-                        "A fish",
-                        "A tax collector",
-                        "A rich young man",
-                        "A Roman soldier"
-                    ],
-                    "answer": {
-                        "index": 0,
-                        "text": "A fish",
                         "verse": "Matthew 17:27"
                     }
                 }
@@ -772,41 +770,41 @@
                 {
                     "question": "Who is the greatest in the kingdom of heaven according to Jesus?",
                     "options": [
-                        "A humble child",
-                        "A wise elder",
-                        "A rich man",
-                        "A Jewish priest"
+                        "Whoever joins a Jewish revolt against the Romans",
+                        "The wealthiest people",
+                        "A priest",
+                        "Whoever humbles himself, becoming like a child"
                     ],
                     "answer": {
-                        "index": 0,
-                        "text": "A humble child",
+                        "index": 3,
+                        "text": "Whoever humbles himself, becoming like a child",
                         "verse": "Matthew 18:4"
                     }
                 },
                 {
                     "question": "What does Jesus say about a shepherd with a lost sheep?",
                     "options": [
-                        "He leaves the ninety-nine in the mountains to go search for the one that wandered off",
+                        "He leaves the ninety-nine on the mountains to go search for the one that wandered off",
                         "He ignores the one and stays with the ninety-nine",
                         "He hires someone to find the lost sheep",
                         "He sacrifices the one to protect the ninety-nine"
                     ],
                     "answer": {
                         "index": 0,
-                        "text": "He leaves the ninety-nine in the mountains to go search for the one that wandered off",
+                        "text": "He leaves the ninety-nine on the mountains to go search for the one that wandered off",
                         "verse": "Matthew 18:12"
                     }
                 },
                 {
-                    "question": "True or False: Jesus instructs to forgive a brother or sister who sins against you seventy-seven times.",
+                    "question": "True or False: If you've been forgiven a great debt, it's okay to not forgive other people.",
                     "options": [
                         "True",
                         "False"
                     ],
                     "answer": {
-                        "index": 0,
-                        "text": "True",
-                        "verse": "Matthew 18:22"
+                        "index": 1,
+                        "text": "False",
+                        "verse": "Matthew 18:21-35"
                     }
                 }
             ]
@@ -841,7 +839,7 @@
                     }
                 },
                 {
-                    "question": "What did Jesus say was necessary to gain eternal life?",
+                    "question": "What did Jesus say was necessary to have eternal life?",
                     "options": [
                         "Keeping the commandments",
                         "Becoming wealthy",
@@ -860,7 +858,7 @@
             "chapter": "20",
             "questions": [
                 {
-                    "question": "In the parable of the workers in the vineyard, what did the landowner pay each worker?",
+                    "question": "In the parable of the laborers in the vineyard, what did the master pay each worker?",
                     "options": [
                         "One denarius",
                         "Two denarii",
@@ -874,7 +872,7 @@
                     }
                 },
                 {
-                    "question": "True or False: James and John asked Jesus for seats at His right and left in His kingdom.",
+                    "question": "True or False: The workers who were hired first were paid more than the workers who were hired last.",
                     "options": [
                         "True",
                         "False"
@@ -882,21 +880,21 @@
                     "answer": {
                         "index": 1,
                         "text": "False",
-                        "verse": "Matthew 20:20"
+                        "verse": "Matthew 20:10"
                     }
                 },
                 {
-                    "question": "What did Jesus say about rulers and those who are great among His followers?",
+                    "question": "Who requested that her sons sit at Jesus' right and left in his kingdom?",
                     "options": [
-                        "They must be served by others",
-                        "They must become servants",
-                        "They must be honored",
-                        "They must govern with authority"
+                        "Mary",
+                        "The mother of Zebedee’s sons",
+                        "Martha",
+                        "Elizabeth"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "They must become servants",
-                        "verse": "Matthew 20:26"
+                        "text": "The mother of Zebedee’s sons",
+                        "verse": "Matthew 20:20-21"
                     }
                 }
             ]
@@ -907,19 +905,19 @@
                 {
                     "question": "What did Jesus ride into Jerusalem?",
                     "options": [
+                        "A camel",
                         "A horse",
                         "A donkey",
-                        "A camel",
-                        "A chariot"
+                        "An elephant"
                     ],
                     "answer": {
-                        "index": 1,
+                        "index": 2,
                         "text": "A donkey",
                         "verse": "Matthew 21:5"
                     }
                 },
                 {
-                    "question": "True or False: The fig tree that Jesus cursed withered at once.",
+                    "question": "True or False: Jesus overturned the tables of the money changers in the temple.",
                     "options": [
                         "True",
                         "False"
@@ -927,21 +925,21 @@
                     "answer": {
                         "index": 0,
                         "text": "True",
-                        "verse": "Matthew 21:19"
+                        "verse": "Matthew 21:12"
                     }
                 },
                 {
-                    "question": "Which group of people tried to trap Jesus with their questions?",
+                    "question": "Which group was indignant at the wonderful things Jesus did and the children shouting in the temple courts?",
                     "options": [
-                        "Pharisees",
-                        "Sadducees",
-                        "Essenes",
-                        "Zealots"
+                        "The chief priests and the teachers of the law",
+                        "The disciples",
+                        "The Romans",
+                        "The Sadducees"
                     ],
                     "answer": {
                         "index": 0,
-                        "text": "Pharisees",
-                        "verse": "Matthew 21:24-27"
+                        "text": "The chief priests and the teachers of the law",
+                        "verse": "Matthew 21:15"
                     }
                 }
             ]
@@ -950,21 +948,21 @@
             "chapter": "22",
             "questions": [
                 {
-                    "question": "In the parable of the wedding banquet, who were invited first?",
+                    "question": "What did the king do to those who ignored his wedding banquet invitation for his son?",
                     "options": [
-                        "The poor",
-                        "The rich",
-                        "The king's subjects",
-                        "The neighboring nations"
+                        "He invited them again",
+                        "He praised them",
+                        "He destroyed them and their city",
+                        "He ignored them"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "The king's subjects",
-                        "verse": "Matthew 22:3"
+                        "text": "He destroyed them and their city",
+                        "verse": "Matthew 22:7"
                     }
                 },
                 {
-                    "question": "True or False: Jesus said that the Pharisees knew the Scriptures and the power of God.",
+                    "question": "True or False: The Pharisees asked Jesus genuine questions to better understand his message.",
                     "options": [
                         "True",
                         "False"
@@ -972,21 +970,21 @@
                     "answer": {
                         "index": 1,
                         "text": "False",
-                        "verse": "Matthew 22:29"
+                        "verse": "Matthew 22:15"
                     }
                 },
                 {
-                    "question": "Which commandment did Jesus say was the greatest?",
+                    "question": "Which commandment did Jesus say is the greatest?",
                     "options": [
-                        "Honor your father and mother",
-                        "Do not murder",
-                        "Love your neighbor as yourself",
-                        "You shall have no other gods before me"
+                        "Do not take the Lord's name in vain",
+                        "Keep the Sabbath day holy",
+                        "Love the Lord your God with all your heart",
+                        "Do not commit adultery"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "Love your neighbor as yourself",
-                        "verse": "Matthew 22:39"
+                        "text": "Love the Lord your God with all your heart",
+                        "verse": "Matthew 22:37-38"
                     }
                 }
             ]
@@ -1054,21 +1052,7 @@
                     }
                 },
                 {
-                    "question": "What will happen to the sun, moon, and stars during the tribulation period?",
-                    "options": [
-                        "They will shine brighter",
-                        "They will fall from the sky",
-                        "The sun will be darkened, and the moon will not give its light; the stars will fall from the sky",
-                        "They will remain the same"
-                    ],
-                    "answer": {
-                        "index": 2,
-                        "text": "The sun will be darkened, and the moon will not give its light; the stars will fall from the sky",
-                        "verse": "Matthew 24:29"
-                    }
-                },
-                {
-                    "question": "True or False: The Son of Man will come at an hour when you do not expect him.",
+                    "question": "True or False: Jesus warned of false prophets who will appear and deceive many people.",
                     "options": [
                         "True",
                         "False"
@@ -1076,7 +1060,21 @@
                     "answer": {
                         "index": 0,
                         "text": "True",
-                        "verse": "Matthew 24:44"
+                        "verse": "Matthew 24:11"
+                    }
+                },
+                {
+                    "question": "What will immediately follow the days of tribulation?",
+                    "options": [
+                        "The sun will be darkened, and the moon will not give its light",
+                        "There will be a great feast",
+                        "Nothing special will happen",
+                        "The stars will shine brighter"
+                    ],
+                    "answer": {
+                        "index": 0,
+                        "text": "The sun will be darkened, and the moon will not give its light",
+                        "verse": "Matthew 24:29"
                     }
                 }
             ]
@@ -1087,10 +1085,10 @@
                 {
                     "question": "In the parable of the ten virgins, what differentiated the wise virgins from the foolish ones?",
                     "options": [
-                        "Their clothing",
-                        "Their lamps",
+                        "Extra sandals",
+                        "They stayed awake",
                         "Bringing extra oil",
-                        "Praying more"
+                        "Having a map"
                     ],
                     "answer": {
                         "index": 2,
@@ -1099,16 +1097,16 @@
                     }
                 },
                 {
-                    "question": "What does the man going on a journey give his servants in the parable?",
+                    "question": "What does the man going on a journey give to his servants in the parable?",
                     "options": [
                         "Sheep",
-                        "Bags of gold",
+                        "Talents",
                         "Jars of oil",
-                        "Candles"
+                        "The vineyard"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "Bags of gold",
+                        "text": "Talents",
                         "verse": "Matthew 25:15"
                     }
                 },
@@ -1149,7 +1147,7 @@
                         "Protect Jesus",
                         "Betray Jesus",
                         "Defend Jesus",
-                        "Follow Jesus"
+                        "Kill Jesus"
                     ],
                     "answer": {
                         "index": 1,
@@ -1178,9 +1176,9 @@
                     "question": "What did Judas do with the thirty pieces of silver after Jesus was condemned?",
                     "options": [
                         "He kept them",
-                        "He bought a field",
+                        "He buried them",
                         "He threw them into the temple",
-                        "He donated them"
+                        "He bought a house"
                     ],
                     "answer": {
                         "index": 2,
@@ -1189,7 +1187,21 @@
                     }
                 },
                 {
-                    "question": "True or False: Pilate tried to persuade the crowd to release Jesus.",
+                    "question": "Who was released instead of Jesus?",
+                    "options": [
+                        "Barabbas",
+                        "Simon",
+                        "Nicodemus",
+                        "Lazarus"
+                    ],
+                    "answer": {
+                        "index": 0,
+                        "text": "Barabbas",
+                        "verse": "Matthew 27:21-26"
+                    }
+                },
+                {
+                    "question": "True or False: The soldiers put a robe on Jesus and said, 'Hail, king of the Jews!'",
                     "options": [
                         "True",
                         "False"
@@ -1197,21 +1209,7 @@
                     "answer": {
                         "index": 0,
                         "text": "True",
-                        "verse": "Matthew 27:20-23"
-                    }
-                },
-                {
-                    "question": "What was put above Jesus’ head on the cross?",
-                    "options": [
-                        "A crown of thorns",
-                        "A sign stating 'This is Jesus, the King of the Jews.'",
-                        "A sign stating 'This is Jesus, the prophet.'",
-                        "A sign stating 'This is Jesus, the savior of the world.'"
-                    ],
-                    "answer": {
-                        "index": 1,
-                        "text": "A sign stating 'This is Jesus, the King of the Jews.'",
-                        "verse": "Matthew 27:37"
+                        "verse": "Matthew 27:28-29"
                     }
                 }
             ]
@@ -1220,11 +1218,11 @@
             "chapter": "28",
             "questions": [
                 {
-                    "question": "Who went to look at the tomb the first day of the week?",
+                    "question": "Who first went to the tomb on the first day of the week?",
                     "options": [
                         "Mary Magdalene and the other Mary",
-                        "Peter and John",
-                        "Judas and Peter",
+                        "Peter and Matthew",
+                        "John and Phillip",
                         "Nicodemus and Joseph of Arimathea"
                     ],
                     "answer": {
@@ -1234,7 +1232,7 @@
                     }
                 },
                 {
-                    "question": "True or False: The angel rolled back the stone from the tomb's entrance and sat on it.",
+                    "question": "True or False: The angel told the women that Jesus had risen from the dead.",
                     "options": [
                         "True",
                         "False"
@@ -1242,7 +1240,7 @@
                     "answer": {
                         "index": 0,
                         "text": "True",
-                        "verse": "Matthew 28:2"
+                        "verse": "Matthew 28:5-7"
                     }
                 },
                 {
