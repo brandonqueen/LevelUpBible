@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, StatusBar } from "react-native";
+import { StyleSheet, SafeAreaView, StatusBar, Platform } from "react-native";
 import { PaperProvider } from "react-native-paper";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
@@ -16,7 +16,7 @@ const App = () => {
 				<PaperProvider>
 					<SafeAreaView style={styles.root}>
 						<BottomTabs />
-						<StatusBar barStyle="light-content" />
+						<StatusBar backgroundColor="#161e39" barStyle="light-content" />
 					</SafeAreaView>
 				</PaperProvider>
 			</PersistGate>

@@ -37,6 +37,12 @@
     },
     "updates": {
       "url": "https://u.expo.dev/8a051174-aeb3-4c13-889f-6f1ebafb2339"
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#000000"
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#000000"
     }
   }
 }
