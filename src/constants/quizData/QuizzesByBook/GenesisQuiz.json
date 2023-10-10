@@ -1590,45 +1590,43 @@
             "chapter": "36",
             "questions": [
                 {
-                    "question": "What other name was Esau known by in Genesis 36?",
+                    "question": "Who is Esau also known as?",
                     "options": [
+                        "Israel",
                         "Edom",
                         "Jacob",
-                        "Israel",
-                        "Abraham"
+                        "Isaac"
                     ],
                     "answer": {
-                        "index": 0,
+                        "index": 1,
                         "text": "Edom",
                         "verse": "Genesis 36:1"
                     }
                 },
                 {
-                    "question": "How many wives did Esau have in Genesis 36?",
+                    "question": "True or False: Esau took his wives, sons, and daughters and moved away from his brother Jacob.",
                     "options": [
-                        "One",
-                        "Two",
-                        "Three",
-                        "Four"
+                        "True",
+                        "False"
                     ],
                     "answer": {
-                        "index": 3,
-                        "text": "Four",
-                        "verse": "Genesis 36:2"
+                        "index": 0,
+                        "text": "True",
+                        "verse": "Genesis 36:6"
                     }
                 },
                 {
-                    "question": "What was the name of Esau's daughter in Genesis 36?",
+                    "question": "Who is NOT listed as a son of Esau?",
                     "options": [
-                        "Leah",
-                        "Rachel",
-                        "Dinah",
-                        "Oholibamah"
+                        "Eliphaz",
+                        "Reuel",
+                        "Joseph",
+                        "Jeush"
                     ],
                     "answer": {
-                        "index": 3,
-                        "text": "Oholibamah",
-                        "verse": "Genesis 36:3"
+                        "index": 2,
+                        "text": "Joseph",
+                        "verse": "Genesis 36:4-5"
                     }
                 }
             ]
@@ -1639,14 +1637,14 @@
                 {
                     "question": "What special gift did Jacob give to his son Joseph in Genesis 37?",
                     "options": [
-                        "A coat of many colors",
                         "A golden crown",
                         "A silver staff",
+                        "A robe of many colors",
                         "A new name"
                     ],
                     "answer": {
-                        "index": 0,
-                        "text": "A coat of many colors",
+                        "index": 2,
+                        "text": "A robe of many colors",
                         "verse": "Genesis 37:3"
                     }
                 },
@@ -1654,27 +1652,25 @@
                     "question": "How did Joseph's brothers react when he told them about his dreams in Genesis 37?",
                     "options": [
                         "They were happy for him",
-                        "They were jealous and hated him",
+                        "They hated him",
                         "They ignored him",
                         "They laughed at him"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "They were jealous and hated him",
+                        "text": "They hated him",
                         "verse": "Genesis 37:4"
                     }
                 },
                 {
-                    "question": "What did Joseph's brothers do to him in Genesis 37?",
+                    "question": "True or False: Joseph's brothers sold him to some Midianite traders.",
                     "options": [
-                        "They sold him into slavery",
-                        "They gave him a gift",
-                        "They helped him achieve his dreams",
-                        "They threw a party for him"
+                        "True",
+                        "False"
                     ],
                     "answer": {
                         "index": 0,
-                        "text": "They sold him into slavery",
+                        "text": "True",
                         "verse": "Genesis 37:28"
                     }
                 }
@@ -1684,45 +1680,43 @@
             "chapter": "38",
             "questions": [
                 {
-                    "question": "What was the name of Judah's wife in Genesis 38?",
+                    "question": "Who is one of the main characters in Genesis 38?",
                     "options": [
-                        "Leah",
-                        "Rachel",
-                        "Tamar",
-                        "Dinah"
+                        "Jacob",
+                        "Joseph",
+                        "Judah",
+                        "Joshua"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "Tamar",
+                        "text": "Judah",
+                        "verse": "Genesis 38:1"
+                    }
+                },
+                {
+                    "question": "True or False: Tamar was married to Er, Judah's son.",
+                    "options": [
+                        "True",
+                        "False"
+                    ],
+                    "answer": {
+                        "index": 0,
+                        "text": "True",
                         "verse": "Genesis 38:6"
                     }
                 },
                 {
-                    "question": "How did Tamar deceive Judah into sleeping with her in Genesis 38?",
+                    "question": "Who did Tamar disguise herself to be?",
                     "options": [
-                        "She wore a disguise",
-                        "She pretended to be drunk",
-                        "She sent him a love letter",
-                        "She bribed him"
+                        "A prophetess",
+                        "A prostitute",
+                        "A merchant",
+                        "A slave"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "She pretended to be drunk",
-                        "verse": "Genesis 38:14-16"
-                    }
-                },
-                {
-                    "question": "What were the names of Tamar's twin sons by Judah in Genesis 38?",
-                    "options": [
-                        "Reuben and Simeon",
-                        "Perez and Zerah",
-                        "Joseph and Benjamin",
-                        "Asher and Naphtali"
-                    ],
-                    "answer": {
-                        "index": 1,
-                        "text": "Perez and Zerah",
-                        "verse": "Genesis 38:29"
+                        "text": "A prostitute",
+                        "verse": "Genesis 38:14-15"
                     }
                 }
             ]
@@ -1731,16 +1725,28 @@
             "chapter": "39",
             "questions": [
                 {
+                    "question": "True or False: Although the LORD was with Joseph, he did not prosper in Potiphar's house.",
+                    "options": [
+                        "True",
+                        "False"
+                    ],
+                    "answer": {
+                        "index": 1,
+                        "text": "False",
+                        "verse": "Genesis 39:2"
+                    }
+                },
+                {
                     "question": "What position did Joseph hold in Potiphar's house in Genesis 39?",
                     "options": [
-                        "Chief baker",
-                        "Chief cupbearer",
-                        "Chief steward",
-                        "Chief slave"
+                        "Cook",
+                        "Farmer",
+                        "Overseer",
+                        "Babysitter"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "Chief steward",
+                        "text": "Overseer",
                         "verse": "Genesis 39:4"
                     }
                 },
@@ -1750,24 +1756,12 @@
                         "Theft",
                         "Murder",
                         "Adultery",
-                        "Rebellion"
+                        "Lying"
                     ],
                     "answer": {
                         "index": 2,
                         "text": "Adultery",
                         "verse": "Genesis 39:7-20"
-                    }
-                },
-                {
-                    "question": "True or False: Joseph accurately interpreted the dreams of Pharaoh's cupbearer and baker while in prison.",
-                    "options": [
-                        "True",
-                        "False"
-                    ],
-                    "answer": {
-                        "index": 0,
-                        "text": "True",
-                        "verse": "Genesis 40:5-23"
                     }
                 }
             ]
@@ -1776,45 +1770,43 @@
             "chapter": "40",
             "questions": [
                 {
-                    "question": "What did Pharaoh's cupbearer promise to do for Joseph after he was released from prison in Genesis 40?",
+                    "question": "Where was Joseph when he interpreted the dreams of the cupbearer and the baker?",
                     "options": [
-                        "He promised to make Joseph his chief steward",
-                        "He promised to get Joseph a pardon",
-                        "He promised to find Joseph's family",
-                        "He promised to make Joseph a wealthy man"
-                    ],
-                    "answer": {
-                        "index": 1,
-                        "text": "He promised to get Joseph a pardon",
-                        "verse": "Genesis 40:14-15"
-                    }
-                },
-                {
-                    "question": "What did Pharaoh's baker dream in Genesis 40?",
-                    "options": [
-                        "A vine with three branches",
-                        "A ladder to heaven",
-                        "A river with flowing water",
-                        "A field of grain"
-                    ],
-                    "answer": {
-                        "index": 0,
-                        "text": "A vine with three branches",
-                        "verse": "Genesis 40:9-10"
-                    }
-                },
-                {
-                    "question": "What was the outcome of the dreams of the cupbearer and the baker in Genesis 40?",
-                    "options": [
-                        "Both dreams were favorable",
-                        "Both dreams were unfavorable",
-                        "The cupbearer's dream was favorable, and the baker's dream was unfavorable",
-                        "The cupbearer's dream was unfavorable, and the baker's dream was favorable"
+                        "In Potiphar's house",
+                        "In the palace",
+                        "In the prison",
+                        "In his father's tent"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "The cupbearer's dream was favorable, and the baker's dream was unfavorable",
-                        "verse": "Genesis 40:16-22"
+                        "text": "In the prison",
+                        "verse": "Genesis 40:3"
+                    }
+                },
+                {
+                    "question": "True or False: The baker and the cupbearer had their dreams on the same night.",
+                    "options": [
+                        "True",
+                        "False"
+                    ],
+                    "answer": {
+                        "index": 0,
+                        "text": "True",
+                        "verse": "Genesis 40:5"
+                    }
+                },
+                {
+                    "question": "What was the fate of the chief baker?",
+                    "options": [
+                        "Restored to his position",
+                        "Executed",
+                        "Promoted",
+                        "Exiled"
+                    ],
+                    "answer": {
+                        "index": 1,
+                        "text": "Executed",
+                        "verse": "Genesis 40:22"
                     }
                 }
             ]
@@ -1823,47 +1815,45 @@
             "chapter": "41",
             "questions": [
                 {
-                    "question": "What did Pharaoh dream about in Genesis 41?",
+                    "question": "In Genesis 41, who had two dreams that troubled him?",
                     "options": [
-                        "Seven cows and seven bulls",
-                        "Seven stars and seven moons",
-                        "Seven baskets of bread",
-                        "Seven years of plenty and seven years of famine"
+                        "Joseph",
+                        "Jacob",
+                        "Pharaoh",
+                        "Potiphar"
                     ],
                     "answer": {
-                        "index": 3,
-                        "text": "Seven years of plenty and seven years of famine",
+                        "index": 2,
+                        "text": "Pharaoh",
                         "verse": "Genesis 41:1-7"
                     }
                 },
                 {
-                    "question": "Who interpreted Pharaoh's dreams in Genesis 41?",
+                    "question": "True or False: Pharaoh was displeased with Joseph and sought to put him to death.",
                     "options": [
-                        "Joseph",
-                        "Potiphar",
-                        "Jacob",
-                        "Pharaoh's magicians"
+                        "True",
+                        "False"
                     ],
                     "answer": {
-                        "index": 0,
-                        "text": "Joseph",
-                        "verse": "Genesis 41:25-26"
+                        "index": 1,
+                        "text": "False",
+                        "verse": "Genesis 41:41-45"
                     }
                 },
                 {
-                    "question": "What position did Pharaoh appoint Joseph to in Genesis 41?",
+                    "question": "How many years of famine did Joseph predict?",
                     "options": [
-                        "Chief baker",
-                        "Chief cupbearer",
-                        "Chief steward",
-                        "Second-in-command of Egypt"
+                        "7",
+                        "14",
+                        "10",
+                        "3"
                     ],
                     "answer": {
-                        "index": 3,
-                        "text": "Second-in-command of Egypt",
-                        "verse": "Genesis 41:41-43"
+                        "index": 0,
+                        "text": "7",
+                        "verse": "Genesis 41:27"
                     }
-                }
+                }        
             ]
         },
         {
@@ -1884,29 +1874,27 @@
                     }
                 },
                 {
-                    "question": "How did Joseph test his brothers when they came to Egypt in Genesis 42?",
+                    "question": "True or False: Joseph’s brothers recognized him when they saw him in Egypt.",
                     "options": [
-                        "He accused them of theft",
-                        "He asked about their father and brother",
-                        "He demanded a large sum of money",
-                        "He challenged them to a wrestling match"
+                        "True",
+                        "False"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "He asked about their father and brother",
-                        "verse": "Genesis 42:13-15"
+                        "text": "False",
+                        "verse": "Genesis 42:8"
                     }
                 },
                 {
                     "question": "Which of Joseph's brothers was kept in Egypt by Joseph in Genesis 42?",
                     "options": [
-                        "Simeon",
                         "Reuben",
                         "Judah",
+                        "Simeon",
                         "Benjamin"
                     ],
                     "answer": {
-                        "index": 0,
+                        "index": 2,
                         "text": "Simeon",
                         "verse": "Genesis 42:24"
                     }
@@ -1917,45 +1905,43 @@
             "chapter": "43",
             "questions": [
                 {
-                    "question": "Why did Jacob agree to send Benjamin to Egypt in Genesis 43?",
+                    "question": "Who persuaded Jacob to send Benjamin to Egypt with the brothers?",
                     "options": [
-                        "To buy more grain",
-                        "To find a wife",
-                        "To visit Joseph",
-                        "To escape a famine"
-                    ],
-                    "answer": {
-                        "index": 0,
-                        "text": "To buy more grain",
-                        "verse": "Genesis 43:2-3"
-                    }
-                },
-                {
-                    "question": "What gift did Jacob send to Joseph in Egypt in Genesis 43?",
-                    "options": [
-                        "Gold and silver",
-                        "A fine robe",
-                        "Honey and spices",
-                        "A coat of many colors"
+                        "Reuben",
+                        "Levi",
+                        "Judah",
+                        "Simeon"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "Honey and spices",
-                        "verse": "Genesis 43:11"
+                        "text": "Judah",
+                        "verse": "Genesis 43:8-9"
                     }
                 },
                 {
-                    "question": "How did Joseph's brothers react when they found the money they had paid for the grain in their sacks in Genesis 43?",
+                    "question": "True or False: Joseph invited his brothers to eat at his own house.",
                     "options": [
-                        "They accused the Egyptian officials of theft",
-                        "They were terrified and confused",
-                        "They rejoiced and thanked God",
-                        "They demanded a refund"
+                        "True",
+                        "False"
+                    ],
+                    "answer": {
+                        "index": 0,
+                        "text": "True",
+                        "verse": "Genesis 43:16"
+                    }
+                },
+                {
+                    "question": "What did the brothers feel when they were invited into Joseph's house?",
+                    "options": [
+                        "Joyful",
+                        "Afraid",
+                        "Angry",
+                        "Indifferent"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "They were terrified and confused",
-                        "verse": "Genesis 43:18-23"
+                        "text": "Afraid",
+                        "verse": "Genesis 43:18"
                     }
                 }
             ]
@@ -1980,15 +1966,15 @@
                 {
                     "question": "How did Joseph's brothers react when the silver cup was found in Benjamin's sack in Genesis 44?",
                     "options": [
-                        "They accused Benjamin of theft",
-                        "They denied any wrongdoing",
+                        "They threatened to beat Benjamin",
+                        "They tore their clothes and returned to the city",
                         "They blamed Joseph for setting them up",
-                        "They confessed to the theft"
+                        "They tried to run away"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "They denied any wrongdoing",
-                        "verse": "Genesis 44:9-10"
+                        "text": "They tore their clothes and returned to the city",
+                        "verse": "Genesis 44:12-13"
                     }
                 },
                 {
@@ -2021,7 +2007,7 @@
                     "answer": {
                         "index": 3,
                         "text": "He wept and embraced them",
-                        "verse": "Genesis 45:1-2"
+                        "verse": "Genesis 45:1-15"
                     }
                 },
                 {
@@ -2049,7 +2035,7 @@
                     "answer": {
                         "index": 1,
                         "text": "That he was alive and well in Egypt",
-                        "verse": "Genesis 45:26-27"
+                        "verse": "Genesis 45:13, 26-27"
                     }
                 }
             ]
@@ -2058,45 +2044,43 @@
             "chapter": "46",
             "questions": [
                 {
-                    "question": "What did God tell Jacob in a vision when he went to Egypt in Genesis 46?",
+                    "question": "Who reassured Jacob not to be afraid to go down to Egypt?",
                     "options": [
-                        "To return to Canaan immediately",
-                        "To stay in Egypt and prosper",
-                        "To be cautious of Pharaoh's plans",
-                        "To take all his possessions with him"
+                        "Joseph",
+                        "Isaac",
+                        "God",
+                        "Pharaoh"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "To be cautious of Pharaoh's plans",
-                        "verse": "Genesis 46:3-4"
+                        "text": "God",
+                        "verse": "Genesis 46:3"
                     }
                 },
                 {
-                    "question": "How many of Jacob's family members went to Egypt with him in Genesis 46?",
+                    "question": "True or False: All the persons of the house of Jacob who came into Egypt were seventy.",
                     "options": [
-                        "70",
-                        "100",
-                        "12",
-                        "40"
+                        "True",
+                        "False"
                     ],
                     "answer": {
                         "index": 0,
-                        "text": "70",
+                        "text": "True",
                         "verse": "Genesis 46:27"
                     }
                 },
                 {
-                    "question": "What land in Egypt did Pharaoh assign to Jacob's family in Genesis 46?",
+                    "question": "Who was sent ahead to Joseph to get directions to Goshen?",
                     "options": [
-                        "The land of Goshen",
-                        "The land of the Nile Delta",
-                        "The land of the pyramids",
-                        "The land of the pharaohs"
+                        "Judah",
+                        "Reuben",
+                        "Levi",
+                        "Benjamin"
                     ],
                     "answer": {
                         "index": 0,
-                        "text": "The land of Goshen",
-                        "verse": "Genesis 46:28-29"
+                        "text": "Judah",
+                        "verse": "Genesis 46:28"
                     }
                 }
             ]
@@ -2104,6 +2088,32 @@
         {
             "chapter": "47",
             "questions": [
+                {
+                    "question": "Whom did Joseph present to Pharaoh from his family?",
+                    "options": [
+                        "His brothers",
+                        "His sisters",
+                        "His sons",
+                        "His daughters"
+                    ],
+                    "answer": {
+                        "index": 0,
+                        "text": "His brothers",
+                        "verse": "Genesis 47:2"
+                    }
+                },
+                {
+                    "question": "True or False: Pharaoh gave Joseph’s family the best part of the land.",
+                    "options": [
+                        "True",
+                        "False"
+                    ],
+                    "answer": {
+                        "index": 0,
+                        "text": "True",
+                        "verse": "Genesis 47:11"
+                    }
+                },
                 {
                     "question": "What did Joseph do when the famine became severe in Egypt in Genesis 47?",
                     "options": [
@@ -2117,34 +2127,6 @@
                         "text": "He stored grain and sold it to the people",
                         "verse": "Genesis 47:13-14"
                     }
-                },
-                {
-                    "question": "What did Joseph require the people of Egypt to do in exchange for grain during the famine in Genesis 47?",
-                    "options": [
-                        "Pay with gold and silver",
-                        "Give up their livestock",
-                        "Offer their children as slaves",
-                        "Surrender their land to Pharaoh"
-                    ],
-                    "answer": {
-                        "index": 3,
-                        "text": "Surrender their land to Pharaoh",
-                        "verse": "Genesis 47:20-21"
-                    }
-                },
-                {
-                    "question": "How did Jacob bless Pharaoh in Genesis 47?",
-                    "options": [
-                        "He offered him a gift of livestock",
-                        "He prayed for him",
-                        "He bowed down to him",
-                        "He gave him valuable jewels"
-                    ],
-                    "answer": {
-                        "index": 2,
-                        "text": "He bowed down to him",
-                        "verse": "Genesis 47:7-10"
-                    }
                 }
             ]
         },
@@ -2152,7 +2134,7 @@
             "chapter": "48",
             "questions": [
                 {
-                    "question": "Who did Jacob bless as his firstborn in Genesis 48?",
+                    "question": "In Genesis 48, who did Jacob bless as he blessed his own firstborn?",
                     "options": [
                         "Reuben",
                         "Simeon",
@@ -2185,7 +2167,7 @@
                         "A new coat of many colors",
                         "A piece of land in Canaan",
                         "A gold crown",
-                        "A portion of his inheritance"
+                        "A large herd of animals"
                     ],
                     "answer": {
                         "index": 1,
@@ -2199,45 +2181,43 @@
             "chapter": "49",
             "questions": [
                 {
-                    "question": "What did Jacob prophesy about Judah in Genesis 49?",
+                    "question": "Who gathered his sons to tell them what will happen in the days to come?",
                     "options": [
-                        "That he would become a powerful ruler",
-                        "That his descendants would be numerous and respected",
-                        "That he would be a humble servant",
-                        "That he would be cursed and despised"
+                        "Joseph",
+                        "Jacob",
+                        "Isaac",
+                        "Judah"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "That his descendants would be numerous and respected",
-                        "verse": "Genesis 49:8-12"
+                        "text": "Jacob",
+                        "verse": "Genesis 49:1"
                     }
                 },
                 {
-                    "question": "What did Jacob predict about Dan in Genesis 49?",
+                    "question": "True or False: Jacob requested to be buried in Egypt.",
                     "options": [
-                        "That he would be a great warrior",
-                        "That he would be a wise ruler",
-                        "That he would be a skilled craftsman",
-                        "That he would be a serpent by the roadside"
+                        "True",
+                        "False"
                     ],
                     "answer": {
-                        "index": 3,
-                        "text": "That he would be a serpent by the roadside",
-                        "verse": "Genesis 49:16-17"
+                        "index": 1,
+                        "text": "False",
+                        "verse": "Genesis 49:29-30"
                     }
                 },
                 {
-                    "question": "What were Jacob's final instructions to his sons in Genesis 49?",
+                    "question": "Which of Jacob's sons did he refer to as a 'lion's cub'?",
                     "options": [
-                        "To divide his wealth equally",
-                        "To bury him in Egypt",
-                        "To seek revenge on their enemies",
-                        "To obey God and live in righteousness"
+                        "Benjamin",
+                        "Joseph",
+                        "Judah",
+                        "Reuben"
                     ],
                     "answer": {
-                        "index": 3,
-                        "text": "To obey God and live in righteousness",
-                        "verse": "Genesis 49:28"
+                        "index": 2,
+                        "text": "Judah",
+                        "verse": "Genesis 49:9"
                     }
                 }
             ]
@@ -2249,42 +2229,40 @@
                     "question": "Where was Jacob buried after his death in Genesis 50?",
                     "options": [
                         "In Egypt",
-                        "In Canaan",
+                        "In a grove of trees",
                         "In a pyramid",
-                        "In a cave"
+                        "In the cave of the field at Machpelah"
                     ],
                     "answer": {
-                        "index": 1,
-                        "text": "In Canaan",
+                        "index": 3,
+                        "text": "In the cave of the field at Machpelah",
                         "verse": "Genesis 50:13"
                     }
                 },
                 {
-                    "question": "How did Joseph's brothers react when they believed he might seek revenge after their father's death in Genesis 50?",
+                    "question": "True or False: Joseph’s brothers were afraid he would seek revenge after their father’s death.",
                     "options": [
-                        "They begged for his forgiveness",
-                        "They fled to a distant land",
-                        "They sent a message of reconciliation",
-                        "They offered themselves as slaves"
+                        "True",
+                        "False"
                     ],
                     "answer": {
-                        "index": 2,
-                        "text": "They sent a message of reconciliation",
-                        "verse": "Genesis 50:15-17"
+                        "index": 0,
+                        "text": "True",
+                        "verse": "Genesis 50:15"
                     }
                 },
                 {
-                    "question": "What did Joseph say to his brothers as a final reassurance in Genesis 50?",
+                    "question": "Where was Joseph buried?",
                     "options": [
-                        "He promised to share his wealth with them",
-                        "He reminded them of their evil deeds",
-                        "He forgave them and assured them of God's plan",
-                        "He challenged them to a wrestling match"
+                        "In Canaan",
+                        "In Egypt",
+                        "In Haran",
+                        "In Bethlehem"
                     ],
                     "answer": {
-                        "index": 2,
-                        "text": "He forgave them and assured them of God's plan",
-                        "verse": "Genesis 50:19-21"
+                        "index": 1,
+                        "text": "In Egypt",
+                        "verse": "Genesis 50:26"
                     }
                 }
             ]
