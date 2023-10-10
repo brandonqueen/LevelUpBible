@@ -320,6 +320,7 @@ const BibleScreen = () => {
 						<Text style={styles.heading}>{`${bookName} ${chapterNum}`}</Text>
 						<View style={styles.passageContainer}>
 							<Text
+								textBreakStrategy="simple"
 								style={
 									isCurrentChapterCompleted ? styles.textFinal : styles.text
 								}
@@ -329,7 +330,11 @@ const BibleScreen = () => {
 							{!isCurrentChapterCompleted &&
 								(highlightedText == [] ? null : (
 									<View style={styles.highlightTextContainer}>
-										<Text style={styles.highlightText}>{highlightedText}</Text>
+										<Text
+											textBreakStrategy="simple"
+											style={styles.highlightText}>
+											{highlightedText}
+										</Text>
 									</View>
 								))}
 						</View>
