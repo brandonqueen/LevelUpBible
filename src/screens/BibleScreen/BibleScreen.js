@@ -439,17 +439,6 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		paddingLeft: 8,
 	},
-	text: {
-		color: colors.text,
-		fontSize: 20,
-		fontWeight: "400",
-		letterSpacing: 0.3,
-		lineHeight: 32,
-		padding: 16,
-		position: "relative",
-		top: 0,
-		left: 0,
-	},
 	progressBarContainer: {
 		flex: 5,
 		alignItems: "center",
@@ -500,6 +489,17 @@ const styles = StyleSheet.create({
 	passageContainer: {
 		width: "100%",
 		flex: 0,
+	},
+	text: {
+		color: colors.text,
+		fontSize: 20,
+		fontWeight: "400",
+		letterSpacing: 0.3,
+		lineHeight: 32,
+		padding: 16,
+		position: "relative",
+		top: 0,
+		left: 0,
 	},
 	textFinal: {
 		color: colors.textHighlight,
