@@ -21,12 +21,12 @@
                     "options": [
                         "Plants",
                         "Animals",
-                        "Expanse",
+                        "An expanse",
                         "Man"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "Expanse",
+                        "text": "An expanse",
                         "verse": "Genesis 1:6-8"
                     }
                 },
@@ -64,7 +64,7 @@
                     }
                 },
                 {
-                    "question": "How many trees were in the Garden of Eden?",
+                    "question": "How many trees were described as being 'in the midst' of the garden?",
                     "options": [
                         "1 tree",
                         "2 trees",
@@ -84,8 +84,8 @@
                         "False"
                     ],
                     "answer": {
-                        "index": 0,
-                        "text": "True",
+                        "index": 1,
+                        "text": "False",
                         "verse": "Genesis 2:18"
                     }
                 }
@@ -112,7 +112,7 @@
                     "question": "What was the consequence of eating the forbidden fruit?",
                     "options": [
                         "Eternal life",
-                        "Knowledge of good and evil",
+                        "God started all over with new humans",
                         "Banishment from the garden",
                         "Nothing"
                     ],
@@ -168,10 +168,10 @@
                     }
                 },
                 {
-                    "question": "Who did God put a mark on to protect from vengeance after Cain's punishment?",
+                    "question": "On whom did God put a mark to protect from being attacked?",
                     "options": [
                         "Cain",
-                        "Abel",
+                        "Cain's son",
                         "Adam",
                         "Eve"
                     ],
@@ -187,16 +187,14 @@
             "chapter": "5",
             "questions": [
                 {
-                    "question": "How old was Adam when he became the father of Seth?",
+                    "question": "True or False: Adam had another son named Seth.",
                     "options": [
-                        "65 years old",
-                        "100 years old",
-                        "130 years old",
-                        "200 years old"
+                        "True",
+                        "False"
                     ],
                     "answer": {
-                        "index": 2,
-                        "text": "130 years old",
+                        "index": 0,
+                        "text": "True",
                         "verse": "Genesis 5:3"
                     }
                 },
@@ -215,17 +213,15 @@
                     }
                 },
                 {
-                    "question": "How many sons did Adam have in total?",
+                    "question": "True or False: Noah was NOT a descendant of Adam.",
                     "options": [
-                        "1 son",
-                        "2 sons",
-                        "3 sons",
-                        "4 sons"
+                        "True",
+                        "False"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "2 sons",
-                        "verse": "Genesis 5:4"
+                        "text": "False",
+                        "verse": "Genesis 5:29"
                     }
                 }
             ]
@@ -234,35 +230,7 @@
             "chapter": "6",
             "questions": [
                 {
-                    "question": "Why did God decide to flood the earth?",
-                    "options": [
-                        "Because people stopped believing in Him",
-                        "Because of the wickedness of humanity",
-                        "Because of a natural disaster",
-                        "Because He was angry with the animals"
-                    ],
-                    "answer": {
-                        "index": 1,
-                        "text": "Because of the wickedness of humanity",
-                        "verse": "Genesis 6:5-7"
-                    }
-                },
-                {
-                    "question": "How many of each clean animal did God instruct Noah to take on the ark?",
-                    "options": [
-                        "1 of each",
-                        "2 of each",
-                        "7 of each",
-                        "None"
-                    ],
-                    "answer": {
-                        "index": 2,
-                        "text": "7 of each",
-                        "verse": "Genesis 7:2"
-                    }
-                },
-                {
-                    "question": "True or False: The flood lasted for 40 days and 40 nights.",
+                    "question": "True or False: The chapter begins by describing an event between the sons of God and the daughters of men.",
                     "options": [
                         "True",
                         "False"
@@ -270,7 +238,35 @@
                     "answer": {
                         "index": 0,
                         "text": "True",
-                        "verse": "Genesis 7:12"
+                        "verse": "Genesis 6:1-2"
+                    }
+                },
+                {
+                    "question": "Why did God decide to bring a flood upon the earth?",
+                    "options": [
+                        "Because the earth was corrupt and filled with violence",
+                        "Because people were righteous",
+                        "To create rainbows",
+                        "None of the above"
+                    ],
+                    "answer": {
+                        "index": 0,
+                        "text": "Because the earth was corrupt and filled with violence",
+                        "verse": "Genesis 6:11-13"
+                    }
+                },
+                {
+                    "question": "What was the material God instructed Noah to use to build the ark?",
+                    "options": [
+                        "Oak",
+                        "Gopher wood",
+                        "Pine",
+                        "Cedar"
+                    ],
+                    "answer": {
+                        "index": 1,
+                        "text": "Gopher wood",
+                        "verse": "Genesis 6:14"
                     }
                 }
             ]
@@ -293,31 +289,29 @@
                     }
                 },
                 {
-                    "question": "How did the floodwaters subside?",
+                    "question": "How many pairs of clean animals did God command Noah to take into the ark?",
                     "options": [
-                        "They were absorbed by the ground",
-                        "God sent a drought",
-                        "God caused a wind to blow",
-                        "The ark got stuck on a mountain"
+                        "Two pairs",
+                        "Seven pairs",
+                        "Three pairs",
+                        "Four pairs"
                     ],
                     "answer": {
-                        "index": 2,
-                        "text": "God caused a wind to blow",
-                        "verse": "Genesis 8:1"
+                        "index": 1,
+                        "text": "Seven pairs",
+                        "verse": "Genesis 7:2"
                     }
                 },
                 {
-                    "question": "What did Noah send out to see if the waters had receded?",
+                    "question": "True or False: Noah was 600 years old when the flood waters came on the earth.",
                     "options": [
-                        "A dove",
-                        "A raven",
-                        "A hawk",
-                        "A seagull"
+                        "True",
+                        "False"
                     ],
                     "answer": {
                         "index": 0,
-                        "text": "A dove",
-                        "verse": "Genesis 8:8-9"
+                        "text": "True",
+                        "verse": "Genesis 7:6"
                     }
                 }
             ]
@@ -326,35 +320,21 @@
             "chapter": "8",
             "questions": [
                 {
-                    "question": "Where did the ark come to rest after the floodwaters receded?",
+                    "question": "What bird did Noah first send out to see if the waters had decreased?",
                     "options": [
-                        "On Mount Sinai",
-                        "On Mount Ararat",
-                        "On Mount Zion",
-                        "On Mount Nebo"
+                        "Dove",
+                        "Raven",
+                        "Sparrow",
+                        "Eagle"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "On Mount Ararat",
-                        "verse": "Genesis 8:4"
+                        "text": "Raven",
+                        "verse": "Genesis 8:7"
                     }
                 },
                 {
-                    "question": "What did Noah offer as a sacrifice to God after leaving the ark?",
-                    "options": [
-                        "A lamb",
-                        "A dove",
-                        "A calf",
-                        "A goat"
-                    ],
-                    "answer": {
-                        "index": 2,
-                        "text": "A calf",
-                        "verse": "Genesis 8:20"
-                    }
-                },
-                {
-                    "question": "True or False: God promised never to send another flood to destroy the earth again.",
+                    "question": "True or False: The dove brought back an olive leaf to Noah.",
                     "options": [
                         "True",
                         "False"
@@ -362,7 +342,21 @@
                     "answer": {
                         "index": 0,
                         "text": "True",
-                        "verse": "Genesis 9:11"
+                        "verse": "Genesis 8:11"
+                    }
+                },
+                {
+                    "question": "After leaving the ark, what was the first thing Noah did?",
+                    "options": [
+                        "Built a city",
+                        "Built an altar to the Lord",
+                        "Planted a vineyard",
+                        "Traveled to the east"
+                    ],
+                    "answer": {
+                        "index": 1,
+                        "text": "Built an altar to the Lord",
+                        "verse": "Genesis 8:20"
                     }
                 }
             ]
@@ -387,14 +381,14 @@
                 {
                     "question": "What did Noah plant after the flood?",
                     "options": [
-                        "Grapes",
-                        "Wheat",
                         "Olives",
+                        "Wheat",
+                        "A vineyard",
                         "Barley"
                     ],
                     "answer": {
                         "index": 3,
-                        "text": "Barley",
+                        "text": "A vineyard",
                         "verse": "Genesis 9:20"
                     }
                 },
@@ -418,45 +412,41 @@
             "chapter": "10",
             "questions": [
                 {
-                    "question": "What is the purpose of the genealogy listed in Genesis 10?",
+                    "question": "True or False: Genesis 10 traces Noah's descendants and the emergence of ancient nations.",
                     "options": [
-                        "To trace the lineage of Noah's descendants",
-                        "To describe the geography of ancient nations",
-                        "To identify the twelve tribes of Israel",
-                        "To list the kings of Babylon"
+                        "True",
+                        "False"
                     ],
                     "answer": {
-                        "index": 1,
-                        "text": "To describe the geography of ancient nations",
+                        "index": 0,
+                        "text": "True",
+                        "verse": "Genesis 10:32"
+                    }
+                },
+                {
+                    "question": "According to Genesis 10, when did Noah's sons start having sons?",
+                    "options": [
+                        "While they were in the ark",
+                        "Before the flood",
+                        "After the flood",
+                        "As soon as they were married"
+                    ],
+                    "answer": {
+                        "index": 2,
+                        "text": "After the flood",
                         "verse": "Genesis 10:1"
                     }
                 },
                 {
-                    "question": "Which of Noah's grandsons is mentioned as the father of the Canaanite nations?",
+                    "question": "True or False: In Genesis 10, Noah's sons are named as Seth, Ham, and Japheth.",
                     "options": [
-                        "Canaan",
-                        "Ham",
-                        "Shem",
-                        "Japheth"
+                        "True",
+                        "False"
                     ],
                     "answer": {
-                        "index": 0,
-                        "text": "Canaan",
-                        "verse": "Genesis 10:15-19"
-                    }
-                },
-                {
-                    "question": "How many sons did Japheth, one of Noah's sons, have?",
-                    "options": [
-                        "7 sons",
-                        "3 sons",
-                        "1 son",
-                        "No sons"
-                    ],
-                    "answer": {
-                        "index": 0,
-                        "text": "7 sons",
-                        "verse": "Genesis 10:2"
+                        "index": 1,
+                        "text": "False",
+                        "verse": "Genesis 10:1"
                     }
                 }
             ]
@@ -465,28 +455,28 @@
             "chapter": "11",
             "questions": [
                 {
-                    "question": "True or False: The people at the Tower of Babel spoke the same language.",
+                    "question": "True or False: At the beginning of the Tower of Babel story the people spoke the same language.",
                     "options": [
                         "True",
                         "False"
                     ],
                     "answer": {
-                        "index": 1,
-                        "text": "False",
+                        "index": 0,
+                        "text": "True",
                         "verse": "Genesis 11:1"
                     }
                 },
                 {
                     "question": "Why did the people want to build the Tower of Babel?",
                     "options": [
-                        "To reach the heavens",
-                        "To make a name for themselves",
-                        "To worship idols",
+                        "To reach the heavens and make a name for themselves",
+                        "Because the ground is lava",
+                        "Because the air is cooler up high",
                         "To escape God's judgment"
                     ],
                     "answer": {
-                        "index": 1,
-                        "text": "To make a name for themselves",
+                        "index": 0,
+                        "text": "To reach the heavens and make a name for themselves",
                         "verse": "Genesis 11:4"
                     }
                 },
@@ -510,7 +500,7 @@
             "chapter": "12",
             "questions": [
                 {
-                    "question": "True or False: God called Abram to leave his homeland and go to a place God would show him.",
+                    "question": "True or False: God called Abram to leave his homeland.",
                     "options": [
                         "True",
                         "False"
@@ -522,17 +512,17 @@
                     }
                 },
                 {
-                    "question": "What promise did God make to Abram (Abraham) in Genesis 12?",
+                    "question": "During the famine, where did Abram go to sojourn?",
                     "options": [
-                        "To make him a great king",
-                        "To give him many children",
-                        "To make his name great",
-                        "To provide a land for his descendants"
+                        "Canaan",
+                        "Jerusalem",
+                        "Egypt",
+                        "In a cave"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "To make his name great",
-                        "verse": "Genesis 12:2"
+                        "text": "Egypt",
+                        "verse": "Genesis 12:10"
                     }
                 },
                 {
@@ -557,19 +547,19 @@
                 {
                     "question": "What caused a dispute between Abram and Lot?",
                     "options": [
-                        "A disagreement over their wives",
-                        "A shortage of water for their flocks",
-                        "A dispute over land for their herds",
+                        "A disagreement between their wives",
+                        "A conflict about a well",
+                        "A dispute over land for their livestock",
                         "A conflict with neighboring tribes"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "A dispute over land for their herds",
+                        "text": "A dispute over land for their livestock",
                         "verse": "Genesis 13:6-7"
                     }
                 },
                 {
-                    "question": "True or False: Abram allowed Lot to choose the land he wanted, and Abram took what was left.",
+                    "question": "True or False: Abram allowed Lot to choose the land he wanted, and Abram would go the other way.",
                     "options": [
                         "True",
                         "False"
@@ -581,17 +571,17 @@
                     }
                 },
                 {
-                    "question": "Where did Lot choose to settle?",
+                    "question": "Where did Abram choose to settle?",
                     "options": [
                         "In the city of Sodom",
-                        "In the land of Canaan",
-                        "By the Jordan River",
+                        "By the oaks of Mamre",
+                        "Across the Jordan",
                         "In the wilderness"
                     ],
                     "answer": {
-                        "index": 0,
-                        "text": "In the city of Sodom",
-                        "verse": "Genesis 13:12"
+                        "index": 1,
+                        "text": "By the oaks of Mamre",
+                        "verse": "Genesis 13:18"
                     }
                 }
             ]
@@ -600,7 +590,7 @@
             "chapter": "14",
             "questions": [
                 {
-                    "question": "Who was the king of Sodom that Abram encountered?",
+                    "question": "Who was the king of Sodom?",
                     "options": [
                         "Bera",
                         "Melchizedek",
@@ -636,7 +626,7 @@
                     "answer": {
                         "index": 2,
                         "text": "Melchizedek",
-                        "verse": "Genesis 14:18-19"
+                        "verse": "Genesis 14:18-20"
                     }
                 }
             ]
