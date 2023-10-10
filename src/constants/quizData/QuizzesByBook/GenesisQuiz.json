@@ -1095,7 +1095,19 @@
             "chapter": "25",
             "questions": [
                 {
-                    "question": "True or False: Abraham had multiple wives and concubines.",
+                    "question": "True or False: Abraham was only married once.",
+                    "options": [
+                        "True",
+                        "False"
+                    ],
+                    "answer": {
+                        "index": 1,
+                        "text": "False",
+                        "verse": "Genesis 25:1"
+                    }
+                },
+                {
+                    "question": "True or False: Abraham left everything he owned to Isaac.",
                     "options": [
                         "True",
                         "False"
@@ -1103,33 +1115,21 @@
                     "answer": {
                         "index": 0,
                         "text": "True",
-                        "verse": "Genesis 25:6"
+                        "verse": "Genesis 25:5"
                     }
                 },
                 {
-                    "question": "What were the names of Abraham's sons by his wife Keturah in Genesis 25?",
+                    "question": "What was the first specific act of rivalry mentioned between Jacob and Esau?",
                     "options": [
-                        "Isaac and Ishmael",
-                        "Jacob and Esau",
-                        "Joseph and Benjamin",
-                        "Midian and Ishbak"
+                        "Jacob stole Esau's birthright",
+                        "Esau stole Jacob’s blessing",
+                        "Jacob was born holding onto Esau’s heel",
+                        "Esau sold his birthright to Jacob"
                     ],
                     "answer": {
-                        "index": 3,
-                        "text": "Midian and Ishbak",
-                        "verse": "Genesis 25:2"
-                    }
-                },
-                {
-                    "question": "True or False: Esau sold his birthright to Jacob for a bowl of stew.",
-                    "options": [
-                        "True",
-                        "False"
-                    ],
-                    "answer": {
-                        "index": 0,
-                        "text": "True",
-                        "verse": "Genesis 25:33"
+                        "index": 2,
+                        "text": "Jacob was born holding onto Esau’s heel",
+                        "verse": "Genesis 25:26"
                     }
                 }
             ]
@@ -1142,12 +1142,12 @@
                     "options": [
                         "Egypt",
                         "Canaan",
-                        "Philistia",
+                        "Gerar",
                         "Mesopotamia"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "Philistia",
+                        "text": "Gerar",
                         "verse": "Genesis 26:1"
                     }
                 },
@@ -1164,7 +1164,7 @@
                     }
                 },
                 {
-                    "question": "What did Isaac do in Philistia that led to conflicts with the local king and his people?",
+                    "question": "What did Isaac do in Gerar that led to conflicts with the people?",
                     "options": [
                         "He dug wells",
                         "He built altars",
@@ -1174,7 +1174,7 @@
                     "answer": {
                         "index": 0,
                         "text": "He dug wells",
-                        "verse": "Genesis 26:15-16"
+                        "verse": "Genesis 26:17-22"
                     }
                 }
             ]
@@ -1183,7 +1183,7 @@
             "chapter": "27",
             "questions": [
                 {
-                    "question": "What did Jacob disguise himself with to deceive his blind father Isaac in Genesis 27?",
+                    "question": "What did Jacob disguise himself with to deceive his aging father Isaac in Genesis 27?",
                     "options": [
                         "A mask",
                         "Esau's clothes and goat skins",
@@ -1197,17 +1197,17 @@
                     }
                 },
                 {
-                    "question": "What did Isaac mistakenly bless Jacob with in Genesis 27?",
+                    "question": "Who did Isaac mistakenly bless in Genesis 27?",
                     "options": [
-                        "Wealth and prosperity",
-                        "Many children",
-                        "Leadership of the family",
-                        "The birthright"
+                        "Esau",
+                        "Jacob",
+                        "Rebekah",
+                        "A servant"
                     ],
                     "answer": {
-                        "index": 0,
-                        "text": "Wealth and prosperity",
-                        "verse": "Genesis 27:28-29"
+                        "index": 1,
+                        "text": "Jacob",
+                        "verse": "Genesis 27:22-29"
                     }
                 },
                 {
@@ -1221,7 +1221,7 @@
                     "answer": {
                         "index": 1,
                         "text": "He wept bitterly and sought to kill Jacob",
-                        "verse": "Genesis 27:41"
+                        "verse": "Genesis 27:38-41"
                     }
                 }
             ]
@@ -1230,45 +1230,43 @@
             "chapter": "28",
             "questions": [
                 {
-                    "question": "Where did Jacob have a dream of a ladder reaching into heaven in Genesis 28?",
+                    "question": "Who did Isaac instruct Jacob not to marry from?",
                     "options": [
-                        "In his home",
-                        "In a cave",
-                        "In a field",
-                        "In a palace"
+                        "The Canaanite women",
+                        "The Egyptian women",
+                        "The Philistine women",
+                        "The Moabite women"
+                    ],
+                    "answer": {
+                        "index": 0,
+                        "text": "The Canaanite women",
+                        "verse": "Genesis 28:1"
+                    }
+                },
+                {
+                    "question": "On what did Jacob rest his head when he had the dream?",
+                    "options": [
+                        "A heap of sand",
+                        "His arm",
+                        "A stone",
+                        "A saddle"
                     ],
                     "answer": {
                         "index": 2,
-                        "text": "In a field",
-                        "verse": "Genesis 28:12"
+                        "text": "A stone",
+                        "verse": "Genesis 28:11"
                     }
                 },
                 {
-                    "question": "What did God promise to Jacob in the dream of the ladder?",
+                    "question": "True or False: Jacob had a dream about a tree reaching up to heaven.",
                     "options": [
-                        "Many riches and prosperity",
-                        "Numerous descendants",
-                        "Leadership of a great nation",
-                        "Eternal life"
+                        "True",
+                        "False"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "Numerous descendants",
-                        "verse": "Genesis 28:13-14"
-                    }
-                },
-                {
-                    "question": "Where did Jacob go after his dream in Genesis 28?",
-                    "options": [
-                        "He returned to his home",
-                        "He went to Egypt",
-                        "He stayed in the field",
-                        "He went to Laban's house in Haran"
-                    ],
-                    "answer": {
-                        "index": 3,
-                        "text": "He went to Laban's house in Haran",
-                        "verse": "Genesis 28:10"
+                        "text": "False",
+                        "verse": "Genesis 28:12"
                     }
                 }
             ]
@@ -1277,45 +1275,43 @@
             "chapter": "29",
             "questions": [
                 {
-                    "question": "What job did Jacob take up when he arrived in Haran in Genesis 29?",
+                    "question": "Who did Jacob first fall in love with?",
                     "options": [
-                        "A shepherd",
-                        "A farmer",
-                        "A blacksmith",
-                        "A merchant"
+                        "Leah",
+                        "Bilhah",
+                        "Zilpah",
+                        "Rachel"
                     ],
                     "answer": {
-                        "index": 0,
-                        "text": "A shepherd",
-                        "verse": "Genesis 29:9"
-                    }
-                },
-                {
-                    "question": "Why did Laban agree to give his daughter Rachel to Jacob in marriage in Genesis 29?",
-                    "options": [
-                        "Because he loved Jacob",
-                        "Because Jacob offered a large dowry",
-                        "Because it was a custom",
-                        "Because Rachel chose Jacob"
-                    ],
-                    "answer": {
-                        "index": 1,
-                        "text": "Because Jacob offered a large dowry",
+                        "index": 3,
+                        "text": "Rachel",
                         "verse": "Genesis 29:18"
                     }
                 },
                 {
-                    "question": "What was the name of Jacob's first wife in Genesis 29?",
+                    "question": "True or False: Jacob was tricked into marrying Leah before Rachel.",
                     "options": [
-                        "Leah",
-                        "Rachel",
-                        "Bilhah",
-                        "Zilpah"
+                        "True",
+                        "False"
                     ],
                     "answer": {
                         "index": 0,
-                        "text": "Leah",
-                        "verse": "Genesis 29:23"
+                        "text": "True",
+                        "verse": "Genesis 29:23-25"
+                    }
+                },
+                {
+                    "question": "For how many years total did Jacob agree to work for Laban in exchange for his daughters?",
+                    "options": [
+                        "7 years",
+                        "14 years",
+                        "21 years",
+                        "28 years"
+                    ],
+                    "answer": {
+                        "index": 1,
+                        "text": "14 years",
+                        "verse": "Genesis 29:27-30"
                     }
                 }
             ]
@@ -1324,31 +1320,29 @@
             "chapter": "30",
             "questions": [
                 {
-                    "question": "What were the names of the twelve sons born to Jacob from Leah, Rachel, Bilhah, and Zilpah in Genesis 30?",
+                    "question": "True or False: Rachel and Leah were happy with each other.",
                     "options": [
-                        "Reuben, Simeon, Levi, Judah, Dan, Naphtali, Gad, Asher, Issachar, Zebulun, Joseph, Benjamin",
-                        "Matthew, Mark, Luke, John, Peter, James, Andrew, Philip, Bartholomew, Thomas, Thaddeus, Simon",
-                        "David, Solomon, Saul, Jonathan, Absalom, Adonijah, Amnon, Josiah, Jeroboam, Rehoboam, Asa, Hezekiah",
-                        "Noah, Shem, Ham, Japheth, Abraham, Isaac, Jacob, Joseph, Moses, Aaron, Joshua, Caleb"
-                    ],
-                    "answer": {
-                        "index": 0,
-                        "text": "Reuben, Simeon, Levi, Judah, Dan, Naphtali, Gad, Asher, Issachar, Zebulun, Joseph, Benjamin",
-                        "verse": "Genesis 30:1-24"
-                    }
-                },
-                {
-                    "question": "Which of Jacob's wives struggled to have children and gave her maidservant to Jacob as a wife?",
-                    "options": [
-                        "Leah",
-                        "Rachel",
-                        "Bilhah",
-                        "Zilpah"
+                        "True",
+                        "False"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "Rachel",
-                        "verse": "Genesis 30:3"
+                        "text": "False",
+                        "verse": "Genesis 30:1-2, 8, 15"
+                    }
+                },
+                {
+                    "question": "Who was Joseph's father?",
+                    "options": [
+                        "Isaac",
+                        "Laban",
+                        "Jacob",
+                        "Esau"
+                    ],
+                    "answer": {
+                        "index": 2,
+                        "text": "Jacob",
+                        "verse": "Genesis 30:22-24"
                     }
                 },
                 {
@@ -1371,17 +1365,15 @@
             "chapter": "31",
             "questions": [
                 {
-                    "question": "Why did Jacob decide to leave Laban's household in Genesis 31?",
+                    "question": "True or False: Jacob decided to leave Laban's household in Genesis 31.",
                     "options": [
-                        "Because Laban asked him to leave",
-                        "Because he had a disagreement with Laban",
-                        "Because he wanted to start his own family",
-                        "Because he missed his parents"
+                        "True",
+                        "False"
                     ],
                     "answer": {
-                        "index": 1,
-                        "text": "Because he had a disagreement with Laban",
-                        "verse": "Genesis 31:1"
+                        "index": 0,
+                        "text": "True",
+                        "verse": "Genesis 31:1, 17-18"
                     }
                 },
                 {
@@ -1404,12 +1396,12 @@
                         "Bethel",
                         "Peniel",
                         "Goshen",
-                        "Mizpah"
+                        "Galeed"
                     ],
                     "answer": {
                         "index": 3,
-                        "text": "Mizpah",
-                        "verse": "Genesis 31:49"
+                        "text": "Galeed",
+                        "verse": "Genesis 31:47-48"
                     }
                 }
             ]
@@ -1432,16 +1424,16 @@
                     }
                 },
                 {
-                    "question": "What did Jacob's hip socket become after the wrestling match with God?",
+                    "question": "What happened to Jacob's hip socket after the wrestling match with God?",
                     "options": [
                         "Broken",
-                        "Dislocated",
+                        "Put out of joint",
                         "Strengthened",
                         "Paralyzed"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "Dislocated",
+                        "text": "Put out of joint",
                         "verse": "Genesis 32:25-31"
                     }
                 },
@@ -1463,45 +1455,43 @@
             "chapter": "33",
             "questions": [
                 {
-                    "question": "How did Jacob react when he saw his brother Esau after many years in Genesis 33?",
+                    "question": "Who did Jacob meet in Genesis 33?",
                     "options": [
-                        "He ran away in fear",
-                        "He embraced Esau and wept",
-                        "He challenged Esau to a fight",
-                        "He ignored Esau"
+                        "Isaac",
+                        "Esau",
+                        "Laban",
+                        "Joseph"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "He embraced Esau and wept",
+                        "text": "Esau",
+                        "verse": "Genesis 33:1"
+                    }
+                },
+                {
+                    "question": "True or False: When Jacob and Esau saw each other, they were hostile to one another.",
+                    "options": [
+                        "True",
+                        "False"
+                    ],
+                    "answer": {
+                        "index": 1,
+                        "text": "False",
                         "verse": "Genesis 33:4"
                     }
                 },
                 {
-                    "question": "What gift did Jacob offer to Esau as a gesture of reconciliation in Genesis 33?",
+                    "question": "What did Esau initially refuse from Jacob?",
                     "options": [
-                        "A gold crown",
-                        "A herd of cattle",
-                        "A fine robe",
-                        "A portion of his land"
+                        "Gifts",
+                        "Food",
+                        "Water",
+                        "Shelter"
                     ],
                     "answer": {
-                        "index": 1,
-                        "text": "A herd of cattle",
-                        "verse": "Genesis 33:8"
-                    }
-                },
-                {
-                    "question": "Where did Jacob and Esau part ways after their reunion in Genesis 33?",
-                    "options": [
-                        "In Canaan",
-                        "In Egypt",
-                        "In Edom",
-                        "In the desert"
-                    ],
-                    "answer": {
-                        "index": 2,
-                        "text": "In Edom",
-                        "verse": "Genesis 33:16"
+                        "index": 0,
+                        "text": "Gifts",
+                        "verse": "Genesis 33:9"
                     }
                 }
             ]
@@ -1510,45 +1500,43 @@
             "chapter": "34",
             "questions": [
                 {
-                    "question": "Why did Dinah, the daughter of Jacob, go out to see the daughters of the land in Genesis 34?",
+                    "question": "Whose daughter was Dinah?",
                     "options": [
-                        "To make friends",
-                        "To attend a festival",
-                        "To visit her grandmother",
-                        "To see the daughters of the land"
+                        "Esau",
+                        "Jacob",
+                        "Laban",
+                        "Isaac"
                     ],
                     "answer": {
-                        "index": 3,
-                        "text": "To see the daughters of the land",
+                        "index": 1,
+                        "text": "Jacob",
                         "verse": "Genesis 34:1"
                     }
                 },
                 {
-                    "question": "Who wanted to marry Dinah after he saw her in Genesis 34?",
+                    "question": "True or False: Shechem was deeply drawn to Dinah, the daughter of Jacob.",
                     "options": [
-                        "Jacob",
-                        "Shechem",
-                        "Esau",
-                        "Levi"
+                        "True",
+                        "False"
                     ],
                     "answer": {
-                        "index": 1,
-                        "text": "Shechem",
+                        "index": 0,
+                        "text": "True",
                         "verse": "Genesis 34:3"
                     }
                 },
                 {
-                    "question": "What did Shechem and his father Hamor propose to Jacob and his sons in Genesis 34?",
+                    "question": "Who took vengeance on Dinah's behalf?",
                     "options": [
-                        "A trade agreement",
-                        "A peace treaty through marriage",
-                        "A war against neighboring tribes",
-                        "A joint venture"
+                        "Reuben and Benjamin",
+                        "Joseph and Judah",
+                        "Simeon and Levi",
+                        "Jacob and Esau"
                     ],
                     "answer": {
-                        "index": 1,
-                        "text": "A peace treaty through marriage",
-                        "verse": "Genesis 34:9-12"
+                        "index": 2,
+                        "text": "Simeon and Levi",
+                        "verse": "Genesis 34:25"
                     }
                 }
             ]
@@ -1585,17 +1573,15 @@
                     }
                 },
                 {
-                    "question": "Where did Rachel die and get buried in Genesis 35?",
+                    "question": "True or False: Rachel almost died while giving birth, but recovered.",
                     "options": [
-                        "In Canaan",
-                        "In Egypt",
-                        "In Moab",
-                        "In Edom"
+                        "True",
+                        "False"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "In Canaan",
-                        "verse": "Genesis 35:19"
+                        "text": "False",
+                        "verse": "Genesis 35:16-19"
                     }
                 }
             ]
