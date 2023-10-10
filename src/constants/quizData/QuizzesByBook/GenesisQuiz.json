@@ -438,7 +438,7 @@
                     }
                 },
                 {
-                    "question": "True or False: In Genesis 10, Noah's sons are named as Seth, Ham, and Japheth.",
+                    "question": "True or False: In Genesis 10, Noah's sons are named Seth, Ham, and Japheth.",
                     "options": [
                         "True",
                         "False"
@@ -637,14 +637,14 @@
                 {
                     "question": "What did God promise Abram in Genesis 15?",
                     "options": [
-                        "To make him a great nation",
-                        "To make him a king",
-                        "To give him wealth",
+                        "To make his offspring like the number of the stars of heaven",
+                        "To give him the Ten Commandments",
+                        "To make him king over Israel",
                         "To grant him immortality"
                     ],
                     "answer": {
                         "index": 0,
-                        "text": "To make him a great nation",
+                        "text": "To make his offspring like the number of the stars of heaven",
                         "verse": "Genesis 15:5"
                     }
                 },
@@ -654,11 +654,11 @@
                         "With a written contract",
                         "With a handshake",
                         "With a rainbow",
-                        "With a vision of smoking fire and a flaming torch"
+                        "With a smoking fire and a flaming torch"
                     ],
                     "answer": {
                         "index": 3,
-                        "text": "With a vision of smoking fire and a flaming torch",
+                        "text": "With a smoking fire and a flaming torch",
                         "verse": "Genesis 15:17"
                     }
                 },
@@ -671,7 +671,7 @@
                     "answer": {
                         "index": 0,
                         "text": "True",
-                        "verse": "Genesis 15:6"
+                        "verse": "Genesis 15:1-6"
                     }
                 }
             ]
@@ -696,14 +696,14 @@
                 {
                     "question": "What did Sarai do to Hagar after Hagar conceived a child with Abram?",
                     "options": [
-                        "She sent Hagar away",
+                        "She dealt harshly with Hagar",
                         "She adopted the child",
                         "She praised Hagar",
                         "She married Hagar to Abram"
                     ],
                     "answer": {
                         "index": 0,
-                        "text": "She sent Hagar away",
+                        "text": "She dealt harshly with Hagar",
                         "verse": "Genesis 16:6"
                     }
                 },
@@ -805,14 +805,14 @@
                     "question": "What did Abraham ask God to spare in Genesis 18 when interceding for Sodom and Gomorrah?",
                     "options": [
                         "The cities",
-                        "The people",
+                        "The righteous people",
                         "The livestock",
                         "The houses"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "The people",
-                        "verse": "Genesis 18:24-26"
+                        "text": "The righteous people",
+                        "verse": "Genesis 18:23-33"
                     }
                 }
             ]
@@ -821,7 +821,7 @@
             "chapter": "19",
             "questions": [
                 {
-                    "question": "Who was the righteous man in Sodom whom the angels rescued?",
+                    "question": "Who was the righteous man in Sodom whose family the angels worked to rescue?",
                     "options": [
                         "Lot",
                         "Abraham",
@@ -835,7 +835,7 @@
                     }
                 },
                 {
-                    "question": "True or False: Lot's wife turned into a pillar of salt when she looked back at the destruction of Sodom and Gomorrah.",
+                    "question": "True or False: Lot's wife turned into a pillar of salt when she looked back at the destruction of the cities.",
                     "options": [
                         "True",
                         "False"
@@ -868,13 +868,13 @@
                 {
                     "question": "What lie did Abraham tell King Abimelech about his relationship with Sarah in Genesis 20?",
                     "options": [
-                        "That Sarah was his sister",
                         "That Sarah was his niece",
+                        "That Sarah was his sister",
                         "That Sarah was his cousin",
                         "That Sarah was his wife"
                     ],
                     "answer": {
-                        "index": 0,
+                        "index": 1,
                         "text": "That Sarah was his sister",
                         "verse": "Genesis 20:2"
                     }
@@ -883,8 +883,8 @@
                     "question": "What did God warn Abimelech about in a dream regarding Sarah?",
                     "options": [
                         "That Sarah was barren",
+                        "That Sarah was pregnant",
                         "That Sarah was a prophet",
-                        "That Sarah was married",
                         "That Sarah was Abraham's wife"
                     ],
                     "answer": {
@@ -927,7 +927,7 @@
                     }
                 },
                 {
-                    "question": "True or False: Sarah was initially happy about Hagar and Ishmael's presence in their household.",
+                    "question": "True or False: Sarah was happy about Hagar and Ishmael's presence in their household.",
                     "options": [
                         "True",
                         "False"
@@ -942,9 +942,9 @@
                     "question": "What did Hagar find for her son Ishmael when they were cast out into the wilderness?",
                     "options": [
                         "A well of water",
-                        "A cave to live in",
-                        "A village to stay",
-                        "A river to cross"
+                        "A cave",
+                        "A village",
+                        "A river"
                     ],
                     "answer": {
                         "index": 0,
@@ -960,13 +960,13 @@
                 {
                     "question": "What did God ask Abraham to do as a test of his faith in Genesis 22?",
                     "options": [
+                        "To fast for forty days and nights",
                         "To sacrifice his only son Isaac",
-                        "To build a great altar",
                         "To leave his homeland",
                         "To give away all his possessions"
                     ],
                     "answer": {
-                        "index": 0,
+                        "index": 1,
                         "text": "To sacrifice his only son Isaac",
                         "verse": "Genesis 22:2"
                     }
@@ -986,17 +986,15 @@
                     }
                 },
                 {
-                    "question": "What name did Abraham give to the place where he was willing to sacrifice Isaac?",
+                    "question": "True or False: God was pleased with Abraham's faith.",
                     "options": [
-                        "Mount Sinai",
-                        "Mount Moriah",
-                        "Mount Zion",
-                        "Mount Horeb"
+                        "True",
+                        "False"
                     ],
                     "answer": {
-                        "index": 1,
-                        "text": "Mount Moriah",
-                        "verse": "Genesis 22:14"
+                        "index": 0,
+                        "text": "True",
+                        "verse": "Genesis 22:15-18"
                     }
                 }
             ]
@@ -1033,17 +1031,17 @@
                     }
                 },
                 {
-                    "question": "What was the name of the cave in the field of Machpelah where Sarah was buried?",
+                    "question": "In the field of Machpelah, where was Sarah buried?",
                     "options": [
-                        "Cave of Wonders",
-                        "Cave of Dreams",
-                        "Cave of Treasures",
-                        "Cave of the Patriarchs"
+                        "Under a tamarisk tree",
+                        "By a stream",
+                        "In the open field",
+                        "In a cave"
                     ],
                     "answer": {
                         "index": 3,
-                        "text": "Cave of the Patriarchs",
-                        "verse": "Genesis 23:9"
+                        "text": "In a cave",
+                        "verse": "Genesis 23:19"
                     }
                 }
             ]
@@ -1052,7 +1050,7 @@
             "chapter": "24",
             "questions": [
                 {
-                    "question": "Who did Abraham send his servant to find as a wife for Isaac in Genesis 24?",
+                    "question": "In Genesis 24, who did Abraham's servant find as a wife for Isaac?",
                     "options": [
                         "Hagar",
                         "Rebekah",
@@ -1062,35 +1060,33 @@
                     "answer": {
                         "index": 1,
                         "text": "Rebekah",
-                        "verse": "Genesis 24:4"
+                        "verse": "Genesis 24:15ff"
                     }
                 },
                 {
                     "question": "What sign did Abraham's servant ask for to confirm God's choice of a wife for Isaac?",
                     "options": [
-                        "A sign of a rainbow",
-                        "A sign of a dove",
-                        "A sign of a burning bush",
-                        "A sign of a well-watered camel"
+                        "A gentle smile",
+                        "The appearance of a dove",
+                        "A voice from heaven",
+                        "Offering water to the camels"
                     ],
                     "answer": {
                         "index": 3,
-                        "text": "A sign of a well-watered camel",
+                        "text": "Offering water to the camels",
                         "verse": "Genesis 24:14"
                     }
                 },
                 {
-                    "question": "What was Rebekah's relationship to Abraham?",
+                    "question": "True or False: Rebekah refused to go with Abraham's servant.",
                     "options": [
-                        "His daughter",
-                        "His niece",
-                        "His sister",
-                        "His granddaughter"
+                        "True",
+                        "False"
                     ],
                     "answer": {
                         "index": 1,
-                        "text": "His niece",
-                        "verse": "Genesis 24:24"
+                        "text": "False",
+                        "verse": "Genesis 24:58"
                     }
                 }
             ]
