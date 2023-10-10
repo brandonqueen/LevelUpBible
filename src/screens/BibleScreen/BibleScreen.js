@@ -54,7 +54,7 @@ const BibleScreen = () => {
 	const [quizModalOpen, setQuizModalOpen] = useState(false);
 	const [noQuizModalOpen, setNoQuizModalOpen] = useState(false);
 
-	//OTHER VARIABLES
+	//OTHER MISC. VARIABLES ⬇️
 
 	//get quiz data for current book and chapter
 	const quizData = quizMap?.[bookName]?.chapters?.[chapterIndex] ?? null;
@@ -90,6 +90,9 @@ const BibleScreen = () => {
 	//Check network connection
 	const netInfo = useNetInfo();
 
+	//MISC FUNCTIONS ⬇️
+
+	//Wait 1sec to show no connection capybara (some Android devices would show briefly every time on screen load)
 	useEffect(() => {
 		const timerId = setTimeout(() => {
 			setIsConnected(netInfo.isConnected);
@@ -98,7 +101,6 @@ const BibleScreen = () => {
 		return () => clearTimeout(timerId);
 	}, [netInfo]);
 
-	///////
 	/////	API CALL TO FETCH BIBLE TEXT
 	const fetchData = async () => {
 		try {
@@ -173,7 +175,7 @@ const BibleScreen = () => {
 		}
 	};
 
-	//Load Bible text on chapter set
+	//Load Bible text on chapter set or connection change
 	useEffect(() => {
 		const nextChapterNumIndex = chapterNum;
 		if (
@@ -186,11 +188,10 @@ const BibleScreen = () => {
 			setNextChapterExists(false);
 		}
 		fetchData();
-	}, [chapterNum]);
-	/////
+	}, [chapterNum, isConnected]);
 	/////// END API CALL LOGIC
 
-	//SCROLL HANDLER
+	////SCROLL HANDLER
 	const handleScroll = (event) => {
 		// Progress Bar Logic
 
@@ -201,6 +202,7 @@ const BibleScreen = () => {
 		//scrollViewHeight - static: visible height, in pixels, of ScrollView container
 		const scrollViewHeight = event.nativeEvent.layoutMeasurement.height;
 
+		//"scrollProgress", a value between 0 and 1 to control horizontal progress bar at top of screen
 		const scrollProgress = offsetY / (contentHeight - scrollViewHeight);
 		setScrollY(scrollProgress);
 
@@ -212,14 +214,16 @@ const BibleScreen = () => {
 			}, 500);
 		}
 
-		//Take lines data and find which are out of view
+		//LOGIC TO RENDER HIGHLIGHTED TEXT
+
+		//Take linesData (data regarding the base, white-text render) and find which lines have been scrolled out of view
 		const linesOutOfViewRaw = linesData.filter((line) => {
 			const lineYStart = line.y;
 			const lineYEnd = lineYStart + line.height;
 			return line && lineYEnd < offsetY;
 		});
 
-		//extract the text (from the raw data) for lines out of view
+		//extract just the text (from all the raw data) for lines that have passed out of view
 		linesOutOfViewText = linesOutOfViewRaw.map((line) => line.text);
 
 		//function to compare array in state with array of text "out of view"
@@ -236,7 +240,7 @@ const BibleScreen = () => {
 			return true;
 		}
 
-		// Highlighted Text Logic
+		// Set text highlights to begin and end at appropriate scroll times
 		if (scrollProgress < 1) {
 			if (!highlightedText) {
 				setHighlightedText(linesOutOfViewText);
@@ -250,9 +254,9 @@ const BibleScreen = () => {
 			setHighlightedText(response);
 		}
 	};
-	//END SCROLL HANDLER
+	///END SCROLL HANDLER FUNCTION (for progress bar and text highlighting logic)
 
-	//Press handler functions
+	//PRESS HANDLERS
 	const handleGoBack = () => {
 		navigation.navigate("ChooseChapter", { prevScreen: "BibleScreen" });
 	};
