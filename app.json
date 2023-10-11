@@ -25,7 +25,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/Images/LevelUpLogoIcon.png"
+      "favicon": "./assets/Images/icon.png"
     },
     "extra": {
       "eas": {
