@@ -2,6 +2,7 @@ import { StyleSheet, Text, ScrollView, Image } from "react-native";
 import StyledTextButton from "../../atoms/StyledTextButton/StyledTextButton";
 import ModalPopup from "../ModalPopup";
 import colors from "../../../constants/colors";
+import React from "react";
 
 const RewardDescriptionModal = ({
 	descriptionModalOpen,

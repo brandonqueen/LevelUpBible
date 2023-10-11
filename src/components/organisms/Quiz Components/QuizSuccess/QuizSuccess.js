@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { useSelector } from "react-redux";
+import QuizSuccessRewards from "../QuizSuccessRewards/QuizSuccessRewards";
 import StyledTextButton from "../../../atoms/StyledTextButton/StyledTextButton";
 import colors from "../../../../constants/colors";
-import QuizSuccessRewards from "../QuizSuccessRewards/QuizSuccessRewards";
+import React from "react";
 
 const QuizSuccess = ({ numOfVerses, rewards, modalToggle }) => {
 	const userProgress = useSelector((state) => state.globalData.userProgress);

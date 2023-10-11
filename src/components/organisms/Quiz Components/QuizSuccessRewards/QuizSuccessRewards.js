@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 import Reward from "../../../atoms/Reward/Reward";
 import colors from "../../../../constants/colors";
+import React from "react";
 
 const QuizSuccessRewards = ({ newRewards }) => {
 	const rewardState = useSelector(
@@ -21,7 +22,7 @@ const QuizSuccessRewards = ({ newRewards }) => {
 					data={newRewards}
 					horizontal={true}
 					keyExtractor={(item, index) => `New reward index: ${index}`}
-					renderItem={({ item, index }) => {
+					renderItem={({ item }) => {
 						const rewardIndex = rewardState.findIndex(
 							(rewardObj) => rewardObj.title === item
 						);

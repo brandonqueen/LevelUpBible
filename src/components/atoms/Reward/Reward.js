@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import { StyleSheet, Text, Pressable, Image, View } from "react-native";
 import { useState } from "react";
 import RewardDescriptionModal from "../../molecules/RewardDescriptionModal/RewardDescriptionModal";
 import colors from "../../../constants/colors";
+import React from "react";
 
 const Reward = ({ reward }) => {
 	//LOCAL STATE

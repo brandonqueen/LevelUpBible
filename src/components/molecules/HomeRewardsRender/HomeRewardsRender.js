@@ -1,5 +1,6 @@
 import { FlatList, View } from "react-native";
 import Reward from "../../atoms/Reward/Reward";
+import React from "react";
 
 const HomeRewardsRender = ({ recentEarnedRewards, rewards }) => {
 	if (recentEarnedRewards.length < 1) {

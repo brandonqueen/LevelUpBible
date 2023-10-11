@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, StatusBar, Platform } from "react-native";
+import { StyleSheet, SafeAreaView, StatusBar } from "react-native";
 import { PaperProvider } from "react-native-paper";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { store } from "./store.js";
 import BottomTabs from "./src/navigation/BottomTabs.js";
 import colors from "./src/constants/colors.js";
+import React from "react";
 
 let persistor = persistStore(store);
 

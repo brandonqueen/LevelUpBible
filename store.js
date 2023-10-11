@@ -3,12 +3,12 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { combineReducers } from "redux";
 import {
 	persistReducer,
-	FLUSH,
-	REHYDRATE,
-	PAUSE,
-	PERSIST,
-	PURGE,
-	REGISTER,
+	// FLUSH,
+	// REHYDRATE,
+	// PAUSE,
+	// PERSIST,
+	// PURGE,
+	// REGISTER,
 } from "redux-persist";
 
 import globalDataReducer from "./src/features/globalData/globalDataSlice";

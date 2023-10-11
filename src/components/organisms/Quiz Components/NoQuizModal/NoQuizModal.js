@@ -3,7 +3,7 @@ import {
 	updateProgress,
 } from "../../../../features/globalData/globalDataSlice";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
+import React, { useState } from "react";
 import NoQuizConfirm from "../NoQuizConfirm/NoQuizConfirm";
 import QuizSuccess from "../QuizSuccess/QuizSuccess";
 import ModalPopup from "../../../molecules/ModalPopup/ModalPopup";

@@ -8,6 +8,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import BibleStack from "./BibleStack";
 import HomeScreen from "../screens/HomeScreen";
 import colors from "../constants/colors";
+import React from "react";
 
 const Tab = createBottomTabNavigator();
 

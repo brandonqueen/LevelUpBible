@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 export const quizMap = {
 	Genesis: require("./quizzesByBook/GenesisQuiz.json"),
 	Exodus: require("./quizzesByBook/ExodusQuiz.json"),

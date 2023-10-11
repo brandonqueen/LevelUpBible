@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import RewardsIcons from "../../../assets/Images/RewardsIconsLoader";
 
 const initialUserProgress = {
@@ -12,7 +13,7 @@ const initialUserProgress = {
 			completed: false,
 			imageBW: RewardsIcons["Chapter-BW.png"],
 			imageColor: RewardsIcons["Chapter-color.png"],
-			description: `Earned after completing your first chapter.`,
+			description: "Earned after completing your first chapter.",
 			earnedDate: "",
 		},
 		{
@@ -20,7 +21,7 @@ const initialUserProgress = {
 			completed: false,
 			imageBW: RewardsIcons["Book-BW.png"],
 			imageColor: RewardsIcons["Book-color.png"],
-			description: `Earned after completing your first book of the Bible.`,
+			description: "Earned after completing your first book of the Bible.",
 			earnedDate: "",
 		},
 		{

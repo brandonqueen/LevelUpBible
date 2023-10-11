@@ -10,7 +10,7 @@ const globalDataSlice = createSlice({
 	},
 	reducers: {
 		readBibleAgain: (state) => {
-			currentPoints = state.userProgress.stats.totalPoints;
+			const currentPoints = state.userProgress.stats.totalPoints;
 			state.bibleData = initialBibleData;
 			state.userProgress = {
 				...initialUserProgress,

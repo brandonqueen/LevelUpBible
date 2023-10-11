@@ -1,6 +1,7 @@
 import { Text, Pressable, View, StyleSheet } from "react-native";
 import { useState } from "react";
 import colors from "../../../constants/colors";
+import React from "react";
 
 const StyledTextButton = ({
 	children,

@@ -1,1 +1,1 @@
-export {default} from "./BibleScreen"
+export { default } from "./BibleScreen";

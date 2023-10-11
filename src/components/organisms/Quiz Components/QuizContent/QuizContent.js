@@ -4,7 +4,7 @@ import {
 } from "../../../../features/globalData/globalDataSlice";
 import { StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
+import React, { useState } from "react";
 import StyledTextButton from "../../../atoms/StyledTextButton/StyledTextButton";
 import QuizChoices from "../QuizChoices/QuizChoices";
 import colors from "../../../../constants/colors";
@@ -119,13 +119,13 @@ const QuizContent = ({
 						!(answeredCorrectly || answeredIncorrectly)
 							? colors.primaryDark
 							: (answeredCorrectly && colors.secondaryLight) ||
-							  (answeredIncorrectly && colors.quinary)
+							(answeredIncorrectly && colors.quinary)
 					}
 					backgroundPressedColor={
 						!(answeredCorrectly || answeredIncorrectly)
 							? null
 							: (answeredCorrectly && colors.secondaryLighter) ||
-							  (answeredIncorrectly && colors.quinaryLight)
+							(answeredIncorrectly && colors.quinaryLight)
 					}
 					borderWidth={2}
 					borderColor={

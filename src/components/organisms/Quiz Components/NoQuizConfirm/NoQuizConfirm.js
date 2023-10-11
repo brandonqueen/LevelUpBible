@@ -1,6 +1,7 @@
 import { StyleSheet, Text, ScrollView } from "react-native";
 import StyledTextButton from "../../../atoms/StyledTextButton/StyledTextButton";
 import colors from "../../../../constants/colors";
+import React from "react";
 
 const NoQuizConfirm = ({
 	bookName,

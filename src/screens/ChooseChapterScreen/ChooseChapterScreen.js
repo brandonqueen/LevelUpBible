@@ -14,8 +14,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { List } from "react-native-paper";
 import ChooseChapterHeader from "../../components/molecules/ChooseChapterHeader/ChooseChapterHeader";
-import colors from "../../constants/colors";
 import ChaptersRender from "../../components/molecules/ChaptersRender/ChaptersRender";
+import colors from "../../constants/colors";
+import React from "react";
 
 const ChooseChapterScreen = () => {
 	//NAVIGATION

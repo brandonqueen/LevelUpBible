@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ChooseChapterScreen from "../screens/ChooseChapterScreen/ChooseChapterScreen";
 import BibleScreen from "../screens/BibleScreen/BibleScreen";
+import React from "react";
 
 const Stack = createNativeStackNavigator();
 

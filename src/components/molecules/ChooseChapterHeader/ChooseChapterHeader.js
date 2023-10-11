@@ -1,5 +1,6 @@
 import { StyleSheet, Text, Pressable } from "react-native";
 import colors from "../../../constants/colors";
+import React from "react";
 
 const ChooseChapterHeader = ({
 	headerBookChosen,

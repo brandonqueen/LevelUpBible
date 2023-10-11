@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 import Reward from "../../components/atoms/Reward/Reward";
 import colors from "../../constants/colors";
+import React from "react";
 
 const RewardsScreen = () => {
 	//GLOBAL STATE

@@ -12,14 +12,10 @@ import {
 	Easing,
 	useDerivedValue,
 } from "react-native-reanimated";
-import {
-	useNavigation,
-	useIsFocused,
-	useFocusEffect,
-} from "@react-navigation/native";
+import { useNavigation, useIsFocused } from "@react-navigation/native";
 import React, { useRef, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { ReText } from "react-native-redash";
+import { useSelector } from "react-redux";
 import HomeRewardsRender from "../../components/molecules/HomeRewardsRender/HomeRewardsRender";
 import CircularProgress from "react-native-circular-progress-indicator";
 import graphic from "../../../assets/Images/Logo.png";

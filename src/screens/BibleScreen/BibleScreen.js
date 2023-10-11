@@ -22,6 +22,7 @@ import QuizModal from "../../components/organisms/Quiz Components/QuizModal/Quiz
 import capybara from "../../../assets/Images/capybara.png";
 import colors from "../../constants/colors";
 import axios from "axios";
+import React from "react";
 
 const BibleScreen = () => {
 	//NAVIGATION
@@ -92,6 +93,24 @@ const BibleScreen = () => {
 
 	//MISC FUNCTIONS ⬇️
 
+	//superscripting logic
+	function replaceWithSuperscript(inputString) {
+		// Use regular expression to find and replace text within brackets
+		const result = inputString.replace(/\[(\d+)\]/g, (_, number) => {
+			// Convert the matched number to a superscripted Unicode version
+			const superscriptedNumber = number
+				.split("")
+				.map((digit) => {
+					const superscriptDigits = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+					return superscriptDigits[digit];
+				})
+				.join("");
+			return superscriptedNumber;
+		});
+
+		return result;
+	}
+
 	//Wait 1sec to show no connection capybara (some Android devices would show briefly every time on screen load)
 	useEffect(() => {
 		const timerId = setTimeout(() => {
@@ -148,24 +167,7 @@ const BibleScreen = () => {
 			//remove extra line breaks in the text:
 			const noInnerBreaks = textString.replace(/\n\s+\n/g, "\n\n");
 			const modifiedText = noInnerBreaks.replace(/\n+$/, "");
-
-			//superscripting logic
-			function replaceWithSuperscript(inputString) {
-				// Use regular expression to find and replace text within brackets
-				const result = inputString.replace(/\[(\d+)\]/g, (_, number) => {
-					// Convert the matched number to a superscripted Unicode version
-					const superscriptedNumber = number
-						.split("")
-						.map((digit) => {
-							const superscriptDigits = "⁰¹²³⁴⁵⁶⁷⁸⁹";
-							return superscriptDigits[digit];
-						})
-						.join("");
-					return superscriptedNumber;
-				});
-
-				return result;
-			}
+			//superscript text
 			const superScripted = replaceWithSuperscript(modifiedText);
 			setResponse(superScripted);
 		} catch (error) {
@@ -224,7 +226,7 @@ const BibleScreen = () => {
 		});
 
 		//extract just the text (from all the raw data) for lines that have passed out of view
-		linesOutOfViewText = linesOutOfViewRaw.map((line) => line.text);
+		const linesOutOfViewText = linesOutOfViewRaw.map((line) => line.text);
 
 		//function to compare array in state with array of text "out of view"
 		function isArrayContained(array1, array2) {

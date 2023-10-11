@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
 	StyleSheet,
 	Text,
@@ -6,6 +7,7 @@ import {
 	FlatList,
 } from "react-native";
 import colors from "../../../constants/colors";
+import React from "react";
 
 const ChaptersRender = ({
 	bookData,
@@ -22,7 +24,7 @@ const ChaptersRender = ({
 				<FlatList
 					data={chapters}
 					showsVerticalScrollIndicator={false}
-					keyExtractor={(item, index) => item.chapter.toString()}
+					keyExtractor={(item) => item.chapter.toString()}
 					renderItem={({ item }) => {
 						return (
 							<TouchableOpacity

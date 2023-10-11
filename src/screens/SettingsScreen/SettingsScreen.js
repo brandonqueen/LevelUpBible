@@ -4,7 +4,7 @@ import {
 } from "../../features/globalData/globalDataSlice";
 import { StyleSheet, Text, View, ScrollView, Linking } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import React, { useState } from "react";
 import VerifyResetModal from "../../components/molecules/VerifyResetModal/VerifyResetModal";
 import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
 import colors from "../../constants/colors";

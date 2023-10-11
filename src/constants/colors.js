@@ -1,4 +1,4 @@
-export default colors = {
+const colors = {
 	primary: "#161e39",
 	primaryDark: "#0b0e1d",
 	primaryDarkTranslucent: "rgba(11, 14, 29, 0.7)",
@@ -22,3 +22,5 @@ export default colors = {
 	textGrey: "rgba(210, 210, 210, 0.8)",
 	quizBackground: "#30286b",
 };
+
+export default colors;

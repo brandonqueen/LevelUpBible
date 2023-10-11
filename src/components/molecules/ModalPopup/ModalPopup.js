@@ -6,6 +6,7 @@ import {
 } from "react-native";
 import { BlurView } from "expo-blur";
 import colors from "../../../constants/colors";
+import React from "react";
 
 const ModalPopup = ({ children, modalOpen, modalToggle, backgroundColor }) => {
 	return (
