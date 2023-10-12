@@ -1,30 +1,48 @@
 {
   "expo": {
-    "name": "bible-reading-app",
-    "slug": "bible-reading-app",
+    "name": "Level Up Bible",
+    "slug": "LevelUpBible",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/Images/icon.png",
+    "userInterfaceStyle": "dark",
+    "owner": "levelupbible",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/Images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#161e39"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/Images/adaptive-icon.png",
+        "backgroundColor": "#161e39"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/Images/icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8a051174-aeb3-4c13-889f-6f1ebafb2339"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/8a051174-aeb3-4c13-889f-6f1ebafb2339"
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#000000"
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#000000"
     }
   }
 }

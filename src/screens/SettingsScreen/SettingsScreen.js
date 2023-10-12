@@ -1,0 +1,191 @@
+import {
+	readBibleAgain,
+	resetAllData,
+} from "../../features/globalData/globalDataSlice";
+import { StyleSheet, Text, View, ScrollView, Linking } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import VerifyResetModal from "../../components/molecules/VerifyResetModal/VerifyResetModal";
+import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
+import colors from "../../constants/colors";
+
+const SettingsScreen = () => {
+	//GLOBAL STATE
+	const dispatch = useDispatch();
+	const userProgress = useSelector((state) => state.globalData.userProgress);
+	const isBibleCompleted = userProgress.rewards[11].completed;
+
+	//LOCAL STATE
+	const [modalOpen, setModalOpen] = useState(false);
+	const [modalOption, setModalOption] = useState({});
+
+	///OTHER VARIABLES
+	//This will be parsed to render options
+	const modalOptions = [
+		{
+			option: "readAgain",
+			message:
+				"This will remove all your current rewards as well as your book/chapter progress, but will NOT reset your total points. \n\nDo you wish to continue?",
+		},
+		{
+			option: "resetAll",
+			message:
+				"This option will reset ALL progress, including your total points.\n\nDo you wish to continue?",
+		},
+	];
+
+	//Press Handlers
+	const modalToggle = () => {
+		setModalOpen(!modalOpen);
+	};
+
+	const handleReadAgainPress = () => {
+		setModalOpen(!modalOpen);
+		setModalOption(modalOptions[0]);
+	};
+
+	const handleReadAgainConfirm = () => {
+		dispatch(readBibleAgain());
+		modalToggle();
+	};
+	const handleResetAllPress = () => {
+		setModalOpen(!modalOpen);
+		setModalOption(modalOptions[1]);
+	};
+	const handleResetAllConfirm = () => {
+		dispatch(resetAllData());
+		modalToggle();
+	};
+
+	const handleContactPress = () => {
+		Linking.openURL("mailto:levelupbible@gmail.com");
+	};
+
+	return (
+		<View style={styles.root}>
+			<VerifyResetModal
+				modalOpen={modalOpen}
+				modalToggle={modalToggle}
+				modalOption={modalOption}
+				handleReadAgain={handleReadAgainConfirm}
+				handleResetAll={handleResetAllConfirm}
+			/>
+			<ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+				<Text style={styles.header}>Settings</Text>
+				<View>
+					<View style={styles.optionContainer}>
+						<Text style={[styles.optionTitle]}>Read Again</Text>
+						<Text style={styles.textDescription}>
+							Reset chapter, book and rewards progress but{" "}
+							<Text style={styles.readAgainTextHighlight}>
+								preserve your current overall points
+							</Text>
+							. This option is ideal for continuing to grow points with multiple
+							re-readings of the Bible.{"\n\n"}(Only available if the whole
+							Bible has been completed.)
+						</Text>
+						<StyledTextButton
+							backgroundColor={colors.secondaryLight}
+							margin={24}
+							backgroundPressedColor={
+								isBibleCompleted && colors.secondaryLighter
+							}
+							opacity={isBibleCompleted ? null : 0.5}
+							onPress={isBibleCompleted ? handleReadAgainPress : null}>
+							Read Bible Again
+						</StyledTextButton>
+					</View>
+					<View style={styles.optionContainer}>
+						<Text style={[styles.optionTitle]}>Reset All Data</Text>
+						<Text style={styles.textDescription}>
+							Reset all data. Same as option above but{" "}
+							<Text style={styles.resetAllTextHighlight}>
+								this will also reset your current points back to zero.
+							</Text>
+						</Text>
+						<StyledTextButton
+							onPress={handleResetAllPress}
+							backgroundColor={colors.quarternary}
+							backgroundPressedColor={colors.quarternaryLight}
+							margin={24}>
+							Reset All Data
+						</StyledTextButton>
+					</View>
+					<View style={styles.contactContainer}>
+						<Text style={styles.optionTitle}>Contact Us</Text>
+						<Text style={styles.textDescription}>
+							If you would like to get in touch to report an issue, ask a
+							question, or just to say hello, please click the button below.
+						</Text>
+						<StyledTextButton
+							onPress={handleContactPress}
+							backgroundColor={colors.quinary}
+							backgroundPressedColor={colors.quinaryLight}
+							margin={24}>
+							Contact Us
+						</StyledTextButton>
+					</View>
+				</View>
+			</ScrollView>
+		</View>
+	);
+};
+
+export default SettingsScreen;
+
+const styles = StyleSheet.create({
+	root: {
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center",
+		paddingHorizontal: 10,
+	},
+	container: {
+		width: "100%",
+		flex: 0,
+	},
+	header: {
+		fontSize: 30,
+		fontWeight: "900",
+		textAlign: "center",
+		color: colors.text,
+		margin: 24,
+		lineHeight: 40,
+	},
+	optionContainer: {
+		paddingVertical: 12,
+		justifyContent: "flex-start",
+		alignItems: "flex-start",
+	},
+	optionTitle: {
+		color: colors.text,
+		fontWeight: "800",
+		fontSize: 24,
+		textAlign: "left",
+		paddingBottom: 12,
+		paddingLeft: 10,
+	},
+	textDescription: {
+		color: colors.text,
+		fontWeight: "400",
+		fontSize: 16,
+		textAlign: "left",
+		paddingHorizontal: 16,
+	},
+	readAgainTextHighlight: {
+		fontWeight: "800",
+		fontSize: 18,
+		color: colors.secondaryLighter,
+	},
+	resetAllTextHighlight: {
+		fontWeight: "800",
+		fontSize: 18,
+		color: colors.quarternary,
+	},
+	contactContainer: {
+		paddingVertical: 12,
+		justifyContent: "flex-start",
+		alignItems: "flex-start",
+		marginBottom: 30,
+	},
+});
