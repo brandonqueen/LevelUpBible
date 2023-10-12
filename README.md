@@ -21,13 +21,13 @@
 ### 4. Technology Stack
 
 - <img src="./assets/Images/Logos/React.png" alt="React Logo" width="2%" height="2%"/> **React Native:** a mobile application library created by Facebook. It is used to develop applications for Android, iOS, and other platforms by enabling developers to use React along with native platform capabilities.
-- <img src="./assets/Images/Logos/Expo.png" alt="Expo Logo" width="2%" height="2%"/> **Expo:** a set of tools and services built around React Native and native platforms that help develop, build, deploy, and quickly iterate on iOS, Android, and web apps from the same JavaScript/TypeScript codebase.
+- <img src="./assets/Images/Logos/Expo.png" alt="Expo Logo" width="2%" height="2%"/>  **Expo:** a set of tools and services built around React Native and native platforms that help develop, build, deploy, and quickly iterate on iOS, Android, and web apps from the same JavaScript/TypeScript codebase.
 - <img src="./assets/Images/Logos/React.png" alt="React Logo" width="2%" height="2%"/> **React:** a front-end JavaScript library developed by Facebook for building user interfaces or UI components. Main uses in the app include React hooks such as useState, useEffect, and useRef.
-- **React Native Navigation:** provides native navigation on both iOS and Android for React Native apps.
-- **Axios:** a simple API and can handle HTTP requests and responses in JSON format. Used for ESV Bible API network call.
+- <img src="./assets/Images/Logos/React Navigation.svg" alt="React Navigation Logo" width="2%" height="2%"/> **React Navigation:** provides native navigation on both iOS and Android for React Native apps.
+- <img src="./assets/Images/Logos/Axios.svg" alt="Axios Logo" width="5%" height="5%"/> **Axios:** a simple API and can handle HTTP requests and responses in JSON format. Used for ESV Bible API network call.
 - <img src="./assets/Images/Logos/React.png" alt="React Logo" width="2%" height="2%"/> **React Native Netinfo:** a library that allows you to handle network state changes in your app.
-- **Redux Toolkit/React Redux/Redux Persist:** Global state manager that consistently updates the JavaScript UI and allows users' data to persist with new app launches.
-- **React Native Paper:** a collection of Material Design components for React Native. Used for certain UI elements in the app such as accordion lists, progress bar, etc.
+- <img src="./assets/Images/Logos/redux.svg" alt="Redux Logo" width="2%" height="2%"/> **Redux Toolkit/React Redux/Redux Persist:** Global state manager that consistently updates the JavaScript UI and allows users' data to persist with new app launches.
+- <img src="./assets/Images/Logos/React Native Paper.svg" alt="React Native Paper Logo" width="5%" height="5%"/> **React Native Paper:** a collection of Material Design components for React Native. Used for certain UI elements in the app such as accordion lists, progress bar, etc.
 - **Others:** Other, more minor, technologies utilized include React Native Reanimated, Redash, and React Native Circular Progress Indicator.
 
 ### 5. Roadmap
