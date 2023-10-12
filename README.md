@@ -3,14 +3,14 @@
 - **Description:** Track your Bible reading progress with points and rewards for completing chapters and answering quiz questions.
 
 ### 2. Screenshots
-<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/0fba7c11-8edb-4640-8e83-9ba8e61b31f2" alt="home screen" width="295.75" height="639">
-<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/3162f453-9987-445d-90a5-4185a7904965" alt="choose chapter screen" width="295.75" height="639"/>
-<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/7035b815-e8ec-4389-a49f-2e26ba6167f7" alt="bible screen" width="295.75" height="639"/>
-<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/a53ed033-f1ca-414a-a5a4-9dc19cd6a77f" alt="reading complete" width="295.75" height="639"/>
-<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/76be4e55-1214-49a5-964d-5c28bcb30c23" alt="quiz" width="295.75" height="639"/>
-<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/54721bbc-c10b-47be-a139-56a376e8fcc2" alt="rewards screen width="295.75" height="639"/>
-<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/0c580601-0407-4f7b-9b3f-e29d69f317f6" alt="reward earned" width="295.75" height="639"/>
-<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/f23b2876-2559-4cba-89e7-4b73569f7dd4" alt="settings screen" width="295.75" height="639"/>
+<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/0fba7c11-8edb-4640-8e83-9ba8e61b31f2" alt="home screen" width="295" height="639">
+<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/3162f453-9987-445d-90a5-4185a7904965" alt="choose chapter screen" width="295" height="639"/>
+<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/7035b815-e8ec-4389-a49f-2e26ba6167f7" alt="bible screen" width="295" height="639"/>
+<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/a53ed033-f1ca-414a-a5a4-9dc19cd6a77f" alt="reading complete" width="295" height="639"/>
+<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/76be4e55-1214-49a5-964d-5c28bcb30c23" alt="quiz" width="295" height="639"/>
+<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/54721bbc-c10b-47be-a139-56a376e8fcc2" alt="rewards screen" width="295" height="639"/>
+<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/0c580601-0407-4f7b-9b3f-e29d69f317f6" alt="reward earned" width="295" height="639"/>
+<img src="https://github.com/brandonqueen/LevelUpBible/assets/140345668/f23b2876-2559-4cba-89e7-4b73569f7dd4" alt="settings screen" width="295" height="639"/>
 
 
 
