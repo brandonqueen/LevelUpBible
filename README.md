@@ -32,7 +32,7 @@
 
 ### 5. Roadmap
 
-- The current iteration of the app is an MVP, pending the app's future, full development. In it's full, future release, Level Up Bible will gain more features such as: quizzes for every book and chapter of the Bible, account creation to share progress across devices, the ability to add "friends" and share your progress/compete with others, tablet support, the ability to adjust fonts, more engaging UI/UX features, and more!
+- The current iteration of the app is an MVP. In it's full, future release, Level Up Bible will gain more features such as: quizzes for every book and chapter of the Bible, account creation to share progress across devices, the ability to add "friends" and share your progress/compete with others, tablet support, the ability to adjust fonts, more engaging UI/UX features, and more!
 
 ### 6. Copyright
 
