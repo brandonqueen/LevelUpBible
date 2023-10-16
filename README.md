@@ -1,6 +1,6 @@
 ### 1. Project Title and Description
 
-- **Title:** Level Up Bible
+- **Title:** Level Up Bible (MVP)
 - **Description:** Track your Bible reading progress with points and rewards for completing chapters and answering quiz questions.
 
 ### 2. Screenshots
@@ -32,7 +32,7 @@
 
 ### 5. Roadmap
 
-- In future iterations of Level Up Bible, we hope to add more features such as: account creation, adding "friends" and sharing your progress socially, tablet support, the ability to adjust fonts, more engaging UI features, and more!
+- The current iteration of the app is an MVP, pending the app's future, full development. In it's full, future release, Level Up Bible will gain more features such as: quizzes for every book and chapter of the Bible, account creation to share progress across devices, the ability to add "friends" and share your progress/compete with others, tablet support, the ability to adjust fonts, more engaging UI/UX features, and more!
 
 ### 6. Copyright
 
