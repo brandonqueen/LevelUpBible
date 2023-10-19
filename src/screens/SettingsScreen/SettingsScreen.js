@@ -3,8 +3,16 @@ import {
 	readBibleAgain,
 	resetAllData,
 } from "../../features/globalData/globalDataSlice";
-import { StyleSheet, Text, View, ScrollView, Linking } from "react-native";
+import {
+	StyleSheet,
+	Text,
+	View,
+	ScrollView,
+	Linking,
+	Pressable,
+} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import React, { useState } from "react";
 import VerifyResetModal from "../../components/molecules/VerifyResetModal/VerifyResetModal";
 import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
@@ -19,6 +27,7 @@ const SettingsScreen = () => {
 	//LOCAL STATE
 	const [modalOpen, setModalOpen] = useState(false);
 	const [modalOption, setModalOption] = useState({});
+	const [aboutExpanded, setAboutExpanded] = useState(false);
 
 	///OTHER VARIABLES
 	//This will be parsed to render options
@@ -62,6 +71,10 @@ const SettingsScreen = () => {
 		Linking.openURL("mailto:levelupbible@gmail.com");
 	};
 
+	const handleReadMorePress = () => {
+		setAboutExpanded(!aboutExpanded);
+	};
+
 	return (
 		<View style={styles.root}>
 			<VerifyResetModal
@@ -80,20 +93,44 @@ const SettingsScreen = () => {
 							Level-Up Bible helps you track your progress in reading the entire
 							Bible. For additional accountability there are some unique
 							features:{"\n\n"}
-							<Text style={styles.bolded}>1) POINTS: </Text> Earn a point for
-							every verse you read!{"\n"}
-							<Text style={styles.bolded}>2) QUIZZES: </Text>There are quiz
-							questions at the end of each chapter. A wrong answer will require
-							you to re-read the chapter. Answering all three questions
-							correctly will gain you points based on the number of verses in
-							that chapter.{"\n"}
-							<Text style={styles.bolded}>3) MILESTONES: </Text>There are
-							milestones to unlock as you progress through the Bible. See the
-							milestones tab for more info!{"\n\n"}
-							We plan for future updates to include more features, like
-							networking with friends and a Bible verse memory game.{"\n\n"}
-							Thank you for downloading Level-Up Bible!
+							<View opacity={aboutExpanded ? 1 : 0.2}>
+								<Text style={styles.textDescription}>
+									<Text style={styles.bolded}>POINTS: </Text> Earn a point for
+									every verse you read!{"\n"}
+								</Text>
+							</View>
 						</Text>
+						<View>
+							{aboutExpanded && (
+								<Text style={styles.textDescription}>
+									<Text style={styles.bolded}>QUIZZES: </Text>There are quiz
+									questions at the end of each chapter. A wrong answer will
+									require you to re-read the chapter. Answering all three
+									questions correctly will gain you points based on the number
+									of verses in that chapter.{"\n\n"}
+									<Text style={styles.bolded}>MILESTONES: </Text>There are
+									milestones to unlock as you progress through the Bible. See
+									the milestones tab for more info!{"\n\n"}
+									We also plan for future updates to include more features, like
+									networking with friends and a Bible verse memory game.{"\n\n"}
+									Thank you for downloading Level-Up Bible!
+								</Text>
+							)}
+						</View>
+						<Pressable
+							style={styles.readMorePressable}
+							onPress={handleReadMorePress}>
+							<View style={styles.readMoreView}>
+								<Text style={styles.readMoreText}>
+									{aboutExpanded ? "Collapse" : "Read More"}
+								</Text>
+								<FontAwesome5
+									name={aboutExpanded ? "chevron-up" : "chevron-down"}
+									color={colors.text}
+									size={18}
+								/>
+							</View>
+						</Pressable>
 					</View>
 					<View style={styles.sectionContainer}>
 						<Text style={styles.sectionTitle}>Read Again</Text>
@@ -190,12 +227,35 @@ const styles = StyleSheet.create({
 	textDescription: {
 		color: colors.text,
 		fontWeight: "400",
-		fontSize: 16,
+		fontSize: 17,
 		textAlign: "left",
 		paddingHorizontal: 16,
+		lineHeight: 21,
+		letterSpacing: 0.1,
 	},
 	bolded: {
 		fontWeight: "800",
+	},
+	readMorePressable: {
+		width: "100%",
+		alignItems: "center",
+		justifyContent: "center",
+		marginTop: 16,
+	},
+	readMoreView: {
+		width: "100%",
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	readMoreText: {
+		color: colors.textGrey,
+		fontWeight: "800",
+		fontSize: 18,
+		textAlign: "left",
+		paddingHorizontal: 16,
+		lineHeight: 21,
+		letterSpacing: 0.1,
 	},
 	readAgainTextHighlight: {
 		fontWeight: "800",
