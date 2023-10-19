@@ -222,7 +222,7 @@ const BibleScreen = () => {
 		const linesOutOfViewRaw = linesData.filter((line) => {
 			const lineYStart = line.y;
 			const lineYEnd = lineYStart + line.height;
-			return line && lineYEnd < offsetY;
+			return line && lineYEnd < offsetY - line.height * 2;
 		});
 
 		//extract just the text (from all the raw data) for lines that have passed out of view
@@ -322,7 +322,8 @@ const BibleScreen = () => {
 						style={styles.scroll}
 						onScroll={handleScroll}
 						showsVerticalScrollIndicator={false}
-						scrollEventThrottle={16}>
+						scrollEventThrottle={16}
+						decelerationRate={0.2}>
 						<Text style={styles.heading}>{`${bookName} ${chapterNum}`}</Text>
 						<View style={styles.passageContainer}>
 							<Text
