@@ -73,8 +73,8 @@ const SettingsScreen = () => {
 			<ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
 				<Text style={styles.header}>Settings</Text>
 				<View>
-					<View style={styles.optionContainer}>
-						<Text style={[styles.optionTitle]}>Read Again</Text>
+					<View style={styles.sectionContainer}>
+						<Text style={[styles.sectionTitle]}>Read Again</Text>
 						<Text style={styles.textDescription}>
 							Reset chapter, book and milestones progress but{" "}
 							<Text style={styles.readAgainTextHighlight}>
@@ -95,8 +95,8 @@ const SettingsScreen = () => {
 							Read Bible Again
 						</StyledTextButton>
 					</View>
-					<View style={styles.optionContainer}>
-						<Text style={[styles.optionTitle]}>Reset All Data</Text>
+					<View style={styles.sectionContainer}>
+						<Text style={[styles.sectionTitle]}>Reset All Data</Text>
 						<Text style={styles.textDescription}>
 							Reset all data. Same as option above but{" "}
 							<Text style={styles.resetAllTextHighlight}>
@@ -112,7 +112,7 @@ const SettingsScreen = () => {
 						</StyledTextButton>
 					</View>
 					<View style={styles.contactContainer}>
-						<Text style={styles.optionTitle}>Contact Us</Text>
+						<Text style={styles.sectionTitle}>Contact Us</Text>
 						<Text style={styles.textDescription}>
 							If you would like to get in touch to report an issue, ask a
 							question, or just to say hello, please click the button below.
@@ -152,12 +152,12 @@ const styles = StyleSheet.create({
 		margin: 24,
 		lineHeight: 40,
 	},
-	optionContainer: {
+	sectionContainer: {
 		paddingVertical: 12,
 		justifyContent: "flex-start",
 		alignItems: "flex-start",
 	},
-	optionTitle: {
+	sectionTitle: {
 		color: colors.text,
 		fontWeight: "800",
 		fontSize: 24,
