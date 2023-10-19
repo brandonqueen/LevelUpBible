@@ -1,7 +1,9 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import {
 	setChapterCompleted,
 	updateProgress,
 } from "../../../../features/globalData/globalDataSlice";
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
 import React, { useState } from "react";
@@ -19,6 +21,9 @@ const QuizContent = ({
 	setQuizComplete,
 	numOfVerses,
 }) => {
+	//NAVIGATION
+	const navigation = useNavigation();
+
 	//GLOBAL STATE
 	const dispatch = useDispatch();
 
@@ -51,6 +56,13 @@ const QuizContent = ({
 			setSelectedChoiceIndex(null);
 			setAnsweredCorrectly(false);
 			setAnsweredIncorrectly(false);
+			navigation.push("Bible", {
+				testamentIndex: testamentIndex,
+				bookIndex: bookIndex,
+				bookName: bookName,
+				chapter: chapterIndex + 1,
+			});
+			modalToggle();
 		}
 		if (answeredCorrectly) {
 			if (currentQuestionIndex + 1 === numberOfQuestions) {
@@ -119,13 +131,13 @@ const QuizContent = ({
 						!(answeredCorrectly || answeredIncorrectly)
 							? colors.primaryDark
 							: (answeredCorrectly && colors.secondaryLight) ||
-							(answeredIncorrectly && colors.quinary)
+							  (answeredIncorrectly && colors.quinary)
 					}
 					backgroundPressedColor={
 						!(answeredCorrectly || answeredIncorrectly)
 							? null
 							: (answeredCorrectly && colors.secondaryLighter) ||
-							(answeredIncorrectly && colors.quinaryLight)
+							  (answeredIncorrectly && colors.quinaryLight)
 					}
 					borderWidth={2}
 					borderColor={
@@ -137,7 +149,7 @@ const QuizContent = ({
 							? null
 							: () => handleSubmit()
 					}>
-					{answeredIncorrectly ? "Start Over" : "Next"}
+					{answeredIncorrectly ? "Read Again" : "Next"}
 				</StyledTextButton>
 			</View>
 		</View>
