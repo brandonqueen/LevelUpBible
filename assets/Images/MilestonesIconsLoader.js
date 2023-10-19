@@ -1,15 +1,15 @@
 // eslint-disable-next-line no-undef
 const imageContext = require.context(
-	"./RewardsIcons",
+	"./MilestonesIcons",
 	false,
 	/\.(png|jpg|jpeg|gif)$/
 );
 
-const RewardsIcons = {};
+const MilestonesIcons = {};
 
 imageContext.keys().forEach((key) => {
 	const imageName = key.replace("./", ""); // Remove the "./" prefix
-	RewardsIcons[imageName] = imageContext(key);
+	MilestonesIcons[imageName] = imageContext(key);
 });
 
-export default RewardsIcons;
+export default MilestonesIcons;

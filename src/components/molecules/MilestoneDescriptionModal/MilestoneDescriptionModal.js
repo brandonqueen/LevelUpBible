@@ -4,20 +4,25 @@ import ModalPopup from "../ModalPopup";
 import colors from "../../../constants/colors";
 import React from "react";
 
-const RewardDescriptionModal = ({
+const MilestoneDescriptionModal = ({
 	descriptionModalOpen,
 	modalToggle,
-	reward,
+	milestone,
 }) => {
 	return (
 		<ModalPopup modalOpen={descriptionModalOpen} modalToggle={modalToggle}>
 			<ScrollView contentContainerStyle={styles.modalContent}>
-				<Text style={styles.modalHeader}>{reward.title}</Text>
-				<Image style={styles.modalRewardImage} source={reward.imageColor} />
-				<Text style={styles.modalRewardDescription}>{reward.description}</Text>
-				{reward.completed && (
-					<Text style={styles.modalRewardEarned}>
-						Earned on {reward.earnedDate}
+				<Text style={styles.modalHeader}>{milestone.title}</Text>
+				<Image
+					style={styles.modalMilestoneImage}
+					source={milestone.imageColor}
+				/>
+				<Text style={styles.modalMilestoneDescription}>
+					{milestone.description}
+				</Text>
+				{milestone.completed && (
+					<Text style={styles.modalMilestoneEarned}>
+						Earned on {milestone.earnedDate}
 					</Text>
 				)}
 				<StyledTextButton
@@ -33,7 +38,7 @@ const RewardDescriptionModal = ({
 	);
 };
 
-export default RewardDescriptionModal;
+export default MilestoneDescriptionModal;
 
 const styles = StyleSheet.create({
 	modalContent: {
@@ -49,19 +54,19 @@ const styles = StyleSheet.create({
 		color: colors.text,
 		marginVertical: 24,
 	},
-	modalRewardImage: {
+	modalMilestoneImage: {
 		height: 130,
 		aspectRatio: 1,
 		margin: 18,
 	},
-	modalRewardDescription: {
+	modalMilestoneDescription: {
 		color: colors.text,
 		fontWeight: "600",
 		fontSize: 18,
 		padding: 18,
 		lineHeight: 26,
 	},
-	modalRewardEarned: {
+	modalMilestoneEarned: {
 		color: colors.tertiary,
 		fontWeight: "800",
 		fontSize: 19,

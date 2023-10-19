@@ -1,26 +1,26 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import { useSelector } from "react-redux";
-import Reward from "../../components/atoms/Reward/Reward";
+import Milestone from "../../components/atoms/Milestone/Milestone";
 import colors from "../../constants/colors";
 import React from "react";
 
-const RewardsScreen = () => {
+const MilestonesScreen = () => {
 	//GLOBAL STATE
 	const userProgress = useSelector((state) => state.globalData.userProgress);
-	const rewardsData = userProgress.rewards;
+	const milestonesData = userProgress.milestones;
 
 	return (
 		<View style={styles.root}>
-			<Text style={styles.header}>Rewards</Text>
+			<Text style={styles.header}>Milestones</Text>
 			<FlatList
-				data={rewardsData}
+				data={milestonesData}
 				showsVerticalScrollIndicator={false}
 				numColumns={3}
-				keyExtractor={(item, index) => `RewardIndex${index}`}
+				keyExtractor={(item, index) => `MilestoneIndex${index}`}
 				renderItem={({ item }) => {
 					return (
-						<View style={styles.rewardContainer}>
-							<Reward style={styles.reward} reward={item} />
+						<View style={styles.milestoneContainer}>
+							<Milestone style={styles.milestone} milestone={item} />
 						</View>
 					);
 				}}
@@ -29,7 +29,7 @@ const RewardsScreen = () => {
 	);
 };
 
-export default RewardsScreen;
+export default MilestonesScreen;
 
 const styles = StyleSheet.create({
 	root: {
@@ -43,14 +43,14 @@ const styles = StyleSheet.create({
 		color: colors.text,
 		margin: 24,
 	},
-	rewardContainer: {
+	milestoneContainer: {
 		flex: 1,
 		flexDirection: "row",
 		flexWrap: "wrap",
 		marginVertical: 10,
 		justifyContent: "center",
 	},
-	reward: {
+	milestone: {
 		alignItems: "center",
 		justifyContent: "center",
 	},
