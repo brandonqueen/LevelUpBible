@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import { useSelector } from "react-redux";
-import Reward from "../../../atoms/Reward/Reward";
+import Reward from "../../../atoms/Milestone/Milestone";
 import colors from "../../../../constants/colors";
 import React from "react";
 
