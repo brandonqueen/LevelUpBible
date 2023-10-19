@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import {
 	readBibleAgain,
 	resetAllData,
@@ -74,7 +75,28 @@ const SettingsScreen = () => {
 				<Text style={styles.header}>Settings</Text>
 				<View>
 					<View style={styles.sectionContainer}>
-						<Text style={[styles.sectionTitle]}>Read Again</Text>
+						<Text style={styles.sectionTitle}>About</Text>
+						<Text style={styles.textDescription}>
+							Level-Up Bible helps you track your progress in reading the entire
+							Bible. For additional accountability there are some unique
+							features:{"\n\n"}
+							<Text style={styles.bolded}>1) POINTS: </Text> Earn a point for
+							every verse you read!{"\n"}
+							<Text style={styles.bolded}>2) QUIZZES: </Text>There are quiz
+							questions at the end of each chapter. A wrong answer will require
+							you to re-read the chapter. Answering all three questions
+							correctly will gain you points based on the number of verses in
+							that chapter.{"\n"}
+							<Text style={styles.bolded}>3) MILESTONES: </Text>There are
+							milestones to unlock as you progress through the Bible. See the
+							milestones tab for more info!{"\n\n"}
+							We plan for future updates to include more features, like
+							networking with friends and a Bible verse memory game.{"\n\n"}
+							Thank you for downloading Level-Up Bible!
+						</Text>
+					</View>
+					<View style={styles.sectionContainer}>
+						<Text style={styles.sectionTitle}>Read Again</Text>
 						<Text style={styles.textDescription}>
 							Reset chapter, book and milestones progress but{" "}
 							<Text style={styles.readAgainTextHighlight}>
@@ -171,6 +193,9 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		textAlign: "left",
 		paddingHorizontal: 16,
+	},
+	bolded: {
+		fontWeight: "800",
 	},
 	readAgainTextHighlight: {
 		fontWeight: "800",
