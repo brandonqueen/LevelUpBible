@@ -222,7 +222,7 @@ const BibleScreen = () => {
 		const linesOutOfViewRaw = linesData.filter((line) => {
 			const lineYStart = line.y;
 			const lineYEnd = lineYStart + line.height;
-			return line && lineYEnd < offsetY - line.height * 2;
+			return line && lineYEnd < offsetY - line.height * 2 - 8;
 		});
 
 		//extract just the text (from all the raw data) for lines that have passed out of view
