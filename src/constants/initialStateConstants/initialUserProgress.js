@@ -1,5 +1,5 @@
 /* eslint-disable quotes */
-import RewardsIcons from "../../../assets/Images/RewardsIconsLoader";
+import RewardsIcons from "../../../assets/Images/MilestonesIconsLoader";
 
 const initialUserProgress = {
 	stats: {
