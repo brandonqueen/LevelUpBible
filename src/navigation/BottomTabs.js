@@ -4,6 +4,7 @@ import { View, StyleSheet } from "react-native";
 import SettingsScreen from "../screens/SettingsScreen/SettingsScreen";
 import MilestonesScreen from "../screens/MilestonesScreen/MilestonesScreen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import Material from "react-native-vector-icons/MaterialCommunityIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import BibleStack from "./BibleStack";
 import HomeScreen from "../screens/HomeScreen";
@@ -60,7 +61,7 @@ function BottomTabs() {
 						component={MilestonesScreen}
 						options={{
 							tabBarIcon: ({ color, size }) => (
-								<FontAwesome name="star" size={size} color={color} />
+								<Material name="map-marker-path" size={size} color={color} />
 							),
 						}}
 					/>
