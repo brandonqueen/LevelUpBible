@@ -9,11 +9,10 @@ import {
 	setChapterSelected,
 	resetBibleSelection,
 } from "../../features/globalData/globalDataSlice";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, Text, Pressable } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { List } from "react-native-paper";
-import ChooseChapterHeader from "../../components/molecules/ChooseChapterHeader/ChooseChapterHeader";
 import ChaptersRender from "../../components/molecules/ChaptersRender/ChaptersRender";
 import colors from "../../constants/colors";
 import React from "react";
@@ -27,8 +26,6 @@ const ChooseChapterScreen = () => {
 	const bibleState = useSelector((state) => state.globalData.bibleData);
 
 	//LOCAL STATE
-	const [headerTestamentChosen, setHeaderTestamentChosen] = useState(false);
-	const [headerBookChosen, setHeaderBookChosen] = useState(false);
 
 	//logic to avoid reset of selected book when navigating back from the Bible Screen
 	const isFocused = useIsFocused();
@@ -36,7 +33,6 @@ const ChooseChapterScreen = () => {
 	useEffect(() => {
 		if (isFocused && route?.params?.prevScreen !== "BibleScreen") {
 			dispatch(resetBibleSelection());
-			handleHeaderPress(); //sets header back to testament selection
 		}
 		navigation.setParams({ prevScreen: "" });
 	}, [isFocused]);
@@ -44,45 +40,12 @@ const ChooseChapterScreen = () => {
 	//PRESS HANDLERS
 	const handleTestamentPress = (index) => {
 		dispatch(setTestamentSelected({ index: index }));
-		setHeaderBookChosen(false);
-
-		//handle header switching logic
-		const otherTestament = bibleState.filter((_, testIndex) => {
-			return testIndex !== index;
-		});
-
-		function isSelected(array) {
-			return array.some((obj) => {
-				return obj.selected === true;
-			});
-		}
-		const anotherTestamentSelected = isSelected(otherTestament);
-
-		anotherTestamentSelected
-			? setHeaderTestamentChosen(true)
-			: setHeaderTestamentChosen(!headerTestamentChosen);
 	};
 
 	const handleBookPress = (testamentIndex, bookIndex) => {
 		dispatch(
 			setBookSelected({ testamentIndex: testamentIndex, bookIndex: bookIndex })
 		);
-
-		//header switching logic
-		const otherBooks = bibleState[testamentIndex].books.filter(
-			(_, filteredBookIndex) => {
-				return filteredBookIndex !== bookIndex;
-			}
-		);
-		function isSelected(array) {
-			return array.some((obj) => {
-				return obj.selected === true;
-			});
-		}
-		const anotherBookSelected = isSelected(otherBooks);
-		anotherBookSelected
-			? setHeaderBookChosen(true)
-			: setHeaderBookChosen(!headerBookChosen);
 	};
 
 	const handleChapterPress = (testamentIndex, bookIndex, item) => {
@@ -106,18 +69,14 @@ const ChooseChapterScreen = () => {
 
 	const handleHeaderPress = () => {
 		dispatch(resetBibleSelection());
-		setHeaderTestamentChosen(false);
-		setHeaderBookChosen(false);
 	};
 
 	//MAIN RENDER/RETURN
 	return (
 		<View style={styles.root}>
-			<ChooseChapterHeader
-				headerBookChosen={headerBookChosen}
-				headerTestamentChosen={headerTestamentChosen}
-				handleHeaderPress={handleHeaderPress}
-			/>
+			<Pressable onPress={handleHeaderPress}>
+				<Text style={styles.header}>Choose Chapter</Text>
+			</Pressable>
 			<FlatList
 				data={bibleState}
 				showsVerticalScrollIndicator={false}
@@ -173,6 +132,13 @@ const styles = StyleSheet.create({
 	root: {
 		flex: 1,
 		paddingHorizontal: 10,
+	},
+	header: {
+		color: colors.text,
+		fontWeight: "800",
+		fontSize: 30,
+		padding: 24,
+		textAlign: "center",
 	},
 	accordionHeader: {
 		backgroundColor: colors.primary,

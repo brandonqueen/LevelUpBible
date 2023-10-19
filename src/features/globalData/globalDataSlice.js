@@ -22,33 +22,13 @@ const globalDataSlice = createSlice({
 			state.userProgress = initialUserProgress;
 		},
 		setTestamentSelected: (state, action) => {
-			const selectedIndex = action.payload.index;
-			state.bibleData.map((testament, index) => {
-				if (index === selectedIndex) {
-					return (state.bibleData[index].selected =
-						!state.bibleData[index].selected);
-				} else {
-					return (state.bibleData[index].selected = false);
-				}
-			});
+			const { index } = action.payload;
+			state.bibleData[index].selected = !state.bibleData[index].selected;
 		},
 		setBookSelected: (state, action) => {
 			const { testamentIndex, bookIndex } = action.payload;
-			state.bibleData.map((testament, testamentMapIndex) => {
-				testament.books.map((book, bookMapIndex) => {
-					if (
-						testamentMapIndex === testamentIndex &&
-						bookMapIndex === bookIndex
-					) {
-						state.bibleData[testamentMapIndex].books[bookMapIndex].selected =
-							!state.bibleData[testamentMapIndex].books[bookMapIndex].selected;
-					} else {
-						state.bibleData[testamentMapIndex].books[
-							bookMapIndex
-						].selected = false;
-					}
-				});
-			});
+			state.bibleData[testamentIndex].books[bookIndex].selected =
+				!state.bibleData[testamentIndex].books[bookIndex].selected;
 		},
 		setChapterSelected: (state, action) => {
 			const { testamentIndex, bookIndex, chapterNum } = action.payload;
