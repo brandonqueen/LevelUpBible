@@ -16,7 +16,7 @@ import { useNavigation, useIsFocused } from "@react-navigation/native";
 import React, { useRef, useEffect } from "react";
 import { ReText } from "react-native-redash";
 import { useSelector } from "react-redux";
-import HomeRewardsRender from "../../components/molecules/HomeRewardsRender/HomeRewardsRender";
+import HomeMilestonesRender from "../../components/molecules/HomeMilestonesRender/HomeMilestonesRender";
 import CircularProgress from "react-native-circular-progress-indicator";
 import graphic from "../../../assets/Images/Logo.png";
 import colors from "../../constants/colors";
@@ -31,8 +31,8 @@ const HomeScreen = () => {
 	const points = userProgress.stats.totalPoints;
 	const chapters = userProgress.stats.numChaptersCompleted;
 	const books = userProgress.stats.numBooksCompleted;
-	const rewards = userProgress.rewards;
-	const recentEarnedRewards = userProgress.recentEarnedRewards;
+	const milestones = userProgress.milestones;
+	const recentEarnedMilestones = userProgress.recentEarnedMilestones;
 
 	//DATA TO CALCULATE BIBLE READING PROGRESS
 	const bibleChapterNumber = 1189;
@@ -69,8 +69,8 @@ const HomeScreen = () => {
 		navigation.navigate("BIBLE");
 	};
 
-	const handleRewardPressed = () => {
-		navigation.navigate("REWARDS");
+	const handleMilestonePressed = () => {
+		navigation.navigate("MILESTONES");
 	};
 
 	return (
@@ -131,17 +131,17 @@ const HomeScreen = () => {
 						</TouchableOpacity>
 					</View>
 				</View>
-				<Text style={styles.rewardsHeader}>
-					{recentEarnedRewards.length < 1 ? "NEXT REWARD" : "RECENT REWARDS"}
+				<Text style={styles.milestonesHeader}>
+					{recentEarnedMilestones.length < 1 ? "NEXT MILESTONE" : "RECENT MILESTONES"}
 				</Text>
 				<View style={styles.rewardsSectionContainer}>
 					<View style={styles.rewardsContainer}>
-						<HomeRewardsRender
-							recentEarnedRewards={recentEarnedRewards}
-							rewards={rewards}
+						<HomeMilestonesRender
+							recentEarnedMilestones={recentEarnedMilestones}
+							milestones={milestones}
 						/>
 					</View>
-					<TouchableOpacity activeOpacity={0.7} onPress={handleRewardPressed}>
+					<TouchableOpacity activeOpacity={0.7} onPress={handleMilestonePressed}>
 						<Text style={styles.viewMore}>view more</Text>
 					</TouchableOpacity>
 				</View>
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
 		padding: 8,
 		letterSpacing: 0.1,
 	},
-	rewardsHeader: {
+	milestonesHeader: {
 		fontSize: 30,
 		fontWeight: "900",
 		textAlign: "center",
@@ -245,12 +245,12 @@ const styles = StyleSheet.create({
 		marginBottom: 10,
 		marginTop: 30,
 	},
-	rewardsSectionContainer: {
+	milestonesSectionContainer: {
 		flex: 1,
 		alignItems: "center",
 		justifyContent: "center",
 	},
-	rewardsContainer: {
+	milestonesContainer: {
 		width: "95%",
 		flex: 0.95,
 		flexDirection: "column",
