@@ -19,7 +19,7 @@ const MilestonesScreen = () => {
 				keyExtractor={(item, index) => `MilestoneIndex${index}`}
 				renderItem={({ item }) => {
 					return (
-						<View style={styles.rewardContainer}>
+						<View style={styles.milestoneContainer}>
 							<Milestone style={styles.milestone} milestone={item} />
 						</View>
 					);

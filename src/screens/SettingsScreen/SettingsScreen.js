@@ -13,7 +13,7 @@ const SettingsScreen = () => {
 	//GLOBAL STATE
 	const dispatch = useDispatch();
 	const userProgress = useSelector((state) => state.globalData.userProgress);
-	const isBibleCompleted = userProgress.rewards[11].completed;
+	const isBibleCompleted = userProgress.milestones[11].completed;
 
 	//LOCAL STATE
 	const [modalOpen, setModalOpen] = useState(false);
@@ -25,7 +25,7 @@ const SettingsScreen = () => {
 		{
 			option: "readAgain",
 			message:
-				"This will remove all your current rewards as well as your book/chapter progress, but will NOT reset your total points. \n\nDo you wish to continue?",
+				"This will remove all your current milestones as well as your book/chapter progress, but will NOT reset your total points. \n\nDo you wish to continue?",
 		},
 		{
 			option: "resetAll",
@@ -76,7 +76,7 @@ const SettingsScreen = () => {
 					<View style={styles.optionContainer}>
 						<Text style={[styles.optionTitle]}>Read Again</Text>
 						<Text style={styles.textDescription}>
-							Reset chapter, book and rewards progress but{" "}
+							Reset chapter, book and milestones progress but{" "}
 							<Text style={styles.readAgainTextHighlight}>
 								preserve your current overall points
 							</Text>

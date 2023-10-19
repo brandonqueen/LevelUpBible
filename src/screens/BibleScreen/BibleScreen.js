@@ -65,10 +65,10 @@ const BibleScreen = () => {
 		bibleState[testamentIndex].books[bookIndex].chapters[chapterIndex]
 			.completed;
 
-	//current awards array
-	const rewardsArray = userProgress.recentEarnedRewards;
-	const currentRewardsArray = useRef(
-		JSON.parse(JSON.stringify(rewardsArray))
+	//current milestones array
+	const milestonesArray = userProgress.recentEarnedMilestones;
+	const currentMilestonesArray = useRef(
+		JSON.parse(JSON.stringify(milestonesArray))
 	).current;
 
 	//Get current Bible books for which quiz data exists
@@ -405,7 +405,7 @@ const BibleScreen = () => {
 					bookIndex={bookIndex}
 					bookName={bookName}
 					chapterIndex={chapterIndex}
-					rewards={currentRewardsArray}
+					milestones={currentMilestonesArray}
 				/>
 			)}
 			{quizModalOpen && (
@@ -418,7 +418,7 @@ const BibleScreen = () => {
 					bookIndex={bookIndex}
 					bookName={bookName}
 					chapterIndex={chapterIndex}
-					rewards={currentRewardsArray}
+					milestones={currentMilestonesArray}
 				/>
 			)}
 		</View>

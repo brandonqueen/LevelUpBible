@@ -134,8 +134,8 @@ const HomeScreen = () => {
 				<Text style={styles.milestonesHeader}>
 					{recentEarnedMilestones.length < 1 ? "NEXT MILESTONE" : "RECENT MILESTONES"}
 				</Text>
-				<View style={styles.rewardsSectionContainer}>
-					<View style={styles.rewardsContainer}>
+				<View style={styles.milestonesSectionContainer}>
+					<View style={styles.milestonesContainer}>
 						<HomeMilestonesRender
 							recentEarnedMilestones={recentEarnedMilestones}
 							milestones={milestones}
