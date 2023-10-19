@@ -1,15 +1,15 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { useSelector } from "react-redux";
-import QuizSuccessRewards from "../QuizSuccessRewards/QuizSuccessRewards";
+import QuizSuccessMilestones from "../QuizSuccessMilestones/QuizSuccessMilestones";
 import StyledTextButton from "../../../atoms/StyledTextButton/StyledTextButton";
 import colors from "../../../../constants/colors";
 import React from "react";
 
-const QuizSuccess = ({ numOfVerses, rewards, modalToggle }) => {
+const QuizSuccess = ({ numOfVerses, milestones, modalToggle }) => {
 	const userProgress = useSelector((state) => state.globalData.userProgress);
-	const updatedRewardsArray = userProgress.recentEarnedRewards;
-	const newRewards = updatedRewardsArray.filter(
-		(item) => !rewards.includes(item)
+	const updatedMilestonesArray = userProgress.recentEarnedMilestones;
+	const newMilestones = updatedMilestonesArray.filter(
+		(item) => !milestones.includes(item)
 	);
 
 	return (
@@ -25,8 +25,8 @@ const QuizSuccess = ({ numOfVerses, rewards, modalToggle }) => {
 				<Text style={styles.text}>
 					You have added {numOfVerses} points to your total score!
 				</Text>
-				{newRewards.length > 0 && (
-					<QuizSuccessRewards newRewards={newRewards} />
+				{newMilestones.length > 0 && (
+					<QuizSuccessMilestones newMilestones={newMilestones} />
 				)}
 				<Text style={styles.text}>Rejoice! 🙌 🎉</Text>
 			</View>

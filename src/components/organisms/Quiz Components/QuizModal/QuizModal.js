@@ -15,7 +15,7 @@ const QuizModal = ({
 	bookIndex,
 	bookName,
 	chapterIndex,
-	rewards,
+	milestones,
 }) => {
 	const [quizComplete, setQuizComplete] = useState(false);
 
@@ -31,7 +31,7 @@ const QuizModal = ({
 					<QuizSuccess
 						numOfVerses={numOfVerses}
 						modalToggle={modalToggle}
-						rewards={rewards}
+						milestones={milestones}
 					/>
 				) : (
 					<QuizContent
