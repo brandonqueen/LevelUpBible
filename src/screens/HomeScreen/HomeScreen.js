@@ -31,8 +31,8 @@ const HomeScreen = () => {
 	const points = userProgress.stats.totalPoints;
 	const chapters = userProgress.stats.numChaptersCompleted;
 	const books = userProgress.stats.numBooksCompleted;
-	const milestones = userProgress.milestones;
-	const recentEarnedMilestones = userProgress.recentEarnedMilestones;
+	const { milestones } = userProgress;
+	const { recentEarnedMilestones } = userProgress;
 
 	//DATA TO CALCULATE BIBLE READING PROGRESS
 	const bibleChapterNumber = 1189;
@@ -132,7 +132,9 @@ const HomeScreen = () => {
 					</View>
 				</View>
 				<Text style={styles.milestonesHeader}>
-					{recentEarnedMilestones.length < 1 ? "NEXT MILESTONE" : "RECENT MILESTONES"}
+					{recentEarnedMilestones.length < 1
+						? "NEXT MILESTONE"
+						: "RECENT MILESTONES"}
 				</Text>
 				<View style={styles.milestonesSectionContainer}>
 					<View style={styles.milestonesContainer}>
@@ -141,7 +143,9 @@ const HomeScreen = () => {
 							milestones={milestones}
 						/>
 					</View>
-					<TouchableOpacity activeOpacity={0.7} onPress={handleMilestonePressed}>
+					<TouchableOpacity
+						activeOpacity={0.7}
+						onPress={handleMilestonePressed}>
 						<Text style={styles.viewMore}>view more</Text>
 					</TouchableOpacity>
 				</View>
