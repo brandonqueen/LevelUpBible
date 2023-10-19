@@ -2,7 +2,7 @@ import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, StyleSheet } from "react-native";
 import SettingsScreen from "../screens/SettingsScreen/SettingsScreen";
-import RewardsScreen from "../screens/RewardsScreen/RewardsScreen";
+import MilestonesScreen from "../screens/MilestonesScreen/MilestonesScreen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import BibleStack from "./BibleStack";
@@ -56,8 +56,8 @@ function BottomTabs() {
 						}}
 					/>
 					<Tab.Screen
-						name="REWARDS"
-						component={RewardsScreen}
+						name="MILESTONES"
+						component={MilestonesScreen}
 						options={{
 							tabBarIcon: ({ color, size }) => (
 								<FontAwesome name="star" size={size} color={color} />
