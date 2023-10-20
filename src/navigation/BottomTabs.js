@@ -60,8 +60,8 @@ function BottomTabs() {
 						name="MILESTONES"
 						component={MilestonesScreen}
 						options={{
-							tabBarIcon: ({ color }) => (
-								<Material name="map-marker-path" size={32} color={color} />
+							tabBarIcon: ({ color, size }) => (
+								<Material name="map-marker-path" size={size} color={color} />
 							),
 						}}
 					/>

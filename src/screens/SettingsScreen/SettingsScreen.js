@@ -196,6 +196,8 @@ export default SettingsScreen;
 const styles = StyleSheet.create({
 	root: {
 		flex: 1,
+		maxWidth: 800,
+		alignSelf: "center",
 		justifyContent: "center",
 		alignItems: "center",
 		paddingHorizontal: 10,
