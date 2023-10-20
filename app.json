@@ -17,7 +17,8 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.levelupbible.LevelUpBible"
+      "bundleIdentifier": "com.levelupbible.LevelUpBible",
+      "buildNumber": "2"
     },
     "android": {
       "adaptiveIcon": {
