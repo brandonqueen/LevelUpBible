@@ -40,7 +40,7 @@
 
 ### 7. Contact Information
 
-- levelupbible@gmail.com
+- brandon@brandonqueen.dev
 
 ### 8. Acknowledgments
 
