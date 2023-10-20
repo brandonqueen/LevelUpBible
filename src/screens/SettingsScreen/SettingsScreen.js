@@ -91,8 +91,8 @@ const SettingsScreen = () => {
 						<Text style={styles.sectionTitle}>About</Text>
 						<Text style={styles.textDescription}>
 							Level-Up Bible helps you track your progress in reading the entire
-							Bible. For additional accountability there are some unique
-							features:{"\n"}
+							Bible. For additional accountability and encouragement there are
+							some unique features:{"\n"}
 						</Text>
 						<View opacity={aboutExpanded ? 1 : 0.2}>
 							<Text style={styles.textDescription}>
@@ -127,7 +127,7 @@ const SettingsScreen = () => {
 								</Text>
 								<FontAwesome5
 									name={aboutExpanded ? "chevron-up" : "chevron-down"}
-									color={colors.text}
+									color={colors.tertiary}
 									size={18}
 								/>
 							</View>
@@ -138,7 +138,7 @@ const SettingsScreen = () => {
 						<Text style={styles.textDescription}>
 							Reset chapter, book and milestones progress but{" "}
 							<Text style={styles.readAgainTextHighlight}>
-								preserve your current overall points
+								preserve your current total points
 							</Text>
 							. This option is ideal for continuing to grow points with multiple
 							re-readings of the Bible.{"\n\n"}(Only available if the whole
@@ -158,9 +158,9 @@ const SettingsScreen = () => {
 					<View style={styles.sectionContainer}>
 						<Text style={[styles.sectionTitle]}>Reset All Data</Text>
 						<Text style={styles.textDescription}>
-							Reset all data. Same as option above but{" "}
+							This is a complete reset. It is similiar to the option above but{" "}
 							<Text style={styles.resetAllTextHighlight}>
-								this will also reset your current points back to zero.
+								this option will also reset your total points back to zero.
 							</Text>
 						</Text>
 						<StyledTextButton
@@ -236,6 +236,7 @@ const styles = StyleSheet.create({
 	},
 	bolded: {
 		fontWeight: "800",
+		color: colors.tertiaryLight,
 	},
 	readMorePressable: {
 		width: "100%",
@@ -250,7 +251,7 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	readMoreText: {
-		color: colors.textGrey,
+		color: colors.tertiary,
 		fontWeight: "800",
 		fontSize: 18,
 		textAlign: "left",
