@@ -117,14 +117,20 @@ const QuizContent = ({
 					}
 				/>
 			</View>
-			<View style={styles.bottomButtonsContainer}>
-				<StyledTextButton
-					backgroundColor={colors.quarternary}
-					backgroundPressedColor={colors.quarternaryLight}
-					width={125}
-					onPress={modalToggle}>
-					Cancel
-				</StyledTextButton>
+			<View
+				style={[
+					styles.bottomButtonsContainer,
+					answeredIncorrectly && styles.bottomButtonsContainerIncorrect,
+				]}>
+				{!answeredIncorrectly && (
+					<StyledTextButton
+						backgroundColor={colors.quarternary}
+						backgroundPressedColor={colors.quarternaryLight}
+						width={125}
+						onPress={modalToggle}>
+						Cancel
+					</StyledTextButton>
+				)}
 				<StyledTextButton
 					opacity={!(answeredCorrectly || answeredIncorrectly) ? 0.6 : 1}
 					backgroundColor={
@@ -200,5 +206,8 @@ const styles = StyleSheet.create({
 		padding: 10,
 		justifyContent: "space-between",
 		marginBottom: 25,
+	},
+	bottomButtonsContainerIncorrect: {
+		justifyContent: "center",
 	},
 });
