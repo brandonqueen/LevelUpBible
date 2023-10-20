@@ -45,14 +45,14 @@ const QuizChoices = ({
 								key={"correctVerse" + index}
 								style={
 									styles.feedbackTextCorrect
-								}>{`(see ${currentQuestion.answer.verse})`}</Text>
+								}>{`(${currentQuestion.answer.verse})`}</Text>
 						</View>
 					) : (
 						<View key={"incorrectdropdown" + index}>
 							<Text
 								key={"incorrectFeedback" + index}
 								style={styles.feedbackTextIncorrect}>
-								Please Try Again 🤔
+								Please Try Again 🤔{"\n"} (see {currentQuestion.answer.verse})
 							</Text>
 						</View>
 					))}
