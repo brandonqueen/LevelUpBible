@@ -17,6 +17,12 @@
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "appleId": "levelupbible@gmail.com",
+        "ascAppId": "6470054738",
+        "appleTeamId": "NTB5S8F9TP"
+      }
+    }
   }
 }
