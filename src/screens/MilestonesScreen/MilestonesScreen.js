@@ -12,19 +12,21 @@ const MilestonesScreen = () => {
 	return (
 		<View style={styles.root}>
 			<Text style={styles.header}>Milestones</Text>
-			<FlatList
-				data={milestonesData}
-				showsVerticalScrollIndicator={false}
-				numColumns={3}
-				keyExtractor={(item, index) => `MilestoneIndex${index}`}
-				renderItem={({ item }) => {
-					return (
-						<View style={styles.milestoneContainer}>
-							<Milestone style={styles.milestone} milestone={item} />
-						</View>
-					);
-				}}
-			/>
+			<View style={styles.container}>
+				<FlatList
+					data={milestonesData}
+					showsVerticalScrollIndicator={false}
+					numColumns={3}
+					keyExtractor={(item, index) => `MilestoneIndex${index}`}
+					renderItem={({ item }) => {
+						return (
+							<View style={styles.milestoneContainer}>
+								<Milestone style={styles.milestone} milestone={item} />
+							</View>
+						);
+					}}
+				/>
+			</View>
 		</View>
 	);
 };
@@ -42,6 +44,12 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		color: colors.text,
 		margin: 24,
+	},
+	container: {
+		maxWidth: 800,
+		flex: 1,
+		flexDirection: "row",
+		alignSelf: "center"
 	},
 	milestoneContainer: {
 		flex: 1,

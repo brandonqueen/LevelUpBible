@@ -78,76 +78,78 @@ const HomeScreen = () => {
 			<View style={styles.topBar}>
 				<Image source={graphic} style={styles.graphic} />
 			</View>
-			<View style={styles.mainContent}>
-				<View style={styles.progressSectionContainer}>
-					<Text style={styles.progressHeader}>YOUR PROGRESS</Text>
-					<TouchableOpacity
-						style={styles.pointsContainer}
-						onPress={handleProgressPress}
-						activeOpacity={0.7}>
-						<ReText style={styles.pointsText} text={pointsText} />
-						<Text style={styles.pointsText}>POINTS</Text>
-					</TouchableOpacity>
-					<View style={styles.progressCirclesContainer}>
+			<View style={styles.mainContentContainer}>
+				<View style={styles.mainContent}>
+					<View style={styles.progressSectionContainer}>
+						<Text style={styles.progressHeader}>YOUR PROGRESS</Text>
 						<TouchableOpacity
-							style={styles.progressCircleContainer}
+							style={styles.pointsContainer}
 							onPress={handleProgressPress}
 							activeOpacity={0.7}>
-							<CircularProgress
-								ref={chapProgressRef}
-								value={chapterPercentage}
-								radius={52}
-								duration={900}
-								progressValueColor={colors.secondary}
-								activeStrokeColor={colors.secondaryLight}
-								inActiveStrokeColor={colors.secondaryDark}
-								circleBackgroundColor={colors.primaryDark}
-								maxValue={100}
-								valueSuffix={"%"}
-							/>
-							<Text style={styles.chapterInfoUnderCircle}>
-								{chapters} / 1,189{"\n"}Chapters
-							</Text>
+							<ReText style={styles.pointsText} text={pointsText} />
+							<Text style={styles.pointsText}>POINTS</Text>
 						</TouchableOpacity>
+						<View style={styles.progressCirclesContainer}>
+							<TouchableOpacity
+								style={styles.progressCircleContainer}
+								onPress={handleProgressPress}
+								activeOpacity={0.7}>
+								<CircularProgress
+									ref={chapProgressRef}
+									value={chapterPercentage}
+									radius={52}
+									duration={900}
+									progressValueColor={colors.secondary}
+									activeStrokeColor={colors.secondaryLight}
+									inActiveStrokeColor={colors.secondaryDark}
+									circleBackgroundColor={colors.primaryDark}
+									maxValue={100}
+									valueSuffix={"%"}
+								/>
+								<Text style={styles.chapterInfoUnderCircle}>
+									{chapters} / 1,189{"\n"}Chapters
+								</Text>
+							</TouchableOpacity>
+							<TouchableOpacity
+								style={styles.progressCircleContainer}
+								onPress={handleProgressPress}
+								activeOpacity={0.7}>
+								<CircularProgress
+									ref={bookProgressRef}
+									value={bookPercentage}
+									radius={52}
+									duration={900}
+									progressValueColor={colors.quarternary}
+									activeStrokeColor={colors.quarternaryLight}
+									inActiveStrokeColor={colors.quarternaryDark}
+									circleBackgroundColor={colors.primaryDark}
+									maxValue={100}
+									valueSuffix={"%"}
+								/>
+								<Text style={styles.bookInfoUnderCircle}>
+									{books} / 66{"\n"}Books
+								</Text>
+							</TouchableOpacity>
+						</View>
+					</View>
+					<Text style={styles.milestonesHeader}>
+						{recentEarnedMilestones.length < 1
+							? "NEXT MILESTONE"
+							: "RECENT MILESTONES"}
+					</Text>
+					<View style={styles.milestonesSectionContainer}>
+						<View style={styles.milestonesContainer}>
+							<HomeMilestonesRender
+								recentEarnedMilestones={recentEarnedMilestones}
+								milestones={milestones}
+							/>
+						</View>
 						<TouchableOpacity
-							style={styles.progressCircleContainer}
-							onPress={handleProgressPress}
-							activeOpacity={0.7}>
-							<CircularProgress
-								ref={bookProgressRef}
-								value={bookPercentage}
-								radius={52}
-								duration={900}
-								progressValueColor={colors.quarternary}
-								activeStrokeColor={colors.quarternaryLight}
-								inActiveStrokeColor={colors.quarternaryDark}
-								circleBackgroundColor={colors.primaryDark}
-								maxValue={100}
-								valueSuffix={"%"}
-							/>
-							<Text style={styles.bookInfoUnderCircle}>
-								{books} / 66{"\n"}Books
-							</Text>
+							activeOpacity={0.7}
+							onPress={handleMilestonePressed}>
+							<Text style={styles.viewMore}>view more</Text>
 						</TouchableOpacity>
 					</View>
-				</View>
-				<Text style={styles.milestonesHeader}>
-					{recentEarnedMilestones.length < 1
-						? "NEXT MILESTONE"
-						: "RECENT MILESTONES"}
-				</Text>
-				<View style={styles.milestonesSectionContainer}>
-					<View style={styles.milestonesContainer}>
-						<HomeMilestonesRender
-							recentEarnedMilestones={recentEarnedMilestones}
-							milestones={milestones}
-						/>
-					</View>
-					<TouchableOpacity
-						activeOpacity={0.7}
-						onPress={handleMilestonePressed}>
-						<Text style={styles.viewMore}>view more</Text>
-					</TouchableOpacity>
 				</View>
 			</View>
 		</ScrollView>
@@ -164,11 +166,18 @@ const styles = StyleSheet.create({
 		marginVertical: 8,
 		justifyContent: "flex-end",
 		alignItems: "center",
+		alignSelf: "center",
 	},
 	graphic: {
 		height: "100%",
 		flex: 1,
 		objectFit: "contain",
+	},
+	mainContentContainer: {
+		flex: 1,
+		flexDirection: "row",
+		maxWidth: 800,
+		alignSelf: "center",
 	},
 	mainContent: {
 		flex: 1,
