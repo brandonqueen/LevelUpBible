@@ -92,14 +92,15 @@ const SettingsScreen = () => {
 						<Text style={styles.textDescription}>
 							Level-Up Bible helps you track your progress in reading the entire
 							Bible. For additional accountability there are some unique
-							features:{"\n\n"}
-							<View opacity={aboutExpanded ? 1 : 0.2}>
-								<Text style={styles.textDescription}>
-									<Text style={styles.bolded}>POINTS: </Text> Earn a point for
-									every verse you read!{"\n"}
-								</Text>
-							</View>
+							features:{"\n"}
 						</Text>
+						<View opacity={aboutExpanded ? 1 : 0.2}>
+							<Text style={styles.textDescription}>
+								<Text style={styles.bolded}>POINTS: </Text> Earn a point for
+								every verse you read!{"\n"}
+							</Text>
+						</View>
+
 						<View>
 							{aboutExpanded && (
 								<Text style={styles.textDescription}>
