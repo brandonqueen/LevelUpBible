@@ -3,13 +3,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, StyleSheet } from "react-native";
 import SettingsScreen from "../screens/SettingsScreen/SettingsScreen";
 import MilestonesScreen from "../screens/MilestonesScreen/MilestonesScreen";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import Material from "react-native-vector-icons/MaterialCommunityIcons";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
 import BibleStack from "./BibleStack";
 import HomeScreen from "../screens/HomeScreen";
 import colors from "../constants/colors";
 import React from "react";
+import { FontAwesome5, FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -61,7 +59,7 @@ function BottomTabs() {
 						component={MilestonesScreen}
 						options={{
 							tabBarIcon: ({ color, size }) => (
-								<Material name="map-marker-path" size={size} color={color} />
+								<MaterialCommunityIcons name="map-marker-path" size={size} color={color} />
 							),
 						}}
 					/>
