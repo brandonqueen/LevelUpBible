@@ -12,11 +12,11 @@ import {
 	Pressable,
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import React, { useState } from "react";
 import VerifyResetModal from "../../components/molecules/VerifyResetModal/VerifyResetModal";
 import StyledTextButton from "../../components/atoms/StyledTextButton/StyledTextButton";
 import colors from "../../constants/colors";
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const SettingsScreen = () => {
 	//GLOBAL STATE
