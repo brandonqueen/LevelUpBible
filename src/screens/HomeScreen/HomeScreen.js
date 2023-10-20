@@ -157,6 +157,8 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
 	root: {
 		flex: 0,
+		maxWidth: 800,
+		alignSelf: "center",
 	},
 	topBar: {
 		height: 90,
