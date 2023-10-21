@@ -17,7 +17,7 @@ const NoQuizModal = ({
 	bookIndex,
 	bookName,
 	chapterIndex,
-	rewards,
+	milestones,
 }) => {
 	//GLOBAL STATE
 	const dispatch = useDispatch();
@@ -48,7 +48,7 @@ const NoQuizModal = ({
 				<QuizSuccess
 					numOfVerses={numOfVerses}
 					modalToggle={modalToggle}
-					rewards={rewards}
+					milestones={milestones}
 				/>
 			) : (
 				<NoQuizConfirm

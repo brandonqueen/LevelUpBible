@@ -53,6 +53,7 @@ export default ChaptersRender;
 const styles = StyleSheet.create({
 	root: {
 		padding: 8,
+		maxWidth: 500
 	},
 	chapterNumRow: {
 		minWidth: "100%",

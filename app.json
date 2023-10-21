@@ -16,7 +16,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": false
+      "supportsTablet": false,
+      "bundleIdentifier": "com.levelupbible.LevelUpBible"
     },
     "android": {
       "adaptiveIcon": {

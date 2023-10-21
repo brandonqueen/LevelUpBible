@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import { StyleSheet, Text, Pressable, Image, View } from "react-native";
 import { useState } from "react";
-import RewardDescriptionModal from "../../molecules/RewardDescriptionModal/RewardDescriptionModal";
+import MilestoneDescriptionModal from "../../molecules/MilestoneDescriptionModal/MilestoneDescriptionModal";
 import colors from "../../../constants/colors";
 import React from "react";
 
-const Reward = ({ reward }) => {
+const Milestone = ({ milestone }) => {
 	//LOCAL STATE
 	const [descriptionModalOpen, setDescriptionModalOpen] = useState(false);
 
@@ -17,26 +17,28 @@ const Reward = ({ reward }) => {
 	return (
 		<View style={styles.container}>
 			{descriptionModalOpen && (
-				<RewardDescriptionModal
+				<MilestoneDescriptionModal
 					descriptionModalOpen={descriptionModalOpen}
 					modalToggle={modalToggle}
-					reward={reward}
+					milestone={milestone}
 				/>
 			)}
 			<Pressable style={styles.pressable} onPress={modalToggle}>
 				<Image
-					style={reward.completed ? styles.image : styles.imageIncomplete}
-					source={reward.completed ? reward.imageColor : reward.imageBW}
+					style={milestone.completed ? styles.image : styles.imageIncomplete}
+					source={
+						milestone.completed ? milestone.imageColor : milestone.imageBW
+					}
 				/>
-				<Text style={reward.completed ? styles.text : styles.textIncomplete}>
-					{reward.title}
+				<Text style={milestone.completed ? styles.text : styles.textIncomplete}>
+					{milestone.title}
 				</Text>
 			</Pressable>
 		</View>
 	);
 };
 
-export default Reward;
+export default Milestone;
 
 const styles = StyleSheet.create({
 	container: {

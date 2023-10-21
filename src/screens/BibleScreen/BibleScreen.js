@@ -65,10 +65,10 @@ const BibleScreen = () => {
 		bibleState[testamentIndex].books[bookIndex].chapters[chapterIndex]
 			.completed;
 
-	//current awards array
-	const rewardsArray = userProgress.recentEarnedRewards;
-	const currentRewardsArray = useRef(
-		JSON.parse(JSON.stringify(rewardsArray))
+	//current milestones array
+	const milestonesArray = userProgress.recentEarnedMilestones;
+	const currentMilestonesArray = useRef(
+		JSON.parse(JSON.stringify(milestonesArray))
 	).current;
 
 	//Get current Bible books for which quiz data exists
@@ -222,7 +222,7 @@ const BibleScreen = () => {
 		const linesOutOfViewRaw = linesData.filter((line) => {
 			const lineYStart = line.y;
 			const lineYEnd = lineYStart + line.height;
-			return line && lineYEnd < offsetY;
+			return line && lineYEnd < offsetY - line.height * 2 - 8;
 		});
 
 		//extract just the text (from all the raw data) for lines that have passed out of view
@@ -322,7 +322,8 @@ const BibleScreen = () => {
 						style={styles.scroll}
 						onScroll={handleScroll}
 						showsVerticalScrollIndicator={false}
-						scrollEventThrottle={16}>
+						scrollEventThrottle={16}
+						decelerationRate={0.01}>
 						<Text style={styles.heading}>{`${bookName} ${chapterNum}`}</Text>
 						<View style={styles.passageContainer}>
 							<Text
@@ -405,7 +406,7 @@ const BibleScreen = () => {
 					bookIndex={bookIndex}
 					bookName={bookName}
 					chapterIndex={chapterIndex}
-					rewards={currentRewardsArray}
+					milestones={currentMilestonesArray}
 				/>
 			)}
 			{quizModalOpen && (
@@ -418,7 +419,7 @@ const BibleScreen = () => {
 					bookIndex={bookIndex}
 					bookName={bookName}
 					chapterIndex={chapterIndex}
-					rewards={currentRewardsArray}
+					milestones={currentMilestonesArray}
 				/>
 			)}
 		</View>
@@ -463,6 +464,7 @@ const styles = StyleSheet.create({
 	card: {
 		width: "95%",
 		height: "95%",
+		maxWidth: 800,
 		backgroundColor: colors.primaryDark,
 		borderRadius: 12,
 		paddingHorizontal: 8,

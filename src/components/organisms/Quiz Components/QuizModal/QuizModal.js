@@ -15,7 +15,7 @@ const QuizModal = ({
 	bookIndex,
 	bookName,
 	chapterIndex,
-	rewards,
+	milestones,
 }) => {
 	const [quizComplete, setQuizComplete] = useState(false);
 
@@ -26,12 +26,12 @@ const QuizModal = ({
 			modalToggle={modalToggle}>
 			<ScrollView
 				showsVerticalScrollIndicator={false}
-				style={{ width: "100%" }}>
+				style={{ width: "100%", maxWidth: 750 }}>
 				{quizComplete ? (
 					<QuizSuccess
 						numOfVerses={numOfVerses}
 						modalToggle={modalToggle}
-						rewards={rewards}
+						milestones={milestones}
 					/>
 				) : (
 					<QuizContent
