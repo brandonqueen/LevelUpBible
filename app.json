@@ -18,13 +18,14 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.levelupbible.LevelUpBible",
-      "buildNumber": "2"
+      "buildNumber": "4"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/Images/adaptive-icon.png",
         "backgroundColor": "#161e39"
-      }
+      },
+      "package": "com.levelupbible.LevelUpBible"
     },
     "web": {
       "favicon": "./assets/Images/icon.png"
