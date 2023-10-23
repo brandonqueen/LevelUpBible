@@ -2,6 +2,7 @@
 
 - **Title:** Level Up Bible (MVP)
 - **Description:** Track your Bible reading progress with points and milestone rewards for completing chapters and answering quiz questions.
+- **Download on the App Store:** https://apps.apple.com/us/app/level-up-bible/id6470054738
 
 ### 2. Screenshots
 <img src="./assets/Images/Screenshots/1.png" alt="home screen" width="295." height="639"> <img src="./assets/Images/Screenshots/2.png" alt="choose chapter screen" width="295" height="639"/> <img src="./assets/Images/Screenshots/3.png" alt="bible screen" width="295" height="639"/> <img src="./assets/Images/Screenshots/4.png" alt="reading complete" width="295" height="639"/> <img src="./assets/Images/Screenshots/5.png" alt="quiz" width="295" height="639"/> <img src="./assets/Images/Screenshots/6.png" alt="rewards screen" width="295" height="639"/> <img src="./assets/Images/Screenshots/7.png" alt="milestone earned" width="295" height="639"/> <img src="./assets/Images/Screenshots/8.png" alt="settings screen" width="295" height="639"/>
