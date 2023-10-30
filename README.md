@@ -1,9 +1,9 @@
 ### 1. Project Title and Description
 
 - **Title:** Level Up Bible (MVP)
-- **Description:** Track your Bible reading progress with points and milestone rewards for completing chapters and answering quiz questions.
-- **Download on the App Store:** https://apps.apple.com/us/app/level-up-bible/id6470054738
-- **Download on the Google Play Store:** https://play.google.com/store/apps/details?id=com.levelupbible.LevelUpBible
+- **Description:** Was hired by client to create an app to track your Bible reading progress with points and milestone rewards for completing chapters and answering quiz questions.
+- **Download Latest Version on the App Store:** https://apps.apple.com/us/app/level-up-bible/id6470054738
+- **Download Latest Version on the Google Play Store:** https://play.google.com/store/apps/details?id=com.levelupbible.LevelUpBible
 
 ### 2. Screenshots
 <img src="./assets/Images/Screenshots/1.png" alt="home screen" width="295." height="639"> <img src="./assets/Images/Screenshots/2.png" alt="choose chapter screen" width="295" height="639"/> <img src="./assets/Images/Screenshots/3.png" alt="bible screen" width="295" height="639"/> <img src="./assets/Images/Screenshots/4.png" alt="reading complete" width="295" height="639"/> <img src="./assets/Images/Screenshots/5.png" alt="quiz" width="295" height="639"/> <img src="./assets/Images/Screenshots/6.png" alt="rewards screen" width="295" height="639"/> <img src="./assets/Images/Screenshots/7.png" alt="milestone earned" width="295" height="639"/> <img src="./assets/Images/Screenshots/8.png" alt="settings screen" width="295" height="639"/>
@@ -32,18 +32,14 @@
 -  **React Native Paper:** a collection of Material Design components for React Native. Used for certain UI elements in the app such as accordion lists, progress bar, etc.
 - **Others:** Other, more minor, technologies utilized include React Native Reanimated, Redash, and React Native Circular Progress Indicator.
 
-### 5. Roadmap
-
-- The current iteration of the app is an MVP. In it's full, future release, Level Up Bible will gain more features such as: quizzes for every book and chapter of the Bible, account creation for multi-device sync, the ability to add "friends" and share your progress/compete with others, tablet support, the ability to adjust fonts, more engaging UI/UX features, a bible memory game, and more!
-
-### 6. Copyright
+### 5. Copyright
 
 - © 2023 Level Up Bible
 
-### 7. Contact Information
+### 6. Contact Information
 
 - brandon@brandonqueen.dev
 
-### 8. Acknowledgments
+### 7. Acknowledgments
 
 - A huge shoutout to our friend, Cory for his help and feedback during development! Also a huge thanks to Nicole at Crossway for permission to use the ESV Bible text in Level Up Bible!
